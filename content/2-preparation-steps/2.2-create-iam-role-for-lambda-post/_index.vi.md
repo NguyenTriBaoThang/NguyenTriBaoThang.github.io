@@ -6,7 +6,7 @@ chapter: false
 pre: "<b>2.2 </b>"
 ---
 
-# Tạo IAM Role cho Lambda InsertStudentData
+
 
 > **Mục tiêu**: Tạo vai trò IAM **LambdaInsertStudentRole** cho hàm Lambda `insertStudentData`, cấp quyền để **ghi dữ liệu** vào bảng DynamoDB `studentData`, **gửi email** qua AWS SES, **ghi log** vào CloudWatch, và hỗ trợ các tương tác tiềm năng với S3 và CloudFront.
 

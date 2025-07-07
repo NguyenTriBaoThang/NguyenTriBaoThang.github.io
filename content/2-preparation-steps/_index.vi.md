@@ -6,7 +6,7 @@ chapter: false
 pre: "<b>2. </b>"
 ---
 
-# Các Bước Chuẩn Bị
+
 
 > **Mục tiêu**: Thiết lập môi trường cần thiết để triển khai ứng dụng serverless quản lý thông tin sinh viên, bao gồm tài khoản AWS, các IAM Role, bảng DynamoDB, và dịch vụ SES.
 

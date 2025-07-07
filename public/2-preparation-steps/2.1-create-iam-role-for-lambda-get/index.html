@@ -3,30 +3,30 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Preparation  :: AWS System Manager</title>
+    <title>Create IAM Role for Lambda Get :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751865279" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751865279" rel="stylesheet">
-    <link href="/css/hybrid.css?1751865279" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751865279" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751865279" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751865279" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751865279" rel="stylesheet">
-    <link href="/css/theme.css?1751865279" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751865279" rel="stylesheet">
+    <link href="/css/nucleus.css?1751879056" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751879056" rel="stylesheet">
+    <link href="/css/hybrid.css?1751879056" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751879056" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751879056" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751879056" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751879056" rel="stylesheet">
+    <link href="/css/theme.css?1751879056" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751879056" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751865279" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751879056" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751865279"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751879056"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751865279"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751865279"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751879056"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751879056"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751865279"></script>
+<script type="text/javascript" src="/%20js/search.js?1751879056"></script>
     
   </div>
 
@@ -89,7 +89,7 @@
         
         ">
   <a href="/1-introduction/">
-     <b> 1. </b> Introduction
+    <b>1. </b>Introduction
     
     <i class="fas fa-check read-icon"></i>
     
@@ -140,13 +140,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
         
         active
         
         ">
   <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
-     <b> 2.1 </b> Preparation 
+    <b>2.1 </b>Create IAM Role for Lambda Get
     
     <i class="fas fa-check read-icon"></i>
     
@@ -168,13 +168,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
-     <b> 2.2 </b> Preparation 
+    <b>2.2 </b>Create IAM Role for Lambda Post
     
     <i class="fas fa-check read-icon"></i>
     
@@ -196,13 +196,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
-     <b> 2.3 </b> Preparation 
+    <b>2.3 </b>Create IAM Role for DynamoDB Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -757,13 +757,13 @@
 
 
 
-<li data-nav-id="/5-portfwd/" title="Port Forwarding" class="dd-item 
+<li data-nav-id="/5-designing-the-website-interface/" title="Session Management" class="dd-item 
         
         
         
         ">
-  <a href="/5-portfwd/">
-     <b> 5. </b> Port Forwarding
+  <a href="/5-designing-the-website-interface/">
+    Session Management
     
     <i class="fas fa-check read-icon"></i>
     
@@ -783,18 +783,170 @@
 
 
 
-<li data-nav-id="/6-cleanup/" title="Clean up resources" class="dd-item 
+<li data-nav-id="/6-configuring-s3-buckets/" title="Session Management" class="dd-item 
         
         
         
         ">
-  <a href="/6-cleanup/">
-    <b>6. </b>Clean up resources
+  <a href="/6-configuring-s3-buckets/">
+    Session Management
     
     <i class="fas fa-check read-icon"></i>
     
   </a>
   
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
   
 </li>
 
@@ -943,7 +1095,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/2-preparation-steps/'>Preparation </a> > Preparation 
+            <a href='/'>Website Serverless</a> > <a href='/2-preparation-steps/'>Preparation </a> > Create IAM Role for Lambda Get
           
         
           
@@ -958,11 +1110,19 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#detailed-steps">Detailed Steps</a>
       <ul>
-        <li><a href="#content">Content</a></li>
+        <li><a href="#1-access-the-aws-management-console">1. Access the AWS Management Console</a></li>
+        <li><a href="#2-navigate-to-the-roles-section">2. Navigate to the Roles Section</a></li>
+        <li><a href="#3-start-the-role-creation-process">3. Start the Role Creation Process</a></li>
+        <li><a href="#4-choose-trusted-entity-type">4. Choose Trusted Entity Type</a></li>
+        <li><a href="#5-grant-permissions-to-the-role">5. Grant Permissions to the Role</a></li>
+        <li><a href="#6-name-and-review-the-role">6. Name and Review the Role</a></li>
+        <li><a href="#7-check-role-creation-status">7. Check Role Creation Status</a></li>
       </ul>
     </li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -980,7 +1140,7 @@
           
             <h1>
               
-              Preparation 
+              Create IAM Role for Lambda Get
             </h1>
           
 
@@ -988,21 +1148,218 @@
 
 
 
-	
-<div class="notices info" ><p>You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.</p>
-</div>
-
-<p>To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:</p>
+	<blockquote>
+<p><strong>Objective</strong>: Create the IAM role <strong>LambdaGetStudentRole</strong> for the Lambda function <code>getStudentData</code>, granting permissions to <strong>read data</strong> from the DynamoDB table <code>studentData</code>, <strong>log data</strong> to CloudWatch, and support potential interactions with S3 and CloudFront.</p></blockquote>
+<p>The function <strong>getStudentData</strong> performs a <strong>Scan</strong> operation to retrieve all student data (<strong>Student ID</strong>, <strong>Full Name</strong>, <strong>Class</strong>, <strong>Date of Birth</strong>, <strong>Email</strong>) from the DynamoDB table <code>studentData</code>. This role needs to include:</p>
 <ul>
-<li><a href="https://000004.awsstudygroup.com/en/">About Amazon EC2</a></li>
-<li><a href="https://000003.awsstudygroup.com/en/">Works with Amazon VPC</a></li>
+<li>Permissions to <strong>log data</strong> to CloudWatch (<code>AWSLambdaBasicExecutionRole</code>).</li>
+<li>Permissions to <strong>read data</strong> from DynamoDB (<code>AmazonDynamoDBReadOnlyAccess</code>).</li>
+<li>Permissions for <strong>S3</strong> and <strong>CloudFront</strong> (<code>AmazonS3FullAccess</code>, <code>CloudFrontFullAccess</code>) for potential future features.</li>
 </ul>
-<p>In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.</p>
-<h3 id="content">Content</h3>
+<blockquote>
+<p><strong>Note</strong>: <code>AmazonS3FullAccess</code> and <code>CloudFrontFullAccess</code> are not currently used in the code, but are retained for future functionalities (e.g., saving files to S3 or managing CloudFront).</p></blockquote>
+<hr>
+<h2 id="detailed-steps">Detailed Steps</h2>
+<p>Below are the detailed steps to create the IAM role <strong>LambdaGetStudentRole</strong>:</p>
+<h3 id="1-access-the-aws-management-console">1. Access the AWS Management Console</h3>
 <ul>
-<li><a href="2.1-createec2/">Prepare VPC and EC2</a></li>
-<li><a href="2.2-createiamrole/">Create IAM Role</a></li>
+<li>
+<p>Open your browser and log in to the <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> with your AWS account.</p>
+</li>
+<li>
+<p>In the search bar at the top of the page, type <strong>IAM</strong> and select <strong>Identity and Access Management (IAM)</strong>.</p>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-01.png" alt="IAM - Access Service">
+<em>Figure 1: AWS Console interface with the IAM search bar.</em></p>
+</li>
 </ul>
+<h3 id="2-navigate-to-the-roles-section">2. Navigate to the Roles Section</h3>
+<ul>
+<li>
+<p>In the IAM interface, find the <strong>left-hand navigation menu</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Roles</strong> to view the list of IAM roles. If no roles exist, the list will be empty.</p>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-02.png" alt="IAM - Roles List">
+<em>Figure 2: Navigation menu with the Roles option.</em></p>
+</li>
+</ul>
+<h3 id="3-start-the-role-creation-process">3. Start the Role Creation Process</h3>
+<ul>
+<li>
+<p>In the <strong>Roles</strong> interface, click the <strong>Create Role</strong> button in the top-right corner.</p>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-03.png" alt="IAM - Create Role Button">
+<em>Figure 3: Create Role button in the Roles interface.</em></p>
+</li>
+</ul>
+<h3 id="4-choose-trusted-entity-type">4. Choose Trusted Entity Type</h3>
+<ul>
+<li>
+<p>In the <strong>Select trusted entity</strong> section, choose <strong>AWS Service</strong> to specify that the role is for an AWS service.</p>
+</li>
+<li>
+<p>In the <strong>Use case</strong> section, select <strong>Lambda</strong> from the list of services.</p>
+</li>
+<li>
+<p>Click <strong>Next</strong> to move to the permission configuration step.</p>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-04.png" alt="IAM - Choose Lambda Service">
+<em>Figure 4: Choosing AWS Service and Lambda in Use case.</em></p>
+</li>
+</ul>
+<h3 id="5-grant-permissions-to-the-role">5. Grant Permissions to the Role</h3>
+<ul>
+<li>
+<p>In the <strong>Permissions</strong> section, add the following four policies:</p>
+<ul>
+<li>
+<p><strong>AWSLambdaBasicExecutionRole</strong>:</p>
+<ul>
+<li>Type <code>AWSLambdaBasicExecutionRole</code> in the search bar.</li>
+<li>Select the <strong>AWSLambdaBasicExecutionRole</strong> policy.
+<blockquote>
+<p><strong>Description</strong>: Allows Lambda functions to log to CloudWatch for monitoring and debugging.</p></blockquote>
+</li>
+</ul>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-05.png" alt="IAM - Add AWSLambdaBasicExecutionRole">
+<em>Figure 5: Selecting the AWSLambdaBasicExecutionRole policy.</em></p>
+</li>
+<li>
+<p><strong>AmazonDynamoDBReadOnlyAccess</strong>:</p>
+<ul>
+<li>Type <code>AmazonDynamoDBReadOnlyAccess</code> in the search bar.</li>
+<li>Select the <strong>AmazonDynamoDBReadOnlyAccess</strong> policy.
+<blockquote>
+<p><strong>Description</strong>: Grants read-only access to DynamoDB, supporting operations like <strong>Scan</strong> or <strong>GetItem</strong>.</p></blockquote>
+</li>
+</ul>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-06.png" alt="IAM - Add AmazonDynamoDBReadOnlyAccess">
+<em>Figure 6: Selecting the AmazonDynamoDBReadOnlyAccess policy.</em></p>
+</li>
+<li>
+<p><strong>AmazonS3FullAccess</strong>:</p>
+<ul>
+<li>Type <code>AmazonS3FullAccess</code> in the search bar.</li>
+<li>Select the <strong>AmazonS3FullAccess</strong> policy.
+<blockquote>
+<p><strong>Description</strong>: Grants read, write, and manage S3 buckets for potential future features (e.g., storing additional files).</p></blockquote>
+</li>
+</ul>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-07.png" alt="IAM - Add AmazonS3FullAccess">
+<em>Figure 7: Selecting the AmazonS3FullAccess policy.</em></p>
+</li>
+<li>
+<p><strong>CloudFrontFullAccess</strong>:</p>
+<ul>
+<li>Type <code>CloudFrontFullAccess</code> in the search bar.</li>
+<li>Select the <strong>CloudFrontFullAccess</strong> policy.
+<blockquote>
+<p><strong>Description</strong>: Grants permission to manage CloudFront distributions for potential future features.</p></blockquote>
+</li>
+</ul>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-08.png" alt="IAM - Add CloudFrontFullAccess">
+<em>Figure 8: Selecting the CloudFrontFullAccess policy.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Verify the list of <strong>Permissions policies</strong> to ensure it includes:</p>
+<ul>
+<li><code>AWSLambdaBasicExecutionRole</code></li>
+<li><code>AmazonDynamoDBReadOnlyAccess</code></li>
+<li><code>AmazonS3FullAccess</code></li>
+<li><code>CloudFrontFullAccess</code></li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Next</strong>.</p>
+</li>
+</ul>
+<h3 id="6-name-and-review-the-role">6. Name and Review the Role</h3>
+<ul>
+<li>
+<p>In the <strong>Role details</strong> section:</p>
+<ul>
+<li><strong>Role Name</strong>: Enter <code>LambdaGetStudentRole</code>.
+<blockquote>
+<p><strong>Note</strong>: The name must match exactly with the Lambda function configuration for <code>getStudentData</code>.</p></blockquote>
+</li>
+<li><strong>Description</strong> (optional): Enter a description, e.g., <em>&ldquo;IAM role for Lambda function getStudentData, granting read access to DynamoDB, CloudWatch logging, and supporting S3/CloudFront.&rdquo;</em></li>
+</ul>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-09.png" alt="IAM - Enter Role Name">
+<em>Figure 9: Enter role name and description.</em></p>
+</li>
+<li>
+<p>Double-check:</p>
+<ul>
+<li><strong>Trusted entity</strong>: AWS Service (Lambda).</li>
+<li><strong>Permissions</strong>: <code>AWSLambdaBasicExecutionRole</code>, <code>AmazonDynamoDBReadOnlyAccess</code>, <code>AmazonS3FullAccess</code>, <code>CloudFrontFullAccess</code>.</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Create Role</strong>.</p>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-10.png" alt="IAM - Confirm Create Role">
+<em>Figure 10: Create Role button to confirm.</em></p>
+</li>
+</ul>
+<h3 id="7-check-role-creation-status">7. Check Role Creation Status</h3>
+<ul>
+<li>
+<p>After clicking <strong>Create Role</strong>, you will return to the <strong>Roles</strong> list.</p>
+</li>
+<li>
+<p>Find the <strong>LambdaGetStudentRole</strong> role. If successful, you should see the message: <em>&ldquo;Role LambdaGetStudentRole created&rdquo;</em>.</p>
+</li>
+<li>
+<p>Click on <strong>LambdaGetStudentRole</strong> to view details:</p>
+<ul>
+<li><strong>ARN</strong>: Record the ARN (e.g., <code>arn:aws:iam::your-account-id:role/LambdaGetStudentRole</code>) to use when configuring the Lambda function.</li>
+<li><strong>Policies</strong>: Verify the inclusion of <code>AWSLambdaBasicExecutionRole</code>, <code>AmazonDynamoDBReadOnlyAccess</code>, <code>AmazonS3FullAccess</code>, <code>CloudFrontFullAccess</code>.</li>
+</ul>
+</li>
+<li>
+<p>If the role does not appear, refresh the page or double-check the steps.</p>
+<p><img src="/images/1-iam-role/get-student/iam-role-get-student-11.png" alt="IAM - Role Details">
+<em>Figure 11: Role details for LambdaGetStudentRole with ARN and policies.</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="important-notes">Important Notes</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Factor</strong></th>
+          <th><strong>Details</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Role Name</strong></td>
+          <td>Must be <code>LambdaGetStudentRole</code> (case-sensitive) to match the Lambda function. Incorrect names will cause execution errors.</td>
+      </tr>
+      <tr>
+          <td><strong>S3 and CloudFront</strong></td>
+          <td><code>AmazonS3FullAccess</code> and <code>CloudFrontFullAccess</code> are not currently used, but kept for future functionality (e.g., storing files in S3 or managing CloudFront). Delete if unnecessary to comply with <strong>least privilege</strong>.</td>
+      </tr>
+      <tr>
+          <td><strong>Security Optimization</strong></td>
+          <td>Consider creating a custom policy instead of <code>AmazonDynamoDBReadOnlyAccess</code> to restrict access specifically to the <code>studentData</code> table.</td>
+      </tr>
+      <tr>
+          <td><strong>Check Early</strong></td>
+          <td>Record the <strong>ARN</strong> and verify the role in IAM before configuring the Lambda function to ensure proper setup.</td>
+      </tr>
+      <tr>
+          <td><strong>Error Handling</strong></td>
+          <td>If you encounter an &ldquo;Access Denied&rdquo; error, check AWS account permissions (<code>iam:CreateRole</code>) or contact your administrator.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Practical Tip</strong>: Always verify the ARN and policies immediately after creating the role to confirm configuration before integrating with Lambda.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The IAM role <strong>LambdaGetStudentRole</strong> ensures that the Lambda function <code>getStudentData</code> has permissions to <strong>read data</strong> from DynamoDB, <strong>log data</strong> to CloudWatch, and support potential extensions with S3 and CloudFront. This role is now ready to be integrated into the Lambda function in the next steps.</p>
+<blockquote>
+<p><strong>Next Step</strong>: Proceed to <a href="/2-Prerequiste/2.2-create-iam-role-for-lambda-post/">Create IAM Role for Lambda Post</a> to set up the role for the function that stores student data!</p></blockquote>
 
 
 
@@ -1446,8 +1803,90 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1464,7 +1903,7 @@
 			<a class="nav nav-prev" href="/2-preparation-steps/" title="Preparation "> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Preparation " style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1474,19 +1913,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751865279"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751865279"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751865279"></script>
-    <script src="/js/jquery.sticky.js?1751865279"></script>
-    <script src="/js/featherlight.min.js?1751865279"></script>
-    <script src="/js/highlight.pack.js?1751865279"></script>
+    <script src="/js/clipboard.min.js?1751879056"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751879056"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751879056"></script>
+    <script src="/js/jquery.sticky.js?1751879056"></script>
+    <script src="/js/featherlight.min.js?1751879056"></script>
+    <script src="/js/highlight.pack.js?1751879056"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751865279"></script>
-    <script src="/js/learn.js?1751865279"></script>
-    <script src="/js/hugo-learn.js?1751865279"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751879056"></script>
+    <script src="/js/learn.js?1751879056"></script>
+    <script src="/js/hugo-learn.js?1751879056"></script>
 
-    <link href="/mermaid/mermaid.css?1751865279" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751865279"></script>
+    <link href="/mermaid/mermaid.css?1751879056" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751879056"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
