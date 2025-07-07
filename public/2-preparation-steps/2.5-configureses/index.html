@@ -3,30 +3,30 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Preparation  :: AWS System Manager</title>
+    <title>Configure Amazon SES :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751876622" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751876622" rel="stylesheet">
-    <link href="/css/hybrid.css?1751876622" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751876622" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751876622" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751876622" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751876622" rel="stylesheet">
-    <link href="/css/theme.css?1751876622" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751876622" rel="stylesheet">
+    <link href="/css/nucleus.css?1751894769" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751894769" rel="stylesheet">
+    <link href="/css/hybrid.css?1751894769" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751894769" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751894769" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751894769" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751894769" rel="stylesheet">
+    <link href="/css/theme.css?1751894769" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751894769" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751876622" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751894769" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751876622"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751894769"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751876622"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751876622"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751894769"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751894769"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751876622"></script>
+<script type="text/javascript" src="/%20js/search.js?1751894769"></script>
     
   </div>
 
@@ -89,7 +89,7 @@
         
         ">
   <a href="/1-introduction/">
-     <b> 1. </b> Introduction
+    <b>1. </b>Introduction
     
     <i class="fas fa-check read-icon"></i>
     
@@ -109,13 +109,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/" title="Preparation Steps" class="dd-item 
         parent
         
         
         ">
   <a href="/2-preparation-steps/">
-     <b> 2. </b> Preparation 
+    <b>2. </b>Preparation Steps
     
     <i class="fas fa-check read-icon"></i>
     
@@ -140,13 +140,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
-     <b> 2.1 </b> Preparation 
+    <b>2.1 </b>Create IAM Role for Lambda Get
     
     <i class="fas fa-check read-icon"></i>
     
@@ -168,13 +168,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
-     <b> 2.2 </b> Preparation 
+    <b>2.2 </b>Create IAM Role for Lambda Post
     
     <i class="fas fa-check read-icon"></i>
     
@@ -196,13 +196,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
-     <b> 2.3 </b> Preparation 
+    <b>2.3 </b>Create IAM Role for DynamoDB Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -224,13 +224,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.4-createtable-in-dynamodb/">
-     <b> 2.4 </b> Preparation 
+    <b>2.4 </b>Create Table in DynamoDB
     
     <i class="fas fa-check read-icon"></i>
     
@@ -252,13 +252,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Configure Amazon SES" class="dd-item 
         
         active
         
         ">
   <a href="/2-preparation-steps/2.5-configureses/">
-     <b> 2.5 </b> Preparation 
+    <b>2.5 </b>Configure Amazon SES
     
     <i class="fas fa-check read-icon"></i>
     
@@ -287,13 +287,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/" title="Creating Lambda Functions" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/">
-     <b> 3. </b> Preparation 
+    <b> 3. </b>Creating Lambda Functions
     
     <i class="fas fa-check read-icon"></i>
     
@@ -318,13 +318,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Configure Lambda Function getStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
-     <b> 3.1 </b> Preparation 
+    <b>3.1 </b>Configure Lambda Function getStudentData
     
     <i class="fas fa-check read-icon"></i>
     
@@ -346,41 +346,41 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Preparation " class="dd-item 
-        
-        
-        
-        ">
-  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
-     <b> 3.3 </b> Preparation 
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="" class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Configure Lambda Function insertStudentData
     
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Configure Lambda Function BackupDynamoDBAndSendEmail
     
     <i class="fas fa-check read-icon"></i>
     
@@ -409,13 +409,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/">
-     <b> 4. </b> Creating a REST API
+    <b>4. </b>Configuring RESTful API with API Key Security
     
     <i class="fas fa-check read-icon"></i>
     
@@ -440,13 +440,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">
-     <b> 4.1 </b> Creating a REST API
+    <b>4.1 </b>Create a New REST API on API Gateway
     
     <i class="fas fa-check read-icon"></i>
     
@@ -468,13 +468,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Create an API Key to Secure Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">
-     <b> 4.2 </b> Manage session logs
+    <b>4.2 </b>Create an API Key to Secure Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -496,13 +496,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Set Up Usage Plan" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
-     <b> 4.3 </b> Manage session logs
+    <b>4.3 </b>Set Up Usage Plan
     
     <i class="fas fa-check read-icon"></i>
     
@@ -524,13 +524,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Create GET Method to Retrieve Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">
-     <b> 4.4 </b> Manage session logs
+    <b>4.4 </b>Create GET Method to Retrieve Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -552,13 +552,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Create POST Method to Store Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">
-     <b> 4.5 </b> Manage session logs
+    <b>4.5 </b>Create POST Method to Store Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -580,13 +580,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Create Resource and Method for Data Backup" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
-     <b> 4.6 </b> Manage session logs
+    <b>4.6 </b>Create Resource and Method for Data Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -608,13 +608,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.7-enabling-cors/">
-     <b> 4.7 </b> Manage session logs
+    <b>4.7 </b>Enable CORS to Support Frontend Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -636,13 +636,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Deploy the API to a Specific Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.8-deploying-the-api/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.8 </b>Deploy the API to a Specific Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -664,13 +664,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.9 </b>Link API Key to Usage Plan &amp; Associate with REST API and Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -699,71 +699,13 @@
 
 
 
-<li data-nav-id="/testchaper/" title="TestChaper" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/testchaper/">
-    <b>X. </b>TestChaper
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-  <ul>
-    
-    
-    
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/testchaper/example/" title="Example"
-  class="dd-item ">
-  <a href="/testchaper/example/">
-    <b>X. </b>Example
-    <i class="fas fa-check read-icon"></i>
-  </a>
-</li>
-
-
-
-
-    
-    
-    
-  </ul>
-  
-</li>
-
-
-
-      
-      
-
-
-
-
-
-
-
-<li data-nav-id="/5-designing-the-website-interface/" title="Session Management" class="dd-item 
+<li data-nav-id="/5-designing-the-website-interface/" title="Write the Website Interface" class="dd-item 
         
         
         
         ">
   <a href="/5-designing-the-website-interface/">
-    Session Management
+    <b>5. </b>Write the Website Interface
     
     <i class="fas fa-check read-icon"></i>
     
@@ -783,13 +725,13 @@
 
 
 
-<li data-nav-id="/6-configuring-s3-buckets/" title="Session Management" class="dd-item 
+<li data-nav-id="/6-configuring-s3-buckets/" title="Configuring S3 Bucket for Storing and Serving the Website" class="dd-item 
         
         
         
         ">
   <a href="/6-configuring-s3-buckets/">
-    Session Management
+    <b>6. </b>Configuring S3 Bucket for Storing and Serving the Website
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1095,7 +1037,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/2-preparation-steps/'>Preparation </a> > Preparation 
+            <a href='/'>Website Serverless</a> > <a href='/2-preparation-steps/'>Preparation Steps</a> > Configure Amazon SES
           
         
           
@@ -1110,11 +1052,19 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#detailed-steps">Detailed Steps</a>
       <ul>
-        <li><a href="#content">Content</a></li>
+        <li><a href="#1-access-the-aws-management-console">1. Access the AWS Management Console</a></li>
+        <li><a href="#2-navigate-to-verified-identities">2. Navigate to Verified Identities</a></li>
+        <li><a href="#3-start-the-identity-creation-process">3. Start the Identity Creation Process</a></li>
+        <li><a href="#4-configure-the-email-address">4. Configure the Email Address</a></li>
+        <li><a href="#5-check-and-verify-the-email">5. Check and Verify the Email</a></li>
+        <li><a href="#6-check-sandbox-mode-and-request-exit-from-sandbox">6. Check Sandbox Mode and Request Exit from Sandbox</a></li>
+        <li><a href="#7-verify-and-test-ses">7. Verify and Test SES</a></li>
       </ul>
     </li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -1132,7 +1082,7 @@
           
             <h1>
               
-              Preparation 
+              Configure Amazon SES
             </h1>
           
 
@@ -1140,21 +1090,169 @@
 
 
 
-	
-<div class="notices info" ><p>You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.</p>
-</div>
-
-<p>To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:</p>
+	<blockquote>
+<p><strong>Objective</strong>: Configure Amazon SES to send confirmation emails for the Lambda function <code>insertStudentData</code> (confirmation when saving student data) and <code>BackupDynamoDBAndSendEmail</code> (notification with a backup file download link). Verify the email address (e.g., <code>nguyentribaothang@gmail.com</code>) and exit sandbox mode to send emails to unverified addresses.</p></blockquote>
+<p>Amazon SES is AWS&rsquo;s email service with high reliability and low cost, used for:</p>
 <ul>
-<li><a href="https://000004.awsstudygroup.com/en/">About Amazon EC2</a></li>
-<li><a href="https://000003.awsstudygroup.com/en/">Works with Amazon VPC</a></li>
+<li>Sending confirmation emails when adding students to the DynamoDB <code>studentData</code> table.</li>
+<li>Sending notification emails containing the pre-signed URL of the backup file from S3.</li>
 </ul>
-<p>In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.</p>
-<h3 id="content">Content</h3>
+<blockquote>
+<p><strong>Note</strong>: The default SES account is in <strong>sandbox</strong> mode, which only allows sending emails to verified addresses. Exiting sandbox mode is necessary to send emails to unverified student addresses.</p></blockquote>
+<hr>
+<h2 id="detailed-steps">Detailed Steps</h2>
+<p>Below are the detailed steps to configure SES:</p>
+<h3 id="1-access-the-aws-management-console">1. Access the AWS Management Console</h3>
 <ul>
-<li><a href="2.1-createec2/">Prepare VPC and EC2</a></li>
-<li><a href="2.2-createiamrole/">Create IAM Role</a></li>
+<li>
+<p>Open your browser and log in to the <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong>.</p>
+</li>
+<li>
+<p>In the search bar, type <strong>SES</strong> and select <strong>Amazon Simple Email Service (SES)</strong>.</p>
+</li>
+<li>
+<p>Ensure you are in an AWS region that supports SES (e.g., <code>us-east-1</code>), check in the top right corner.</p>
+<p><img src="/images/3-configureses/configureses-01.png" alt="SES - Access Service">
+<em>Figure 1: AWS Console interface with the SES search bar.</em></p>
+</li>
 </ul>
+<h3 id="2-navigate-to-verified-identities">2. Navigate to Verified Identities</h3>
+<ul>
+<li>
+<p>In the SES interface, find the <strong>left-hand navigation menu</strong>.</p>
+</li>
+<li>
+<p>Select <strong>Verified identities</strong> to view the list of verified email addresses or domains. If none exist, the list will be empty.</p>
+<p><img src="/images/3-configureses/configureses-02.png" alt="SES - Verified Identities List">
+<em>Figure 2: Navigation menu with the Verified identities option.</em></p>
+</li>
+</ul>
+<h3 id="3-start-the-identity-creation-process">3. Start the Identity Creation Process</h3>
+<ul>
+<li>
+<p>In the <strong>Verified identities</strong> interface, click <strong>Create identity</strong> in the top-right corner.</p>
+<p><img src="/images/3-configureses/configureses-03.png" alt="SES - Create Identity Button">
+<em>Figure 3: Create Identity button in the Verified identities interface.</em></p>
+</li>
+</ul>
+<h3 id="4-configure-the-email-address">4. Configure the Email Address</h3>
+<ul>
+<li>
+<p>In the <strong>Identity type</strong> section, select <strong>Email address</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Email address</strong> field, enter the source email address (e.g., <code>nguyentribaothang@gmail.com</code>).</p>
+<blockquote>
+<p><strong>Note</strong>: Use an email you have access to for verification. Avoid using sample emails like <code>example@gmail.com</code>.</p></blockquote>
+</li>
+<li>
+<p>Leave the default settings (no need for Feedback notifications or DKIM settings).</p>
+</li>
+<li>
+<p>Click <strong>Create identity</strong> to send the verification request.</p>
+<p><img src="/images/3-configureses/configureses-04.png" alt="SES - Configure Email">
+<em>Figure 4: Email configuration interface.</em></p>
+</li>
+</ul>
+<h3 id="5-check-and-verify-the-email">5. Check and Verify the Email</h3>
+<ul>
+<li>
+<p>AWS SES will send a verification email to the entered address (e.g., <code>nguyentribaothang@gmail.com</code>).</p>
+</li>
+<li>
+<p>Log in to your email account, check your <strong>Inbox</strong> or <strong>Spam/Junk</strong> folder for an email from AWS (subject may be <em>&ldquo;Amazon Web Services - Email Address Verification Request&rdquo;</em>).</p>
+</li>
+<li>
+<p>Click the verification link in the email to complete the process.</p>
+</li>
+<li>
+<p>Return to SES and refresh the <strong>Verified identities</strong> page. Confirm the status is <strong>Verified</strong>.</p>
+<p><img src="/images/3-configureses/configureses-05.png" alt="SES - Verify Email">
+<em>Figure 5: Checking the Verified status of the email.</em></p>
+</li>
+</ul>
+<h3 id="6-check-sandbox-mode-and-request-exit-from-sandbox">6. Check Sandbox Mode and Request Exit from Sandbox</h3>
+<ul>
+<li><strong>Check sandbox</strong>:
+<ul>
+<li>In SES, go to <strong>Account dashboard</strong> or <strong>Sending statistics</strong>.</li>
+<li>Check the <strong>Account status</strong>. If it shows <em>&ldquo;Your account is in the sandbox&rdquo;</em>, the account is limited to sending emails to verified addresses only.</li>
+</ul>
+</li>
+<li><strong>Request to exit sandbox</strong>:
+<ul>
+<li>In the <strong>Account dashboard</strong>, click <strong>Edit your account details</strong> or <strong>Request production access</strong>.</li>
+<li>Fill out the form:
+<ul>
+<li><strong>Use case description</strong>: <em>&ldquo;Send confirmation emails when saving student information and backup notifications from DynamoDB.&rdquo;</em></li>
+<li><strong>Mail type</strong>: Choose <strong>Transactional</strong>.</li>
+<li><strong>Website URL</strong>: Enter the application URL (if available) or write <em>&ldquo;Website under development.&rdquo;</em></li>
+<li><strong>Sender email address</strong>: Enter the verified email (e.g., <code>nguyentribaothang@gmail.com</code>).</li>
+<li><strong>Additional information</strong>: <em>&ldquo;Need to send emails to unverified student addresses for the student information management system.&rdquo;</em></li>
+</ul>
+</li>
+<li>Submit the request. AWS will approve it within <strong>24-48 hours</strong>, notifying via email.</li>
+</ul>
+</li>
+<li><strong>Temporary workaround</strong>: In sandbox mode, verify additional receiving emails (follow steps 4–5) or modify the Lambda code to only send emails to verified addresses.</li>
+</ul>
+<h3 id="7-verify-and-test-ses">7. Verify and Test SES</h3>
+<ul>
+<li>
+<p>Go back to <strong>Verified identities</strong>, check the email status (e.g., <code>nguyentribaothang@gmail.com</code>) is <strong>Verified</strong>.</p>
+</li>
+<li>
+<p>In SES, select <strong>Send a test email</strong> (if available), send a test email to the verified email to test functionality.</p>
+</li>
+<li>
+<p>If the status is still <strong>Pending</strong>, check your email (Inbox/Spam) or recreate the identity.</p>
+<p><img src="/images/3-configureses/configureses-06.png" alt="SES - Verify Status">
+<em>Figure 6: Confirming Verified status and testing email sending.</em></p>
+</li>
+</ul>
+<hr>
+<h2 id="important-notes">Important Notes</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Factor</strong></th>
+          <th><strong>Details</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Valid Email</strong></td>
+          <td>Use an email you have access to (e.g., <code>nguyentribaothang@gmail.com</code>). If you don’t receive the verification email within 5-10 minutes, check <strong>Spam/Junk</strong> or contact AWS Support.</td>
+      </tr>
+      <tr>
+          <td><strong>Sandbox Mode</strong></td>
+          <td>In sandbox mode, only send emails to verified addresses. Exit sandbox mode to send emails to student addresses (unverified), or the <code>insertStudentData</code> function will report an <strong>AccessDenied</strong> error.</td>
+      </tr>
+      <tr>
+          <td><strong>AWS Region</strong></td>
+          <td>Configure SES in a region that supports it (e.g., <code>us-east-1</code>), matching with Lambda. Check the list of supported SES regions in <a href="https://docs.aws.amazon.com/ses/latest/dg/regions.html">AWS SES Documentation</a>.</td>
+      </tr>
+      <tr>
+          <td><strong>Error Handling</strong></td>
+          <td>If you don’t receive the verification email, check DNS settings or contact your email provider. If Lambda reports <em>&ldquo;Email address is not verified&rdquo;</em>, check the verification status in SES or CloudWatch logs.</td>
+      </tr>
+      <tr>
+          <td><strong>Optimization</strong></td>
+          <td>Consider verifying the domain or setting up DKIM for security. See <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim.html">AWS SES Documentation - DKIM</a>.</td>
+      </tr>
+      <tr>
+          <td><strong>Test Early</strong></td>
+          <td>Test sending an email from SES before integrating with Lambda to ensure proper functionality.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Practical Tip</strong>: After verifying the email, send a test email from SES to check before running the Lambda functions.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>Configuring SES with a verified email (e.g., <code>nguyentribaothang@gmail.com</code>) and exiting sandbox mode (if necessary) ensures that the Lambda functions <code>insertStudentData</code> and <code>BackupDynamoDBAndSendEmail</code> can send confirmation emails and notifications successfully. SES is now ready for integration into the serverless application.</p>
+<blockquote>
+<p><strong>Next Step</strong>: Proceed to <a href="/3-creating-lambda-functions/">Configure Lambda Functions</a> to set up the Lambda functions!</p></blockquote>
 
 
 
@@ -1556,38 +1654,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1698,10 +1764,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Preparation "> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-creating-lambda-functions/" title="Preparation " style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-creating-lambda-functions/" title="Creating Lambda Functions" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1711,19 +1777,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751876622"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751876622"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751876622"></script>
-    <script src="/js/jquery.sticky.js?1751876622"></script>
-    <script src="/js/featherlight.min.js?1751876622"></script>
-    <script src="/js/highlight.pack.js?1751876622"></script>
+    <script src="/js/clipboard.min.js?1751894769"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751894769"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751894769"></script>
+    <script src="/js/jquery.sticky.js?1751894769"></script>
+    <script src="/js/featherlight.min.js?1751894769"></script>
+    <script src="/js/highlight.pack.js?1751894769"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751876622"></script>
-    <script src="/js/learn.js?1751876622"></script>
-    <script src="/js/hugo-learn.js?1751876622"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751894769"></script>
+    <script src="/js/learn.js?1751894769"></script>
+    <script src="/js/hugo-learn.js?1751894769"></script>
 
-    <link href="/mermaid/mermaid.css?1751876622" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751876622"></script>
+    <link href="/mermaid/mermaid.css?1751894769" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751894769"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

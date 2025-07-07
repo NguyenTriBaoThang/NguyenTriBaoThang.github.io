@@ -3,30 +3,30 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="generator" content="Hugo 0.147.8">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Preparation  :: AWS System Manager</title>
+    <title>Configure Lambda Function BackupDynamoDBAndSendEmail :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751865279" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751865279" rel="stylesheet">
-    <link href="/css/hybrid.css?1751865279" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751865279" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751865279" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751865279" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751865279" rel="stylesheet">
-    <link href="/css/theme.css?1751865279" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751865279" rel="stylesheet">
+    <link href="/css/nucleus.css?1751894769" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751894769" rel="stylesheet">
+    <link href="/css/hybrid.css?1751894769" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751894769" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751894769" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751894769" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751894769" rel="stylesheet">
+    <link href="/css/theme.css?1751894769" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751894769" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751865279" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751894769" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751865279"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751894769"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751865279"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751865279"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751894769"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751894769"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751865279"></script>
+<script type="text/javascript" src="/%20js/search.js?1751894769"></script>
     
   </div>
 
@@ -89,7 +89,7 @@
         
         ">
   <a href="/1-introduction/">
-     <b> 1. </b> Introduction
+    <b>1. </b>Introduction
     
     <i class="fas fa-check read-icon"></i>
     
@@ -109,13 +109,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/" title="Preparation Steps" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/">
-     <b> 2. </b> Preparation 
+    <b>2. </b>Preparation Steps
     
     <i class="fas fa-check read-icon"></i>
     
@@ -140,13 +140,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
-     <b> 2.1 </b> Preparation 
+    <b>2.1 </b>Create IAM Role for Lambda Get
     
     <i class="fas fa-check read-icon"></i>
     
@@ -168,13 +168,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
-     <b> 2.2 </b> Preparation 
+    <b>2.2 </b>Create IAM Role for Lambda Post
     
     <i class="fas fa-check read-icon"></i>
     
@@ -196,13 +196,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
-     <b> 2.3 </b> Preparation 
+    <b>2.3 </b>Create IAM Role for DynamoDB Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -224,13 +224,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.4-createtable-in-dynamodb/">
-     <b> 2.4 </b> Preparation 
+    <b>2.4 </b>Create Table in DynamoDB
     
     <i class="fas fa-check read-icon"></i>
     
@@ -252,13 +252,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Configure Amazon SES" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.5-configureses/">
-     <b> 2.5 </b> Preparation 
+    <b>2.5 </b>Configure Amazon SES
     
     <i class="fas fa-check read-icon"></i>
     
@@ -287,13 +287,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/" title="Creating Lambda Functions" class="dd-item 
         parent
         
         
         ">
   <a href="/3-creating-lambda-functions/">
-     <b> 3. </b> Preparation 
+    <b> 3. </b>Creating Lambda Functions
     
     <i class="fas fa-check read-icon"></i>
     
@@ -318,13 +318,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Configure Lambda Function getStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
-     <b> 3.1 </b> Preparation 
+    <b>3.1 </b>Configure Lambda Function getStudentData
     
     <i class="fas fa-check read-icon"></i>
     
@@ -346,41 +346,41 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Preparation " class="dd-item 
-        
-        active
-        
-        ">
-  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
-     <b> 3.3 </b> Preparation 
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="" class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Configure Lambda Function insertStudentData
     
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Configure Lambda Function BackupDynamoDBAndSendEmail
     
     <i class="fas fa-check read-icon"></i>
     
@@ -409,13 +409,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/">
-     <b> 4. </b> Creating a REST API
+    <b>4. </b>Configuring RESTful API with API Key Security
     
     <i class="fas fa-check read-icon"></i>
     
@@ -440,13 +440,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">
-     <b> 4.1 </b> Creating a REST API
+    <b>4.1 </b>Create a New REST API on API Gateway
     
     <i class="fas fa-check read-icon"></i>
     
@@ -468,13 +468,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Create an API Key to Secure Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">
-     <b> 4.2 </b> Manage session logs
+    <b>4.2 </b>Create an API Key to Secure Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -496,13 +496,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Set Up Usage Plan" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
-     <b> 4.3 </b> Manage session logs
+    <b>4.3 </b>Set Up Usage Plan
     
     <i class="fas fa-check read-icon"></i>
     
@@ -524,13 +524,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Create GET Method to Retrieve Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">
-     <b> 4.4 </b> Manage session logs
+    <b>4.4 </b>Create GET Method to Retrieve Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -552,13 +552,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Create POST Method to Store Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">
-     <b> 4.5 </b> Manage session logs
+    <b>4.5 </b>Create POST Method to Store Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -580,13 +580,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Create Resource and Method for Data Backup" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
-     <b> 4.6 </b> Manage session logs
+    <b>4.6 </b>Create Resource and Method for Data Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -608,13 +608,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.7-enabling-cors/">
-     <b> 4.7 </b> Manage session logs
+    <b>4.7 </b>Enable CORS to Support Frontend Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -636,13 +636,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Deploy the API to a Specific Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.8-deploying-the-api/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.8 </b>Deploy the API to a Specific Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -664,13 +664,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.9 </b>Link API Key to Usage Plan &amp; Associate with REST API and Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -699,13 +699,39 @@
 
 
 
-<li data-nav-id="/testchaper/" title="TestChaper" class="dd-item 
+<li data-nav-id="/5-designing-the-website-interface/" title="Write the Website Interface" class="dd-item 
         
         
         
         ">
-  <a href="/testchaper/">
-    <b>X. </b>TestChaper
+  <a href="/5-designing-the-website-interface/">
+    <b>5. </b>Write the Website Interface
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/" title="Configuring S3 Bucket for Storing and Serving the Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/">
+    <b>6. </b>Configuring S3 Bucket for Storing and Serving the Website
     
     <i class="fas fa-check read-icon"></i>
     
@@ -716,6 +742,8 @@
     
     
     
+    
+    
 
     
     
@@ -728,14 +756,132 @@
 
 
 
-<li data-nav-id="/testchaper/example/" title="Example"
-  class="dd-item ">
-  <a href="/testchaper/example/">
-    <b>X. </b>Example
+<li data-nav-id="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
+    Session Management
+    
     <i class="fas fa-check read-icon"></i>
+    
   </a>
+  
+  
 </li>
 
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
 
 
 
@@ -743,58 +889,6 @@
     
     
   </ul>
-  
-</li>
-
-
-
-      
-      
-
-
-
-
-
-
-
-<li data-nav-id="/5-portfwd/" title="Port Forwarding" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/5-portfwd/">
-     <b> 5. </b> Port Forwarding
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
-
-      
-      
-
-
-
-
-
-
-
-<li data-nav-id="/6-cleanup/" title="Clean up resources" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/6-cleanup/">
-    <b>6. </b>Clean up resources
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
   
 </li>
 
@@ -943,7 +1037,7 @@
             
           
           
-            <a href='/'>Session Management</a> > <a href='/3-creating-lambda-functions/'>Preparation </a> > Preparation 
+            <a href='/'>Website Serverless</a> > <a href='/3-creating-lambda-functions/'>Creating Lambda Functions</a> > Configure Lambda Function BackupDynamoDBAndSendEmail
           
         
           
@@ -958,11 +1052,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#content">Content</a></li>
-      </ul>
-    </li>
+    <li><a href="#overview-of-the-backupdynamodbandsendemail-function">Overview of the BackupDynamoDBAndSendEmail Function</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#detailed-steps">Detailed Steps</a></li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -980,7 +1074,7 @@
           
             <h1>
               
-              Preparation 
+              Configure Lambda Function BackupDynamoDBAndSendEmail
             </h1>
           
 
@@ -988,21 +1082,372 @@
 
 
 
-	
-<div class="notices info" ><p>You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.</p>
+	<blockquote>
+<p><strong>Objective</strong>: Create and configure the <code>BackupDynamoDBAndSendEmail</code> Lambda function to back up all data from the DynamoDB <code>studentData</code> table into an S3 bucket as a JSON file, create a pre-signed URL, and send a notification email containing the download link via SES. The function uses <strong>Python 3.13</strong>, architecture <code>x86_64</code>, and is assigned the IAM role <code>DynamoDBBackupRole</code> (created in step 2.3). The function will return a JSON response to integrate with other systems (if needed) and log to CloudWatch for monitoring.</p></blockquote>
+<hr>
+<h2 id="overview-of-the-backupdynamodbandsendemail-function">Overview of the BackupDynamoDBAndSendEmail Function</h2>
+<p>The <code>BackupDynamoDBAndSendEmail</code> function performs the following tasks:</p>
+<ul>
+<li>Reads all data from the <code>studentData</code> table (fields <code>studentid</code>, <code>name</code>, <code>class</code>, <code>birthdate</code>, <code>email</code>) using the <code>Scan</code> operation.</li>
+<li>Temporarily stores the data as a JSON file in the <code>/tmp</code> directory of the Lambda environment.</li>
+<li>Uploads the JSON file to an S3 bucket with a timestamped filename (e.g., <code>backups/backup-20250707-0409.json</code>).</li>
+<li>Creates a pre-signed URL (expires in 1 hour) to access the backup file.</li>
+<li>Sends a notification email via SES with a beautiful HTML content, containing the download link and expiration time.</li>
+<li>Returns a JSON response confirming the backup status and email sending.</li>
+</ul>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<div class="notices info" ><p>You need to complete the preparation steps in section 2 (IAM Role <code>DynamoDBBackupRole</code>, DynamoDB <code>studentData</code> table, SES email verification, S3 bucket <code>student-backup-20250706</code>). Ensure your AWS account is set up and the AWS region is <code>us-east-1</code>.</p>
 </div>
 
-<p>To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:</p>
+<hr>
+<h2 id="detailed-steps">Detailed Steps</h2>
+<ol>
+<li>
+<p><strong>Access AWS Management Console</strong></p>
 <ul>
-<li><a href="https://000004.awsstudygroup.com/en/">About Amazon EC2</a></li>
-<li><a href="https://000003.awsstudygroup.com/en/">Works with Amazon VPC</a></li>
+<li>
+<p>Open your browser and log in to the <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> with your AWS account.</p>
+</li>
+<li>
+<p>In the top search bar, type <strong>Lambda</strong> and select <strong>AWS Lambda</strong> to access the management interface.</p>
+</li>
+<li>
+<p>Ensure you are working in the correct AWS region (e.g., <code>us-east-1</code>), check the region in the top-right corner of the AWS Console. This region must match the DynamoDB <code>studentData</code> table, the S3 <code>student-backup-20250706</code> bucket, and SES.</p>
+<p><img src="/images/4-lambda-functions/3-backupdynamodbandsendemail/lambda-functions-backupdynamodbandsendemail-01.png" alt="AWS Console Interface with Lambda search bar">
+<em>Figure 1: AWS Console Interface with Lambda search bar.</em></p>
+</li>
 </ul>
-<p>In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.</p>
-<h3 id="content">Content</h3>
+</li>
+<li>
+<p><strong>Navigate to the Functions Section</strong></p>
 <ul>
-<li><a href="2.1-createec2/">Prepare VPC and EC2</a></li>
-<li><a href="2.2-createiamrole/">Create IAM Role</a></li>
+<li>
+<p>In the AWS Lambda main interface, look at the left navigation menu.</p>
+</li>
+<li>
+<p>Select <strong>Functions</strong> to see the list of existing Lambda functions. If no functions are created, the list will be empty.</p>
+<p><img src="/images/4-lambda-functions/3-backupdynamodbandsendemail/lambda-functions-backupdynamodbandsendemail-02.png" alt="Navigation menu with Functions option"><br>
+<em>Figure 2: Navigation menu with Functions option.</em></p>
+</li>
 </ul>
+</li>
+<li>
+<p><strong>Start Creating the Function</strong></p>
+<ul>
+<li>
+<p>In the <strong>Functions</strong> interface, click the <strong>Create function</strong> button in the top-right corner to start creating a new function.</p>
+<p><img src="/images/4-lambda-functions/3-backupdynamodbandsendemail/lambda-functions-backupdynamodbandsendemail-03.png" alt="Create function button in Functions interface">
+<em>Figure 3: Create function button in the Functions interface.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure Basic Function Information</strong></p>
+<ul>
+<li>
+<p>In the <strong>Function type</strong> section, select <strong>Author from scratch</strong> to write your own code.</p>
+</li>
+<li>
+<p>In the <strong>Function name</strong> section, enter <code>BackupDynamoDBAndSendEmail</code>. This name will be used when integrating with other services (e.g., CloudWatch Events/EventBridge for automatic backups).</p>
+</li>
+<li>
+<p>In the <strong>Runtime</strong> section, select <strong>Python 3.13</strong> (the required latest Python version). If Python 3.13 is unavailable, select the latest supported version (e.g., Python 3.12 or 3.11).</p>
+</li>
+<li>
+<p>In the <strong>Architecture</strong> section, select <code>x86_64</code> to ensure compatibility with the standard architecture.</p>
+<p><img src="/images/4-lambda-functions/3-backupdynamodbandsendemail/lambda-functions-backupdynamodbandsendemail-04.png" alt="Basic function configuration interface"><br>
+<em>Figure 4: Basic function configuration interface.</em></p>
+</li>
+<li>
+<p>In the <strong>Permissions</strong> section, select <strong>Use an existing role</strong>.</p>
+<ul>
+<li>From the list of roles, choose <code>DynamoDBBackupRole</code> (created in section 2.3). This role includes the policies <code>AWSLambdaBasicExecutionRole</code>, <code>AmazonDynamoDBReadOnlyAccess</code>, <code>AmazonS3FullAccess</code>, <code>AmazonSESFullAccess</code>, and <code>CloudFrontFullAccess</code>.</li>
+<li><strong>Note</strong>: <code>CloudFrontFullAccess</code> is not used in the current code but is retained as per previous instructions.</li>
+</ul>
+</li>
+<li>
+<p>Keep the other settings as default and click <strong>Create function</strong> to create the function.</p>
+<p><img src="/images/4-lambda-functions/3-backupdynamodbandsendemail/lambda-functions-backupdynamodbandsendemail-05.png" alt="Select DynamoDBBackupRole and click Create function"><br>
+<em>Figure 5: Select DynamoDBBackupRole and click Create function.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Function Creation Status</strong></p>
+<ul>
+<li>After clicking <strong>Create function</strong>, you will be directed to the detail page for the <code>BackupDynamoDBAndSendEmail</code> function.</li>
+<li>The interface will show a message like: <em>&ldquo;Successfully created the function BackupDynamoDBAndSendEmail. You can now change its code and configuration. To invoke your function with a test event, choose Test.&rdquo;</em></li>
+<li>If you don’t see the message or encounter an error, verify that the <code>DynamoDBBackupRole</code> exists and that your AWS account has the <code>lambda:CreateFunction</code> permission.</li>
+</ul>
+</li>
+<li>
+<p><strong>Configure the Code</strong></p>
+<ul>
+<li>In the function details page for <code>BackupDynamoDBAndSendEmail</code>, go to the <strong>Code</strong> tab and scroll down to the <strong>Code source</strong> section.</li>
+<li>Delete the default code in <code>lambda_function.py</code> and paste the following code:</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> boto3
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> botocore.exceptions <span style="color:#f92672">import</span> ClientError
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dynamodb <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>resource(<span style="color:#e6db74">&#39;dynamodb&#39;</span>)
+</span></span><span style="display:flex;"><span>ses <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;ses&#39;</span>)
+</span></span><span style="display:flex;"><span>s3_client <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>client(<span style="color:#e6db74">&#39;s3&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">lambda_handler</span>(event, context):
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Access DynamoDB table</span>
+</span></span><span style="display:flex;"><span>    table <span style="color:#f92672">=</span> dynamodb<span style="color:#f92672">.</span>Table(<span style="color:#e6db74">&#39;studentData&#39;</span>)
+</span></span><span style="display:flex;"><span>    response <span style="color:#f92672">=</span> table<span style="color:#f92672">.</span>scan()
+</span></span><span style="display:flex;"><span>    items <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;Items&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Store data in a temporary file in Lambda</span>
+</span></span><span style="display:flex;"><span>    backup_file <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/tmp/backup.json&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> open(backup_file, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>        json<span style="color:#f92672">.</span>dump(items, f)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Upload the file to S3</span>
+</span></span><span style="display:flex;"><span>    s3_bucket <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;student-backup-20250706&#39;</span>  <span style="color:#75715e"># Replace with your actual bucket name</span>
+</span></span><span style="display:flex;"><span>    s3_key <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;backups/backup-</span><span style="color:#e6db74">{</span>datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now()<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#34;%Y%m</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">-%H%M%S&#34;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">.json&#39;</span>
+</span></span><span style="display:flex;"><span>    s3_client<span style="color:#f92672">.</span>upload_file(backup_file, s3_bucket, s3_key)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create pre-signed URL (expires in 1 hour)</span>
+</span></span><span style="display:flex;"><span>    presigned_url <span style="color:#f92672">=</span> s3_client<span style="color:#f92672">.</span>generate_presigned_url(
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;get_object&#39;</span>,
+</span></span><span style="display:flex;"><span>        Params<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;Bucket&#39;</span>: s3_bucket, <span style="color:#e6db74">&#39;Key&#39;</span>: s3_key},
+</span></span><span style="display:flex;"><span>        ExpiresIn<span style="color:#f92672">=</span><span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Create an HTML email</span>
+</span></span><span style="display:flex;"><span>    sender <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;baothangvip@gmail.com&#39;</span>
+</span></span><span style="display:flex;"><span>    recipient <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;nguyentribaothang@gmail.com&#39;</span>
+</span></span><span style="display:flex;"><span>    subject <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Student Data Backup Notification&#39;</span>
+</span></span><span style="display:flex;"><span>    expiry_time <span style="color:#f92672">=</span> (datetime<span style="color:#f92672">.</span>datetime<span style="color:#f92672">.</span>now() <span style="color:#f92672">+</span> datetime<span style="color:#f92672">.</span>timedelta(hours<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))<span style="color:#f92672">.</span>strftime(<span style="color:#e6db74">&#39;%Y-%m-</span><span style="color:#e6db74">%d</span><span style="color:#e6db74"> %H:%M:%S&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    html_body <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;!DOCTYPE html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;html lang=&#34;vi&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;meta charset=&#34;UTF-8&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            body </span><span style="color:#ae81ff">{{</span><span style="color:#e6db74"> font-family: Arial, sans-serif; color: #333; line-height: 1.6; </span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            .container </span><span style="color:#ae81ff">{{</span><span style="color:#e6db74"> max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; </span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            .header </span><span style="color:#ae81ff">{{</span><span style="color:#e6db74"> background-color: #4CAF50; color: white; padding: 10px; text-align: center; border-radius: 8px 8px 0 0; </span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            .content </span><span style="color:#ae81ff">{{</span><span style="color:#e6db74"> padding: 20px; background-color: white; border-radius: 0 0 8px 8px; </span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            .button </span><span style="color:#ae81ff">{{</span><span style="color:#e6db74"> display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white !important; text-decoration: none; border-radius: 5px; margin-top: 20px; </span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            .footer </span><span style="color:#ae81ff">{{</span><span style="color:#e6db74"> font-size: 12px; color: #777; text-align: center; margin-top: 20px; </span><span style="color:#ae81ff">}}</span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div class=&#34;container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div class=&#34;header&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;h2&gt;Student Data Backup&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div class=&#34;content&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p&gt;Dear Customer,&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p&gt;The student data has been successfully backed up and stored on AWS S3.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p&gt;&lt;strong&gt;Download the backup file here:&lt;/strong&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;a href=&#34;</span><span style="color:#e6db74">{</span>presigned_url<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34; class=&#34;button&#34;&gt;Download Backup File&lt;/a&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This link will expire on </span><span style="color:#e6db74">{</span>expiry_time<span style="color:#e6db74">}</span><span style="color:#e6db74">.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div class=&#34;footer&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p&gt;This is an automated email. Please do not reply to this email directly.&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        response <span style="color:#f92672">=</span> ses<span style="color:#f92672">.</span>send_email(
+</span></span><span style="display:flex;"><span>            Source<span style="color:#f92672">=</span>sender,
+</span></span><span style="display:flex;"><span>            Destination<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;ToAddresses&#39;</span>: [recipient]},
+</span></span><span style="display:flex;"><span>            Message<span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Subject&#39;</span>: {<span style="color:#e6db74">&#39;Data&#39;</span>: subject},
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;Body&#39;</span>: {
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#39;Html&#39;</span>: {<span style="color:#e6db74">&#39;Data&#39;</span>: html_body},
+</span></span><span style="display:flex;"><span>                    <span style="color:#e6db74">&#39;Text&#39;</span>: {<span style="color:#e6db74">&#39;Data&#39;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Backup file: </span><span style="color:#e6db74">{</span>presigned_url<span style="color:#e6db74">}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">Expires at: </span><span style="color:#e6db74">{</span>expiry_time<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>}
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Email sent! Message ID: </span><span style="color:#e6db74">{</span>response[<span style="color:#e6db74">&#39;MessageId&#39;</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> ClientError <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Error sending email: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;statusCode&#39;</span>: <span style="color:#ae81ff">500</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#e6db74">&#39;body&#39;</span>: json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#39;message&#39;</span>: <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Backup successful but email failed: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>})
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;statusCode&#39;</span>: <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#39;body&#39;</span>: json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#39;message&#39;</span>: <span style="color:#e6db74">&#39;Backup and email sent successfully!&#39;</span>})
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><ul>
+<li>
+<p><strong>Explanation of the Improved Code</strong>:</p>
+<ul>
+<li><strong>Logging</strong>: Added <code>logging</code> to record detailed logs to CloudWatch (INFO and ERROR levels), replacing <code>print</code> for easier monitoring.</li>
+<li><strong>Pagination Handling</strong>: Added a <code>while</code> loop to handle pagination for the <code>Scan</code> operation, ensuring that all data from large tables is fetched.</li>
+<li><strong>CORS</strong>: Added <code>Access-Control-Allow-Origin: '*'</code> header in all responses to integrate with API Gateway.</li>
+<li><strong>Error Handling</strong>: Added <code>try-except</code> blocks for the <code>Scan</code>, file saving, S3 upload, and pre-signed URL creation steps, returning detailed error messages with a 500 status code.</li>
+<li><strong>AWS Region</strong>: Specified <code>region_name='us-east-1'</code> for DynamoDB, S3, and SES to ensure consistency.</li>
+<li><strong>HTML Email</strong>: Kept the beautiful HTML content with inline CSS, but added <code>logging</code> for email sending status.</li>
+</ul>
+</li>
+<li>
+<p><strong>Check and Modify</strong>:</p>
+<ul>
+<li><strong>AWS Region</strong>: Replace <code>region_name='us-east-1'</code> in the <code>dynamodb</code>, <code>ses</code>, and <code>s3_client</code> initialization lines if you are using another region (e.g., <code>us-west-2</code>).</li>
+<li><strong>Email</strong>: Replace <code>baothangvip@gmail.com</code> (sender) and <code>nguyentribaothang@gmail.com</code> (recipient) with verified SES emails (step 2.5). If SES is in sandbox mode, both emails need to be verified.</li>
+<li><strong>S3 Bucket</strong>: Replace <code>student-backup-20250706</code> with your actual bucket name (to be created in the next step).</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Deploy</strong> to save and deploy the code.</p>
+<p><img src="/images/4-lambda-functions/3-backupdynamodbandsendemail/lambda-functions-backupdynamodbandsendemail-06.png" alt="BackupDynamoDBAndSendEmail code editing interface"><br>
+<em>Figure 6: BackupDynamoDBAndSendEmail code editing interface.</em></p>
+</li>
+<li>
+<p>After deployment, the interface will display the message: <em>&ldquo;Successfully updated the function BackupDynamoDBAndSendEmail.&rdquo;</em></p>
+</li>
+</ul>
+<ol start="7">
+<li>
+<p><strong>Configure Timeout and Memory</strong></p>
+<ul>
+<li>In the <strong>Configuration</strong> tab &gt; <strong>General configuration</strong>, click <strong>Edit</strong>.</li>
+<li>Set <strong>Timeout</strong>: 60 seconds (enough for <code>Scan</code>, file saving, S3 upload, and email sending).</li>
+<li>Set <strong>Memory</strong>: 256 MB (to handle large tables and store temporarily in <code>/tmp</code>).</li>
+<li>Click <strong>Save</strong> to save the changes.</li>
+<li><strong>Reason</strong>: The <code>Scan</code> operation on large tables and storing files in <code>/tmp</code> may require more resources than <code>getStudentData</code> or <code>insertStudentData</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Test the Function</strong></p>
+<ul>
+<li>In the <strong>Test</strong> tab, click <strong>Create new test event</strong>.</li>
+<li>Name the event (e.g., <code>testBackupDynamoDB</code>).</li>
+<li>Use the sample JSON (it can be left empty as the function does not require specific input):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{}
+</span></span></code></pre></div></li>
+<li>Click <strong>Create</strong> to save the test event, then click <strong>Test</strong> to run the function.</li>
+<li>Check the result:
+<ul>
+<li>If successful, the function returns:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;statusCode&#34;</span>: <span style="color:#ae81ff">200</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#e6db74">&#34;{\&#34;message\&#34;: \&#34;Backup and email sent successfully!\&#34;}&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;headers&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Content-Type&#34;</span>: <span style="color:#e6db74">&#34;application/json&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;Access-Control-Allow-Origin&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Check the <code>student-backup-20250706</code> bucket in the S3 Console (go to S3 &gt; Buckets &gt; student-backup-20250706 &gt; Objects) to verify the backup file (e.g., <code>backups/backup-20250707-0409.json</code>).</li>
+<li>Check the recipient&rsquo;s email inbox (<code>nguyentribaothang@gmail.com</code>, including Spam/Junk) to view the notification email with HTML content like:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;vi&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">body</span> { <span style="color:#66d9ef">font-family</span>: Arial, <span style="color:#66d9ef">sans-serif</span>; <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#333</span>; <span style="color:#66d9ef">line-height</span>: <span style="color:#ae81ff">1.6</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">container</span> { <span style="color:#66d9ef">max-width</span>: <span style="color:#ae81ff">600</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span> <span style="color:#66d9ef">auto</span>; <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#f9f9f9</span>; <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">header</span> { <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#4CAF50</span>; <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span>; <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>; <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">content</span> { <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">white</span>; <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">8</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">button</span> { <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">inline-block</span>; <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">background-color</span>: <span style="color:#ae81ff">#4CAF50</span>; <span style="color:#66d9ef">color</span>: <span style="color:#66d9ef">white</span> <span style="color:#75715e">!important</span>; <span style="color:#66d9ef">text-decoration</span>: <span style="color:#66d9ef">none</span>; <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">5</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>        .<span style="color:#a6e22e">footer</span> { <span style="color:#66d9ef">font-size</span>: <span style="color:#ae81ff">12</span><span style="color:#66d9ef">px</span>; <span style="color:#66d9ef">color</span>: <span style="color:#ae81ff">#777</span>; <span style="color:#66d9ef">text-align</span>: <span style="color:#66d9ef">center</span>; <span style="color:#66d9ef">margin-top</span>: <span style="color:#ae81ff">20</span><span style="color:#66d9ef">px</span>; }
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">h2</span>&gt;Student Data Backup&lt;/<span style="color:#f92672">h2</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;Dear Customer,&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;The student data has been successfully backed up and stored on AWS S3.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Download the backup file here:&lt;/<span style="color:#f92672">strong</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;[pre-signed-url]&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span>&gt;Download Backup File&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;&lt;<span style="color:#f92672">strong</span>&gt;Note:&lt;/<span style="color:#f92672">strong</span>&gt; This link will expire on [expiry_time].&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">p</span>&gt;This is an automated email. Please do not reply to this email directly.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div></li>
+<li>Click the link in the email to verify that the backup file can be downloaded.</li>
+<li>Check the log in CloudWatch (go to Monitor &gt; Logs &gt; select log group <code>/aws/lambda/BackupDynamoDBAndSendEmail</code>) to view detailed information (number of records, Message ID of the email).</li>
+<li>If there are errors, check the common issues:
+<ul>
+<li><em>&ldquo;AccessDenied&rdquo; (DynamoDB)</em>: Check that the <code>DynamoDBBackupRole</code> has the <code>Scan</code> permission.</li>
+<li><em>&ldquo;AccessDenied&rdquo; (S3)</em>: Check the <code>PutObject</code> permission in <code>AmazonS3FullAccess</code> and ensure the <code>student-backup-20250706</code> bucket exists.</li>
+<li><em>&ldquo;Email address is not verified&rdquo; (SES)</em>: Ensure <code>baothangvip@gmail.com</code> and <code>nguyentribaothang@gmail.com</code> are verified in SES.</li>
+<li><em>&ldquo;NoSuchBucket&rdquo;</em>: Ensure the <code>student-backup-20250706</code> bucket has been created (to be set up in the next step).</li>
+<li><em>&ldquo;ResourceNotFoundException&rdquo;</em>: Ensure the <code>studentData</code> table exists (step 2.4).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="important-notes">Important Notes</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Factor</strong></th>
+          <th><strong>Details</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>IAM Role</strong></td>
+          <td>The <code>DynamoDBBackupRole</code> (created in step 2.3) is suitable for the function. However, <code>CloudFrontFullAccess</code> is not used. For least privilege, consider removing or replacing it with a custom policy if needed. <!-- raw HTML omitted --> - Go to IAM &gt; Policies &gt; Create Policy. <!-- raw HTML omitted --> - Choose JSON, paste the policy above (replace <code>student-backup-20250706</code> with the actual bucket name). <!-- raw HTML omitted --> - Name it (e.g., <code>S3BackupStudentData</code>) and attach it to <code>DynamoDBBackupRole</code>.</td>
+      </tr>
+      <tr>
+          <td><strong>SES Sandbox</strong></td>
+          <td>Ensure both sender (<code>baothangvip@gmail.com</code>) and recipient (<code>nguyentribaothang@gmail.com</code>) emails are verified in SES (step 2.5). If SES is in sandbox mode, both emails must be verified. Exit the sandbox to send emails to any address: <!-- raw HTML omitted --> - Go to SES &gt; Account dashboard &gt; Request production access. <!-- raw HTML omitted --> - Fill in the form as instructed in step 2.5. <!-- raw HTML omitted --> If not out of sandbox, try using the same verified email for both sender and recipient.</td>
+      </tr>
+      <tr>
+          <td><strong>S3 Bucket</strong></td>
+          <td>Ensure the <code>student-backup-20250706</code> bucket is created (to be configured in the next step). If not, the function will throw a <code>NoSuchBucket</code> error. Ensure the bucket has a <code>backups/</code> folder, or the code will create it (if <code>PutObject</code> permission is granted).</td>
+      </tr>
+      <tr>
+          <td><strong>CORS</strong></td>
+          <td>The <code>Access-Control-Allow-Origin: '*'</code> header is added to support integration with API Gateway (if the function is called from a web interface). Ensure CORS is configured in API Gateway (to be discussed in later steps).</td>
+      </tr>
+      <tr>
+          <td><strong>AWS Region</strong></td>
+          <td>Ensure the region in the code (<code>us-east-1</code>) matches the region of the <code>studentData</code> table, the S3 bucket, and SES. If using another region (e.g., <code>us-west-2</code>), update <code>region_name</code> in the <code>dynamodb</code>, <code>ses</code>, and <code>s3_client</code> initialization lines.</td>
+      </tr>
+      <tr>
+          <td><strong>Error Handling</strong></td>
+          <td>If the function reports errors, check the logs in CloudWatch (go to Monitor &gt; Logs &gt; select the log group <code>/aws/lambda/BackupDynamoDBAndSendEmail</code>). Common errors: <!-- raw HTML omitted --> - <em>&ldquo;AccessDenied&rdquo; (DynamoDB)</em>: Missing <code>Scan</code> permission. <!-- raw HTML omitted --> - <em>&ldquo;AccessDenied&rdquo; (S3)</em>: Missing <code>PutObject</code> permission or the bucket does not exist. <!-- raw HTML omitted --> - <em>&ldquo;Email address is not verified&rdquo; (SES)</em>: Email not verified. <!-- raw HTML omitted --> - <em>&ldquo;ResourceNotFoundException&rdquo;</em>: <code>studentData</code> table not created. <!-- raw HTML omitted --> Use CloudTrail or IAM Access Advisor to pinpoint permission issues.</td>
+      </tr>
+      <tr>
+          <td><strong>Optimization</strong></td>
+          <td>- Added pagination handling for <code>Scan</code> (as improved in the code). <!-- raw HTML omitted --> - Used <code>logging</code> instead of <code>print</code> (as added). <!-- raw HTML omitted --> - Increased memory (256 MB) and timeout (60 seconds) for handling large tables. <!-- raw HTML omitted --> - For enhanced security, verify the SES domain (see AWS SES Documentation - DKIM) and update the sender email (e.g., <code>no-reply@system.edu.vn</code>). <!-- raw HTML omitted --> - If the <code>studentData</code> table is large, consider using DynamoDB Streams for incremental backups rather than using the <code>Scan</code> operation on the whole table.</td>
+      </tr>
+      <tr>
+          <td><strong>Early Testing</strong></td>
+          <td>After creating and deploying the function, run tests to verify the backup file in S3, the notification email, and the logs in CloudWatch before integrating with CloudWatch Events/EventBridge (for scheduled backups).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Practical Tip</strong>: Add sample data to the <code>studentData</code> table, check the S3 bucket and recipient&rsquo;s email (including Spam/Junk) to verify results.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Lambda function <code>BackupDynamoDBAndSendEmail</code> has been created to back up student data from the <code>studentData</code> table to S3 and send a notification email with a file download link. The function is ready for integration with CloudWatch Events/EventBridge for scheduled backups.</p>
+<blockquote>
+<p><strong>Next Step</strong>: Proceed to <a href="/4-creating-a-restful-api/">Configuring CloudWatch Events/EventBridge</a> to continue!</p></blockquote>
 
 
 
@@ -1195,7 +1640,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -1212,8 +1656,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -1234,6 +1676,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -1243,22 +1688,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -1388,22 +1817,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
             
             
@@ -1449,8 +1862,90 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1464,10 +1959,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Preparation "> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1477,19 +1972,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751865279"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751865279"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751865279"></script>
-    <script src="/js/jquery.sticky.js?1751865279"></script>
-    <script src="/js/featherlight.min.js?1751865279"></script>
-    <script src="/js/highlight.pack.js?1751865279"></script>
+    <script src="/js/clipboard.min.js?1751894769"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751894769"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751894769"></script>
+    <script src="/js/jquery.sticky.js?1751894769"></script>
+    <script src="/js/featherlight.min.js?1751894769"></script>
+    <script src="/js/highlight.pack.js?1751894769"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751865279"></script>
-    <script src="/js/learn.js?1751865279"></script>
-    <script src="/js/hugo-learn.js?1751865279"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751894769"></script>
+    <script src="/js/learn.js?1751894769"></script>
+    <script src="/js/hugo-learn.js?1751894769"></script>
 
-    <link href="/mermaid/mermaid.css?1751865279" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751865279"></script>
+    <link href="/mermaid/mermaid.css?1751894769" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751894769"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

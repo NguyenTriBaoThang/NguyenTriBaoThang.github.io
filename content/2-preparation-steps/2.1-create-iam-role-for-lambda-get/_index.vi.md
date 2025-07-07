@@ -6,6 +6,7 @@ chapter: false
 pre: "<b>2.1 </b>"
 ---
 
+
 > **Mục tiêu**: Tạo vai trò IAM **LambdaGetStudentRole** cho hàm Lambda `getStudentData`, cấp quyền để **đọc dữ liệu** từ bảng DynamoDB `studentData`, **ghi log** vào CloudWatch, và hỗ trợ các tương tác tiềm năng với S3 và CloudFront.
 
 Hàm **getStudentData** thực hiện thao tác **Scan** để truy xuất toàn bộ dữ liệu sinh viên (**Mã sinh viên**, **Họ tên**, **Lớp**, **Ngày sinh**, **Email**) từ bảng DynamoDB `studentData`. Vai trò này cần:  
