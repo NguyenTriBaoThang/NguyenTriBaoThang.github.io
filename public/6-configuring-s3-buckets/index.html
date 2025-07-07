@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Session Management :: AWS System Manager</title>
+    <title>Configuring S3 Bucket for Storing and Serving the Website :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751876617" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751876617" rel="stylesheet">
-    <link href="/css/hybrid.css?1751876617" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751876617" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751876617" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751876617" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751876617" rel="stylesheet">
-    <link href="/css/theme.css?1751876617" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751876617" rel="stylesheet">
+    <link href="/css/nucleus.css?1751891988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751891988" rel="stylesheet">
+    <link href="/css/hybrid.css?1751891988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751891988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751891988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751891988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751891988" rel="stylesheet">
+    <link href="/css/theme.css?1751891988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751891988" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751876617" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751891988" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751876617"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751891988"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751876617"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751876617"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751891988"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751891988"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751876617"></script>
+<script type="text/javascript" src="/%20js/search.js?1751891988"></script>
     
   </div>
 
@@ -89,7 +89,7 @@
         
         ">
   <a href="/1-introduction/">
-     <b> 1. </b> Introduction
+    <b>1. </b>Introduction
     
     <i class="fas fa-check read-icon"></i>
     
@@ -109,13 +109,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/" title="Preparation Steps" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/">
-     <b> 2. </b> Preparation 
+    <b>2. </b>Preparation Steps
     
     <i class="fas fa-check read-icon"></i>
     
@@ -140,13 +140,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
-     <b> 2.1 </b> Preparation 
+    <b>2.1 </b>Create IAM Role for Lambda Get
     
     <i class="fas fa-check read-icon"></i>
     
@@ -168,13 +168,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
-     <b> 2.2 </b> Preparation 
+    <b>2.2 </b>Create IAM Role for Lambda Post
     
     <i class="fas fa-check read-icon"></i>
     
@@ -196,13 +196,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
-     <b> 2.3 </b> Preparation 
+    <b>2.3 </b>Create IAM Role for DynamoDB Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -224,13 +224,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.4-createtable-in-dynamodb/">
-     <b> 2.4 </b> Preparation 
+    <b>2.4 </b>Create Table in DynamoDB
     
     <i class="fas fa-check read-icon"></i>
     
@@ -252,13 +252,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Configure Amazon SES" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.5-configureses/">
-     <b> 2.5 </b> Preparation 
+    <b>2.5 </b>Configure Amazon SES
     
     <i class="fas fa-check read-icon"></i>
     
@@ -287,13 +287,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/" title="Creating Lambda Functions" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/">
-     <b> 3. </b> Preparation 
+    <b> 3. </b>Creating Lambda Functions
     
     <i class="fas fa-check read-icon"></i>
     
@@ -318,13 +318,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Configure Lambda Function getStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
-     <b> 3.1 </b> Preparation 
+    <b>3.1 </b>Configure Lambda Function getStudentData
     
     <i class="fas fa-check read-icon"></i>
     
@@ -346,41 +346,41 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Preparation " class="dd-item 
-        
-        
-        
-        ">
-  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
-     <b> 3.3 </b> Preparation 
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="" class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Configure Lambda Function insertStudentData
     
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Configure Lambda Function BackupDynamoDBAndSendEmail
     
     <i class="fas fa-check read-icon"></i>
     
@@ -409,13 +409,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/">
-     <b> 4. </b> Creating a REST API
+    <b>4. </b>Configuring RESTful API with API Key Security
     
     <i class="fas fa-check read-icon"></i>
     
@@ -440,13 +440,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">
-     <b> 4.1 </b> Creating a REST API
+    <b>4.1 </b>Create a New REST API on API Gateway
     
     <i class="fas fa-check read-icon"></i>
     
@@ -468,13 +468,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Create an API Key to Secure Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">
-     <b> 4.2 </b> Manage session logs
+    <b>4.2 </b>Create an API Key to Secure Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -496,13 +496,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Set Up Usage Plan" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
-     <b> 4.3 </b> Manage session logs
+    <b>4.3 </b>Set Up Usage Plan
     
     <i class="fas fa-check read-icon"></i>
     
@@ -524,13 +524,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Create GET Method to Retrieve Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">
-     <b> 4.4 </b> Manage session logs
+    <b>4.4 </b>Create GET Method to Retrieve Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -552,13 +552,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Create POST Method to Store Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">
-     <b> 4.5 </b> Manage session logs
+    <b>4.5 </b>Create POST Method to Store Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -580,13 +580,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Create Resource and Method for Data Backup" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
-     <b> 4.6 </b> Manage session logs
+    <b>4.6 </b>Create Resource and Method for Data Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -608,13 +608,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.7-enabling-cors/">
-     <b> 4.7 </b> Manage session logs
+    <b>4.7 </b>Enable CORS to Support Frontend Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -636,13 +636,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Deploy the API to a Specific Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.8-deploying-the-api/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.8 </b>Deploy the API to a Specific Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -664,13 +664,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.9 </b>Link API Key to Usage Plan &amp; Associate with REST API and Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -699,71 +699,13 @@
 
 
 
-<li data-nav-id="/testchaper/" title="TestChaper" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/testchaper/">
-    <b>X. </b>TestChaper
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-  <ul>
-    
-    
-    
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/testchaper/example/" title="Example"
-  class="dd-item ">
-  <a href="/testchaper/example/">
-    <b>X. </b>Example
-    <i class="fas fa-check read-icon"></i>
-  </a>
-</li>
-
-
-
-
-    
-    
-    
-  </ul>
-  
-</li>
-
-
-
-      
-      
-
-
-
-
-
-
-
-<li data-nav-id="/5-designing-the-website-interface/" title="Session Management" class="dd-item 
+<li data-nav-id="/5-designing-the-website-interface/" title="Write the Website Interface" class="dd-item 
         
         
         
         ">
   <a href="/5-designing-the-website-interface/">
-    Session Management
+    <b>5. </b>Write the Website Interface
     
     <i class="fas fa-check read-icon"></i>
     
@@ -783,13 +725,13 @@
 
 
 
-<li data-nav-id="/6-configuring-s3-buckets/" title="Session Management" class="dd-item 
+<li data-nav-id="/6-configuring-s3-buckets/" title="Configuring S3 Bucket for Storing and Serving the Website" class="dd-item 
         
         active
         
         ">
   <a href="/6-configuring-s3-buckets/">
-    Session Management
+    <b>6. </b>Configuring S3 Bucket for Storing and Serving the Website
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1091,7 +1033,7 @@
             
           
           
-            <a href='/'>Session Management</a> > Session Management
+            <a href='/'>Website Serverless</a> > Configuring S3 Bucket for Storing and Serving the Website
           
         
           
@@ -1104,12 +1046,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#overall">Overall</a></li>
-        <li><a href="#content">Content</a></li>
-      </ul>
-    </li>
+    <li><a href="#initial-requirements">Initial Requirements</a></li>
+    <li><a href="#configuration-steps">Configuration Steps</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -1127,7 +1066,7 @@
           
             <h1>
               
-              Session Management
+              Configuring S3 Bucket for Storing and Serving the Website
             </h1>
           
 
@@ -1135,20 +1074,71 @@
 
 
 
-	<h1 id="work-with-amazon-system-manager---session-manager">Work with Amazon System Manager - Session Manager</h1>
-<h3 id="overall">Overall</h3>
-<p>In this lab, you&rsquo;ll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections.</p>
-<p><img src="/images/arc-log.png" alt="ConnectPrivate"></p>
-<h3 id="content">Content</h3>
-<ol>
-<li><a href="1-introduce/">Introduction </a></li>
-<li><a href="2-prerequiste/">Preparation</a></li>
-<li><a href="3-accessibilitytoinstances/">Connect to EC2 instance</a></li>
-<li><a href="4-s3log/">Manage session logs</a></li>
-<li><a href="5-Portfwd/">Port Forwarding</a></li>
-<li><a href="6-cleanup/">Clean up resources</a></li>
-</ol>
+	<blockquote>
+<p><strong>Objective</strong>: Configure two Amazon S3 Buckets for:</p>
+<ul>
+<li><strong>Storing and serving the web interface</strong>: Create the <code>student-web-20250706</code> bucket to store static files (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> from section 5), enable Static Website Hosting, and configure public access permissions to serve the interface via CloudFront (section 7).</li>
+<li><strong>Data backup</strong>: Configure the <code>student-backup-20250706</code> bucket (created in section 2.4) to store backup files from the <strong>POST /backup</strong> endpoint (section 4.6), ensuring the <code>BackupDynamoDBAndSendEmail</code> Lambda function has write permissions to the bucket.<br>
+This configuration integrates with the <code>student</code> API (stage <code>prod</code>, section 4.8) and ensures the web interface (using Tailwind CSS) works smoothly with the <strong>GET /students</strong>, <strong>POST /students</strong>, and <strong>POST /backup</strong> endpoints.</li>
+</ul></blockquote>
+<hr>
+<h2 id="initial-requirements">Initial Requirements</h2>
+
+<div class="notices info" ><p>You need to complete section 2.4 (create the <code>student-backup-20250706</code> bucket), section 3.3 (create the <code>BackupDynamoDBAndSendEmail</code> Lambda function with the <code>DynamoDBBackupRole</code> role), section 4.1 (create the <code>student</code> API), section 4.2 (create the <code>StudentApiKey</code>), section 4.3 (create the <code>StudentUsagePlan</code>), section 4.4 (create the <strong>GET /students</strong> method), section 4.5 (create the <strong>POST /students</strong> method), section 4.6 (create the <code>/backup</code> resource and <strong>POST /backup</strong> method), section 4.7 (enable CORS), section 4.8 (deploy the API to the <code>prod</code> stage), section 4.9 (link the <code>StudentApiKey</code> to <code>StudentUsagePlan</code> and associate with the <code>student</code> API in the <code>prod</code> stage), and section 5 (build the web interface with <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>). Ensure that your AWS account has permissions to access S3, Lambda, API Gateway, and the AWS region is <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="configuration-steps">Configuration Steps</h2>
+<p>Below are the specific steps to configure the S3 Bucket:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Step</strong></th>
+          <th><strong>Content</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>6.1</td>
+          <td><a href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Create a new S3 Bucket</a></td>
+          <td>Create the <code>student-web-20250706</code> bucket to store static files (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</td>
+      </tr>
+      <tr>
+          <td>6.2</td>
+          <td><a href="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">Upload the web interface assets to S3 (HTML/CSS/JS)</a></td>
+          <td>Upload the static files from section 5 to the <code>student-web-20250706</code> bucket.</td>
+      </tr>
+      <tr>
+          <td>6.3</td>
+          <td><a href="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">Enable Static Website Hosting</a></td>
+          <td>Enable Static Website Hosting in the <code>student-web-20250706</code> bucket to serve the web interface.</td>
+      </tr>
+      <tr>
+          <td>6.4</td>
+          <td><a href="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">Configure Bucket Policy for public access</a></td>
+          <td>Update the Bucket Policy for <code>student-web-20250706</code> to allow CloudFront to access the content (<code>s3:GetObject</code>).</td>
+      </tr>
+      <tr>
+          <td>6.5</td>
+          <td><a href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">Update Bucket Policy to support data backup (Backup)</a></td>
+          <td>Update the Bucket Policy for <code>student-backup-20250706</code> to allow the <code>BackupDynamoDBAndSendEmail</code> Lambda function to write files (<code>s3:PutObject</code>).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong>: Follow the steps in order to ensure the S3 Bucket configuration is correct. Each step will be explained in detail in the corresponding documentation.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>By completing these configuration steps, you will have:</p>
+<ul>
+<li>The <code>student-web-20250706</code> bucket storing and serving the static web interface, ready to integrate with CloudFront.</li>
+<li>The <code>student-backup-20250706</code> bucket supporting the storage of backup files from the <strong>POST /backup</strong> endpoint, integrated with the <code>BackupDynamoDBAndSendEmail</code> Lambda function.</li>
+<li>A fully integrated system with the <code>student</code> API (stage <code>prod</code>) and a web interface using Tailwind CSS.</li>
+</ul>
+<blockquote>
+<p><strong>Ready to continue?</strong><br>
+Go to <a href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Create a new S3 Bucket</a> to start configuring the <code>student-web-20250706</code> bucket!</p></blockquote>
 
 
 
@@ -1542,38 +1532,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1688,7 +1646,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/5-designing-the-website-interface/" title="Session Management"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/5-designing-the-website-interface/" title="Write the Website Interface"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Session Management" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1701,19 +1659,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751876617"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751876617"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751876617"></script>
-    <script src="/js/jquery.sticky.js?1751876617"></script>
-    <script src="/js/featherlight.min.js?1751876617"></script>
-    <script src="/js/highlight.pack.js?1751876617"></script>
+    <script src="/js/clipboard.min.js?1751891988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751891988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751891988"></script>
+    <script src="/js/jquery.sticky.js?1751891988"></script>
+    <script src="/js/featherlight.min.js?1751891988"></script>
+    <script src="/js/highlight.pack.js?1751891988"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751876617"></script>
-    <script src="/js/learn.js?1751876617"></script>
-    <script src="/js/hugo-learn.js?1751876617"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751891988"></script>
+    <script src="/js/learn.js?1751891988"></script>
+    <script src="/js/hugo-learn.js?1751891988"></script>
 
-    <link href="/mermaid/mermaid.css?1751876617" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751876617"></script>
+    <link href="/mermaid/mermaid.css?1751891988" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751891988"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

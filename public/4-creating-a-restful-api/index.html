@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Creating a REST API :: AWS System Manager</title>
+    <title>Configuring RESTful API with API Key Security :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751876617" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751876617" rel="stylesheet">
-    <link href="/css/hybrid.css?1751876617" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751876617" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751876617" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751876617" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751876617" rel="stylesheet">
-    <link href="/css/theme.css?1751876617" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751876617" rel="stylesheet">
+    <link href="/css/nucleus.css?1751891870" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751891870" rel="stylesheet">
+    <link href="/css/hybrid.css?1751891870" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751891870" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751891870" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751891870" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751891870" rel="stylesheet">
+    <link href="/css/theme.css?1751891870" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751891870" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751876617" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751891870" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751876617"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751891870"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751876617"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751876617"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751891870"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751891870"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751876617"></script>
+<script type="text/javascript" src="/%20js/search.js?1751891870"></script>
     
   </div>
 
@@ -89,7 +89,7 @@
         
         ">
   <a href="/1-introduction/">
-     <b> 1. </b> Introduction
+    <b>1. </b>Introduction
     
     <i class="fas fa-check read-icon"></i>
     
@@ -109,13 +109,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/" title="Preparation Steps" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/">
-     <b> 2. </b> Preparation 
+    <b>2. </b>Preparation Steps
     
     <i class="fas fa-check read-icon"></i>
     
@@ -140,13 +140,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
-     <b> 2.1 </b> Preparation 
+    <b>2.1 </b>Create IAM Role for Lambda Get
     
     <i class="fas fa-check read-icon"></i>
     
@@ -168,13 +168,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
-     <b> 2.2 </b> Preparation 
+    <b>2.2 </b>Create IAM Role for Lambda Post
     
     <i class="fas fa-check read-icon"></i>
     
@@ -196,13 +196,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
-     <b> 2.3 </b> Preparation 
+    <b>2.3 </b>Create IAM Role for DynamoDB Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -224,13 +224,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.4-createtable-in-dynamodb/">
-     <b> 2.4 </b> Preparation 
+    <b>2.4 </b>Create Table in DynamoDB
     
     <i class="fas fa-check read-icon"></i>
     
@@ -252,13 +252,13 @@
 
 
 
-<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Preparation " class="dd-item 
+<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Configure Amazon SES" class="dd-item 
         
         
         
         ">
   <a href="/2-preparation-steps/2.5-configureses/">
-     <b> 2.5 </b> Preparation 
+    <b>2.5 </b>Configure Amazon SES
     
     <i class="fas fa-check read-icon"></i>
     
@@ -287,13 +287,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/" title="Creating Lambda Functions" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/">
-     <b> 3. </b> Preparation 
+    <b> 3. </b>Creating Lambda Functions
     
     <i class="fas fa-check read-icon"></i>
     
@@ -318,13 +318,13 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Preparation " class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Configure Lambda Function getStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
-     <b> 3.1 </b> Preparation 
+    <b>3.1 </b>Configure Lambda Function getStudentData
     
     <i class="fas fa-check read-icon"></i>
     
@@ -346,41 +346,41 @@
 
 
 
-<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Preparation " class="dd-item 
-        
-        
-        
-        ">
-  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
-     <b> 3.3 </b> Preparation 
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="" class="dd-item 
+<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData" class="dd-item 
         
         
         
         ">
   <a href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Configure Lambda Function insertStudentData
     
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Configure Lambda Function BackupDynamoDBAndSendEmail
     
     <i class="fas fa-check read-icon"></i>
     
@@ -409,13 +409,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" class="dd-item 
         
         active
         
         ">
   <a href="/4-creating-a-restful-api/">
-     <b> 4. </b> Creating a REST API
+    <b>4. </b>Configuring RESTful API with API Key Security
     
     <i class="fas fa-check read-icon"></i>
     
@@ -440,13 +440,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Creating a REST API" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">
-     <b> 4.1 </b> Creating a REST API
+    <b>4.1 </b>Create a New REST API on API Gateway
     
     <i class="fas fa-check read-icon"></i>
     
@@ -468,13 +468,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Create an API Key to Secure Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">
-     <b> 4.2 </b> Manage session logs
+    <b>4.2 </b>Create an API Key to Secure Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -496,13 +496,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Set Up Usage Plan" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
-     <b> 4.3 </b> Manage session logs
+    <b>4.3 </b>Set Up Usage Plan
     
     <i class="fas fa-check read-icon"></i>
     
@@ -524,13 +524,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Create GET Method to Retrieve Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">
-     <b> 4.4 </b> Manage session logs
+    <b>4.4 </b>Create GET Method to Retrieve Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -552,13 +552,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Create POST Method to Store Data" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">
-     <b> 4.5 </b> Manage session logs
+    <b>4.5 </b>Create POST Method to Store Data
     
     <i class="fas fa-check read-icon"></i>
     
@@ -580,13 +580,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Create Resource and Method for Data Backup" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
-     <b> 4.6 </b> Manage session logs
+    <b>4.6 </b>Create Resource and Method for Data Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -608,13 +608,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.7-enabling-cors/">
-     <b> 4.7 </b> Manage session logs
+    <b>4.7 </b>Enable CORS to Support Frontend Access
     
     <i class="fas fa-check read-icon"></i>
     
@@ -636,13 +636,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Deploy the API to a Specific Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.8-deploying-the-api/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.8 </b>Deploy the API to a Specific Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -664,13 +664,13 @@
 
 
 
-<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Manage session logs" class="dd-item 
+<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" class="dd-item 
         
         
         
         ">
   <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
-     <b> 4.8 </b> Manage session logs
+    <b>4.9 </b>Link API Key to Usage Plan &amp; Associate with REST API and Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -699,71 +699,13 @@
 
 
 
-<li data-nav-id="/testchaper/" title="TestChaper" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/testchaper/">
-    <b>X. </b>TestChaper
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-  <ul>
-    
-    
-    
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/testchaper/example/" title="Example"
-  class="dd-item ">
-  <a href="/testchaper/example/">
-    <b>X. </b>Example
-    <i class="fas fa-check read-icon"></i>
-  </a>
-</li>
-
-
-
-
-    
-    
-    
-  </ul>
-  
-</li>
-
-
-
-      
-      
-
-
-
-
-
-
-
-<li data-nav-id="/5-designing-the-website-interface/" title="Session Management" class="dd-item 
+<li data-nav-id="/5-designing-the-website-interface/" title="Write the Website Interface" class="dd-item 
         
         
         
         ">
   <a href="/5-designing-the-website-interface/">
-    Session Management
+    <b>5. </b>Write the Website Interface
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1091,7 +1033,7 @@
             
           
           
-            <a href='/'>Session Management</a> > Creating a REST API
+            <a href='/'>Website Serverless</a> > Configuring RESTful API with API Key Security
           
         
           
@@ -1104,11 +1046,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#content">Content:</a></li>
-      </ul>
-    </li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#configuration-steps">Configuration Steps</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -1126,7 +1066,7 @@
           
             <h1>
               
-              Creating a REST API
+              Configuring RESTful API with API Key Security
             </h1>
           
 
@@ -1134,17 +1074,86 @@
 
 
 
-	<p>With Session Manager, we can view the history of connections to instances through <strong>Session history</strong>. However, we have not seen the details of the commands used in a session.</p>
-<p><img src="/images/4.s3/001-s3.png" alt="S3"></p>
-<p>In this section, we will proceed to create an S3 bucket and configure the session logs feature to see the details of the commands used in the session.</p>
-<p><img src="/images/arc-log.png" alt="port-fwd"></p>
-<h3 id="content">Content:</h3>
+	<blockquote>
+<p><strong>Objective</strong>: Create a RESTful API using AWS API Gateway to integrate with Lambda functions (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), allowing the web interface (running on CloudFront) to access, store, and back up student data. The API will be secured with an API Key, use a Usage Plan to limit access, and enable CORS to support communication with the web interface. The API will be deployed on a specific stage (e.g., <code>prod</code>) and linked with the API Key to ensure that only valid requests are processed.</p></blockquote>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<div class="notices info" ><p>You need to complete the steps in section 3 (create Lambda functions <code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>, DynamoDB table <code>studentData</code>, S3 bucket <code>student-backup-20250706</code>, SES email verification). Ensure your AWS account is set up, and the AWS region is <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="configuration-steps">Configuration Steps</h2>
+<p>Below are the specific steps to configure the RESTful API:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Step</strong></th>
+          <th><strong>Content</strong></th>
+          <th><strong>Description</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>4.1</td>
+          <td><a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">Create a new REST API on API Gateway</a></td>
+          <td>Create a new REST API in AWS API Gateway to integrate with Lambda functions.</td>
+      </tr>
+      <tr>
+          <td>4.2</td>
+          <td><a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">Create API Key to secure access</a></td>
+          <td>Create an API Key to secure API requests from the web interface.</td>
+      </tr>
+      <tr>
+          <td>4.3</td>
+          <td><a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">Set up Usage Plan</a></td>
+          <td>Set up a Usage Plan to limit the number of API requests and manage access.</td>
+      </tr>
+      <tr>
+          <td>4.4</td>
+          <td><a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">Create GET method to fetch data</a></td>
+          <td>Create a GET method for the <code>/students</code> endpoint to call the <code>getStudentData</code> function and retrieve student data.</td>
+      </tr>
+      <tr>
+          <td>4.5</td>
+          <td><a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">Create POST method to store data</a></td>
+          <td>Create a POST method for the <code>/students</code> endpoint to call the <code>insertStudentData</code> function and store student information.</td>
+      </tr>
+      <tr>
+          <td>4.6</td>
+          <td><a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">Create Resource &amp; Method for data backup</a></td>
+          <td>Create a resource and POST method for the <code>/backup</code> endpoint to call the <code>BackupDynamoDBAndSendEmail</code> function.</td>
+      </tr>
+      <tr>
+          <td>4.7</td>
+          <td><a href="/4-creating-a-restful-api/4.7-enabling-cors/">Enable CORS to support frontend access</a></td>
+          <td>Enable CORS to support cross-origin requests from the web interface on CloudFront.</td>
+      </tr>
+      <tr>
+          <td>4.8</td>
+          <td><a href="/4-creating-a-restful-api/4.8-deploying-the-api/">Deploy the API to a specific stage</a></td>
+          <td>Deploy the API to a stage (e.g., <code>prod</code>) for use in the production environment.</td>
+      </tr>
+      <tr>
+          <td>4.9</td>
+          <td><a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">Link API Key to Usage Plan &amp; link with REST API and Stage</a></td>
+          <td>Link the API Key to the Usage Plan and stage to ensure only valid requests are processed.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Note</strong>: Follow the steps in order to ensure the API is configured correctly. Each step will be detailed in the corresponding documentation.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>By completing these configuration steps, you will have:</p>
 <ul>
-<li><a href="./4.1-updateiamrole/">Update IAM Role</a></li>
-<li><a href="./4.2-creates3bucket/">Create <strong>S3 Bucket</strong></a></li>
-<li><a href="./4.3-creategwes3">Create S3 Gateway endpoint</a></li>
-<li><a href="./4.4-configsessionlogs/">Configure <strong>Session logs</strong></a></li>
+<li>A RESTful API integrated with Lambda functions (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>).</li>
+<li>The API secured with an API Key and Usage Plan.</li>
+<li>CORS support for the web interface on CloudFront.</li>
 </ul>
+<blockquote>
+<p><strong>Ready to proceed?</strong><br>
+Go to <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">Create a new REST API on API Gateway</a> to start configuring the first API!</p></blockquote>
 
 
 
@@ -1542,38 +1551,6 @@
                     
 
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1684,10 +1661,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Creating a REST API" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1697,19 +1674,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751876617"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751876617"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751876617"></script>
-    <script src="/js/jquery.sticky.js?1751876617"></script>
-    <script src="/js/featherlight.min.js?1751876617"></script>
-    <script src="/js/highlight.pack.js?1751876617"></script>
+    <script src="/js/clipboard.min.js?1751891870"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751891870"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751891870"></script>
+    <script src="/js/jquery.sticky.js?1751891870"></script>
+    <script src="/js/featherlight.min.js?1751891870"></script>
+    <script src="/js/highlight.pack.js?1751891870"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751876617"></script>
-    <script src="/js/learn.js?1751876617"></script>
-    <script src="/js/hugo-learn.js?1751876617"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751891870"></script>
+    <script src="/js/learn.js?1751891870"></script>
+    <script src="/js/hugo-learn.js?1751891870"></script>
 
-    <link href="/mermaid/mermaid.css?1751876617" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751876617"></script>
+    <link href="/mermaid/mermaid.css?1751891870" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751891870"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

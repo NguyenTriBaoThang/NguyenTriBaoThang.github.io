@@ -6,7 +6,6 @@ chapter: false
 pre: "<b>4.7 </b>"
 ---
 
-# Kích Hoạt CORS Để Hỗ Trợ Frontend Truy Cập
 
 > **Mục tiêu**: Kích hoạt CORS (Cross-Origin Resource Sharing) trên API `student` (tạo ở mục 4.1) để cho phép giao diện web (chạy trên CloudFront, sử dụng Tailwind CSS) gửi yêu cầu đến các endpoint **GET /students**, **POST /students**, và **POST /backup**. CORS sẽ được cấu hình trên các resource `/students` và `/backup` bằng cách thêm phương thức **OPTIONS** và thiết lập các header cần thiết (`Access-Control-Allow-Methods`, `Access-Control-Allow-Headers`, `Access-Control-Allow-Origin`), đảm bảo tích hợp mượt mà và an toàn với frontend.
 

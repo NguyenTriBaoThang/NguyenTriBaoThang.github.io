@@ -1,5 +1,5 @@
 ---
-title: "Triển khai (Deploy) API lên một Stage cụ thể"
+title: "Triển khai API lên một Stage cụ thể"
 date: 2023-10-25
 weight: 8
 chapter: false

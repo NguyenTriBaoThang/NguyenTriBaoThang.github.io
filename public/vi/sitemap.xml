@@ -28,19 +28,6 @@
                 href="//localhost:1313/vi/1-introduction/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -52,6 +39,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-preparation-steps/</loc>
@@ -132,19 +132,6 @@
                 href="//localhost:1313/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-creating-lambda-functions/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/3-creating-lambda-functions/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/3-creating-lambda-functions/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -156,6 +143,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/3-creating-lambda-functions/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/3-creating-lambda-functions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/3-creating-lambda-functions/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/</loc>
