@@ -6,6 +6,8 @@ chapter: false
 pre: "<b>2. </b>"
 ---
 
+
+
 > **Mục tiêu**: Thiết lập môi trường cần thiết để triển khai ứng dụng serverless quản lý thông tin sinh viên, bao gồm tài khoản AWS, các IAM Role, bảng DynamoDB, và dịch vụ SES.
 
 Để bắt đầu workshop **Triển khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS**, bạn cần chuẩn bị các thành phần cơ bản để đảm bảo tích hợp mượt mà với các dịch vụ AWS như Lambda, DynamoDB, API Gateway, S3, CloudFront, và SES.

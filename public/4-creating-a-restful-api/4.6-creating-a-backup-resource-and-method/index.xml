@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Manage session logs on AWS System Manager</title>
+    <title>Create Resource and Method for Data Backup on AWS System Manager</title>
     <link>//localhost:1313/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</link>
-    <description>Recent content in Manage session logs on AWS System Manager</description>
+    <description>Recent content in Create Resource and Method for Data Backup on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
