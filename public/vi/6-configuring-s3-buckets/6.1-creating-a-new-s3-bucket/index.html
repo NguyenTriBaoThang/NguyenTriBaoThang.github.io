@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: AWS System Manager</title>
+    <title>Khởi Tạo S3 Bucket Mới :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751897062" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751897062" rel="stylesheet">
-    <link href="/css/hybrid.css?1751897062" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751897062" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751897062" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751897062" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751897062" rel="stylesheet">
-    <link href="/css/theme.css?1751897062" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751897062" rel="stylesheet">
+    <link href="/css/nucleus.css?1751900579" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751900579" rel="stylesheet">
+    <link href="/css/hybrid.css?1751900579" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751900579" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751900579" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751900579" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751900579" rel="stylesheet">
+    <link href="/css/theme.css?1751900579" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751900579" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751897062" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751900579" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751897062"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751900579"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751897062"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751897062"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751900579"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751900579"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751897062"></script>
+<script type="text/javascript" src="/%20js/search.js?1751900579"></script>
     
   </div>
 
@@ -756,13 +756,13 @@
 
 
 
-<li data-nav-id="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="" class="dd-item 
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Khởi Tạo S3 Bucket Mới" class="dd-item 
         
         active
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
-    
+    <b>6.1 </b>Khởi Tạo S3 Bucket Mới
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1037,7 +1037,7 @@
             
           
           
-            <a href='/vi/'>Website Serverless</a> > <a href='/vi/6-configuring-s3-buckets/'>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website</a> > 
+            <a href='/vi/'>Website Serverless</a> > <a href='/vi/6-configuring-s3-buckets/'>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website</a> > Khởi Tạo S3 Bucket Mới
           
         
           
@@ -1050,7 +1050,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tổng-quan-về-s3-bucket-trong-ứng-dụng">Tổng Quan về S3 Bucket trong Ứng Dụng</a></li>
+    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
+    <li><a href="#hành-động-chi-tiết">Hành Động Chi Tiết</a></li>
+    <li><a href="#lưu-ý-quan-trọng">Lưu Ý Quan Trọng</a></li>
+    <li><a href="#kết-luận">Kết Luận</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1066,7 +1074,7 @@
           
             <h1>
               
-              
+              Khởi Tạo S3 Bucket Mới
             </h1>
           
 
@@ -1074,7 +1082,200 @@
 
 
 
-	
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Tạo một Amazon S3 Bucket mới với tên <code>student-management-website-2025</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 5) cho giao diện web của ứng dụng Quản Lý Dữ Liệu Sinh Viên. Bucket này sẽ được cấu hình để hỗ trợ <strong>Static Website Hosting</strong> (mục 6.3) và phục vụ nội dung qua CloudFront (mục 7), tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) để gọi các endpoint <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong> với bảo mật API Key (<code>StudentApiKey</code>, mục 4.2) và CORS (mục 4.7).</p></blockquote>
+<hr>
+<h2 id="tổng-quan-về-s3-bucket-trong-ứng-dụng">Tổng Quan về S3 Bucket trong Ứng Dụng</h2>
+<ul>
+<li><strong>Vai trò của bucket <code>student-management-website-2025</code></strong>:
+<ul>
+<li>Lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>) cho giao diện web sử dụng Tailwind CSS.</li>
+<li>Bật <strong>Static Website Hosting</strong> để cung cấp endpoint truy cập giao diện (sẽ được phân phối qua CloudFront để hỗ trợ HTTPS và hiệu suất cao).</li>
+<li>Bỏ chọn <strong>Block all public access</strong> để cho phép cấu hình quyền công khai (<code>s3:GetObject</code>) trong <strong>Bucket Policy</strong> (mục 6.4), cần thiết để CloudFront truy xuất nội dung.</li>
+<li>Bật <strong>Bucket Versioning</strong> để lưu trữ các phiên bản của tệp, hỗ trợ khôi phục nếu xảy ra lỗi khi cập nhật giao diện.</li>
+</ul>
+</li>
+<li><strong>Tích hợp với hệ thống</strong>:
+<ul>
+<li>Giao diện web gọi API <code>student</code> (mục 4.8) sử dụng <strong>Invoke URL</strong> (VD: <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>) và <code>StudentApiKey</code> trong header <code>x-api-key</code>.</li>
+<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <code>https://d12345678.cloudfront.net</code>).</li>
+<li>Bucket này khác với bucket <code>student-backup-20250706</code> (mục 2.4, 6.5), dùng để lưu trữ tệp backup từ endpoint <strong>POST /backup</strong>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+
+<div class="notices info" ><p>Bạn cần hoàn thành mục 2.4 (tạo bucket <code>student-backup-20250706</code>), mục 3 (tạo các hàm Lambda <code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>, bảng DynamoDB <code>studentData</code>, SES email xác minh), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code> và liên kết với API <code>student</code> stage <code>prod</code>), và mục 5 (xây dựng giao diện web với <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>). Đảm bảo tài khoản AWS có quyền truy cập S3 (<code>s3:CreateBucket</code>, <code>s3:PutBucketPolicy</code>) và vùng AWS là <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="hành-động-chi-tiết">Hành Động Chi Tiết</h2>
+<ol>
+<li>
+<p><strong>Truy Cập AWS Management Console</strong></p>
+<ul>
+<li>Mở trình duyệt và đăng nhập vào <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> bằng tài khoản AWS của bạn.</li>
+<li>Trong thanh tìm kiếm ở đầu trang, nhập <strong>S3</strong> và chọn dịch vụ <strong>Amazon S3</strong> để vào giao diện quản lý bucket.</li>
+<li>Kiểm tra vùng AWS: Đảm bảo bạn đang làm việc trong vùng <strong>us-east-1</strong> (US East (N. Virginia)) để đồng bộ với API <code>student</code>, các hàm Lambda (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, và SES. Vùng được hiển thị ở góc trên bên phải AWS Console.<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-01.png" alt="Giao diện AWS Console với thanh tìm kiếm S3.">
+<em>Hình 1: Giao diện AWS Console với thanh tìm kiếm S3.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Mở Giao Diện Tạo Bucket</strong></p>
+<ul>
+<li>Trong giao diện chính của Amazon S3, nhìn vào menu điều hướng bên trái hoặc phần chính.</li>
+<li>Nhấn nút <strong>Create bucket</strong> (thường nằm ở góc trên bên phải) để mở giao diện cấu hình bucket mới.</li>
+<li><strong>Lưu ý</strong>: Nếu giao diện hiển thị danh sách bucket hiện có, kiểm tra xem bucket <code>student-management-website-2025</code> đã tồn tại hay chưa để tránh trùng lặp.<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-02.png" alt="Nút Create bucket trong giao diện S3.">
+<em>Hình 2: Nút Create bucket trong giao diện S3.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Cấu Hình Bucket <code>student-management-website-2025</code></strong></p>
+<ul>
+<li>Trong giao diện <strong>Create bucket</strong>, nhập các thông tin sau:
+<ul>
+<li><strong>Bucket name</strong>: Nhập <code>student-management-website-2025</code>.
+<ul>
+<li>Tên bucket phải duy nhất toàn cầu (không trùng với bất kỳ bucket nào trong AWS).</li>
+<li>Nếu tên bị trùng, thử thêm hậu tố ngẫu nhiên (VD: <code>student-management-website-20250706-abc123</code>).</li>
+<li>Tên phải tuân thủ quy tắc: chỉ chứa chữ cái thường, số, dấu gạch ngang (-), không chứa khoảng trắng hoặc ký tự đặc biệt khác.</li>
+</ul>
+</li>
+<li><strong>AWS Region</strong>: Chọn <strong>US East (N. Virginia) us-east-1</strong> để đồng bộ với các dịch vụ khác trong hệ thống.</li>
+<li><strong>Bucket type</strong>: Chọn <strong>General purpose</strong> (phù hợp cho lưu trữ giao diện tĩnh).</li>
+<li><strong>Object Ownership</strong>:
+<ul>
+<li>Chọn <strong>ACLs enabled</strong> &gt; <strong>Bucket owner preferred</strong> để hỗ trợ quyền truy cập công khai thông qua <strong>Bucket Policy</strong> (mục 6.4).</li>
+<li>Điều này cho phép quản lý quyền bằng Access Control Lists (ACLs) và Bucket Policy, cần thiết để CloudFront truy xuất tệp.<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-03.png" alt="Cấu hình tên bucket và vùng AWS.">
+<em>Hình 3: Cấu hình tên bucket và vùng AWS.</em></li>
+</ul>
+</li>
+<li><strong>Block Public Access settings for this bucket</strong>:
+<ul>
+<li>Bỏ chọn <strong>Block all public access</strong> và tất cả các tùy chọn con:
+<ul>
+<li><em>Block public access to buckets and objects granted through new access control lists</em></li>
+<li><em>Block public access to buckets and objects granted through new public bucket or access point policies</em></li>
+<li><em>Block public access from access points</em></li>
+</ul>
+</li>
+<li><strong>Lý do</strong>: Cần cho phép truy cập công khai (<code>s3:GetObject</code>) để CloudFront phục vụ giao diện web. Sau khi cấu hình <strong>Bucket Policy</strong> (mục 6.4), có thể bật lại các tùy chọn không liên quan để tăng bảo mật.<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-04.png" alt="Bỏ chọn Block Public Access.">
+<em>Hình 4: Bỏ chọn Block Public Access.</em></li>
+</ul>
+</li>
+<li><strong>Bucket Versioning</strong>:
+<ul>
+<li>Chọn <strong>Enable</strong> để bật <strong>Bucket Versioning</strong>.</li>
+<li><strong>Lý do</strong>: Lưu trữ các phiên bản của tệp (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>) để khôi phục nếu xảy ra lỗi khi cập nhật giao diện (VD: tải nhầm tệp).<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-05.png" alt="Bật Bucket Versioning.">
+<em>Hình 5: Bật Bucket Versioning.</em></li>
+</ul>
+</li>
+<li><strong>Tags (Tùy chọn)</strong>:
+<ul>
+<li>Thêm tag để quản lý chi phí, ví dụ: <code>Project=StudentManagement</code>, <code>Environment=Production</code>.</li>
+</ul>
+</li>
+<li><strong>Default encryption</strong>:
+<ul>
+<li>Chọn <strong>Enable</strong> &gt; <strong>Server-side encryption with Amazon S3-managed keys (SSE-S3)</strong> để mã hóa dữ liệu tại rest, tăng bảo mật cho các tệp giao diện.</li>
+</ul>
+</li>
+<li><strong>Advanced settings</strong>: Giữ mặc định (không cần cấu hình Object Lock hoặc Multi-Region Access Points cho giao diện tĩnh).</li>
+</ul>
+</li>
+<li>Kiểm tra cấu hình: Xem lại thông tin, đặc biệt là tên bucket, vùng, và cài đặt <strong>Block Public Access</strong>.</li>
+<li>Nhấn <strong>Create bucket</strong> để hoàn tất.<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-06.png" alt="Xem lại và nhấn Create bucket.">
+<em>Hình 6: Xem lại và nhấn Create bucket.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Tạo Bucket</strong></p>
+<ul>
+<li>Sau khi nhấn <strong>Create bucket</strong>, bạn sẽ thấy thông báo: <em>&ldquo;Successfully created bucket &lsquo;student-management-website-2025&rsquo;.&rdquo;</em></li>
+<li>Kết quả mong đợi: Trong danh sách <strong>Buckets</strong>, bucket <code>student-management-website-2025</code> xuất hiện với trạng thái mới tạo.</li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li>Nếu gặp lỗi <em>&ldquo;Bucket name already exists&rdquo;</em>:
+<ul>
+<li>Thay tên bucket (VD: <code>student-management-website-20250706-&lt;random-string&gt;</code>).</li>
+<li>Kiểm tra xem bạn có quyền tạo bucket (<code>s3:CreateBucket</code>) trong vai trò IAM.</li>
+</ul>
+</li>
+<li>Nếu gặp lỗi <em>&ldquo;AccessDenied&rdquo;</em>:
+<ul>
+<li>Kiểm tra vai trò IAM của tài khoản AWS có quyền <code>s3:CreateBucket</code> và <code>s3:PutBucketPolicy</code>.<br>
+<img src="/images/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/creating-a-new-s3-bucket-07.png" alt="Thông báo trạng thái tạo bucket."><br>
+<em>Hình 7: Thông báo trạng thái tạo bucket.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Kiểm Tra Bucket</strong></p>
+<ul>
+<li>Trong <strong>S3 &gt; Buckets</strong>, chọn <code>student-management-website-2025</code> để xác minh:
+<ul>
+<li><strong>Properties</strong>: Kiểm tra vùng (<code>us-east-1</code>), <strong>Bucket Versioning</strong> (Enabled), <strong>Default encryption</strong> (SSE-S3).</li>
+<li><strong>Permissions</strong>: Xác minh <strong>Block all public access</strong> đã bỏ chọn để hỗ trợ cấu hình <strong>Bucket Policy</strong> (mục 6.4).</li>
+</ul>
+</li>
+<li><strong>Lưu ý</strong>: Bucket này sẽ được sử dụng để tải tệp giao diện (mục 6.2), bật <strong>Static Website Hosting</strong> (mục 6.3), và cấu hình quyền công khai (mục 6.4) trước khi tích hợp với CloudFront.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="lưu-ý-quan-trọng">Lưu Ý Quan Trọng</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Yếu Tố</strong></th>
+          <th><strong>Chi Tiết</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Tên bucket</strong></td>
+          <td>- Tên <code>student-management-website-2025</code> được đề xuất để dễ nhận diện, nhưng phải duy nhất toàn cầu. Nếu trùng, thêm hậu tố ngẫu nhiên (VD: <code>student-management-website-20250706-abc123</code>). <!-- raw HTML omitted --> - Đảm bảo không trùng với bucket backup (<code>student-backup-20250706</code>, mục 2.4).</td>
+      </tr>
+      <tr>
+          <td><strong>Bảo mật</strong></td>
+          <td>- Bỏ chọn <strong>Block all public access</strong> chỉ là tạm thời để cấu hình <strong>Bucket Policy</strong> (mục 6.4). Sau khi cấu hình, có thể bật lại các tùy chọn không liên quan để tăng bảo mật. <!-- raw HTML omitted --> - Để bảo mật tốt hơn, sử dụng CloudFront <strong>Origin Access Identity (OAI)</strong> thay vì quyền công khai hoàn toàn (mục 6.4). <!-- raw HTML omitted --> - Không lưu <code>API_KEY</code> trong các tệp tĩnh. Sử dụng AWS Secrets Manager hoặc CloudFront Functions để thêm header <code>x-api-key</code> (mục 5).</td>
+      </tr>
+      <tr>
+          <td><strong>Vùng AWS</strong></td>
+          <td>- Đảm bảo vùng <code>us-east-1</code> khớp với bucket <code>student-management-website-2025</code>, <code>student-backup-20250706</code>, API <code>student</code>, stage <code>prod</code>, các hàm Lambda (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), DynamoDB <code>studentData</code>, SES, và CloudFront.</td>
+      </tr>
+      <tr>
+          <td><strong>Xử lý lỗi</strong></td>
+          <td>- Nếu bucket không xuất hiện: Làm mới trang hoặc kiểm tra vùng AWS. <!-- raw HTML omitted --> - Nếu không thể tạo bucket: Kiểm tra giới hạn bucket trong tài khoản (mặc định 100 bucket/vùng, có thể yêu cầu AWS tăng quota). <!-- raw HTML omitted --> - Nếu gặp lỗi <code>AccessDenied</code>: Kiểm tra vai trò IAM có quyền <code>s3:CreateBucket</code> và <code>s3:PutBucketPolicy</code>.</td>
+      </tr>
+      <tr>
+          <td><strong>Tối ưu hóa</strong></td>
+          <td>- Thêm <strong>S3 Access Logs</strong> để theo dõi truy cập: Trong <strong>S3 &gt; student-management-website-2025 &gt; Properties &gt; Server access logging</strong>, chọn <strong>Enable</strong> và chỉ định bucket log (VD: <code>student-web-logs-20250706</code>). <!-- raw HTML omitted --> - Sử dụng AWS CLI hoặc SDK để tự động hóa tạo bucket:</td>
+      </tr>
+      <tr>
+          <td><strong>Kiểm tra tích hợp</strong></td>
+          <td>- Xác minh bucket <code>student-management-website-2025</code> tồn tại trong <strong>S3 &gt; Buckets</strong> với đúng vùng (<code>us-east-1</code>) và <strong>Bucket Versioning</strong> (Enabled). <!-- raw HTML omitted --> - Chuẩn bị sẵn các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> (mục 5) để tải lên (mục 6.2). <!-- raw HTML omitted --> - Sau khi hoàn tất mục 6, truy cập giao diện qua CloudFront URL (VD: <code>https://d12345678.cloudfront.net</code>) và kiểm tra các chức năng: <!-- raw HTML omitted --> - <strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email qua SES. <!-- raw HTML omitted --> - <strong>GET /students</strong>: Hiển thị bảng sinh viên. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Tạo tệp backup trong <code>student-backup-20250706</code> và gửi email thông báo.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Mẹo thực tiễn</strong>: Sau khi tạo bucket, kiểm tra ngay trong <strong>S3 &gt; Buckets</strong> để xác minh thông tin. Sử dụng AWS CLI hoặc SDK để tự động hóa nếu cần tạo nhiều bucket. Chuẩn bị tệp giao diện từ mục 5 và kiểm tra quyền IAM trước khi tiếp tục với mục 6.2 (tải tệp lên S3).</p></blockquote>
+<hr>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Bucket <code>student-management-website-2025</code> đã được tạo thành công trong vùng <code>us-east-1</code>, với <strong>Bucket Versioning</strong> và <strong>Default encryption</strong> được bật, sẵn sàng để tải tệp giao diện (mục 6.2), cấu hình <strong>Static Website Hosting</strong> (mục 6.3), và tích hợp với CloudFront.</p>
+<blockquote>
+<p><strong>Bước tiếp theo</strong>: Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">Tải tài nguyên giao diện lên S3</a> để tiếp tục cấu hình!</p></blockquote>
+
 
 
 
@@ -1595,19 +1796,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751897062"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751897062"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751897062"></script>
-    <script src="/js/jquery.sticky.js?1751897062"></script>
-    <script src="/js/featherlight.min.js?1751897062"></script>
-    <script src="/js/highlight.pack.js?1751897062"></script>
+    <script src="/js/clipboard.min.js?1751900579"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751900579"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751900579"></script>
+    <script src="/js/jquery.sticky.js?1751900579"></script>
+    <script src="/js/featherlight.min.js?1751900579"></script>
+    <script src="/js/highlight.pack.js?1751900579"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751897062"></script>
-    <script src="/js/learn.js?1751897062"></script>
-    <script src="/js/hugo-learn.js?1751897062"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751900579"></script>
+    <script src="/js/learn.js?1751900579"></script>
+    <script src="/js/hugo-learn.js?1751900579"></script>
 
-    <link href="/mermaid/mermaid.css?1751897062" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751897062"></script>
+    <link href="/mermaid/mermaid.css?1751900579" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751900579"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
