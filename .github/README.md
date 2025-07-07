@@ -1,5 +1,5 @@
 <p align="center">
-	<img loading="lazy" src="./static/images/system-architecture-overview" alt="Project" height="150">
+	<img loading="lazy" src="../static/images/system-architecture-overview" alt="Project" height="150">
 </p>
 
 <h1 align="center">Deploy Serverless Website to Manage Student Information with AWS</h1>
