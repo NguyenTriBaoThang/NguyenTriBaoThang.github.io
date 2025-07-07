@@ -1,5 +1,5 @@
 ---
-title: "Creating Lambda Functions"
+title: "Tạo hàm Lambda Functions"
 date: 2023-10-25
 weight: 3
 chapter: false
