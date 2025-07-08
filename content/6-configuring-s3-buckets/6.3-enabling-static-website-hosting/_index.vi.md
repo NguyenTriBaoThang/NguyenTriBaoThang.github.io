@@ -1,7 +1,7 @@
 ---
 title: "Bật Tính Năng Static Website Hosting"
 date: 2023-10-25
-weight: 6.3
+weight: 3
 chapter: false
 pre: "<b>6.3 </b>"
 ---

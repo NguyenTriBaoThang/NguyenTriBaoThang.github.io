@@ -1,7 +1,7 @@
 ---
 title: "Khởi Tạo S3 Bucket Mới"
 date: 2023-10-25
-weight: 6.1
+weight: 1
 chapter: false
 pre: "<b>6.1 </b>"
 ---

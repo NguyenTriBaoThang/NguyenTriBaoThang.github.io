@@ -41,19 +41,6 @@
                 href="//localhost:1313/1-introduction/"
                 />
   </url><url>
-    <loc>//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
-                />
-  </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -325,6 +312,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/6-configuring-s3-buckets/"
+                />
+  </url><url>
+    <loc>//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
                 />
   </url><url>
     <loc>//localhost:1313/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</loc>

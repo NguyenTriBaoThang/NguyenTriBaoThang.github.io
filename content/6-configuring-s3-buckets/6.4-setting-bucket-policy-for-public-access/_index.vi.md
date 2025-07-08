@@ -144,7 +144,7 @@ Bạn cần hoàn thành mục 6.1 (tạo bucket `student-management-website-202
        - Kiểm tra **Static Website Hosting** đã bật với `index.html` là **Index document** (mục 6.3).  
      - **Giao diện hiển thị sai**:  
        - Mở **Developer Tools > Console** trong trình duyệt để kiểm tra lỗi (VD: tệp CSS/JS không tải).  
-       - Xác minh đường dẫn trong `index.html` (VD: <link href="styles.css">, <script src="scripts.js">).  
+       - Xác minh đường dẫn trong `index.html` (VD: `<link href="styles.css">`, `<script src="scripts.js">`).  
 
 ---
 

@@ -249,6 +249,32 @@
                 href="//localhost:1313/vi/5-designing-the-website-interface/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/6-configuring-s3-buckets/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -273,6 +299,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</loc>
@@ -325,42 +364,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/</loc>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Session Management on AWS System Manager</title>
+    <title>Enable Static Website Hosting on AWS System Manager</title>
     <link>//localhost:1313/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</link>
-    <description>Recent content in Session Management on AWS System Manager</description>
+    <description>Recent content in Enable Static Website Hosting on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
