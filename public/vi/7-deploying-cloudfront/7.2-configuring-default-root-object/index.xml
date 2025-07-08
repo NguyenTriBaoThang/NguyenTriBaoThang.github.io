@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cấu Hình Default Root Object on AWS System Manager</title>
+    <title>Configure Default Root Object on AWS System Manager</title>
     <link>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</link>
-    <description>Recent content in Cấu Hình Default Root Object on AWS System Manager</description>
+    <description>Recent content in Configure Default Root Object on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>

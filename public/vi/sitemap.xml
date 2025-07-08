@@ -93,19 +93,6 @@
                 href="//localhost:1313/vi/2-preparation-steps/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/7-deploying-cloudfront/7.2-configuring-default-root-object/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -117,6 +104,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.2-configuring-default-root-object/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>

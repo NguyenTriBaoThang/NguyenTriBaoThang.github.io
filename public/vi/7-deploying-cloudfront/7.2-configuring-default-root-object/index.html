@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Cấu Hình Default Root Object :: AWS System Manager</title>
+    <title>Configure Default Root Object :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751953239" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751953239" rel="stylesheet">
-    <link href="/css/hybrid.css?1751953239" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751953239" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751953239" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751953239" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751953239" rel="stylesheet">
-    <link href="/css/theme.css?1751953239" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751953239" rel="stylesheet">
+    <link href="/css/nucleus.css?1751953312" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751953312" rel="stylesheet">
+    <link href="/css/hybrid.css?1751953312" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751953312" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751953312" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751953312" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751953312" rel="stylesheet">
+    <link href="/css/theme.css?1751953312" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751953312" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751953239" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751953312" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751953239"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751953312"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751953239"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751953239"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751953312"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751953312"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751953239"></script>
+<script type="text/javascript" src="/%20js/search.js?1751953312"></script>
     
   </div>
 
@@ -962,13 +962,13 @@
 
 
 
-<li data-nav-id="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Cấu Hình Default Root Object" class="dd-item 
+<li data-nav-id="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Configure Default Root Object" class="dd-item 
         
         active
         
         ">
   <a href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/">
-    <b>7.2 </b>Cấu Hình Default Root Object
+    <b>7.2 </b>Configure Default Root Object
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1253,7 +1253,7 @@
             
           
           
-            <a href='/vi/'>Website Serverless</a> > <a href='/vi/7-deploying-cloudfront/'>Triển Khai CloudFront để Tăng Tốc Website</a> > Cấu Hình Default Root Object
+            <a href='/vi/'>Website Serverless</a> > <a href='/vi/7-deploying-cloudfront/'>Triển Khai CloudFront để Tăng Tốc Website</a> > Configure Default Root Object
           
         
           
@@ -1268,11 +1268,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#tổng-quan-về-default-root-object">Tổng Quan về Default Root Object</a></li>
-    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
-    <li><a href="#hành-động-chi-tiết">Hành Động Chi Tiết</a></li>
-    <li><a href="#lưu-ý-quan-trọng">Lưu Ý Quan Trọng</a></li>
-    <li><a href="#kết-luận">Kết Luận</a></li>
+    <li><a href="#overview-of-default-root-object">Overview of Default Root Object</a></li>
+    <li><a href="#initial-requirements">Initial Requirements</a></li>
+    <li><a href="#detailed-actions">Detailed Actions</a></li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -1290,7 +1290,7 @@
           
             <h1>
               
-              Cấu Hình Default Root Object
+              Configure Default Root Object
             </h1>
           
 
@@ -1299,82 +1299,82 @@
 
 
 	<blockquote>
-<p><strong>Mục tiêu</strong>: Cấu hình <code>index.html</code> làm <strong>Default Root Object</strong> cho CloudFront Distribution <code>StudentWebsiteDistribution</code> (mục 7.1) để CloudFront tự động phục vụ tệp <code>index.html</code> từ S3 Bucket <code>student-management-website-2025</code> khi người dùng truy cập domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>). Điều này đảm bảo giao diện web tĩnh (biểu mẫu, bảng sinh viên, nút chức năng) hiển thị đúng và tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) để thực hiện các chức năng như lưu, xem, và sao lưu dữ liệu.</p></blockquote>
+<p><strong>Objective</strong>: Configure <code>index.html</code> as the <strong>Default Root Object</strong> for the CloudFront Distribution <code>StudentWebsiteDistribution</code> (section 7.1) so that CloudFront automatically serves the <code>index.html</code> file from the S3 Bucket <code>student-management-website-2025</code> when users access the CloudFront domain (e.g., <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>). This ensures the static web interface (form, student table, functional buttons) displays correctly and integrates with the <code>student</code> API (stage <code>prod</code>, section 4.8) to perform functions like saving, viewing, and backing up data.</p></blockquote>
 <hr>
-<h2 id="tổng-quan-về-default-root-object">Tổng Quan về Default Root Object</h2>
+<h2 id="overview-of-default-root-object">Overview of Default Root Object</h2>
 <ul>
-<li><strong>Vai trò của Default Root Object</strong>:
+<li><strong>Role of Default Root Object</strong>:
 <ul>
-<li>Chỉ định tệp mặc định (<code>index.html</code>) mà CloudFront trả về khi người dùng truy cập URL gốc của distribution (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
-<li>Tương tự <strong>Index document</strong> trong S3 <strong>Static Website Hosting</strong> (mục 6.3), nhưng áp dụng ở tầng CloudFront.</li>
-<li>Đảm bảo giao diện chính hiển thị mà không cần nhập đường dẫn cụ thể (VD: /index.html).</li>
+<li>Specifies the default file (<code>index.html</code>) that CloudFront returns when users access the root URL of the distribution (e.g., <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+<li>Similar to the <strong>Index document</strong> in S3 <strong>Static Website Hosting</strong> (section 6.3), but applied at the CloudFront layer.</li>
+<li>Ensures the main interface displays without the need for a specific path (e.g., /index.html).</li>
 </ul>
 </li>
-<li><strong>Tích hợp với hệ thống</strong>:
+<li><strong>Integration with the system</strong>:
 <ul>
-<li>CloudFront phân phối các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>, mục 6.2) từ S3 Bucket <code>student-management-website-2025</code> (mục 6.1–6.4) thông qua <strong>Origin Access Identity (OAI)</strong> (mục 7.1) để giới hạn truy cập.</li>
-<li>Giao diện web gọi API <code>student</code> (mục 4.8) với <strong>Invoke URL</strong> (VD: <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod">https://abc123.execute-api.us-east-1.amazonaws.com/prod</a>) và <code>StudentApiKey</code> (mục 4.2).</li>
-<li>Các chức năng:
+<li>CloudFront distributes static files (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>, section 6.2) from the S3 Bucket <code>student-management-website-2025</code> (sections 6.1–6.4) via <strong>Origin Access Identity (OAI)</strong> (section 7.1) to restrict access.</li>
+<li>The web interface calls the <code>student</code> API (section 4.8) with the <strong>Invoke URL</strong> (e.g., <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod">https://abc123.execute-api.us-east-1.amazonaws.com/prod</a>) and <code>StudentApiKey</code> (section 4.2).</li>
+<li>The functions include:
 <ul>
-<li><strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email qua SES.</li>
-<li><strong>GET /students</strong>: Hiển thị dữ liệu trong bảng.</li>
-<li><strong>POST /backup</strong>: Tạo tệp trong S3 Bucket <code>student-backup-20250706</code> (mục 6.5) và gửi email thông báo.</li>
+<li><strong>POST /students</strong>: Save records to DynamoDB <code>studentData</code> and send a confirmation email via SES.</li>
+<li><strong>GET /students</strong>: Display data in the table.</li>
+<li><strong>POST /backup</strong>: Create a file in the S3 Bucket <code>student-backup-20250706</code> (section 6.5) and send notification emails via SES.</li>
 </ul>
 </li>
-<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+<li>CORS is configured (section 4.7) to support requests from the CloudFront domain (e.g., <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
 </ul>
 </li>
 </ul>
 <hr>
-<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+<h2 id="initial-requirements">Initial Requirements</h2>
 
-<div class="notices info" ><p>Bạn cần hoàn thành mục 7.1 (tạo CloudFront Distribution <code>StudentWebsiteDistribution</code>), mục 6.1 (tạo bucket <code>student-management-website-2025</code>), mục 6.2 (tải lên <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>), mục 6.3 (bật <strong>Static Website Hosting</strong>), mục 6.4 (cấu hình <strong>Bucket Policy</strong>), mục 6.5 (cấu hình bucket <code>student-backup-20250706</code>), mục 5 (xây dựng giao diện web), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code>). Đảm bảo tài khoản AWS có quyền <code>cloudfront:UpdateDistribution</code>, <code>s3:GetObject</code>, và vùng AWS là <code>us-east-1</code> cho các dịch vụ liên quan.</p>
+<div class="notices info" ><p>You need to complete section 7.1 (create the CloudFront Distribution <code>StudentWebsiteDistribution</code>), section 6.1 (create the <code>student-management-website-2025</code> bucket), section 6.2 (upload <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>), section 6.3 (enable <strong>Static Website Hosting</strong>), section 6.4 (configure <strong>Bucket Policy</strong>), section 6.5 (configure the <code>student-backup-20250706</code> bucket), section 5 (build the web interface), section 4.1 (create the <code>student</code> API), section 4.2 (create the <code>StudentApiKey</code>), section 4.3 (create the <code>StudentUsagePlan</code>), section 4.4 (create the <strong>GET /students</strong> method), section 4.5 (create the <strong>POST /students</strong> method), section 4.6 (create the <code>/backup</code> resource and <strong>POST /backup</strong> method), section 4.7 (enable CORS), section 4.8 (deploy the API to the <code>prod</code> stage), section 4.9 (link the <code>StudentApiKey</code> to <code>StudentUsagePlan</code>). Ensure your AWS account has <code>cloudfront:UpdateDistribution</code>, <code>s3:GetObject</code>, and the AWS region is <code>us-east-1</code> for related services.</p>
 </div>
 
 <hr>
-<h2 id="hành-động-chi-tiết">Hành Động Chi Tiết</h2>
+<h2 id="detailed-actions">Detailed Actions</h2>
 <ol>
 <li>
-<p><strong>Truy Cập AWS Management Console</strong></p>
+<p><strong>Access the AWS Management Console</strong></p>
 <ul>
-<li>Đăng nhập vào <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> bằng tài khoản AWS.</li>
-<li>Trong thanh tìm kiếm, nhập <strong>CloudFront</strong> và chọn dịch vụ <strong>Amazon CloudFront</strong>.</li>
-<li>Kiểm tra vùng AWS: CloudFront là dịch vụ toàn cầu, nhưng đảm bảo S3 Bucket <code>student-management-website-2025</code>, API <code>student</code>, Lambda, DynamoDB, và SES ở <code>us-east-1</code>.<br>
-<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-01.png" alt="Giao diện AWS Console với thanh tìm kiếm CloudFront."><br>
-<em>Hình 1: Giao diện AWS Console với thanh tìm kiếm CloudFront.</em></li>
+<li>Log in to the <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> with your AWS account.</li>
+<li>In the search bar, type <strong>CloudFront</strong> and select the <strong>Amazon CloudFront</strong> service.</li>
+<li>Check the AWS region: CloudFront is a global service, but ensure the S3 Bucket <code>student-management-website-2025</code>, <code>student</code> API, Lambda, DynamoDB, and SES are in <code>us-east-1</code>.<br>
+<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-01.png" alt="AWS Console Interface with CloudFront Search Bar"><br>
+<em>Figure 1: AWS Console Interface with the CloudFront search bar.</em></li>
 </ul>
 </li>
 <li>
-<p><strong>Chọn CloudFront Distribution</strong></p>
+<p><strong>Select the CloudFront Distribution</strong></p>
 <ul>
-<li>Trong <strong>CloudFront &gt; Distributions</strong>, tìm và chọn distribution có tên <code>StudentWebsiteDistribution</code> (tạo ở mục 7.1).
+<li>In <strong>CloudFront &gt; Distributions</strong>, find and select the distribution named <code>StudentWebsiteDistribution</code> (created in section 7.1).
 <ul>
-<li><strong>Nhận diện</strong>: Distribution có ID bắt đầu bằng <code>E...</code> và Domain name dạng <code>d12345678.cloudfront.net</code>.</li>
+<li><strong>Identification</strong>: The distribution ID starts with <code>E...</code> and the Domain name is of the format <code>d12345678.cloudfront.net</code>.</li>
 </ul>
 </li>
-<li>Nhấn vào ID hoặc tên distribution để vào giao diện chi tiết.</li>
-<li>Kiểm tra trạng thái: Đảm bảo distribution ở trạng thái <strong>Enabled</strong>. Nếu vẫn là <strong>In Progress</strong>, chờ 5–15 phút để triển khai hoàn tất.<br>
-<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-02.png" alt="Chọn CloudFront Distribution."><br>
-<em>Hình 2: Chọn CloudFront Distribution.</em></li>
+<li>Click the ID or distribution name to enter the distribution details interface.</li>
+<li>Check the status: Ensure the distribution is in the <strong>Enabled</strong> state. If it is still <strong>In Progress</strong>, wait 5–15 minutes for the deployment to complete.<br>
+<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-02.png" alt="Select CloudFront Distribution"><br>
+<em>Figure 2: Select CloudFront Distribution.</em></li>
 </ul>
 </li>
 <li>
-<p><strong>Chỉnh Sửa Default Root Object</strong></p>
+<p><strong>Edit Default Root Object</strong></p>
 <ul>
-<li>Trong giao diện chi tiết của <code>StudentWebsiteDistribution</code>, chọn tab <strong>General</strong>.</li>
-<li>Tìm phần <strong>Settings</strong> và nhấn nút <strong>Edit</strong> bên cạnh <strong>Default root object</strong> (thường hiển thị giá trị hiện tại, nếu có).<br>
-<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-03.png" alt="Tìm và nhấn Edit trong phần Settings."><br>
-<em>Hình 3: Tìm và nhấn Edit trong phần Settings.</em></li>
-<li>Trong trường <strong>Default root object</strong>, nhập <code>index.html</code>.
+<li>In the details interface of <code>StudentWebsiteDistribution</code>, select the <strong>General</strong> tab.</li>
+<li>Find the <strong>Settings</strong> section and click the <strong>Edit</strong> button next to <strong>Default root object</strong> (usually shows the current value if set).<br>
+<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-03.png" alt="Find and Click Edit in the Settings Section"><br>
+<em>Figure 3: Find and Click Edit in the Settings Section.</em></li>
+<li>In the <strong>Default root object</strong> field, enter <code>index.html</code>.
 <ul>
-<li><strong>Lý do</strong>: <code>index.html</code> là tệp chính chứa giao diện web (biểu mẫu nhập liệu, bảng sinh viên, nút chức năng Lưu/Xem/Backup) được tải lên S3 Bucket <code>student-management-website-2025</code> (mục 6.2). Khi người dùng truy cập domain CloudFront, CloudFront sẽ yêu cầu <code>index.html</code> từ S3 qua OAI (mục 7.1).</li>
+<li><strong>Reason</strong>: <code>index.html</code> is the main file containing the web interface (input form, student table, save/view/backup functional buttons) uploaded to the S3 Bucket <code>student-management-website-2025</code> (section 6.2). When users access the CloudFront domain, CloudFront will request <code>index.html</code> from S3 through OAI (section 7.1).</li>
 </ul>
 </li>
-<li>Kiểm tra trước khi lưu:
+<li>Review before saving:
 <ul>
-<li>Đảm bảo <code>index.html</code> đã được tải lên thư mục gốc của S3 Bucket <code>student-management-website-2025</code> (mục 6.2).</li>
-<li>Xác minh <strong>Static Website Hosting</strong> đã bật với <code>index.html</code> làm <strong>Index document</strong> (mục 6.3).</li>
-<li>Kiểm tra <strong>Bucket Policy</strong> (mục 7.1) cho phép OAI truy cập:
+<li>Ensure <code>index.html</code> has been uploaded to the root directory of the S3 Bucket <code>student-management-website-2025</code> (section 6.2).</li>
+<li>Verify <strong>Static Website Hosting</strong> is enabled with <code>index.html</code> as the <strong>Index document</strong> (section 6.3).</li>
+<li>Check the <strong>Bucket Policy</strong> (section 7.1) allows OAI access:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
@@ -1395,17 +1395,17 @@
 </ul>
 </li>
 <li>
-<p><strong>Lưu Thay Đổi</strong></p>
+<p><strong>Save Changes</strong></p>
 <ul>
-<li>Nhấn <strong>Save changes</strong> để áp dụng cấu hình.<br>
-<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-04.png" alt="Nhấn Save changes để lưu cấu hình."><br>
-<em>Hình 4: Nhấn Save changes để lưu cấu hình.</em></li>
-<li>Kết quả mong đợi: CloudFront bắt đầu cập nhật cấu hình (mất 5–10 phút). Sau khi hoàn tất, trạng thái distribution trở lại <strong>Enabled</strong>, và AWS hiển thị thông báo <em>&ldquo;Successfully updated distribution settings&rdquo;</em>.<br>
-<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-05.png" alt="Thông báo cập nhật thành công."><br>
-<em>Hình 5: Thông báo cập nhật thành công.</em></li>
-<li><strong>Xử lý lỗi</strong>:
+<li>Click <strong>Save changes</strong> to apply the configuration.<br>
+<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-04.png" alt="Click Save Changes to Save Configuration"><br>
+<em>Figure 4: Click Save Changes to Save Configuration.</em></li>
+<li>Expected result: CloudFront will start updating the configuration (takes 5–10 minutes). Once completed, the distribution status will return to <strong>Enabled</strong>, and AWS will display the message <em>&ldquo;Successfully updated distribution settings&rdquo;</em>.<br>
+<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-05.png" alt="Update Success Message"><br>
+<em>Figure 5: Update Success Message.</em></li>
+<li><strong>Error Handling</strong>:
 <ul>
-<li><strong>&ldquo;AccessDenied&rdquo;</strong>: Kiểm tra vai trò IAM có quyền <code>cloudfront:UpdateDistribution</code>:
+<li><strong>&ldquo;AccessDenied&rdquo;</strong>: Check if the IAM role has <code>cloudfront:UpdateDistribution</code> permissions:
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
@@ -1417,13 +1417,13 @@
 </span></span><span style="display:flex;"><span>    ]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
-<li>Thay <code>&lt;AWS_ACCOUNT_ID&gt;</code> và <code>&lt;DISTRIBUTION_ID&gt;</code> bằng giá trị thực (tìm trong CloudFront &gt; Distributions).</li>
+<li>Replace <code>&lt;AWS_ACCOUNT_ID&gt;</code> and <code>&lt;DISTRIBUTION_ID&gt;</code> with actual values (found in CloudFront &gt; Distributions).</li>
 </ul>
 </li>
-<li><strong>Cập nhật không áp dụng</strong>:
+<li><strong>Update not applied</strong>:
 <ul>
-<li>Kiểm tra trạng thái distribution, chờ cho đến khi trở lại <strong>Enabled</strong>.</li>
-<li>Xác minh trường <strong>Default root object</strong> hiển thị <code>index.html</code> trong tab <strong>General</strong>.</li>
+<li>Check the distribution status and wait for it to return to <strong>Enabled</strong>.</li>
+<li>Verify that the <strong>Default root object</strong> field shows <code>index.html</code> in the <strong>General</strong> tab.</li>
 </ul>
 </li>
 </ul>
@@ -1431,90 +1431,86 @@
 </ul>
 </li>
 <li>
-<p><strong>Kiểm Tra Default Root Object</strong></p>
+<p><strong>Test Default Root Object</strong></p>
 <ul>
-<li>Trong <strong>CloudFront &gt; Distributions</strong>, sao chép <strong>Distribution domain name</strong> (VD: <code>https://d12345678.cloudfront.net</code>).</li>
-<li>Mở trình duyệt và truy cập URL này.</li>
-<li>Kết quả mong đợi:
+<li>In <strong>CloudFront &gt; Distributions</strong>, copy the <strong>Distribution domain name</strong> (e.g., <code>https://d12345678.cloudfront.net</code>).</li>
+<li>Open your browser and access this URL.</li>
+<li>Expected result:
 <ul>
-<li>Giao diện web hiển thị với biểu mẫu nhập liệu, bảng sinh viên, và các nút chức năng (Lưu, Xem, Backup) sử dụng Tailwind CSS và font Poppins.</li>
-<li>Các tệp <code>styles.css</code> và <code>scripts.js</code> được tải đúng qua HTTPS, giao diện hiển thị chính xác.</li>
-<li>Yêu cầu API (<strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>) hoạt động nếu CORS được cấu hình đúng (mục 4.7).<br>
-<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-06.png" alt="Giao diện web qua CloudFront.">
-<em>Hình 6: Giao diện web qua CloudFront.</em></li>
+<li>The web interface should display with the input form, student table, and functional buttons (Save, View, Backup) using Tailwind CSS and Poppins font.</li>
+<li>The <code>styles.css</code> and <code>scripts.js</code> files should load correctly over HTTPS, and the interface should display as expected.</li>
+<li>API requests (<strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>) should work if CORS is correctly configured (section 4.7).<br>
+<img src="/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-06.png" alt="Web Interface via CloudFront"><br>
+<em>Figure 6: Web Interface via CloudFront.</em></li>
 </ul>
 </li>
-<li><strong>Xử lý lỗi</strong>:
+<li><strong>Error Handling</strong>:
 <ul>
-<li><strong>Lỗi 403 Forbidden</strong>:
+<li><strong>403 Forbidden</strong>:
 <ul>
-<li>Kiểm tra <strong>Bucket Policy</strong> của <code>student-management-website-2025</code> (mục 7.1) cho phép OAI truy cập với đúng <code>&lt;OAI_ID&gt;</code>.</li>
-<li>Xác minh <code>index.html</code> được tải lên thư mục gốc của S3 (mục 6.2).</li>
-<li>Đảm bảo <strong>Block public access</strong> được bật (trừ <strong>Block public access for bucket policies</strong>) trong S3 (mục 7.1).</li>
+<li>Check the <strong>Bucket Policy</strong> for the correct OAI ARN (<code>arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity EXXXXXX</code>).</li>
+<li>Verify <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> are uploaded to S3 (section 6.2).</li>
+<li>Ensure the old public policy (<code>Principal: &quot;*&quot;</code>) has been removed (section 6.4).</li>
 </ul>
 </li>
-<li><strong>Lỗi 404 Not Found</strong>:
+<li><strong>404 Not Found</strong>:
 <ul>
-<li>Kiểm tra <strong>Default root object</strong> được đặt là <code>index.html</code> trong CloudFront &gt; Distributions &gt; General.</li>
-<li>Xác minh <strong>Static Website Hosting</strong> bật với <code>index.html</code> làm <strong>Index document</strong> (mục 6.3).</li>
+<li>Check that <strong>Default root object</strong> is set to <code>index.html</code> in CloudFront &gt; Distributions &gt; General.</li>
+<li>Verify that <strong>Static Website Hosting</strong> is enabled with <code>index.html</code> as the <strong>Index document</strong> (section 6.3).</li>
 </ul>
 </li>
-<li><strong>Giao diện hiển thị sai</strong>:
+<li><strong>Incorrect Interface</strong>:
 <ul>
-<li>Mở <strong>Developer Tools &gt; Console</strong> trong trình duyệt để kiểm tra lỗi tải <code>styles.css</code> hoặc <code>scripts.js</code>.</li>
-<li>Kiểm tra đường dẫn trong <code>index.html</code> (VD: <code>&lt;link href=&quot;styles.css&quot;&gt;</code>, <code>&lt;script src=&quot;scripts.js&quot;&gt;</code>) khớp với cấu trúc thư mục trong S3.</li>
+<li>Open <strong>Developer Tools &gt; Console</strong> to check for errors loading <code>styles.css</code> or <code>scripts.js</code>.</li>
+<li>Check the paths in <code>index.html</code> (e.g., <code>&lt;link href=&quot;styles.css&quot;&gt;</code>, <code>&lt;script src=&quot;scripts.js&quot;&gt;</code>).</li>
 </ul>
 </li>
-<li><strong>Lỗi CORS khi gọi API</strong>:
-<ul>
-<li>Kiểm tra cấu hình CORS trong API Gateway (mục 4.7) có <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>.</li>
-<li>Đảm bảo <code>scripts.js</code> gửi yêu cầu API với đúng <strong>Invoke URL</strong> (VD: <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod">https://abc123.execute-api.us-east-1.amazonaws.com/prod</a>) và header <code>x-api-key: &lt;StudentApiKey&gt;</code>.</li>
-</ul>
-</li>
+<li><strong>CORS</strong>: Check the CORS configuration in API Gateway (section 4.7) with <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>.</li>
+<li><strong>API Errors</strong>: Check <code>StudentApiKey</code>, <code>StudentUsagePlan</code> (section 4.9), and CloudWatch logs for Lambda.</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
 <hr>
-<h2 id="lưu-ý-quan-trọng">Lưu Ý Quan Trọng</h2>
+<h2 id="important-notes">Important Notes</h2>
 <table>
   <thead>
       <tr>
-          <th>Yếu Tố</th>
-          <th>Chi Tiết</th>
+          <th>Factor</th>
+          <th>Details</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Bảo mật</td>
-          <td>Đảm bảo <strong>Bucket Policy</strong> chỉ cho phép OAI truy cập S3 (mục 7.1). Tránh nhúng <code>StudentApiKey</code> trong <code>scripts.js</code>. Sử dụng CloudFront Functions để thêm header <code>x-api-key</code>: <!-- raw HTML omitted --> <code>javascript &lt;br&gt; function handler(event) { &lt;br&gt;     var request = event.request; &lt;br&gt;     request.headers['x-api-key'] = { value: 'xxxxxxxxxxxxxxxxxxxx' }; &lt;br&gt;     return request; &lt;br&gt; } &lt;br&gt; </code></td>
+          <td><strong>Security</strong></td>
+          <td>Ensure the <strong>Bucket Policy</strong> allows only OAI access to S3 (section 7.1). Avoid embedding <code>StudentApiKey</code> in <code>scripts.js</code>. Use CloudFront Functions to add the <code>x-api-key</code> header: <!-- raw HTML omitted --> <code>javascript &lt;br&gt; function handler(event) { &lt;br&gt;     var request = event.request; &lt;br&gt;     request.headers['x-api-key'] = { value: 'xxxxxxxxxxxxxxxxxxxx' }; &lt;br&gt;     return request; &lt;br&gt; } &lt;br&gt; </code></td>
       </tr>
       <tr>
-          <td>Tối ưu hóa</td>
-          <td>Bật <strong>CloudFront Standard Logs</strong> để theo dõi truy cập: Trong <strong>CloudFront &gt; Distribution &gt; General &gt; Logging</strong>, chọn <strong>On</strong>, chỉ định bucket log (VD: <code>student-web-logs-20250706</code>). Sử dụng AWS CLI để kiểm tra cấu hình: <!-- raw HTML omitted --> <code>bash &lt;br&gt; aws cloudfront get-distribution --id &lt;DISTRIBUTION_ID&gt; &lt;br&gt; </code></td>
+          <td><strong>Optimization</strong></td>
+          <td>Enable <strong>CloudFront Standard Logs</strong> to track access: In <strong>CloudFront &gt; Distribution &gt; General &gt; Logging</strong>, select <strong>On</strong>, and specify a log bucket (e.g., <code>student-web-logs-20250706</code>). Use AWS CLI to check the configuration: <!-- raw HTML omitted --> <code>bash &lt;br&gt; aws cloudfront get-distribution --id &lt;DISTRIBUTION_ID&gt; &lt;br&gt; </code></td>
       </tr>
       <tr>
-          <td>Tích hợp với hệ thống</td>
-          <td>Cập nhật CORS trong API Gateway (mục 4.7) với <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>. Đảm bảo endpoint <strong>POST /students</strong>, <strong>GET /students</strong>, <strong>POST /backup</strong> hoạt động với <strong>Invoke URL</strong> và <code>StudentApiKey</code>.</td>
+          <td><strong>System Integration</strong></td>
+          <td>Update CORS in API Gateway (section 4.7) with <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>. Ensure <strong>POST /students</strong>, <strong>GET /students</strong>, <strong>POST /backup</strong> work with <strong>Invoke URL</strong> and <code>StudentApiKey</code>.</td>
       </tr>
       <tr>
-          <td>Kiểm tra tích hợp</td>
-          <td>Truy cập CloudFront URL (<a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>) và kiểm tra: <!-- raw HTML omitted --> - <strong>POST /students</strong>: Lưu bản ghi, gửi email SES. <!-- raw HTML omitted --> - <strong>GET /students</strong>: Hiển thị bảng. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Tạo tệp trong <code>student-backup-20250706</code>, gửi email. <!-- raw HTML omitted --> Sử dụng <strong>Developer Tools &gt; Network</strong> để kiểm tra yêu cầu API.</td>
+          <td><strong>Integration Testing</strong></td>
+          <td>Access the CloudFront URL (<a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>) and check: <!-- raw HTML omitted --> - <strong>POST /students</strong>: Save records, send SES email. <!-- raw HTML omitted --> - <strong>GET /students</strong>: Display table. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Create file in <code>student-backup-20250706</code>, send email. <!-- raw HTML omitted --> Use <strong>Developer Tools &gt; Network</strong> to check API requests.</td>
       </tr>
       <tr>
-          <td>Xử lý lỗi</td>
-          <td><strong>403 Forbidden</strong>: Kiểm tra OAI ARN, <strong>Bucket Policy</strong>, quyền <code>s3:GetObject</code>. <strong>404 Not Found</strong>: Xác minh <code>index.html</code> là <strong>Default root object</strong>, tệp tồn tại trong S3. <strong>CORS</strong>: Kiểm tra header <code>Access-Control-Allow-Origin</code> trong Lambda (mục 3) và API Gateway (mục 4.7). <strong>429</strong>: Kiểm tra giới hạn Rate/Burst/Quota trong <code>StudentUsagePlan</code> (mục 4.3).</td>
+          <td><strong>Error Handling</strong></td>
+          <td><strong>403 Forbidden</strong>: Check OAI ARN, <strong>Bucket Policy</strong>, <code>s3:GetObject</code> permission. <strong>404 Not Found</strong>: Verify <code>index.html</code> is the <strong>Default root object</strong>, file exists in S3. <strong>Incorrect Interface</strong>: Check <strong>Developer Tools &gt; Console</strong>, paths in <code>index.html</code>. <strong>CORS</strong>: Check <code>Access-Control-Allow-Origin</code> header in Lambda (section 3) and API Gateway (section 4.7). <strong>429</strong>: Check rate/burst/quota limits in <code>StudentUsagePlan</code> (section 4.3).</td>
       </tr>
   </tbody>
 </table>
 <blockquote>
-<p><strong>Mẹo thực tiễn</strong>: Kiểm tra CloudFront URL ngay sau khi cập nhật <strong>Default root object</strong>. Nếu giao diện chưa hiển thị đúng, tạo invalidation (mục 7.3) để làm mới cache. Sử dụng AWS CLI để kiểm tra cấu hình: <code>aws cloudfront get-distribution --id &lt;DISTRIBUTION_ID&gt;</code>.</p></blockquote>
+<p><strong>Best Practice Tip</strong>: Test the CloudFront URL immediately after setting the <strong>Default root object</strong>. Create invalidation (section 7.3) if updating files in S3. Use AWS CLI to check the configuration: <code>aws cloudfront get-distribution --id &lt;DISTRIBUTION_ID&gt;</code>.</p></blockquote>
 <hr>
-<h2 id="kết-luận">Kết Luận</h2>
-<p><strong>Default Root Object</strong> đã được cấu hình là <code>index.html</code> cho CloudFront Distribution <code>StudentWebsiteDistribution</code>, đảm bảo giao diện web hiển thị đúng khi truy cập domain CloudFront. Hệ thống sẵn sàng tích hợp với API <code>student</code>.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <strong>Default Root Object</strong> has been configured as <code>index.html</code> for the CloudFront Distribution <code>StudentWebsiteDistribution</code>, ensuring the web interface displays correctly when accessing the CloudFront domain. The system is now ready to integrate with the <code>student</code> API.</p>
 <blockquote>
-<p><strong>Bước tiếp theo</strong>: Chuyển đến <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">Tạo Invalidation để làm mới nội dung cache</a> để tiếp tục!</p></blockquote>
+<p><strong>Next step</strong>: Proceed to <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">Create Invalidation to Refresh Cache</a> to continue!</p></blockquote>
 
 
 
@@ -2155,19 +2151,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751953239"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751953239"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751953239"></script>
-    <script src="/js/jquery.sticky.js?1751953239"></script>
-    <script src="/js/featherlight.min.js?1751953239"></script>
-    <script src="/js/highlight.pack.js?1751953239"></script>
+    <script src="/js/clipboard.min.js?1751953312"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751953312"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751953312"></script>
+    <script src="/js/jquery.sticky.js?1751953312"></script>
+    <script src="/js/featherlight.min.js?1751953312"></script>
+    <script src="/js/highlight.pack.js?1751953312"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751953239"></script>
-    <script src="/js/learn.js?1751953239"></script>
-    <script src="/js/hugo-learn.js?1751953239"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751953312"></script>
+    <script src="/js/learn.js?1751953312"></script>
+    <script src="/js/hugo-learn.js?1751953312"></script>
 
-    <link href="/mermaid/mermaid.css?1751953239" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751953239"></script>
+    <link href="/mermaid/mermaid.css?1751953312" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751953312"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
