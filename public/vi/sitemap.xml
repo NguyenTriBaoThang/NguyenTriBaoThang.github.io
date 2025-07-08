@@ -15,6 +15,19 @@
                 href="//localhost:1313/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/1-introduction/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -143,6 +156,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.2-creating-an-api-key/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/</loc>
@@ -442,30 +468,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>
