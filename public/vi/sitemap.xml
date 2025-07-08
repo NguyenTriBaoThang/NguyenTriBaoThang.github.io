@@ -28,6 +28,19 @@
                 href="//localhost:1313/vi/1-introduction/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -39,6 +52,45 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.2-configuring-default-root-object/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/</loc>
@@ -80,6 +132,19 @@
                 href="//localhost:1313/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.2-creating-an-api-key/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -117,6 +182,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/</loc>
@@ -171,6 +249,19 @@
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -208,6 +299,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.4-creating-a-get-method/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-preparation-steps/2.5-configureses/</loc>
@@ -262,19 +366,6 @@
                 href="//localhost:1313/vi/6-configuring-s3-buckets/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -327,52 +418,17 @@
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
+                href="//localhost:1313/7-deploying-cloudfront/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
+                href="//localhost:1313/vi/7-deploying-cloudfront/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>
