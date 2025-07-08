@@ -67,6 +67,19 @@
                 href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
                 />
   </url><url>
+    <loc>//localhost:1313/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                />
+  </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -416,6 +429,32 @@
                 rel="alternate"
                 hreflang="en"
                 href="//localhost:1313/4-creating-a-restful-api/4.8-deploying-the-api/"
+                />
+  </url><url>
+    <loc>//localhost:1313/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
+                />
+  </url><url>
+    <loc>//localhost:1313/8-setting-up-system-backup/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/"
                 />
   </url><url>
     <loc>//localhost:1313/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/</loc>

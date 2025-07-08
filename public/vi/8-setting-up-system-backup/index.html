@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Categories :: AWS System Manager</title>
+    <title>Thiết Lập Backup Hệ Thống Tự Động :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751952457" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751952457" rel="stylesheet">
-    <link href="/css/hybrid.css?1751952457" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751952457" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751952457" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751952457" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751952457" rel="stylesheet">
-    <link href="/css/theme.css?1751952457" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751952457" rel="stylesheet">
+    <link href="/css/nucleus.css?1751953239" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751953239" rel="stylesheet">
+    <link href="/css/hybrid.css?1751953239" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751953239" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751953239" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751953239" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751953239" rel="stylesheet">
+    <link href="/css/theme.css?1751953239" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751953239" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751952457" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751953239" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751952457"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751953239"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/vi/categories/">
+  <body class="" data-url="/vi/8-setting-up-system-backup/">
     <nav id="sidebar" class="showVisitedLinks">
 
   
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751952457"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751952457"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751953239"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751953239"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751952457"></script>
+<script type="text/javascript" src="/%20js/search.js?1751953239"></script>
     
   </div>
 
@@ -1018,6 +1018,100 @@
 
       
       
+
+
+
+
+
+
+
+<li data-nav-id="/vi/8-setting-up-system-backup/" title="Thiết Lập Backup Hệ Thống Tự Động" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/vi/8-setting-up-system-backup/">
+    <b>8. </b>Thiết Lập Backup Hệ Thống Tự Động
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/" title="" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/">
+    
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/" title="" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/">
+    
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
     </ul>
 
     
@@ -1052,7 +1146,7 @@
                 
                 
                 
-                <option id="en" value="//localhost:1313/categories/">English
+                <option id="en" value="//localhost:1313/8-setting-up-system-backup/">English
                 </option>
                 
                 
@@ -1067,7 +1161,7 @@
                 
                 
                 
-                <option id="vi" value="//localhost:1313/vi/categories/" selected>Tiếng Việt</option>
+                <option id="vi" value="//localhost:1313/vi/8-setting-up-system-backup/" selected>Tiếng Việt</option>
                 
                 
                 
@@ -1155,7 +1249,7 @@
             
           
           
-            <a href='/vi/'>Website Serverless</a> > Categories
+            <a href='/vi/'>Website Serverless</a> > Thiết Lập Backup Hệ Thống Tự Động
           
         
           
@@ -1166,7 +1260,13 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
+    <li><a href="#các-bước-cấu-hình">Các Bước Cấu Hình</a></li>
+    <li><a href="#kết-luận">Kết Luận</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1182,9 +1282,7 @@
           
             <h1>
               
-                taxonomy ::
-              
-              Categories
+              Thiết Lập Backup Hệ Thống Tự Động
             </h1>
           
 
@@ -1192,11 +1290,59 @@
 
 
 
-
-
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Thiết lập hệ thống backup tự động cho bảng DynamoDB <code>studentData</code> bằng cách chỉnh sửa Lambda function <code>BackupDynamoDBAndSendEmail</code> (tích hợp với endpoint <strong>POST /backup</strong>, mục 4.8) và tạo Amazon EventBridge Rule để kích hoạt backup định kỳ. Backup sẽ lưu dữ liệu vào S3 Bucket <code>student-backup-20250706</code> (mục 6.5) và gửi email thông báo qua Amazon SES. Hệ thống đảm bảo:</p>
 <ul>
-	
+<li>Tự động hóa quy trình backup để giảm thiểu can thiệp thủ công.</li>
+<li>Tích hợp với giao diện web (phân phối qua CloudFront, mục 7.1–7.3) và API <code>student</code> (stage <code>prod</code>, mục 4.8).</li>
+<li>Bảo mật với <code>StudentApiKey</code> (mục 4.2) và vai trò IAM <code>DynamoDBBackupRole</code> (mục 6.5).</li>
+</ul></blockquote>
+<hr>
+<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+
+<div class="notices info" ><p>Bạn cần hoàn thành mục 7.1–7.3 (tạo và cấu hình CloudFront <code>StudentWebsiteDistribution</code>), mục 6.1–6.5 (cấu hình S3 Buckets <code>student-management-website-2025</code> và <code>student-backup-20250706</code>), mục 5 (xây dựng giao diện web), mục 4.1–4.9 (tạo và triển khai API <code>student</code>, <code>StudentApiKey</code>, <code>StudentUsagePlan</code>, endpoint <strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>, CORS, stage <code>prod</code>), mục 3.3 (tạo Lambda function <code>BackupDynamoDBAndSendEmail</code> với vai trò <code>DynamoDBBackupRole</code>), mục 3 (tạo bảng DynamoDB <code>studentData</code>, SES email xác minh). Đảm bảo tài khoản AWS có quyền <code>lambda:UpdateFunctionConfiguration</code>, <code>events:PutRule</code>, <code>events:PutTargets</code>, <code>iam:PassRole</code>, và vùng AWS là <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="các-bước-cấu-hình">Các Bước Cấu Hình</h2>
+<p>Dưới đây là các bước cụ thể để thiết lập backup tự động:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Bước</strong></th>
+          <th><strong>Nội Dung</strong></th>
+          <th><strong>Mô Tả</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>8.1</td>
+          <td><a href="/8-automatic-backup/8.1-configuring-lambda-backup/">Chỉnh sửa cấu hình trong Lambda Backup</a></td>
+          <td>Cập nhật Lambda function <code>BackupDynamoDBAndSendEmail</code> để hỗ trợ kích hoạt từ EventBridge, đảm bảo lưu dữ liệu từ DynamoDB <code>studentData</code> vào S3 <code>student-backup-20250706</code> và gửi email qua SES.</td>
+      </tr>
+      <tr>
+          <td>8.2</td>
+          <td><a href="/8-automatic-backup/8.2-creating-eventbridge-rule/">Tạo EventBridge Rule để tự động hóa Backup</a></td>
+          <td>Tạo Amazon EventBridge Rule <code>StudentDataBackupRule</code> để kích hoạt Lambda function <code>BackupDynamoDBAndSendEmail</code> định kỳ (VD: hàng ngày).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Lưu ý</strong>: Thực hiện các bước theo thứ tự để đảm bảo cấu hình backup tự động chính xác. Mỗi bước được hướng dẫn chi tiết trong các tài liệu tương ứng.</p></blockquote>
+<hr>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Hoàn thành các bước cấu hình này, bạn sẽ có:</p>
+<ul>
+<li>Lambda function <code>BackupDynamoDBAndSendEmail</code> được cập nhật để hỗ trợ cả API Gateway và EventBridge.</li>
+<li>EventBridge Rule <code>StudentDataBackupRule</code> kích hoạt backup định kỳ, lưu dữ liệu từ DynamoDB <code>studentData</code> vào S3 <code>student-backup-20250706</code> với thông báo qua SES.</li>
+<li>Hệ thống tích hợp đầy đủ với API <code>student</code> (stage <code>prod</code>) và giao diện web qua CloudFront <code>StudentWebsiteDistribution</code>.</li>
 </ul>
+<blockquote>
+<p><strong>Sẵn sàng tiếp tục?</strong><br>
+Chuyển đến <a href="/8-automatic-backup/8.1-configuring-lambda-backup/">Chỉnh sửa cấu hình trong Lambda Backup</a> để bắt đầu cấu hình Lambda function!</p></blockquote>
+
+
+
 
 
 <footer class=" footline" >
@@ -1754,6 +1900,60 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
             
         
         
@@ -1766,7 +1966,7 @@
 			<a class="nav nav-prev" href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/" title="Tạo Invalidation để Làm Mới Nội Dung Cache"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/1-introduction/" title="Giới Thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1776,19 +1976,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751952457"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751952457"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751952457"></script>
-    <script src="/js/jquery.sticky.js?1751952457"></script>
-    <script src="/js/featherlight.min.js?1751952457"></script>
-    <script src="/js/highlight.pack.js?1751952457"></script>
+    <script src="/js/clipboard.min.js?1751953239"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751953239"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751953239"></script>
+    <script src="/js/jquery.sticky.js?1751953239"></script>
+    <script src="/js/featherlight.min.js?1751953239"></script>
+    <script src="/js/highlight.pack.js?1751953239"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751952457"></script>
-    <script src="/js/learn.js?1751952457"></script>
-    <script src="/js/hugo-learn.js?1751952457"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751953239"></script>
+    <script src="/js/learn.js?1751953239"></script>
+    <script src="/js/hugo-learn.js?1751953239"></script>
 
-    <link href="/mermaid/mermaid.css?1751952457" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751952457"></script>
+    <link href="/mermaid/mermaid.css?1751953239" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751953239"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

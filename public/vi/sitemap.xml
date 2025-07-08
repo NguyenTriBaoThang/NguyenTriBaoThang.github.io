@@ -41,6 +41,19 @@
                 href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -52,32 +65,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/7-deploying-cloudfront/7.2-configuring-default-root-object/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/</loc>
@@ -104,6 +91,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/2-preparation-steps/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.2-configuring-default-root-object/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/</loc>
@@ -208,6 +208,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-creating-lambda-functions/</loc>
@@ -379,19 +392,6 @@
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.7-enabling-cors/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/7-deploying-cloudfront/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -403,6 +403,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/7-deploying-cloudfront/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.8-deploying-the-api/</loc>
@@ -429,6 +442,30 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>
