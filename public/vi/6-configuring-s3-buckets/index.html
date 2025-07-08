@@ -12,21 +12,21 @@
     <title>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751944753" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751944753" rel="stylesheet">
-    <link href="/css/hybrid.css?1751944753" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751944753" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751944753" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751944753" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751944753" rel="stylesheet">
-    <link href="/css/theme.css?1751944753" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751944753" rel="stylesheet">
+    <link href="/css/nucleus.css?1751949628" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751949628" rel="stylesheet">
+    <link href="/css/hybrid.css?1751949628" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751949628" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751949628" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751949628" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751949628" rel="stylesheet">
+    <link href="/css/theme.css?1751949628" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751949628" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751944753" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751949628" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751944753"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751949628"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751944753"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751944753"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751949628"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751949628"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751944753"></script>
+<script type="text/javascript" src="/%20js/search.js?1751949628"></script>
     
   </div>
 
@@ -903,13 +903,13 @@
 
 
 
-<li data-nav-id="/vi/7-deploying-cloudfront/" title="" class="dd-item 
+<li data-nav-id="/vi/7-deploying-cloudfront/" title="Triển Khai CloudFront để Tăng Tốc Website" class="dd-item 
         
         
         
         ">
   <a href="/vi/7-deploying-cloudfront/">
-    
+    <b>7 </b>Triển Khai CloudFront để Tăng Tốc Website
     
     <i class="fas fa-check read-icon"></i>
     
@@ -922,34 +922,6 @@
     
     
     
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Website Serverless" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
-    <b>7.1 </b>Website Serverless
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
 
     
     
@@ -997,6 +969,34 @@
         ">
   <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
     <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Tạo CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
+    <b>7.1 </b>Tạo CloudFront Distribution
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1199,14 +1199,14 @@
 	<blockquote>
 <p><strong>Mục tiêu</strong>: Cấu hình hai Amazon S3 Bucket để:</p>
 <ul>
-<li><strong>Lưu trữ và phục vụ giao diện web</strong>: Tạo bucket <code>student-web-20250706</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 5), bật tính năng Static Website Hosting, và cấu hình quyền truy cập công khai để phục vụ giao diện qua CloudFront (mục 7).</li>
+<li><strong>Lưu trữ và phục vụ giao diện web</strong>: Tạo bucket <code>student-management-website-2025</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 5), bật tính năng <strong>Static Website Hosting</strong>, và cấu hình quyền truy cập công khai để phục vụ giao diện qua CloudFront (mục 7).</li>
 <li><strong>Sao lưu dữ liệu</strong>: Cấu hình bucket <code>student-backup-20250706</code> (tạo ở mục 2.4) để lưu trữ tệp backup từ endpoint <strong>POST /backup</strong> (mục 4.6), đảm bảo hàm Lambda <code>BackupDynamoDBAndSendEmail</code> có quyền ghi vào bucket.<br>
 Cấu hình này tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) và đảm bảo giao diện web (sử dụng Tailwind CSS) hoạt động mượt mà với các endpoint <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong>.</li>
 </ul></blockquote>
 <hr>
 <h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
 
-<div class="notices info" ><p>Bạn cần hoàn thành mục 2.4 (tạo bucket <code>student-backup-20250706</code>), mục 3.3 (tạo hàm Lambda <code>BackupDynamoDBAndSendEmail</code> với vai trò <code>DynamoDBBackupRole</code>), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code> và liên kết với API <code>student</code> stage <code>prod</code>), và mục 5 (xây dựng giao diện web với <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>). Đảm bảo tài khoản AWS có quyền truy cập S3, Lambda, API Gateway, và vùng AWS là <code>us-east-1</code>.</p>
+<div class="notices info" ><p>Bạn cần hoàn thành mục 2.4 (tạo bucket <code>student-backup-20250706</code>), mục 3.3 (tạo hàm Lambda <code>BackupDynamoDBAndSendEmail</code> với vai trò <code>DynamoDBBackupRole</code>), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code> và liên kết với API <code>student</code> stage <code>prod</code>), và mục 5 (xây dựng giao diện web với <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>). Đảm bảo tài khoản AWS có quyền truy cập S3 (<code>s3:CreateBucket</code>, <code>s3:PutBucketPolicy</code>, <code>s3:PutBucketWebsite</code>), Lambda, API Gateway, và vùng AWS là <code>us-east-1</code>.</p>
 </div>
 
 <hr>
@@ -1224,43 +1224,43 @@ Cấu hình này tích hợp với API <code>student</code> (stage <code>prod</c
       <tr>
           <td>6.1</td>
           <td><a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Khởi tạo S3 Bucket mới</a></td>
-          <td>Tạo bucket <code>student-web-20250706</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</td>
+          <td>Tạo bucket <code>student-management-website-2025</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</td>
       </tr>
       <tr>
           <td>6.2</td>
           <td><a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">Tải tài nguyên giao diện lên S3 (HTML/CSS/JS)</a></td>
-          <td>Tải các tệp tĩnh từ mục 5 lên bucket <code>student-web-20250706</code>.</td>
+          <td>Tải các tệp tĩnh từ mục 5 lên bucket <code>student-management-website-2025</code>.</td>
       </tr>
       <tr>
           <td>6.3</td>
           <td><a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">Bật tính năng Static Website Hosting</a></td>
-          <td>Kích hoạt Static Website Hosting trong bucket <code>student-web-20250706</code> để phục vụ giao diện web.</td>
+          <td>Kích hoạt <strong>Static Website Hosting</strong> trong bucket <code>student-management-website-2025</code> để phục vụ giao diện web.</td>
       </tr>
       <tr>
           <td>6.4</td>
           <td><a href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">Cấu hình Bucket Policy để cho phép truy cập công khai</a></td>
-          <td>Cập nhật Bucket Policy của <code>student-web-20250706</code> để cho phép CloudFront truy xuất nội dung (<code>s3:GetObject</code>).</td>
+          <td>Cập nhật <strong>Bucket Policy</strong> của <code>student-management-website-2025</code> để cho phép CloudFront truy xuất nội dung (<code>s3:GetObject</code>).</td>
       </tr>
       <tr>
           <td>6.5</td>
           <td><a href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">Cập nhật Bucket Policy để hỗ trợ sao lưu dữ liệu (Backup)</a></td>
-          <td>Cập nhật Bucket Policy của <code>student-backup-20250706</code> để cho phép hàm Lambda <code>BackupDynamoDBAndSendEmail</code> ghi tệp (<code>s3:PutObject</code>).</td>
+          <td>Cập nhật <strong>Bucket Policy</strong> của <code>student-backup-20250706</code> để cho phép hàm Lambda <code>BackupDynamoDBAndSendEmail</code> ghi tệp (<code>s3:PutObject</code>).</td>
       </tr>
   </tbody>
 </table>
 <blockquote>
-<p><strong>Lưu ý</strong>: Thực hiện các bước theo thứ tự để đảm bảo cấu hình S3 Bucket chính xác. Mỗi bước sẽ được hướng dẫn chi tiết trong các tài liệu tương ứng.</p></blockquote>
+<p><strong>Lưu ý</strong>: Thực hiện các bước theo thứ tự để đảm bảo cấu hình S3 Bucket chính xác. Mỗi bước được hướng dẫn chi tiết trong các tài liệu tương ứng.</p></blockquote>
 <hr>
 <h2 id="kết-luận">Kết Luận</h2>
 <p>Hoàn thành các bước cấu hình này, bạn sẽ có:</p>
 <ul>
-<li>Bucket <code>student-web-20250706</code> lưu trữ và phục vụ giao diện web tĩnh, sẵn sàng tích hợp với CloudFront.</li>
+<li>Bucket <code>student-management-website-2025</code> lưu trữ và phục vụ giao diện web tĩnh, sẵn sàng tích hợp với CloudFront.</li>
 <li>Bucket <code>student-backup-20250706</code> hỗ trợ lưu trữ tệp backup từ endpoint <strong>POST /backup</strong>, tích hợp với hàm Lambda <code>BackupDynamoDBAndSendEmail</code>.</li>
 <li>Hệ thống tích hợp đầy đủ với API <code>student</code> (stage <code>prod</code>) và giao diện web sử dụng Tailwind CSS.</li>
 </ul>
 <blockquote>
 <p><strong>Sẵn sàng tiếp tục?</strong><br>
-Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Khởi tạo S3 Bucket mới</a> để bắt đầu cấu hình bucket <code>student-web-20250706</code>!</p></blockquote>
+Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Khởi tạo S3 Bucket mới</a> để bắt đầu cấu hình bucket <code>student-management-website-2025</code>!</p></blockquote>
 
 
 
@@ -1847,19 +1847,19 @@ Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-buck
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751944753"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751944753"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751944753"></script>
-    <script src="/js/jquery.sticky.js?1751944753"></script>
-    <script src="/js/featherlight.min.js?1751944753"></script>
-    <script src="/js/highlight.pack.js?1751944753"></script>
+    <script src="/js/clipboard.min.js?1751949628"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751949628"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751949628"></script>
+    <script src="/js/jquery.sticky.js?1751949628"></script>
+    <script src="/js/featherlight.min.js?1751949628"></script>
+    <script src="/js/highlight.pack.js?1751949628"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751944753"></script>
-    <script src="/js/learn.js?1751944753"></script>
-    <script src="/js/hugo-learn.js?1751944753"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751949628"></script>
+    <script src="/js/learn.js?1751949628"></script>
+    <script src="/js/hugo-learn.js?1751949628"></script>
 
-    <link href="/mermaid/mermaid.css?1751944753" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751944753"></script>
+    <link href="/mermaid/mermaid.css?1751949628" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751949628"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

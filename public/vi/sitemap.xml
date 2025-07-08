@@ -54,19 +54,6 @@
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -392,6 +379,32 @@
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.7-enabling-cors/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/7-deploying-cloudfront/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/7-deploying-cloudfront/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/4-creating-a-restful-api/4.8-deploying-the-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -416,19 +429,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/7-deploying-cloudfront/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/7-deploying-cloudfront/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/7-deploying-cloudfront/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>

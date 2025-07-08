@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: AWS System Manager</title>
+    <title>Triển Khai CloudFront để Tăng Tốc Website :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751944754" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751944754" rel="stylesheet">
-    <link href="/css/hybrid.css?1751944754" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751944754" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751944754" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751944754" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751944754" rel="stylesheet">
-    <link href="/css/theme.css?1751944754" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751944754" rel="stylesheet">
+    <link href="/css/nucleus.css?1751950370" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751950370" rel="stylesheet">
+    <link href="/css/hybrid.css?1751950370" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751950370" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751950370" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751950370" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751950370" rel="stylesheet">
+    <link href="/css/theme.css?1751950370" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751950370" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751944754" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751950370" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751944754"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751950370"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751944754"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751944754"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751950370"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751950370"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751944754"></script>
+<script type="text/javascript" src="/%20js/search.js?1751950370"></script>
     
   </div>
 
@@ -903,13 +903,13 @@
 
 
 
-<li data-nav-id="/vi/7-deploying-cloudfront/" title="" class="dd-item 
+<li data-nav-id="/vi/7-deploying-cloudfront/" title="Triển Khai CloudFront để Tăng Tốc Website" class="dd-item 
         
         active
         
         ">
   <a href="/vi/7-deploying-cloudfront/">
-    
+    <b>7 </b>Triển Khai CloudFront để Tăng Tốc Website
     
     <i class="fas fa-check read-icon"></i>
     
@@ -922,34 +922,6 @@
     
     
     
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Website Serverless" class="dd-item 
-        
-        
-        
-        ">
-  <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
-    <b>7.1 </b>Website Serverless
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
 
     
     
@@ -997,6 +969,34 @@
         ">
   <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
     <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Tạo CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
+    <b>7.1 </b>Tạo CloudFront Distribution
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1155,7 +1155,7 @@
             
           
           
-            <a href='/vi/'>Website Serverless</a> > 
+            <a href='/vi/'>Website Serverless</a> > Triển Khai CloudFront để Tăng Tốc Website
           
         
           
@@ -1166,7 +1166,14 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tổng-quan-về-cloudfront-trong-ứng-dụng">Tổng Quan về CloudFront trong Ứng Dụng</a></li>
+    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
+    <li><a href="#các-bước-cấu-hình">Các Bước Cấu Hình</a></li>
+    <li><a href="#kết-luận">Kết Luận</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1182,7 +1189,7 @@
           
             <h1>
               
-              
+              Triển Khai CloudFront để Tăng Tốc Website
             </h1>
           
 
@@ -1190,7 +1197,88 @@
 
 
 
-	
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Triển khai Amazon CloudFront, một dịch vụ CDN (Content Delivery Network), để tăng tốc độ tải và bảo mật giao diện web tĩnh lưu trữ trên S3 Bucket <code>student-management-website-2025</code> (mục 6). CloudFront sẽ:</p>
+<ul>
+<li>Phân phối nội dung từ S3 qua HTTPS, cải thiện hiệu suất với các edge locations toàn cầu.</li>
+<li>Phục vụ tệp <code>index.html</code> (mục 6.2) làm trang mặc định thông qua <strong>Default Root Object</strong>.</li>
+<li>Làm mới nội dung cache khi cần cập nhật giao diện.<br>
+CloudFront tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) để hỗ trợ các endpoint <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong>, sử dụng <code>StudentApiKey</code> (mục 4.2) với CORS được cấu hình (mục 4.7) để gọi từ domain CloudFront.</li>
+</ul></blockquote>
+<hr>
+<h2 id="tổng-quan-về-cloudfront-trong-ứng-dụng">Tổng Quan về CloudFront trong Ứng Dụng</h2>
+<ul>
+<li><strong>Vai trò của CloudFront</strong>:
+<ul>
+<li>Cung cấp HTTPS cho giao diện web (S3 chỉ hỗ trợ HTTP qua <strong>Static Website Hosting</strong>, mục 6.3).</li>
+<li>Tăng tốc độ tải bằng cách lưu cache nội dung tại các edge locations gần người dùng.</li>
+<li>Tích hợp với S3 Bucket <code>student-management-website-2025</code> (mục 6.1–6.4) để phục vụ các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>.</li>
+<li>Hỗ trợ bảo mật API Key bằng CloudFront Functions (khuyến nghị) để thêm header <code>x-api-key</code> mà không nhúng trong <code>scripts.js</code>.</li>
+</ul>
+</li>
+<li><strong>Tích hợp với hệ thống</strong>:
+<ul>
+<li>Giao diện web (phân phối qua CloudFront) gọi API <code>student</code> (mục 4.8) với <strong>Invoke URL</strong> (VD: <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod">https://abc123.execute-api.us-east-1.amazonaws.com/prod</a>) và <code>StudentApiKey</code>.</li>
+<li>Các chức năng:
+<ul>
+<li><strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email qua SES.</li>
+<li><strong>GET /students</strong>: Hiển thị dữ liệu trong bảng.</li>
+<li><strong>POST /backup</strong>: Tạo tệp backup trong S3 Bucket <code>student-backup-20250706</code> (mục 6.5) và gửi email thông báo qua SES.</li>
+</ul>
+</li>
+<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+
+<div class="notices info" ><p>Bạn cần hoàn thành mục 6.1 (tạo bucket <code>student-management-website-2025</code>), mục 6.2 (tải lên <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>), mục 6.3 (bật <strong>Static Website Hosting</strong>), mục 6.4 (cấu hình <strong>Bucket Policy</strong>), mục 6.5 (cấu hình bucket <code>student-backup-20250706</code>), mục 5 (xây dựng giao diện web), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code>), mục 3 (tạo các hàm Lambda, bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, SES). Đảm bảo tài khoản AWS có quyền <code>cloudfront:CreateDistribution</code>, <code>cloudfront:CreateInvalidation</code>, và vùng AWS là <code>us-east-1</code> cho các dịch vụ liên quan.</p>
+</div>
+
+<hr>
+<h2 id="các-bước-cấu-hình">Các Bước Cấu Hình</h2>
+<p>Dưới đây là các bước cụ thể để triển khai CloudFront:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Bước</strong></th>
+          <th><strong>Nội Dung</strong></th>
+          <th><strong>Mô Tả</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>7.1</td>
+          <td><a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">Tạo CloudFront Distribution</a></td>
+          <td>Tạo một CloudFront distribution để phân phối nội dung từ bucket <code>student-management-website-2025</code> qua HTTPS.</td>
+      </tr>
+      <tr>
+          <td>7.2</td>
+          <td><a href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/">Cấu hình Default Root Object</a></td>
+          <td>Đặt <code>index.html</code> làm <strong>Default Root Object</strong> để phục vụ trang chính khi truy cập domain CloudFront.</td>
+      </tr>
+      <tr>
+          <td>7.3</td>
+          <td><a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">Tạo Invalidation để làm mới nội dung cache</a></td>
+          <td>Tạo invalidation để làm mới cache CloudFront, đảm bảo nội dung mới nhất từ S3 được phục vụ.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Lưu ý</strong>: Thực hiện các bước theo thứ tự để đảm bảo CloudFront được cấu hình chính xác. Mỗi bước được hướng dẫn chi tiết trong các tài liệu tương ứng.</p></blockquote>
+<hr>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Hoàn thành các bước cấu hình này, bạn sẽ có:</p>
+<ul>
+<li>Một CloudFront distribution phân phối nội dung từ bucket <code>student-management-website-2025</code> qua HTTPS, cải thiện tốc độ và bảo mật.</li>
+<li>Giao diện web tích hợp với API <code>student</code> (stage <code>prod</code>), hỗ trợ các chức năng <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong>.</li>
+<li>Hệ thống sẵn sàng để kiểm tra và triển khai sản xuất.</li>
+</ul>
+<blockquote>
+<p><strong>Sẵn sàng tiếp tục?</strong><br>
+Chuyển đến <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">Tạo CloudFront Distribution</a> để bắt đầu triển khai CloudFront!</p></blockquote>
+
 
 
 
@@ -1766,7 +1854,7 @@
 			<a class="nav nav-prev" href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Website Serverless" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Website Serverless" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1776,19 +1864,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751944754"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751944754"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751944754"></script>
-    <script src="/js/jquery.sticky.js?1751944754"></script>
-    <script src="/js/featherlight.min.js?1751944754"></script>
-    <script src="/js/highlight.pack.js?1751944754"></script>
+    <script src="/js/clipboard.min.js?1751950370"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751950370"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751950370"></script>
+    <script src="/js/jquery.sticky.js?1751950370"></script>
+    <script src="/js/featherlight.min.js?1751950370"></script>
+    <script src="/js/highlight.pack.js?1751950370"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751944754"></script>
-    <script src="/js/learn.js?1751944754"></script>
-    <script src="/js/hugo-learn.js?1751944754"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751950370"></script>
+    <script src="/js/learn.js?1751950370"></script>
+    <script src="/js/hugo-learn.js?1751950370"></script>
 
-    <link href="/mermaid/mermaid.css?1751944754" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751944754"></script>
+    <link href="/mermaid/mermaid.css?1751950370" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751950370"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
