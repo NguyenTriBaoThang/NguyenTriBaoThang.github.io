@@ -1,7 +1,7 @@
 ---
 title: "Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai"
 date: 2023-10-25
-weight: 6.4
+weight: 4
 chapter: false
 pre: "<b>6.4 </b>"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)"
 date: 2023-10-25
-weight: 6.5
+weight: 5
 chapter: false
 pre: "<b>6.5 </b>"
 ---
