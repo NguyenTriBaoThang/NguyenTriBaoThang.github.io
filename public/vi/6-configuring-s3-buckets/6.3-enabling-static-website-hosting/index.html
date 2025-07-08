@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title> :: AWS System Manager</title>
+    <title>Bật Tính Năng Static Website Hosting :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751900421" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751900421" rel="stylesheet">
-    <link href="/css/hybrid.css?1751900421" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751900421" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751900421" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751900421" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751900421" rel="stylesheet">
-    <link href="/css/theme.css?1751900421" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751900421" rel="stylesheet">
+    <link href="/css/nucleus.css?1751936415" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751936415" rel="stylesheet">
+    <link href="/css/hybrid.css?1751936415" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751936415" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751936415" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751936415" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751936415" rel="stylesheet">
+    <link href="/css/theme.css?1751936415" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751936415" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751900421" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751936415" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751900421"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751936415"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751900421"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751900421"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751936415"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751936415"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751900421"></script>
+<script type="text/javascript" src="/%20js/search.js?1751936415"></script>
     
   </div>
 
@@ -756,6 +756,34 @@
 
 
 
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Bật Tính Năng Static Website Hosting" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    <b>6.3 </b>Bật Tính Năng Static Website Hosting
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
 <li data-nav-id="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Khởi Tạo S3 Bucket Mới" class="dd-item 
         
         
@@ -784,41 +812,13 @@
 
 
 
-<li data-nav-id="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="" class="dd-item 
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)" class="dd-item 
         
         
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
-    
-    
-    <i class="fas fa-check read-icon"></i>
-    
-  </a>
-  
-  
-</li>
-
-
-
-    
-    
-    
-    
-
-
-
-
-
-
-
-<li data-nav-id="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="" class="dd-item 
-        
-        active
-        
-        ">
-  <a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
-    
+    <b>6.2 </b>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1037,7 +1037,7 @@
             
           
           
-            <a href='/vi/'>Website Serverless</a> > <a href='/vi/6-configuring-s3-buckets/'>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website</a> > 
+            <a href='/vi/'>Website Serverless</a> > <a href='/vi/6-configuring-s3-buckets/'>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website</a> > Bật Tính Năng Static Website Hosting
           
         
           
@@ -1050,7 +1050,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tổng-quan-về-static-website-hosting">Tổng Quan về Static Website Hosting</a></li>
+    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
+    <li><a href="#hành-động-chi-tiết">Hành Động Chi Tiết</a></li>
+    <li><a href="#lưu-ý-quan-trọng">Lưu Ý Quan Trọng</a></li>
+    <li><a href="#kết-luận">Kết Luận</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1066,7 +1074,7 @@
           
             <h1>
               
-              
+              Bật Tính Năng Static Website Hosting
             </h1>
           
 
@@ -1074,7 +1082,261 @@
 
 
 
-	
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Bật tính năng <strong>Static Website Hosting</strong> trên S3 Bucket <code>student-management-website-2025</code> để phục vụ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 6.2) dưới dạng website tĩnh. Điều này cung cấp endpoint HTTP (VD: <a href="http://student-management-website-2025.s3-website-us-east-1.amazonaws.com">http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</a>) để truy cập giao diện, chuẩn bị phân phối qua CloudFront (mục 7) với HTTPS và hiệu suất cao. Giao diện gọi các endpoint API <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong> (mục 4.8) sử dụng <strong>Invoke URL</strong> (VD: <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod">https://abc123.execute-api.us-east-1.amazonaws.com/prod</a>) và <code>StudentApiKey</code> (mục 4.2) với CORS (mục 4.7).</p></blockquote>
+<hr>
+<h2 id="tổng-quan-về-static-website-hosting">Tổng Quan về Static Website Hosting</h2>
+<ul>
+<li><strong>Vai trò của Static Website Hosting</strong>:
+<ul>
+<li>Biến bucket <code>student-management-website-2025</code> thành máy chủ web tĩnh, cung cấp endpoint HTTP (VD: <a href="http://student-management-website-2025.s3-website-us-east-1.amazonaws.com">http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</a>).</li>
+<li>Xử lý yêu cầu HTTP GET cho các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</li>
+<li>Chỉ định <code>index.html</code> làm <strong>Index document</strong> để hiển thị trang chính khi truy cập endpoint gốc.</li>
+</ul>
+</li>
+<li><strong>Tích hợp với hệ thống</strong>:
+<ul>
+<li>Giao diện web gọi API <code>student</code> (stage <code>prod</code>, mục 4.8) để:
+<ul>
+<li><strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email xác nhận qua SES.</li>
+<li><strong>GET /students</strong>: Hiển thị dữ liệu trong bảng.</li>
+<li><strong>POST /backup</strong>: Tạo tệp backup trong S3 Bucket <code>student-backup-20250706</code> (mục 2.4, 6.5) và gửi email thông báo qua SES.</li>
+</ul>
+</li>
+<li><strong>Bucket Policy</strong> (mục 6.4) cho phép truy cập công khai (<code>s3:GetObject</code>) để CloudFront truy xuất nội dung.</li>
+<li>CloudFront (mục 7) sử dụng endpoint S3 làm Origin để cung cấp HTTPS và tăng tốc độ tải.</li>
+<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+<li><strong>Lý do chọn <code>index.html</code> làm Index document</strong>:
+<ul>
+<li><code>index.html</code> là tệp chính chứa giao diện (biểu mẫu, bảng, nút chức năng) được tải lên ở mục 6.2.</li>
+<li>Khi truy cập endpoint gốc, S3 tự động phục vụ <code>index.html</code>.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+
+<div class="notices info" ><p>Bạn cần hoàn thành mục 6.1 (tạo bucket <code>student-management-website-2025</code>), mục 6.2 (tải lên <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>), mục 5 (xây dựng giao diện web), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code>), mục 3 (tạo các hàm Lambda <code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>, bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, SES email xác minh). Đảm bảo tài khoản AWS có quyền <code>s3:PutBucketWebsite</code> và vùng AWS là <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="hành-động-chi-tiết">Hành Động Chi Tiết</h2>
+<ol>
+<li>
+<p><strong>Truy Cập AWS Management Console</strong></p>
+<ul>
+<li>
+<p>Mở trình duyệt và đăng nhập vào <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> bằng tài khoản AWS của bạn.</p>
+</li>
+<li>
+<p>Trong thanh tìm kiếm ở đầu trang, nhập <strong>S3</strong> và chọn dịch vụ <strong>Amazon S3</strong> để vào giao diện quản lý bucket.</p>
+</li>
+<li>
+<p>Kiểm tra vùng AWS: Đảm bảo bạn đang làm việc trong vùng <strong>us-east-1</strong> (US East (N. Virginia)) để đồng bộ với bucket <code>student-management-website-2025</code>, API <code>student</code>, các hàm Lambda (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, và SES. Vùng được hiển thị ở góc trên bên phải AWS Console.</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-01.png" alt="Giao diện AWS Console với thanh tìm kiếm S3.">
+<em>Hình 1: Giao diện AWS Console với thanh tìm kiếm S3.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Chọn Bucket <code>student-management-website-2025</code></strong></p>
+<ul>
+<li>
+<p>Trong giao diện chính của <strong>Amazon S3 &gt; Buckets</strong>, tìm và chọn bucket <code>student-management-website-2025</code> (tạo ở mục 6.1).</p>
+</li>
+<li>
+<p>Nếu không thấy bucket:</p>
+<ul>
+<li>Kiểm tra vùng AWS (<code>us-east-1</code>) và làm mới trang.</li>
+<li>Xác minh bucket đã được tạo với tên chính xác (tên bucket là duy nhất toàn cầu, có thể bạn đã dùng tên khác như <code>student-management-website-20250706-abc123</code>).</li>
+</ul>
+</li>
+<li>
+<p>Nhấn vào tên bucket để vào giao diện quản lý bucket.</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-02.png" alt="Chọn bucket student-management-website-2025.">
+<em>Hình 2: Chọn bucket student-management-website-2025.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Truy Cập Tab Properties</strong></p>
+<ul>
+<li>
+<p>Trong giao diện của bucket <code>student-management-website-2025</code>, chọn tab <strong>Properties</strong> (thường nằm ở đầu trang, bên cạnh Objects, Permissions, v.v.).</p>
+</li>
+<li>
+<p>Cuộn xuống phần <strong>Static website hosting</strong> để xem trạng thái hiện tại (mặc định là <strong>Disabled</strong>).</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-03.png" alt="Tab Properties và phần Static website hosting.">
+<em>Hình 3: Tab Properties và phần Static website hosting.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Chỉnh Sửa Static Website Hosting</strong></p>
+<ul>
+<li>
+<p>Trong phần <strong>Static website hosting</strong>, nhấn nút <strong>Edit</strong> để mở giao diện cấu hình.</p>
+</li>
+<li>
+<p>Kiểm tra trước khi chỉnh sửa: Đảm bảo các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> đã được tải lên bucket (mục 6.2), vì <strong>Static Website Hosting</strong> yêu cầu tệp <code>index.html</code> tồn tại để hoạt động đúng.</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-04.png" alt="Nhấn Edit trong Static website hosting.">
+<em>Hình 4: Nhấn Edit trong Static website hosting.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Cấu Hình Static Website Hosting</strong></p>
+<ul>
+<li>
+<p>Trong giao diện <strong>Edit static website hosting</strong>, nhập các thông tin sau:</p>
+<ul>
+<li><strong>Static website hosting</strong>: Chọn <strong>Enable</strong> để bật tính năng.</li>
+<li><strong>Hosting type</strong>: Chọn <strong>Host a static website</strong> (phù hợp cho giao diện tĩnh của ứng dụng).
+<ul>
+<li><strong>Lưu ý</strong>: Không chọn <strong>Redirect requests for an object</strong> (dùng cho chuyển hướng, không phù hợp ở đây).</li>
+</ul>
+</li>
+<li><strong>Index document</strong>: Nhập <code>index.html</code> (tệp chính của giao diện web, chứa biểu mẫu và bảng sinh viên).
+<ul>
+<li><strong>Lý do</strong>: Khi truy cập endpoint gốc của bucket, S3 sẽ phục vụ <code>index.html</code> làm trang mặc định.</li>
+</ul>
+</li>
+<li><strong>Error document</strong> (Tùy chọn):
+<ul>
+<li>Nhập <code>index.html</code> để chuyển hướng mọi lỗi (VD: 404 Not Found) về trang chính.</li>
+<li><strong>Lý do</strong>: Đảm bảo người dùng luôn thấy giao diện chính, ngay cả khi truy cập đường dẫn không tồn tại.</li>
+<li>Nếu muốn trang lỗi tùy chỉnh, tải lên tệp <code>error.html</code> (mục 6.2) và nhập tên tệp ở đây.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Kiểm tra cấu hình: Xác minh <strong>Enable</strong> được chọn, <strong>Hosting type</strong> là <strong>Host a static website</strong>, và <strong>Index document</strong> là <code>index.html</code>.</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-05.png" alt="Cấu hình Static website hosting.">
+<em>Hình 5: Cấu hình Static website hosting.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Lưu Thay Đổi</strong></p>
+<ul>
+<li>
+<p>Nhấn <strong>Save changes</strong> để áp dụng cấu hình.</p>
+</li>
+<li>
+<p>Kết quả mong đợi: AWS S3 hiển thị thông báo <em>&ldquo;Successfully edited static website hosting&rdquo;</em>.</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-06.png" alt="Nhấn Save changes.">
+<em>Hình 6: Nhấn Save changes.</em></p>
+</li>
+<li>
+<p>Trong tab <strong>Properties &gt; Static website hosting</strong>, bạn sẽ thấy:</p>
+<ul>
+<li><strong>Status</strong>: Enabled.</li>
+<li><strong>Bucket website endpoint</strong>: URL dạng <a href="http://student-management-website-2025.s3-website-us-east-1.amazonaws.com">http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</a>.</li>
+</ul>
+</li>
+<li>
+<p>Sao chép <strong>Bucket website endpoint</strong> để kiểm tra.</p>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-08.png" alt="Thông báo trạng thái và Bucket website endpoint.">
+<em>Hình 7: Thông báo trạng thái và Bucket website endpoint.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Kiểm Tra Static Website Hosting</strong></p>
+<ul>
+<li>
+<p>Mở trình duyệt và truy cập <strong>Bucket website endpoint</strong> (VD: <a href="http://student-management-website-2025.s3-website-us-east-1.amazonaws.com">http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</a>).</p>
+</li>
+<li>
+<p>Kết quả mong đợi:</p>
+<ul>
+<li>Giao diện web hiển thị với biểu mẫu nhập liệu, bảng sinh viên, và các nút chức năng (Lưu, Xem, Backup).</li>
+<li>Các tệp <code>styles.css</code> và <code>scripts.js</code> được tải đúng, giao diện sử dụng Tailwind CSS và font Poppins hiển thị chính xác.</li>
+</ul>
+<p><img src="/images/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/enabling-static-website-hosting-09.png" alt="Giao diện web hiển thị qua endpoint S3.">
+<em>Hình 8: Giao diện web hiển thị qua endpoint S3.</em></p>
+</li>
+<li>
+<p><strong>Lưu ý</strong>:</p>
+<ul>
+<li>Các yêu cầu API (<strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>) có thể gặp lỗi CORS vì endpoint S3 sử dụng HTTP và chưa tích hợp với CloudFront. Điều này sẽ được khắc phục khi cấu hình CloudFront (mục 7) và CORS trong API Gateway (mục 4.7).</li>
+<li>Endpoint S3 chỉ hỗ trợ HTTP, không hỗ trợ HTTPS. CloudFront sẽ cung cấp HTTPS và tăng tốc độ tải.</li>
+</ul>
+</li>
+<li>
+<p><strong>Xử lý lỗi</strong>:</p>
+<ul>
+<li><strong>Lỗi 403 Forbidden</strong>:
+<ul>
+<li>Kiểm tra <strong>Bucket Policy</strong> (mục 6.4) đã cho phép <code>s3:GetObject</code> công khai.</li>
+<li>Đảm bảo <strong>Block all public access</strong> đã bỏ chọn (mục 6.1).</li>
+</ul>
+</li>
+<li><strong>Lỗi 404 Not Found</strong>:
+<ul>
+<li>Xác minh <code>index.html</code> đã được tải lên bucket (mục 6.2) và nằm ở thư mục gốc.</li>
+<li>Kiểm tra đường dẫn trong <code>index.html</code> cho <code>styles.css</code> và <code>scripts.js</code> (VD: <!-- raw HTML omitted -->, <!-- raw HTML omitted -->).</li>
+</ul>
+</li>
+<li><strong>Giao diện hiển thị sai</strong>:
+<ul>
+<li>Mở <strong>Developer Tools &gt; Console</strong> trong trình duyệt để kiểm tra lỗi (VD: tệp CSS/JS không tải).</li>
+<li>Xác minh các tệp được tải lên đúng (mục 6.2) và không bị hỏng.</li>
+</ul>
+</li>
+<li><strong>Lỗi &ldquo;AccessDenied&rdquo;</strong>:
+<ul>
+<li>Kiểm tra vai trò IAM của tài khoản có quyền <code>s3:PutBucketWebsite</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="lưu-ý-quan-trọng">Lưu Ý Quan Trọng</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Yếu Tố</th>
+          <th>Chi Tiết</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Bảo mật</td>
+          <td>Hiện tại, bucket sử dụng quyền công khai (<code>s3:GetObject</code>). Sử dụng CloudFront <strong>Origin Access Identity (OAI)</strong> (mục 6.4) để hạn chế truy cập trực tiếp vào S3. Tránh nhúng <code>StudentApiKey</code> trong <code>scripts.js</code>; sử dụng AWS Secrets Manager hoặc CloudFront Functions: <!-- raw HTML omitted --> function handler(event) { var request = event.request; request.headers[&lsquo;x-api-key&rsquo;] = { value: &lsquo;xxxxxxxxxxxxxxxxxxxx&rsquo; }; return request; }</td>
+      </tr>
+      <tr>
+          <td>Tối ưu hóa</td>
+          <td>Đảm bảo <code>styles.css</code>, <code>scripts.js</code> đã nén (mục 6.2). Bật <strong>S3 Access Logs</strong>: Trong S3 &gt; student-management-website-2025 &gt; Properties &gt; Server access logging, chọn <strong>Enable</strong>, chỉ định bucket log (VD: student-web-logs-20250706). Sử dụng AWS CLI: <!-- raw HTML omitted --> aws s3api put-bucket-website &ndash;bucket student-management-website-2025 &ndash;website-configuration &lsquo;{&ldquo;IndexDocument&rdquo;:{&ldquo;Suffix&rdquo;:&ldquo;index.html&rdquo;},&ldquo;ErrorDocument&rdquo;:{&ldquo;Key&rdquo;:&ldquo;index.html&rdquo;}}&rsquo;</td>
+      </tr>
+      <tr>
+          <td>Tích hợp với hệ thống</td>
+          <td>Cấu hình <strong>Bucket Policy</strong> (mục 6.4) để cho phép CloudFront truy xuất. Tạo CloudFront phân phối (mục 7) với Origin là <strong>Bucket website endpoint</strong>, <strong>Default root object</strong>: <code>index.html</code>, <strong>Viewer protocol policy</strong>: Redirect HTTP to HTTPS. Cập nhật CORS trong API Gateway (mục 4.7) với <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>.</td>
+      </tr>
+      <tr>
+          <td>Kiểm tra tích hợp</td>
+          <td>Truy cập <strong>Bucket website endpoint</strong> để kiểm tra giao diện. Sau khi cấu hình CloudFront, truy cập CloudFront URL (<a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>) và kiểm tra: <strong>POST /students</strong> (lưu bản ghi, gửi email SES), <strong>GET /students</strong> (hiển thị bảng), <strong>POST /backup</strong> (tạo tệp trong <code>student-backup-20250706</code>, gửi email). Sử dụng <strong>Developer Tools &gt; Network</strong> để kiểm tra yêu cầu API.</td>
+      </tr>
+      <tr>
+          <td>Xử lý lỗi</td>
+          <td><strong>403 Forbidden</strong>: Kiểm tra <strong>Bucket Policy</strong> (mục 6.4) và <strong>Block all public access</strong> (mục 6.1). <strong>404 Not Found</strong>: Xác minh <code>index.html</code> ở thư mục gốc, đường dẫn trong <code>index.html</code> đúng (<!-- raw HTML omitted -->, <!-- raw HTML omitted -->). <strong>Giao diện sai</strong>: Kiểm tra <strong>Developer Tools &gt; Console</strong>. <strong>AccessDenied</strong>: Kiểm tra quyền IAM (<code>s3:PutBucketWebsite</code>).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Mẹo thực tiễn</strong>: Kiểm tra endpoint S3 trước khi tích hợp CloudFront. Nếu gặp lỗi CORS, xác minh cấu hình CORS trong API Gateway (mục 4.7). Sử dụng AWS CLI để tự động hóa cấu hình.</p></blockquote>
+<hr>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Tính năng <strong>Static Website Hosting</strong> đã được bật trên bucket <code>student-management-website-2025</code>, cung cấp endpoint HTTP để phục vụ giao diện web. Bucket sẵn sàng tích hợp với CloudFront (mục 7) để hỗ trợ HTTPS.</p>
+<blockquote>
+<p><strong>Bước tiếp theo</strong>: Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">Cấu hình Bucket Policy để cho phép truy cập công khai</a> để tiếp tục cấu hình!</p></blockquote>
+
 
 
 
@@ -1491,6 +1753,23 @@
             
                 
                     
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                         
                         
                     
@@ -1525,26 +1804,6 @@
             
             
                 
-                    
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
                     
                 
                 
@@ -1585,10 +1844,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title=""> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/6-configuring-s3-buckets/" title="Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Khởi Tạo S3 Bucket Mới" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1598,19 +1857,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751900421"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751900421"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751900421"></script>
-    <script src="/js/jquery.sticky.js?1751900421"></script>
-    <script src="/js/featherlight.min.js?1751900421"></script>
-    <script src="/js/highlight.pack.js?1751900421"></script>
+    <script src="/js/clipboard.min.js?1751936416"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751936416"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751936416"></script>
+    <script src="/js/jquery.sticky.js?1751936416"></script>
+    <script src="/js/featherlight.min.js?1751936416"></script>
+    <script src="/js/highlight.pack.js?1751936416"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751900421"></script>
-    <script src="/js/learn.js?1751900421"></script>
-    <script src="/js/hugo-learn.js?1751900421"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751936416"></script>
+    <script src="/js/learn.js?1751936416"></script>
+    <script src="/js/hugo-learn.js?1751936416"></script>
 
-    <link href="/mermaid/mermaid.css?1751900421" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751900421"></script>
+    <link href="/mermaid/mermaid.css?1751936416" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751936416"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
