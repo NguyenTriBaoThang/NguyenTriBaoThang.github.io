@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website on AWS System Manager</title>
+    <title>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup) on AWS System Manager</title>
     <link>//localhost:1313/vi/6-configuring-s3-buckets/</link>
-    <description>Recent content in Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website on AWS System Manager</description>
+    <description>Recent content in Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup) on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>

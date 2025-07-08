@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website :: AWS System Manager</title>
+    <title>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup) :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751936880" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751936880" rel="stylesheet">
-    <link href="/css/hybrid.css?1751936880" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751936880" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751936880" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751936880" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751936880" rel="stylesheet">
-    <link href="/css/theme.css?1751936880" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751936880" rel="stylesheet">
+    <link href="/css/nucleus.css?1751937555" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751937555" rel="stylesheet">
+    <link href="/css/hybrid.css?1751937555" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751937555" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751937555" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751937555" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751937555" rel="stylesheet">
+    <link href="/css/theme.css?1751937555" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751937555" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751936880" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1751937555" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751936880"></script>
+    <script src="/js/jquery-3.3.1.min.js?1751937555"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751936880"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751936880"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1751937555"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751937555"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/\/localhost:1313\/\/vi";
@@ -66,7 +66,7 @@
     var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751936880"></script>
+<script type="text/javascript" src="/%20js/search.js?1751937555"></script>
     
   </div>
 
@@ -725,13 +725,13 @@
 
 
 
-<li data-nav-id="/vi/6-configuring-s3-buckets/" title="Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website" class="dd-item 
+<li data-nav-id="/vi/6-configuring-s3-buckets/" title="Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)" class="dd-item 
         
         active
         
         ">
   <a href="/vi/6-configuring-s3-buckets/">
-    <b>6. </b>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website
+    <b>6.5 </b>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1033,7 +1033,7 @@
             
           
           
-            <a href='/vi/'>Website Serverless</a> > Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website
+            <a href='/vi/'>Website Serverless</a> > Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
           
         
           
@@ -1046,8 +1046,10 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#tổng-quan-về-bucket-sao-lưu">Tổng Quan về Bucket Sao Lưu</a></li>
     <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
-    <li><a href="#các-bước-cấu-hình">Các Bước Cấu Hình</a></li>
+    <li><a href="#hành-động-chi-tiết">Hành Động Chi Tiết</a></li>
+    <li><a href="#lưu-ý-quan-trọng">Lưu Ý Quan Trọng</a></li>
     <li><a href="#kết-luận">Kết Luận</a></li>
   </ul>
 </nav>
@@ -1066,7 +1068,7 @@
           
             <h1>
               
-              Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website
+              Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
             </h1>
           
 
@@ -1075,70 +1077,303 @@
 
 
 	<blockquote>
-<p><strong>Mục tiêu</strong>: Cấu hình hai Amazon S3 Bucket để:</p>
+<p><strong>Mục tiêu</strong>: Tạo S3 Bucket <code>student-backup-20250706</code> (nếu chưa được tạo ở mục 2.4) và cấu hình <strong>Bucket Policy</strong> để cho phép hàm Lambda <code>BackupDynamoDBAndSendEmail</code> (với vai trò <code>DynamoDBBackupRole</code>, mục 3.3) ghi tệp backup (JSON/CSV) vào bucket thông qua endpoint <strong>POST /backup</strong> (mục 4.6). Bucket này lưu trữ dữ liệu sao lưu từ bảng DynamoDB <code>studentData</code> và tích hợp với SES để gửi email thông báo. Bucket không cần truy cập công khai, chỉ cần quyền <code>s3:PutObject</code> cho vai trò <code>DynamoDBBackupRole</code>, đảm bảo bảo mật và tích hợp mượt mà với hệ thống serverless.</p></blockquote>
+<hr>
+<h2 id="tổng-quan-về-bucket-sao-lưu">Tổng Quan về Bucket Sao Lưu</h2>
 <ul>
-<li><strong>Lưu trữ và phục vụ giao diện web</strong>: Tạo bucket <code>student-web-20250706</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 5), bật tính năng Static Website Hosting, và cấu hình quyền truy cập công khai để phục vụ giao diện qua CloudFront (mục 7).</li>
-<li><strong>Sao lưu dữ liệu</strong>: Cấu hình bucket <code>student-backup-20250706</code> (tạo ở mục 2.4) để lưu trữ tệp backup từ endpoint <strong>POST /backup</strong> (mục 4.6), đảm bảo hàm Lambda <code>BackupDynamoDBAndSendEmail</code> có quyền ghi vào bucket.<br>
-Cấu hình này tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) và đảm bảo giao diện web (sử dụng Tailwind CSS) hoạt động mượt mà với các endpoint <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong>.</li>
-</ul></blockquote>
+<li><strong>Vai trò của bucket <code>student-backup-20250706</code></strong>:
+<ul>
+<li>Lưu trữ các tệp backup (JSON/CSV) được tạo bởi hàm Lambda <code>BackupDynamoDBAndSendEmail</code> khi gọi endpoint <strong>POST /backup</strong>.</li>
+<li>Được cấu hình để chỉ cho phép vai trò <code>DynamoDBBackupRole</code> ghi tệp (<code>s3:PutObject</code>, <code>s3:PutObjectAcl</code>), không cho phép truy cập công khai.</li>
+<li>Tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) và SES để gửi email thông báo sau khi sao lưu.</li>
+</ul>
+</li>
+<li><strong>Tích hợp với hệ thống</strong>:
+<ul>
+<li>Hàm Lambda <code>BackupDynamoDBAndSendEmail</code> (mục 3.3):
+<ul>
+<li>Đọc dữ liệu từ DynamoDB <code>studentData</code> (<code>dynamodb:Scan</code>, <code>dynamodb:Query</code>).</li>
+<li>Ghi tệp backup vào <code>student-backup-20250706</code> (<code>s3:PutObject</code>).</li>
+<li>Gửi email thông báo qua SES (<code>ses:SendEmail</code>, <code>ses:SendRawEmail</code>).</li>
+</ul>
+</li>
+<li>Endpoint <strong>POST /backup</strong> (mục 4.6) được gọi từ giao diện web (tệp <code>scripts.js</code>, mục 6.2) thông qua <strong>Invoke URL</strong> (VD: <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup">https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup</a>) với header <code>x-api-key: &lt;StudentApiKey&gt;</code> (mục 4.2).</li>
+<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+<li><strong>Lý do không cho phép truy cập công khai</strong>:
+<ul>
+<li>Bucket <code>student-backup-20250706</code> chỉ cần quyền ghi từ Lambda, không cần truy cập công khai như bucket <code>student-management-website-2025</code> (mục 6.4).</li>
+<li><strong>Block all public access</strong> được bật để tăng bảo mật, chỉ cho phép vai trò <code>DynamoDBBackupRole</code> truy cập.</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
 
-<div class="notices info" ><p>Bạn cần hoàn thành mục 2.4 (tạo bucket <code>student-backup-20250706</code>), mục 3.3 (tạo hàm Lambda <code>BackupDynamoDBAndSendEmail</code> với vai trò <code>DynamoDBBackupRole</code>), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code> và liên kết với API <code>student</code> stage <code>prod</code>), và mục 5 (xây dựng giao diện web với <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>). Đảm bảo tài khoản AWS có quyền truy cập S3, Lambda, API Gateway, và vùng AWS là <code>us-east-1</code>.</p>
+<div class="notices info" ><p>Bạn cần hoàn thành mục 2.4 (tạo bucket <code>student-backup-20250706</code>), mục 3.3 (tạo hàm Lambda <code>BackupDynamoDBAndSendEmail</code> với vai trò <code>DynamoDBBackupRole</code>), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code>), mục 5 (xây dựng giao diện web với <code>scripts.js</code>), mục 6.1 (tạo bucket <code>student-management-website-2025</code>). Đảm bảo tài khoản AWS có quyền <code>s3:CreateBucket</code>, <code>s3:PutBucketPolicy</code>, và vùng AWS là <code>us-east-1</code>.</p>
 </div>
 
 <hr>
-<h2 id="các-bước-cấu-hình">Các Bước Cấu Hình</h2>
-<p>Dưới đây là các bước cụ thể để cấu hình S3 Bucket:</p>
+<h2 id="hành-động-chi-tiết">Hành Động Chi Tiết</h2>
+<ol>
+<li>
+<p><strong>Truy Cập AWS Management Console</strong></p>
+<ul>
+<li>Mở trình duyệt và đăng nhập vào <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> bằng tài khoản AWS của bạn.</li>
+<li>Trong thanh tìm kiếm ở đầu trang, nhập <strong>S3</strong> và chọn dịch vụ <strong>Amazon S3</strong> để vào giao diện quản lý bucket.</li>
+<li>Kiểm tra vùng AWS: Đảm bảo bạn đang làm việc trong vùng <strong>us-east-1</strong> (US East (N. Virginia)) để đồng bộ với bucket <code>student-backup-20250706</code>, API <code>student</code>, các hàm Lambda (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), bảng DynamoDB <code>studentData</code>, và SES. Vùng được hiển thị ở góc trên bên phải AWS Console.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-01.png" alt="Giao diện AWS Console với thanh tìm kiếm S3."><br>
+<em>Hình 1: Giao diện AWS Console với thanh tìm kiếm S3.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Tạo Bucket <code>student-backup-20250706</code></strong></p>
+<ul>
+<li>Kiểm tra bucket hiện có: Trong <strong>S3 &gt; Buckets</strong>, tìm bucket <code>student-backup-20250706</code> (giả định đã tạo ở mục 2.4). Nếu đã tồn tại, bỏ qua bước tạo và chuyển sang Bước 3.</li>
+<li>Trong giao diện chính của <strong>Amazon S3</strong>, nhấn nút <strong>Create bucket</strong> (thường nằm ở góc trên bên phải).<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-02.png" alt="Nút Create bucket trong giao diện S3."><br>
+<em>Hình 2: Nút Create bucket trong giao diện S3.</em></li>
+<li>Trong giao diện <strong>Create bucket</strong>, nhập các thông tin sau:
+<ul>
+<li><strong>Bucket name</strong>: Nhập <code>student-backup-20250706</code>.
+<ul>
+<li>Tên bucket phải duy nhất toàn cầu. Nếu trùng, thử thêm hậu tố ngẫu nhiên (VD: <code>student-backup-20250706-abc123</code>).</li>
+<li>Tên chỉ chứa chữ cái thường, số, dấu gạch ngang (-), không chứa khoảng trắng hoặc ký tự đặc biệt.</li>
+</ul>
+</li>
+<li><strong>AWS Region</strong>: Chọn <strong>US East (N. Virginia) us-east-1</strong> để đồng bộ với các dịch vụ khác.</li>
+<li><strong>Bucket type</strong>: Chọn <strong>General purpose</strong> (phù hợp cho lưu trữ tệp backup).</li>
+<li><strong>Object Ownership</strong>: Chọn <strong>ACLs disabled</strong> (khuyến nghị cho bucket không công khai) để quản lý quyền qua <strong>Bucket Policy</strong> và IAM.</li>
+<li><strong>Block Public Access settings for this bucket</strong>: Giữ <strong>Block all public access</strong> được chọn (mặc định) để đảm bảo bucket không cho phép truy cập công khai.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-04.png" alt="Bỏ chọn Block Public Access."><br>
+<em>Hình 3: Bỏ chọn Block Public Access.</em></li>
+<li><strong>Bucket Versioning</strong>: Chọn <strong>Disable</strong> (theo yêu cầu).
+<ul>
+<li><strong>Lưu ý</strong>: Khuyến nghị bật <strong>Enable</strong> để lưu trữ các phiên bản của tệp backup, hỗ trợ khôi phục nếu xảy ra lỗi ghi. Nếu bật, sử dụng AWS CLI:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3api put-bucket-versioning --bucket student-backup-20250706 --versioning-configuration Status<span style="color:#f92672">=</span>Enabled
+</span></span></code></pre></div></li>
+</ul>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-05.png" alt="Bật Bucket Versioning."><br>
+<em>Hình 4: Bật Bucket Versioning.</em></li>
+<li><strong>Default encryption</strong>: Chọn <strong>Enable</strong> &gt; <strong>Server-side encryption with Amazon S3-managed keys (SSE-S3)</strong> để mã hóa dữ liệu tại rest, tăng bảo mật.</li>
+<li><strong>Tags</strong> (Tùy chọn): Thêm tag để quản lý chi phí, ví dụ: <code>Project=StudentManagement</code>, <code>Environment=Production</code>.</li>
+</ul>
+</li>
+<li>Nhấn <strong>Create bucket</strong>.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-06.png" alt="Xem lại và nhấn Create bucket."><br>
+<em>Hình 5: Xem lại và nhấn Create bucket.</em></li>
+<li>Kết quả mong đợi: AWS S3 hiển thị thông báo <em>&ldquo;Successfully created bucket &lsquo;student-backup-20250706&rsquo;&rdquo;</em>.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-07.png" alt="Thông báo trạng thái tạo bucket."><br>
+<em>Hình 6: Thông báo trạng thái tạo bucket.</em></li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li><strong>&ldquo;Bucket name already exists&rdquo;</strong>: Thay tên bucket (VD: <code>student-backup-20250706-&lt;random-string&gt;</code>). Kiểm tra quyền <code>s3:CreateBucket</code> trong vai trò IAM.</li>
+<li><strong>&ldquo;AccessDenied&rdquo;</strong>: Kiểm tra vai trò IAM có quyền <code>s3:CreateBucket</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:CreateBucket&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Truy Cập Tab Permissions của Bucket</strong></p>
+<ul>
+<li>Trong <strong>S3 &gt; Buckets</strong>, chọn bucket <code>student-backup-20250706</code>.</li>
+<li>Chọn tab <strong>Permissions</strong> (thường nằm ở đầu trang, bên cạnh Objects, Properties, v.v.).</li>
+<li>Cuộn xuống phần <strong>Bucket policy</strong> để xem trạng thái hiện tại (mặc định là trống nếu chưa cấu hình).<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-03.png" alt="Tab Permissions và phần Bucket policy."><br>
+<em>Hình 7: Tab Permissions và phần Bucket policy.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Chỉnh Sửa Bucket Policy</strong></p>
+<ul>
+<li>Trong phần <strong>Bucket policy</strong>, nhấn nút <strong>Edit</strong> để mở giao diện chỉnh sửa.</li>
+<li>Dán mã JSON sau để cho phép vai trò <code>DynamoDBBackupRole</code> ghi tệp (<code>s3:PutObject</code>, <code>s3:PutObjectAcl</code>):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;AllowLambdaPutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Principal&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;AWS&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::&lt;AWS_ACCOUNT_ID&gt;:role/DynamoDBBackupRole&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObjectAcl&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-backup-20250706/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><strong>Giải thích mã JSON</strong>:
+<ul>
+<li><strong>Version</strong>: &ldquo;2012-10-17&rdquo; là phiên bản định dạng chính sách IAM mới nhất.</li>
+<li><strong>Statement</strong>: Danh sách các chính sách quyền.</li>
+<li><strong>Sid</strong>: &ldquo;AllowLambdaPutObject&rdquo; là tên tùy chọn để nhận diện chính sách.</li>
+<li><strong>Effect</strong>: &ldquo;Allow&rdquo; cho phép hành động được chỉ định.</li>
+<li><strong>Principal</strong>: &ldquo;arn:aws:iam::&lt;AWS_ACCOUNT_ID&gt;:role/DynamoDBBackupRole&rdquo; chỉ định vai trò IAM của Lambda <code>BackupDynamoDBAndSendEmail</code>.</li>
+<li><strong>Action</strong>:
+<ul>
+<li><code>s3:PutObject</code>: Cho phép ghi tệp backup vào bucket.</li>
+<li><code>s3:PutObjectAcl</code>: Cho phép đặt quyền ACL trên tệp (nếu cần).</li>
+</ul>
+</li>
+<li><strong>Resource</strong>: &ldquo;arn:aws:s3:::student-backup-20250706/*&rdquo; chỉ định tất cả các tệp trong bucket <code>student-backup-20250706</code>.</li>
+</ul>
+</li>
+<li><strong>Thay <code>&lt;AWS_ACCOUNT_ID&gt;</code></strong>:
+<ul>
+<li>Tìm ID tài khoản AWS trong <strong>IAM &gt; Users</strong> hoặc <strong>Account</strong> (VD: 123456789012).</li>
+<li>Thay vào ARN: <code>arn:aws:iam::123456789012:role/DynamoDBBackupRole</code>.</li>
+</ul>
+</li>
+<li>Kiểm tra mã: Đảm bảo ARN trong <strong>Resource</strong> và <strong>Principal</strong> đúng cú pháp và khớp với bucket/role thực tế.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-04.png" alt="Cấu hình Bucket Policy."><br>
+<em>Hình 8: Cấu hình Bucket Policy.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Lưu Thay Đổi</strong></p>
+<ul>
+<li>Nhấn <strong>Save changes</strong> để áp dụng <strong>Bucket Policy</strong>.</li>
+<li>Kết quả mong đợi: AWS S3 hiển thị thông báo <em>&ldquo;Successfully edited bucket policy&rdquo;</em>.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-05.png" alt="Nhấn Save changes."><br>
+<em>Hình 9: Nhấn Save changes.</em></li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li><strong>&ldquo;Policy has invalid resource&rdquo;</strong>: Kiểm tra ARN trong <strong>Resource</strong> đúng cú pháp (<code>arn:aws:s3:::student-backup-20250706/*</code>).</li>
+<li><strong>&ldquo;Invalid principal in policy&rdquo;</strong>: Xác minh ARN của <code>DynamoDBBackupRole</code> đúng và vai trò tồn tại trong IAM.</li>
+<li><strong>&ldquo;AccessDenied&rdquo;</strong>: Kiểm tra vai trò IAM của tài khoản có quyền <code>s3:PutBucketPolicy</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:PutBucketPolicy&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-backup-20250706&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Kiểm Tra Quyền Lambda</strong></p>
+<ul>
+<li>Xác minh vai trò <code>DynamoDBBackupRole</code>:
+<ul>
+<li>Trong <strong>IAM &gt; Roles</strong>, tìm <code>DynamoDBBackupRole</code> (tạo ở mục 3.3).</li>
+<li>Đảm bảo vai trò có quyền <code>s3:PutObject</code> và <code>s3:PutObjectAcl</code> cho bucket <code>student-backup-20250706</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObjectAcl&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-backup-20250706/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>Kiểm tra endpoint <strong>POST /backup</strong>:
+<ul>
+<li>Gọi endpoint bằng curl để xác minh hàm Lambda ghi tệp backup:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;x-api-key: xxxxxxxxxxxxxxxxxxxx&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span>
+</span></span></code></pre></div></li>
+<li>Kết quả mong đợi:
+<ul>
+<li>Tệp backup (JSON/CSV) được tạo trong <strong>S3 &gt; student-backup-20250706 &gt; Objects</strong> (VD: <code>backup-20250706.json</code>).</li>
+<li>Email thông báo được gửi qua SES (kiểm tra hộp thư, bao gồm Spam/Junk).</li>
+</ul>
+</li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li><strong>Lỗi 403 Forbidden</strong>:
+<ul>
+<li>Kiểm tra ARN trong <strong>Bucket Policy</strong> (<strong>Resource</strong> và <strong>Principal</strong>) khớp với bucket và vai trò.</li>
+<li>Xác minh <code>DynamoDBBackupRole</code> có quyền <code>s3:PutObject</code> và được gắn vào Lambda <code>BackupDynamoDBAndSendEmail</code>.</li>
+</ul>
+</li>
+<li><strong>Tệp backup không xuất hiện</strong>:
+<ul>
+<li>Kiểm tra log CloudWatch của Lambda (<code>/aws/lambda/BackupDynamoDBAndSendEmail</code>) để tìm lỗi.</li>
+<li>Xác minh endpoint <strong>POST /backup</strong> trả về mã 200 và không có lỗi CORS.</li>
+</ul>
+</li>
+<li><strong>Lỗi CORS</strong>:
+<ul>
+<li>Kiểm tra header <code>Access-Control-Allow-Origin</code> trong Lambda (mục 3.3) và API Gateway (mục 4.7).</li>
+<li>Đảm bảo CORS hỗ trợ domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="lưu-ý-quan-trọng">Lưu Ý Quan Trọng</h2>
 <table>
   <thead>
       <tr>
-          <th><strong>Bước</strong></th>
-          <th><strong>Nội Dung</strong></th>
-          <th><strong>Mô Tả</strong></th>
+          <th>Yếu Tố</th>
+          <th>Chi Tiết</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>6.1</td>
-          <td><a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Khởi tạo S3 Bucket mới</a></td>
-          <td>Tạo bucket <code>student-web-20250706</code> để lưu trữ các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</td>
+          <td>Bảo mật</td>
+          <td>Giữ <strong>Block all public access</strong> bật để đảm bảo bucket <code>student-backup-20250706</code> không bị truy cập công khai. Chỉ vai trò <code>DynamoDBBackupRole</code> được phép ghi tệp. Tránh nhúng <code>StudentApiKey</code> trong <code>scripts.js</code>; sử dụng AWS Secrets Manager hoặc CloudFront Functions: <!-- raw HTML omitted --> function handler(event) { var request = event.request; request.headers[&lsquo;x-api-key&rsquo;] = { value: &lsquo;xxxxxxxxxxxxxxxxxxxx&rsquo; }; return request; }</td>
       </tr>
       <tr>
-          <td>6.2</td>
-          <td><a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">Tải tài nguyên giao diện lên S3 (HTML/CSS/JS)</a></td>
-          <td>Tải các tệp tĩnh từ mục 5 lên bucket <code>student-web-20250706</code>.</td>
+          <td>Tối ưu hóa</td>
+          <td>Bật <strong>S3 Access Logs</strong>: Trong S3 &gt; student-backup-20250706 &gt; Properties &gt; Server access logging, chọn <strong>Enable</strong>, chỉ định bucket log (VD: student-backup-logs-20250706). Sử dụng AWS CLI để tự động hóa: <!-- raw HTML omitted --> aws s3api put-bucket-policy &ndash;bucket student-backup-20250706 &ndash;policy file://policy.json</td>
       </tr>
       <tr>
-          <td>6.3</td>
-          <td><a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">Bật tính năng Static Website Hosting</a></td>
-          <td>Kích hoạt Static Website Hosting trong bucket <code>student-web-20250706</code> để phục vụ giao diện web.</td>
+          <td>Tích hợp với hệ thống</td>
+          <td>Đảm bảo endpoint <strong>POST /backup</strong> hoạt động với <strong>Invoke URL</strong> và <code>StudentApiKey</code>. Cập nhật CORS trong API Gateway (mục 4.7) với <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>. Tích hợp với CloudFront (mục 7) để gọi API từ giao diện web.</td>
       </tr>
       <tr>
-          <td>6.4</td>
-          <td><a href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">Cấu hình Bucket Policy để cho phép truy cập công khai</a></td>
-          <td>Cập nhật Bucket Policy của <code>student-web-20250706</code> để cho phép CloudFront truy xuất nội dung (<code>s3:GetObject</code>).</td>
+          <td>Kiểm tra tích hợp</td>
+          <td>Gọi <strong>POST /backup</strong> từ giao diện web (<a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>) hoặc curl. Kiểm tra: <!-- raw HTML omitted --> - Tệp backup xuất hiện trong <code>student-backup-20250706</code>. <!-- raw HTML omitted --> - Email SES được gửi. <!-- raw HTML omitted --> Sử dụng <strong>Developer Tools &gt; Network</strong> để kiểm tra yêu cầu API.</td>
       </tr>
       <tr>
-          <td>6.5</td>
-          <td><a href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">Cập nhật Bucket Policy để hỗ trợ sao lưu dữ liệu (Backup)</a></td>
-          <td>Cập nhật Bucket Policy của <code>student-backup-20250706</code> để cho phép hàm Lambda <code>BackupDynamoDBAndSendEmail</code> ghi tệp (<code>s3:PutObject</code>).</td>
+          <td>Xử lý lỗi</td>
+          <td><strong>403 Forbidden</strong>: Kiểm tra ARN trong <strong>Bucket Policy</strong>, quyền <code>s3:PutObject</code> của <code>DynamoDBBackupRole</code>. <strong>Tệp không xuất hiện</strong>: Kiểm tra log CloudWatch, mã Lambda. <strong>CORS</strong>: Kiểm tra header <code>Access-Control-Allow-Origin</code> trong Lambda (mục 3.3) và API Gateway (mục 4.7). <strong>429</strong>: Kiểm tra giới hạn Rate/Burst/Quota trong <code>StudentUsagePlan</code> (mục 4.3).</td>
       </tr>
   </tbody>
 </table>
 <blockquote>
-<p><strong>Lưu ý</strong>: Thực hiện các bước theo thứ tự để đảm bảo cấu hình S3 Bucket chính xác. Mỗi bước sẽ được hướng dẫn chi tiết trong các tài liệu tương ứng.</p></blockquote>
+<p><strong>Mẹo thực tiễn</strong>: Kiểm tra <strong>Bucket Policy</strong> và quyền IAM của <code>DynamoDBBackupRole</code> trước khi gọi <strong>POST /backup</strong>. Sử dụng AWS CLI để tự động hóa nếu cần áp dụng chính sách cho nhiều bucket. Chuẩn bị cho mục 7 (cấu hình CloudFront) để hoàn thiện tích hợp.</p></blockquote>
 <hr>
 <h2 id="kết-luận">Kết Luận</h2>
-<p>Hoàn thành các bước cấu hình này, bạn sẽ có:</p>
-<ul>
-<li>Bucket <code>student-web-20250706</code> lưu trữ và phục vụ giao diện web tĩnh, sẵn sàng tích hợp với CloudFront.</li>
-<li>Bucket <code>student-backup-20250706</code> hỗ trợ lưu trữ tệp backup từ endpoint <strong>POST /backup</strong>, tích hợp với hàm Lambda <code>BackupDynamoDBAndSendEmail</code>.</li>
-<li>Hệ thống tích hợp đầy đủ với API <code>student</code> (stage <code>prod</code>) và giao diện web sử dụng Tailwind CSS.</li>
-</ul>
+<p>Bucket <code>student-backup-20250706</code> đã được tạo và cấu hình <strong>Bucket Policy</strong> để cho phép hàm Lambda <code>BackupDynamoDBAndSendEmail</code> ghi tệp backup. Bucket sẵn sàng tích hợp với endpoint <strong>POST /backup</strong> và CloudFront (mục 7).</p>
 <blockquote>
-<p><strong>Sẵn sàng tiếp tục?</strong><br>
-Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">Khởi tạo S3 Bucket mới</a> để bắt đầu cấu hình bucket <code>student-web-20250706</code>!</p></blockquote>
+<p><strong>Bước tiếp theo</strong>: Chuyển đến <a href="/7-configuring-cloudfront/">Cấu hình CloudFront để phân phối nội dung</a> để tiếp tục cấu hình!</p></blockquote>
 
 
 
@@ -1659,19 +1894,19 @@ Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-buck
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751936880"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751936880"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751936880"></script>
-    <script src="/js/jquery.sticky.js?1751936880"></script>
-    <script src="/js/featherlight.min.js?1751936880"></script>
-    <script src="/js/highlight.pack.js?1751936880"></script>
+    <script src="/js/clipboard.min.js?1751937555"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751937555"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751937555"></script>
+    <script src="/js/jquery.sticky.js?1751937555"></script>
+    <script src="/js/featherlight.min.js?1751937555"></script>
+    <script src="/js/highlight.pack.js?1751937555"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751936880"></script>
-    <script src="/js/learn.js?1751936880"></script>
-    <script src="/js/hugo-learn.js?1751936880"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751937555"></script>
+    <script src="/js/learn.js?1751937555"></script>
+    <script src="/js/hugo-learn.js?1751937555"></script>
 
-    <link href="/mermaid/mermaid.css?1751936880" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751936880"></script>
+    <link href="/mermaid/mermaid.css?1751937555" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751937555"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
