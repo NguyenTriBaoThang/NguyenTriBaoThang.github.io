@@ -3,7 +3,7 @@ title: "Create IAM Role for DynamoDB Backup"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>2.3 </b>"
+pre: "<b>2.3. </b>"
 ---
 
 > **Objective**: Create the IAM role **DynamoDBBackupRole** for the Lambda function `BackupDynamoDBAndSendEmail`, granting permissions to **read and write data** to the DynamoDB table `studentData`, **store backup files** in S3, **send emails** via SES, **log data** to CloudWatch, and support potential interactions with CloudFront.

@@ -3,7 +3,7 @@ title: "Tạo REST API mới trên API Gateway"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>4.1 </b>"
+pre: "<b>4.1. </b>"
 ---
 
 > **Mục tiêu**: Tạo một REST API mới trong AWS API Gateway với tên `student` và loại endpoint **Edge-optimized**, để tích hợp với các hàm Lambda (`getStudentData`, `insertStudentData`, `BackupDynamoDBAndSendEmail`) và giao diện web (chạy trên CloudFront). API này sẽ cung cấp các endpoint để truy xuất, lưu trữ, và sao lưu dữ liệu sinh viên, đồng thời được bảo mật bằng API Key và hỗ trợ CORS.

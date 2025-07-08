@@ -3,7 +3,7 @@ title: "Tạo API Key để bảo vệ truy cập"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>4.2 </b>"
+pre: "<b>4.2. </b>"
 ---
 
 > **Mục tiêu**: Tạo một API Key có tên `StudentApiKey` trong AWS API Gateway để bảo vệ các endpoint của API `student` (tạo ở mục 4.1), đảm bảo chỉ các yêu cầu từ giao diện web (chạy trên CloudFront) hoặc client được cấp key hợp lệ mới có thể truy cập. API Key sẽ được sử dụng trong header `x-api-key` khi gọi các endpoint (`GET /students`, `POST /students`, `POST /backup`) và sẽ được liên kết với Usage Plan (mục 4.3) để quản lý giới hạn truy cập.

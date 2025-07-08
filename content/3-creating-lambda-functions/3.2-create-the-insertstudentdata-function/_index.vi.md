@@ -3,7 +3,7 @@ title: "Cấu hình Lambda Function insertStudentData"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>3.2 </b>"
+pre: "<b>3.2. </b>"
 ---
 
 > **Mục tiêu**: Tạo và cấu hình hàm Lambda `insertStudentData` để nhận thông tin sinh viên từ giao diện web, lưu vào bảng DynamoDB `studentData`, và gửi email xác nhận qua SES. Hàm này xử lý dữ liệu các trường Mã sinh viên (`studentid`), Họ tên (`name`), Lớp (`class`), Ngày sinh (`birthdate`), và Email (`email`), đồng thời kiểm tra tính hợp lệ và trùng lặp trước khi lưu. Hàm sử dụng **Python 3.13**, kiến trúc `x86_64`, và gán vai trò IAM `LambdaInsertStudentRole` (sửa lỗi từ `LambdaGetStudentRole` trong yêu cầu). Hàm sẽ trả về phản hồi JSON để tích hợp với giao diện web qua API Gateway.

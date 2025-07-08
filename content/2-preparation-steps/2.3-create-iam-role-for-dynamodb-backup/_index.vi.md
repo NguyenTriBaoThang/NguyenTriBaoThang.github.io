@@ -3,7 +3,7 @@ title: "Tạo IAM Role cho DynamoDB Backup"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>2.3 </b>"
+pre: "<b>2.3. </b>"
 ---
 
 > **Mục tiêu**: Tạo vai trò IAM **DynamoDBBackupRole** cho hàm Lambda `BackupDynamoDBAndSendEmail`, cấp quyền để **đọc và ghi dữ liệu** vào bảng DynamoDB `studentData`, **lưu tệp backup** vào S3, **gửi email** qua SES, **ghi log** vào CloudWatch, và hỗ trợ tương tác tiềm năng với CloudFront.

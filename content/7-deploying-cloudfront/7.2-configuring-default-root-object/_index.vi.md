@@ -3,7 +3,7 @@ title: "Configure Default Root Object"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>7.2 </b>"
+pre: "<b>7.2. </b>"
 ---
 
 > **Objective**: Configure `index.html` as the **Default Root Object** for the CloudFront Distribution `StudentWebsiteDistribution` (section 7.1) so that CloudFront automatically serves the `index.html` file from the S3 Bucket `student-management-website-2025` when users access the CloudFront domain (e.g., https://d12345678.cloudfront.net). This ensures the static web interface (form, student table, functional buttons) displays correctly and integrates with the `student` API (stage `prod`, section 4.8) to perform functions like saving, viewing, and backing up data.

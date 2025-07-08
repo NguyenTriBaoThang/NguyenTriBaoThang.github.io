@@ -3,7 +3,7 @@ title: "Bật Tính Năng Static Website Hosting"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>6.3 </b>"
+pre: "<b>6.3. </b>"
 ---
 
 > **Mục tiêu**: Bật tính năng **Static Website Hosting** trên S3 Bucket `student-management-website-2025` để phục vụ các tệp tĩnh (`index.html`, `styles.css`, `scripts.js` từ mục 6.2) dưới dạng website tĩnh. Điều này cung cấp endpoint HTTP (VD: http://student-management-website-2025.s3-website-us-east-1.amazonaws.com) để truy cập giao diện, chuẩn bị phân phối qua CloudFront (mục 7) với HTTPS và hiệu suất cao. Giao diện gọi các endpoint API **GET /students**, **POST /students**, và **POST /backup** (mục 4.8) sử dụng **Invoke URL** (VD: https://abc123.execute-api.us-east-1.amazonaws.com/prod) và `StudentApiKey` (mục 4.2) với CORS (mục 4.7).

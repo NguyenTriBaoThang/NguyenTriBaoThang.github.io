@@ -2,496 +2,535 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/</loc>
+    <loc>//localhost:1313/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/"
+                href="//localhost:1313/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/"
+                href="//localhost:1313/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/"
                 />
   </url><url>
-    <loc>/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                href="//localhost:1313/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/"
                 />
   </url><url>
-    <loc>/vi/1-introduction/</loc>
+    <loc>//localhost:1313/vi/1-introduction/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/1-introduction/"
+                href="//localhost:1313/1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/1-introduction/"
+                href="//localhost:1313/vi/1-introduction/"
                 />
   </url><url>
-    <loc>/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
+                href="//localhost:1313/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/"
                 />
   </url><url>
-    <loc>/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                href="//localhost:1313/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.1-creating-a-rest-api/"
+                href="//localhost:1313/4-creating-a-restful-api/4.1-creating-a-rest-api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/"
                 />
   </url><url>
-    <loc>/vi/</loc>
+    <loc>//localhost:1313/vi/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="//localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/"
+                href="//localhost:1313/vi/"
                 />
   </url><url>
-    <loc>/vi/2-preparation-steps/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-preparation-steps/"
+                href="//localhost:1313/2-preparation-steps/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-preparation-steps/"
+                href="//localhost:1313/vi/2-preparation-steps/"
                 />
   </url><url>
-    <loc>/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/</loc>
+    <loc>//localhost:1313/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/"
+                href="//localhost:1313/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/"
+                href="//localhost:1313/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/"
                 />
   </url><url>
-    <loc>/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/7-deploying-cloudfront/7.2-configuring-default-root-object/"
+                href="//localhost:1313/7-deploying-cloudfront/7.2-configuring-default-root-object/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/"
                 />
   </url><url>
-    <loc>/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
+                href="//localhost:1313/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.2-creating-an-api-key/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.2-creating-an-api-key/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.2-creating-an-api-key/"
+                href="//localhost:1313/4-creating-a-restful-api/4.2-creating-an-api-key/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.2-creating-an-api-key/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.2-creating-an-api-key/"
                 />
   </url><url>
-    <loc>/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
+                href="//localhost:1313/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
+                href="//localhost:1313/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
                 />
   </url><url>
-    <loc>/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
+                href="//localhost:1313/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
+                href="//localhost:1313/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
                 />
   </url><url>
-    <loc>/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/"
+                href="//localhost:1313/2-preparation-steps/2.2-create-iam-role-for-lambda-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/"
+                href="//localhost:1313/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/"
                 />
   </url><url>
-    <loc>/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
+                href="//localhost:1313/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/"
                 />
   </url><url>
-    <loc>/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/</loc>
+    <loc>//localhost:1313/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/"
+                href="//localhost:1313/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/"
+                href="//localhost:1313/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/"
                 />
   </url><url>
-    <loc>/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/"
+                href="//localhost:1313/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/"
+                href="//localhost:1313/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/"
                 />
   </url><url>
-    <loc>/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/</loc>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
+                href="//localhost:1313/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
+                href="//localhost:1313/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/"
                 />
   </url><url>
-    <loc>/vi/3-creating-lambda-functions/</loc>
+    <loc>//localhost:1313/vi/3-creating-lambda-functions/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/3-creating-lambda-functions/"
+                href="//localhost:1313/3-creating-lambda-functions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/3-creating-lambda-functions/"
+                href="//localhost:1313/vi/3-creating-lambda-functions/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/"
+                href="//localhost:1313/4-creating-a-restful-api/4.3-creating-a-usage-plan/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/"
                 />
   </url><url>
-    <loc>/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
+                href="//localhost:1313/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/"
+                href="//localhost:1313/4-creating-a-restful-api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/"
                 />
   </url><url>
-    <loc>/vi/2-preparation-steps/2.4-createtable-in-dynamodb/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/2.4-createtable-in-dynamodb/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-preparation-steps/2.4-createtable-in-dynamodb/"
+                href="//localhost:1313/2-preparation-steps/2.4-createtable-in-dynamodb/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-preparation-steps/2.4-createtable-in-dynamodb/"
+                href="//localhost:1313/vi/2-preparation-steps/2.4-createtable-in-dynamodb/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.4-creating-a-get-method/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.4-creating-a-get-method/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.4-creating-a-get-method/"
+                href="//localhost:1313/4-creating-a-restful-api/4.4-creating-a-get-method/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.4-creating-a-get-method/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.4-creating-a-get-method/"
                 />
   </url><url>
-    <loc>/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/</loc>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
+                href="//localhost:1313/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/"
                 />
   </url><url>
-    <loc>/vi/2-preparation-steps/2.5-configureses/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/2.5-configureses/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2-preparation-steps/2.5-configureses/"
+                href="//localhost:1313/2-preparation-steps/2.5-configureses/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/2-preparation-steps/2.5-configureses/"
+                href="//localhost:1313/vi/2-preparation-steps/2.5-configureses/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.5-creating-a-post-method/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.5-creating-a-post-method/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.5-creating-a-post-method/"
+                href="//localhost:1313/4-creating-a-restful-api/4.5-creating-a-post-method/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.5-creating-a-post-method/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.5-creating-a-post-method/"
                 />
   </url><url>
-    <loc>/vi/5-designing-the-website-interface/</loc>
+    <loc>//localhost:1313/vi/5-designing-the-website-interface/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/5-designing-the-website-interface/"
+                href="//localhost:1313/5-designing-the-website-interface/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/5-designing-the-website-interface/"
+                href="//localhost:1313/vi/5-designing-the-website-interface/"
                 />
   </url><url>
-    <loc>/vi/6-configuring-s3-buckets/</loc>
+    <loc>//localhost:1313/vi/6-configuring-s3-buckets/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/6-configuring-s3-buckets/"
+                href="//localhost:1313/6-configuring-s3-buckets/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/6-configuring-s3-buckets/"
+                href="//localhost:1313/vi/6-configuring-s3-buckets/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/"
+                href="//localhost:1313/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.7-enabling-cors/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.7-enabling-cors/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.7-enabling-cors/"
+                href="//localhost:1313/4-creating-a-restful-api/4.7-enabling-cors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.7-enabling-cors/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.7-enabling-cors/"
                 />
   </url><url>
-    <loc>/vi/7-deploying-cloudfront/</loc>
+    <loc>//localhost:1313/vi/7-deploying-cloudfront/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/7-deploying-cloudfront/"
+                href="//localhost:1313/7-deploying-cloudfront/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/7-deploying-cloudfront/"
+                href="//localhost:1313/vi/7-deploying-cloudfront/"
                 />
   </url><url>
-    <loc>/vi/8-setting-up-system-backup/</loc>
+    <loc>//localhost:1313/vi/8-setting-up-system-backup/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/8-setting-up-system-backup/"
+                href="//localhost:1313/8-setting-up-system-backup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/8-setting-up-system-backup/"
+                href="//localhost:1313/vi/8-setting-up-system-backup/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.8-deploying-the-api/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.8-deploying-the-api/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.8-deploying-the-api/"
+                href="//localhost:1313/4-creating-a-restful-api/4.8-deploying-the-api/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.8-deploying-the-api/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.8-deploying-the-api/"
                 />
   </url><url>
-    <loc>/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/</loc>
+    <loc>//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/</loc>
     <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
+                href="//localhost:1313/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
+                href="//localhost:1313/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/"
                 />
   </url><url>
-    <loc>/vi/categories/</loc>
+    <loc>//localhost:1313/vi/9-testing-results/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="//localhost:1313/9-testing-results/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/categories/"
+                href="//localhost:1313/vi/9-testing-results/"
                 />
   </url><url>
-    <loc>/vi/tags/</loc>
+    <loc>//localhost:1313/vi/10-monitoring-logs-with-cloudwatch/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="//localhost:1313/10-monitoring-logs-with-cloudwatch/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="/vi/tags/"
+                href="//localhost:1313/vi/10-monitoring-logs-with-cloudwatch/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/11-reference-video-demo/</loc>
+    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/11-reference-video-demo/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/11-reference-video-demo/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/categories/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/tags/"
                 />
   </url>
 </urlset>

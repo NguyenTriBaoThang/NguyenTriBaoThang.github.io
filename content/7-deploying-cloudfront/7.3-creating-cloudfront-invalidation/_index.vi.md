@@ -3,7 +3,7 @@ title: "Tạo Invalidation để Làm Mới Nội Dung Cache"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>7.3 </b>"
+pre: "<b>7.3. </b>"
 ---
 
 > **Mục tiêu**: Tạo Invalidation cho CloudFront Distribution `StudentWebsiteDistribution` (mục 7.1) để làm mới nội dung cache, đảm bảo các tệp tĩnh (`index.html`, `styles.css`, `scripts.js`, mục 6.2) từ S3 Bucket `student-management-website-2025` được cập nhật trên domain CloudFront (VD: https://d12345678.cloudfront.net). Điều này giúp người dùng thấy phiên bản mới nhất của giao diện web khi các tệp được sửa đổi, đồng thời duy trì tích hợp với API `student` (stage `prod`, mục 4.8) để thực hiện các chức năng như lưu, xem, và sao lưu dữ liệu. Sau khi tạo invalidation, kiểm tra trạng thái Deploying và giao diện qua **Distribution domain name**.

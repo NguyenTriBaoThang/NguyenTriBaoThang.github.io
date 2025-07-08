@@ -3,7 +3,7 @@ title: "Create Invalidation to Refresh Cache Content"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>7.3 </b>"
+pre: "<b>7.3. </b>"
 ---
 
 > **Objective**: Create an Invalidation for the CloudFront Distribution `StudentWebsiteDistribution` (section 7.1) to refresh the cache content, ensuring the static files (`index.html`, `styles.css`, `scripts.js`, section 6.2) from the S3 Bucket `student-management-website-2025` are updated on the CloudFront domain (e.g., https://d12345678.cloudfront.net). This ensures that users see the latest version of the web interface when files are modified, while maintaining integration with the `student` API (stage `prod`, section 4.8) to perform functions such as saving, viewing, and backing up data. After creating the invalidation, check the **Deploying** status and the interface via the **Distribution domain name**.

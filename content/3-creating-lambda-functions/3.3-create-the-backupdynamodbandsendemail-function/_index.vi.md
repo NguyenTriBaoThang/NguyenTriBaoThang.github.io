@@ -3,7 +3,7 @@ title: "Cấu hình Lambda Function BackupDynamoDBAndSendEmail"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>3.3 </b>"
+pre: "<b>3.3. </b>"
 ---
 
 > **Mục tiêu**: Tạo và cấu hình hàm Lambda `BackupDynamoDBAndSendEmail` để sao lưu toàn bộ dữ liệu từ bảng DynamoDB `studentData` vào bucket S3 dưới dạng tệp JSON, tạo pre-signed URL, và gửi email thông báo chứa link tải qua SES. Hàm sử dụng **Python 3.13**, kiến trúc `x86_64`, và gán vai trò IAM `DynamoDBBackupRole` (tạo ở mục 2.3). Hàm sẽ trả về phản hồi JSON để tích hợp với các hệ thống khác (nếu cần) và ghi log vào CloudWatch để giám sát.

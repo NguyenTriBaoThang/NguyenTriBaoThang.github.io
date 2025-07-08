@@ -3,7 +3,7 @@ title: "Kích hoạt CORS để hỗ trợ frontend truy cập"
 date: 2023-10-25
 weight: 7
 chapter: false
-pre: "<b>4.7 </b>"
+pre: "<b>4.7. </b>"
 ---
 
 
@@ -83,6 +83,9 @@ Bạn cần hoàn thành mục 4.1 (tạo API `student`), mục 4.2 (tạo API K
      ![Giao diện kích hoạt CORS cho resource /students.](/images/5-creating-a-restful-api/4.7-enabling-cors/enabling-cors-04.png)
      *Hình 4: Giao diện kích hoạt CORS cho resource /students.*
 
+     ![Giao diện kích hoạt CORS cho resource /students.](/images/5-creating-a-restful-api/4.7-enabling-cors/enabling-cors-07.png)
+     *Hình 5: Giao diện kích hoạt CORS cho resource /students.*
+
 5. **Kích Hoạt CORS cho Resource /backup**  
    - Trong giao diện **Resources**, chọn resource `/backup` (tạo ở mục 4.6).  
    - Nhấn **Actions** > **Enable CORS**.  
@@ -99,7 +102,10 @@ Bạn cần hoàn thành mục 4.1 (tạo API `student`), mục 4.2 (tạo API K
    - Nhấn **Save** để lưu cấu hình.  
 
      ![Giao diện kích hoạt CORS cho resource /backup.](/images/5-creating-a-restful-api/4.7-enabling-cors/enabling-cors-05.png)
-     *Hình 5: Giao diện kích hoạt CORS cho resource /backup.*
+     *Hình 6: Giao diện kích hoạt CORS cho resource /backup.*
+
+     ![Giao diện kích hoạt CORS cho resource /backup.](/images/5-creating-a-restful-api/4.7-enabling-cors/enabling-cors-08.png)
+     *Hình 7: Giao diện kích hoạt CORS cho resource /backup.*
 
 6. **Kiểm Tra Trạng Thái Kích Hoạt CORS**  
    - Sau khi kích hoạt CORS, bạn sẽ thấy thông báo: _"Successfully enabled CORS"_ cho từng resource (`/students`, `/backup`).  
@@ -123,7 +129,10 @@ Bạn cần hoàn thành mục 4.1 (tạo API `student`), mục 4.2 (tạo API K
    - **Lưu ý quan trọng**: CORS sẽ không hoạt động cho đến khi bạn triển khai API vào một stage (mục 4.8).  
 
      ![Thông báo thành công sau khi kích hoạt CORS.](/images/5-creating-a-restful-api/4.7-enabling-cors/enabling-cors-06.png)
-     *Hình 6: Thông báo thành công sau khi kích hoạt CORS.*
+     *Hình 8: Thông báo thành công sau khi kích hoạt CORS.*
+
+     ![Thông báo thành công sau khi kích hoạt CORS.](/images/5-creating-a-restful-api/4.7-enabling-cors/enabling-cors-09.png)
+     *Hình 9: Thông báo thành công sau khi kích hoạt CORS.*
 
 ---
 

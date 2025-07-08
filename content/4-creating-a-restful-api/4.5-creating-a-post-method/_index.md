@@ -3,7 +3,7 @@ title: "Create POST Method to Store Data"
 date: 2023-10-25
 weight: 5
 chapter: false
-pre: "<b>4.5 </b>"
+pre: "<b>4.5. </b>"
 ---
 
 > **Objective**: Create a **POST** method on the `/students` resource in the `student` API (created in section 4.1) to integrate with the `insertStudentData` Lambda function (created in section 3.2), allowing student information to be stored in the `studentData` DynamoDB table and a confirmation email to be sent via SES. The method will require an API Key (`StudentApiKey`, created in section 4.2) in the `x-api-key` header for security and prepare for enabling CORS (section 4.7) so the web interface (running on CloudFront) can make requests.

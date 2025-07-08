@@ -3,7 +3,7 @@ title: "Create GET Method to Retrieve Data"
 date: 2023-10-25
 weight: 4
 chapter: false
-pre: "<b>4.4 </b>"
+pre: "<b>4.4. </b>"
 ---
 
 > **Objective**: Create a **GET** method on the `/students` resource in the `student` API (created in section 4.1) to integrate with the `getStudentData` Lambda function (created in section 3.1), allowing the retrieval of the student list from the `studentData` DynamoDB table. The method will require an API Key (`StudentApiKey`, created in section 4.2) in the `x-api-key` header for security, and prepare for enabling CORS (section 4.7) so the web interface (running on CloudFront) can make requests.

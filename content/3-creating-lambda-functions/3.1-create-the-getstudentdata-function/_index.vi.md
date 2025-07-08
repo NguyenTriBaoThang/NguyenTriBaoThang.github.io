@@ -3,7 +3,7 @@ title: "Cấu hình Lambda Function getStudentData"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>3.1 </b>"
+pre: "<b>3.1. </b>"
 ---
 
 > **Mục tiêu**: Tạo và cấu hình hàm Lambda `getStudentData` để truy xuất toàn bộ dữ liệu sinh viên từ bảng DynamoDB `studentData`, bao gồm các trường Mã sinh viên (`studentid`), Họ tên (`name`), Lớp (`class`), Ngày sinh (`birthdate`), và Email (`email`). Hàm này sử dụng thao tác Scan để lấy dữ liệu và trả về kết quả dưới dạng JSON, hỗ trợ tích hợp với giao diện web thông qua API Gateway.

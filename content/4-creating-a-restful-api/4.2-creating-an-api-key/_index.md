@@ -3,7 +3,7 @@ title: "Create an API Key to Secure Access"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>4.2 </b>"
+pre: "<b>4.2. </b>"
 ---
 
 > **Objective**: Create an API Key named `StudentApiKey` in AWS API Gateway to secure the endpoints of the `student` API (created in section 4.1), ensuring that only requests from the web interface (running on CloudFront) or clients with valid keys can access. The API Key will be used in the `x-api-key` header when calling endpoints (`GET /students`, `POST /students`, `POST /backup`) and will be linked to a Usage Plan (section 4.3) to manage access limits.

@@ -3,7 +3,7 @@ title: "Create a New S3 Bucket"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>6.1 </b>"
+pre: "<b>6.1. </b>"
 ---
 
 > **Objective**: Create a new Amazon S3 Bucket named `student-management-website-2025` to store static files (`index.html`, `styles.css`, `scripts.js` from section 5) for the Student Data Management application's web interface. This bucket will be configured to support **Static Website Hosting** (section 6.3) and serve content via CloudFront (section 7), integrated with the `student` API (stage `prod`, section 4.8) to call the **GET /students**, **POST /students**, and **POST /backup** endpoints with API Key security (`StudentApiKey`, section 4.2) and CORS (section 4.7).

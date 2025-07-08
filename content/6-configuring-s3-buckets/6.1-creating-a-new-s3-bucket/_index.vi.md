@@ -3,7 +3,7 @@ title: "Khởi Tạo S3 Bucket Mới"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>6.1 </b>"
+pre: "<b>6.1. </b>"
 ---
 
 > **Mục tiêu**: Tạo một Amazon S3 Bucket mới với tên `student-management-website-2025` để lưu trữ các tệp tĩnh (`index.html`, `styles.css`, `scripts.js` từ mục 5) cho giao diện web của ứng dụng Quản Lý Dữ Liệu Sinh Viên. Bucket này sẽ được cấu hình để hỗ trợ **Static Website Hosting** (mục 6.3) và phục vụ nội dung qua CloudFront (mục 7), tích hợp với API `student` (stage `prod`, mục 4.8) để gọi các endpoint **GET /students**, **POST /students**, và **POST /backup** với bảo mật API Key (`StudentApiKey`, mục 4.2) và CORS (mục 4.7).

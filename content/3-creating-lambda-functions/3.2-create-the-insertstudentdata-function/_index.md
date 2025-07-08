@@ -3,7 +3,7 @@ title: "Configure Lambda Function insertStudentData"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>3.2 </b>"
+pre: "<b>3.2. </b>"
 ---
 
 > **Objective**: Create and configure the Lambda function `insertStudentData` to receive student information from the web interface, store it in the DynamoDB `studentData` table, and send a confirmation email via SES. This function processes the data for fields Student ID (`studentid`), Full Name (`name`), Class (`class`), Date of Birth (`birthdate`), and Email (`email`), while checking for validity and duplicates before saving. The function uses **Python 3.13**, architecture `x86_64`, and assigns the IAM role `LambdaInsertStudentRole` (corrected from `LambdaGetStudentRole` in the requirements). The function will return a JSON response for integration with the web interface via API Gateway.

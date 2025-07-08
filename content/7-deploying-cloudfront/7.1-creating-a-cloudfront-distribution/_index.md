@@ -3,7 +3,7 @@ title: "Create CloudFront Distribution"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>7.1 </b>"
+pre: "<b>7.1. </b>"
 ---
 
 > **Objective**: Create a CloudFront Distribution to serve static content from the S3 Bucket `student-management-website-2025` (sections 6.1–6.4), using **Origin Access Identity (OAI)** to restrict bucket access only from CloudFront, enabling **Web Application Firewall (WAF)** for increased security, and providing HTTPS for the web interface (`index.html`, `styles.css`, `scripts.js`). The distribution will integrate with the `student` API (stage `prod`, section 4.8) to support the **GET /students**, **POST /students**, and **POST /backup** endpoints, using `StudentApiKey` (section 4.2) with CORS (section 4.7).

@@ -3,7 +3,7 @@ title: "Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai"
 date: 2023-10-25
 weight: 4
 chapter: false
-pre: "<b>6.4 </b>"
+pre: "<b>6.4. </b>"
 ---
 
 > **Mục tiêu**: Cấu hình **Bucket Policy** cho S3 Bucket `student-management-website-2025` để cho phép truy cập công khai (`s3:GetObject`) tới các tệp tĩnh (`index.html`, `styles.css`, `scripts.js` từ mục 6.2). Điều này đảm bảo giao diện web tĩnh (được bật **Static Website Hosting** ở mục 6.3) có thể được truy cập qua endpoint S3 hoặc CloudFront (mục 7). **Bucket Policy** cho phép mọi người (`Principal: *`) đọc các tệp, hỗ trợ tích hợp với API `student` (stage `prod`, mục 4.8) để gọi các endpoint **GET /students**, **POST /students**, và **POST /backup** với bảo mật API Key (`StudentApiKey`, mục 4.2) và CORS (mục 4.7).

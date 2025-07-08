@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.147.9">
@@ -12,21 +12,21 @@
     <title>Thiết Lập Backup Hệ Thống Tự Động :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1751992431" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1751992431" rel="stylesheet">
-    <link href="/css/hybrid.css?1751992431" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1751992431" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1751992431" rel="stylesheet">
-    <link href="/css/auto-complete.css?1751992431" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1751992431" rel="stylesheet">
-    <link href="/css/theme.css?1751992431" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1751992431" rel="stylesheet">
+    <link href="/css/nucleus.css?1752012333" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752012333" rel="stylesheet">
+    <link href="/css/hybrid.css?1752012333" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752012333" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752012333" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752012333" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752012333" rel="stylesheet">
+    <link href="/css/theme.css?1752012333" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752012333" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1751992431" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1752012333" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1751992431"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752012333"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,16 +57,16 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1751992431"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1751992431"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1752012333"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1752012333"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
-    var baseurl = "\/\/vi";
+    var baseurl = "\/\/localhost:1313\/\/vi";
     { { else } }
-    var baseurl = "\/";
+    var baseurl = "\/\/localhost:1313\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1751992431"></script>
+<script type="text/javascript" src="/%20js/search.js?1752012333"></script>
     
   </div>
 
@@ -146,7 +146,7 @@
         
         ">
   <a href="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
-    <b>2.1 </b>Tạo IAM Role cho Lambda Get
+    <b>2.1. </b>Tạo IAM Role cho Lambda Get
     
     <i class="fas fa-check read-icon"></i>
     
@@ -174,7 +174,7 @@
         
         ">
   <a href="/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
-    <b>2.2 </b>Tạo IAM Role cho Lambda Post
+    <b>2.2. </b>Tạo IAM Role cho Lambda Post
     
     <i class="fas fa-check read-icon"></i>
     
@@ -202,7 +202,7 @@
         
         ">
   <a href="/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
-    <b>2.3 </b>Tạo IAM Role cho DynamoDB Backup
+    <b>2.3. </b>Tạo IAM Role cho DynamoDB Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -230,7 +230,7 @@
         
         ">
   <a href="/vi/2-preparation-steps/2.4-createtable-in-dynamodb/">
-    <b>2.4 </b>Tạo bảng trong DynamoDB
+    <b>2.4. </b>Tạo bảng trong DynamoDB
     
     <i class="fas fa-check read-icon"></i>
     
@@ -258,7 +258,7 @@
         
         ">
   <a href="/vi/2-preparation-steps/2.5-configureses/">
-    <b>2.5 </b>Cấu hình Amazon SES
+    <b>2.5. </b>Cấu hình Amazon SES
     
     <i class="fas fa-check read-icon"></i>
     
@@ -324,7 +324,7 @@
         
         ">
   <a href="/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
-    <b>3.1 </b>Cấu hình Lambda Function getStudentData
+    <b>3.1. </b>Cấu hình Lambda Function getStudentData
     
     <i class="fas fa-check read-icon"></i>
     
@@ -352,7 +352,7 @@
         
         ">
   <a href="/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
-    <b>3.2 </b>Cấu hình Lambda Function insertStudentData
+    <b>3.2. </b>Cấu hình Lambda Function insertStudentData
     
     <i class="fas fa-check read-icon"></i>
     
@@ -380,7 +380,7 @@
         
         ">
   <a href="/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
-    <b>3.3 </b>Cấu hình Lambda Function BackupDynamoDBAndSendEmail
+    <b>3.3. </b>Cấu hình Lambda Function BackupDynamoDBAndSendEmail
     
     <i class="fas fa-check read-icon"></i>
     
@@ -446,7 +446,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/">
-    <b>4.1 </b>Tạo REST API mới trên API Gateway
+    <b>4.1. </b>Tạo REST API mới trên API Gateway
     
     <i class="fas fa-check read-icon"></i>
     
@@ -474,7 +474,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.2-creating-an-api-key/">
-    <b>4.2 </b>Tạo API Key để bảo vệ truy cập
+    <b>4.2. </b>Tạo API Key để bảo vệ truy cập
     
     <i class="fas fa-check read-icon"></i>
     
@@ -502,7 +502,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
-    <b>4.3 </b>Thiết lập Usage Plan (Kế hoạch sử dụng)
+    <b>4.3. </b>Thiết lập Usage Plan (Kế hoạch sử dụng)
     
     <i class="fas fa-check read-icon"></i>
     
@@ -530,7 +530,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.4-creating-a-get-method/">
-    <b>4.4 </b>Tạo phương thức GET để truy xuất dữ liệu
+    <b>4.4. </b>Tạo phương thức GET để truy xuất dữ liệu
     
     <i class="fas fa-check read-icon"></i>
     
@@ -558,7 +558,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.5-creating-a-post-method/">
-    <b>4.5 </b>Tạo phương thức POST để lưu dữ liệu
+    <b>4.5. </b>Tạo phương thức POST để lưu dữ liệu
     
     <i class="fas fa-check read-icon"></i>
     
@@ -586,7 +586,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
-    <b>4.6 </b>Tạo Resource và Method cho Backup dữ liệu
+    <b>4.6. </b>Tạo Resource và Method cho Backup dữ liệu
     
     <i class="fas fa-check read-icon"></i>
     
@@ -614,7 +614,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.7-enabling-cors/">
-    <b>4.7 </b>Kích hoạt CORS để hỗ trợ frontend truy cập
+    <b>4.7. </b>Kích hoạt CORS để hỗ trợ frontend truy cập
     
     <i class="fas fa-check read-icon"></i>
     
@@ -642,7 +642,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.8-deploying-the-api/">
-    <b>4.8 </b>Triển khai API lên một Stage cụ thể
+    <b>4.8. </b>Triển khai API lên một Stage cụ thể
     
     <i class="fas fa-check read-icon"></i>
     
@@ -670,7 +670,7 @@
         
         ">
   <a href="/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
-    <b>4.9 </b>Gắn API Key vào Usage Plan &amp; Liên kết với REST API và Stage
+    <b>4.9. </b>Gắn API Key vào Usage Plan &amp; Liên kết với REST API và Stage
     
     <i class="fas fa-check read-icon"></i>
     
@@ -762,7 +762,7 @@
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
-    <b>6.1 </b>Khởi Tạo S3 Bucket Mới
+    <b>6.1. </b>Khởi Tạo S3 Bucket Mới
     
     <i class="fas fa-check read-icon"></i>
     
@@ -790,7 +790,7 @@
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
-    <b>6.2 </b>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
+    <b>6.2. </b>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
     
     <i class="fas fa-check read-icon"></i>
     
@@ -818,7 +818,7 @@
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
-    <b>6.3 </b>Bật Tính Năng Static Website Hosting
+    <b>6.3. </b>Bật Tính Năng Static Website Hosting
     
     <i class="fas fa-check read-icon"></i>
     
@@ -846,7 +846,7 @@
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
-    <b>6.4 </b>Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai
+    <b>6.4. </b>Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai
     
     <i class="fas fa-check read-icon"></i>
     
@@ -874,7 +874,7 @@
         
         ">
   <a href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
-    <b>6.5 </b>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
+    <b>6.5. </b>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
     
     <i class="fas fa-check read-icon"></i>
     
@@ -909,7 +909,7 @@
         
         ">
   <a href="/vi/7-deploying-cloudfront/">
-    <b>7 </b>Triển Khai CloudFront để Tăng Tốc Website
+    <b>7. </b>Triển Khai CloudFront để Tăng Tốc Website
     
     <i class="fas fa-check read-icon"></i>
     
@@ -940,7 +940,7 @@
         
         ">
   <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
-    <b>7.1 </b>Tạo CloudFront Distribution
+    <b>7.1. </b>Tạo CloudFront Distribution
     
     <i class="fas fa-check read-icon"></i>
     
@@ -968,7 +968,7 @@
         
         ">
   <a href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/">
-    <b>7.2 </b>Configure Default Root Object
+    <b>7.2. </b>Configure Default Root Object
     
     <i class="fas fa-check read-icon"></i>
     
@@ -996,7 +996,7 @@
         
         ">
   <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
-    <b>7.3 </b>Tạo Invalidation để Làm Mới Nội Dung Cache
+    <b>7.3. </b>Tạo Invalidation để Làm Mới Nội Dung Cache
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1062,7 +1062,7 @@
         
         ">
   <a href="/vi/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/">
-    <b>8.1 </b>Chỉnh Sửa Cấu Hình trong Lambda Backup
+    <b>8.1. </b>Chỉnh Sửa Cấu Hình trong Lambda Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1090,7 +1090,7 @@
         
         ">
   <a href="/vi/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/">
-    <b>8.2 </b>Tạo EventBridge Rule để Tự Động Hóa Backup
+    <b>8.2. </b>Tạo EventBridge Rule để Tự Động Hóa Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1105,6 +1105,110 @@
     
     
   </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/9-testing-results/" title="Kiểm Tra Kết Quả Hệ Thống" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/9-testing-results/">
+    <b>9. </b>Kiểm Tra Kết Quả Hệ Thống
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/10-monitoring-logs-with-cloudwatch/" title="Xem Logs Hoạt Động Bằng CloudWatch" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/10-monitoring-logs-with-cloudwatch/">
+    <b>10. </b>Xem Logs Hoạt Động Bằng CloudWatch
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/11-reference-video-demo/" title="Video Demo Tham Khảo" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/11-reference-video-demo/">
+    <b>11. </b>Video Demo Tham Khảo
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/12-cleaning-up-resources/" title="" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/12-cleaning-up-resources/">
+    
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
   
 </li>
 
@@ -1146,7 +1250,7 @@
                 
                 
                 
-                <option id="en" value="/8-setting-up-system-backup/">English
+                <option id="en" value="//localhost:1313/8-setting-up-system-backup/">English
                 </option>
                 
                 
@@ -1161,7 +1265,7 @@
                 
                 
                 
-                <option id="vi" value="/vi/8-setting-up-system-backup/" selected>Tiếng Việt</option>
+                <option id="vi" value="//localhost:1313/vi/8-setting-up-system-backup/" selected>Tiếng Việt</option>
                 
                 
                 
@@ -1207,9 +1311,10 @@
         <br>
             <b> Team </b> <br>
            
-            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
-                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Gia Hưng  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Kha Văn </a> <br>
+                <a href="https://www.linkedin.com/in/thangntb"  style="color:orange">Bão Thắng </a>
+                <a href="https://www.linkedin.com/in/vthanhtrung/"  style="color:orange">Thành Trung </a>
                
         </i>
         </left>
@@ -1954,6 +2059,70 @@ Chuyển đến <a href="/8-automatic-backup/8.1-configuring-lambda-backup/">Ch�
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
         
@@ -1976,19 +2145,19 @@ Chuyển đến <a href="/8-automatic-backup/8.1-configuring-lambda-backup/">Ch�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1751992431"></script>
-    <script src="/js/perfect-scrollbar.min.js?1751992431"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1751992431"></script>
-    <script src="/js/jquery.sticky.js?1751992431"></script>
-    <script src="/js/featherlight.min.js?1751992431"></script>
-    <script src="/js/highlight.pack.js?1751992431"></script>
+    <script src="/js/clipboard.min.js?1752012333"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752012333"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752012333"></script>
+    <script src="/js/jquery.sticky.js?1752012333"></script>
+    <script src="/js/featherlight.min.js?1752012333"></script>
+    <script src="/js/highlight.pack.js?1752012333"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1751992431"></script>
-    <script src="/js/learn.js?1751992431"></script>
-    <script src="/js/hugo-learn.js?1751992431"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752012333"></script>
+    <script src="/js/learn.js?1752012333"></script>
+    <script src="/js/hugo-learn.js?1752012333"></script>
 
-    <link href="/mermaid/mermaid.css?1751992431" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1751992431"></script>
+    <link href="/mermaid/mermaid.css?1752012333" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1752012333"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

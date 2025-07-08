@@ -3,7 +3,7 @@ title: "Deploy the API to a Specific Stage"
 date: 2023-10-25
 weight: 8
 chapter: false
-pre: "<b>4.8 </b>"
+pre: "<b>4.8. </b>"
 ---
 
 > **Objective**: Deploy the `student` API (created in section 4.1) to the `prod` stage in AWS API Gateway to activate the **GET /students** (section 4.4), **POST /students** (section 4.5), and **POST /backup** (section 4.6) methods, along with CORS configuration (section 4.7). After deployment, copy the **Invoke URL** (e.g., `https://abc123.execute-api.us-east-1.amazonaws.com/prod`) to be used in the web interface (running on CloudFront, using Tailwind CSS) to call the endpoints with the API Key `StudentApiKey` (section 4.2).

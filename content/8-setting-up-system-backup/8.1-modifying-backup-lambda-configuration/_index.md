@@ -3,7 +3,7 @@ title : "Website Serverless"
 date : 2023-10-25
 weight : 1
 chapter : false
-pre: "<b>8.1 </b>"
+pre: "<b>8.1. </b>"
 ---
 # Work with Amazon System Manager - Session Manager
 

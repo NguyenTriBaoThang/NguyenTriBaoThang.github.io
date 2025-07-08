@@ -3,7 +3,7 @@ title: "Triển khai API lên một Stage cụ thể"
 date: 2023-10-25
 weight: 8
 chapter: false
-pre: "<b>4.8 </b>"
+pre: "<b>4.8. </b>"
 ---
 
 > **Mục tiêu**: Triển khai API `student` (tạo ở mục 4.1) lên stage `prod` trong AWS API Gateway để kích hoạt các phương thức **GET /students** (mục 4.4), **POST /students** (mục 4.5), và **POST /backup** (mục 4.6), cùng với cấu hình CORS (mục 4.7). Sau khi triển khai, sao chép **Invoke URL** (ví dụ: `https://abc123.execute-api.us-east-1.amazonaws.com/prod`) để sử dụng trong giao diện web (chạy trên CloudFront, sử dụng Tailwind CSS) khi gọi các endpoint với API Key `StudentApiKey` (mục 4.2).

@@ -3,7 +3,7 @@ title: "Gắn API Key vào Usage Plan & Liên kết với REST API và Stage"
 date: 2023-10-25
 weight: 9
 chapter: false
-pre: "<b>4.9 </b>"
+pre: "<b>4.9. </b>"
 ---
 
 > **Mục tiêu**: Gắn API Key `StudentApiKey` (tạo ở mục 4.2) vào Usage Plan `StudentUsagePlan` (tạo ở mục 4.3) và liên kết với API `student` (tạo ở mục 4.1) trên stage `prod` (tạo ở mục 4.8). Điều này đảm bảo các yêu cầu đến các endpoint (**GET /students**, **POST /students**, **POST /backup**) phải sử dụng `StudentApiKey` trong header `x-api-key` và tuân theo giới hạn của `StudentUsagePlan` (Rate: 5 yêu cầu/giây, Burst: 10 yêu cầu, Quota: 1000 yêu cầu/ngày). Cấu hình này cho phép giao diện web (chạy trên CloudFront, sử dụng Tailwind CSS) truy cập API một cách an toàn và kiểm soát.

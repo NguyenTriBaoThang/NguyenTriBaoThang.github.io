@@ -3,7 +3,7 @@ title: "Configure Bucket Policy for Public Access"
 date: 2023-10-25
 weight: 4
 chapter: false
-pre: "<b>6.4 </b>"
+pre: "<b>6.4. </b>"
 ---
 
 > **Objective**: Configure the **Bucket Policy** for the S3 Bucket `student-management-website-2025` to allow public access (`s3:GetObject`) to the static files (`index.html`, `styles.css`, `scripts.js` from section 6.2). This ensures the static web interface (enabled with **Static Website Hosting** in section 6.3) can be accessed via the S3 endpoint or CloudFront (section 7). The **Bucket Policy** allows everyone (`Principal: *`) to read the files, supporting integration with the `student` API (stage `prod`, section 4.8) to call the **GET /students**, **POST /students**, and **POST /backup** endpoints with API Key security (`StudentApiKey`, section 4.2) and CORS (section 4.7).

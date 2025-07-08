@@ -3,7 +3,7 @@ title: "Thiết lập Usage Plan (Kế hoạch sử dụng)"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>4.3 </b>"
+pre: "<b>4.3. </b>"
 ---
 
 > **Mục tiêu**: Tạo một Usage Plan có tên `StudentUsagePlan` trong AWS API Gateway để kiểm soát và giới hạn truy cập vào API `student` (tạo ở mục 4.1) thông qua API Key `StudentApiKey` (tạo ở mục 4.2). Usage Plan sẽ áp dụng giới hạn tốc độ (**Rate**: 5 yêu cầu/giây, **Burst**: 10 yêu cầu) và quota (1000 yêu cầu/ngày), đảm bảo kiểm soát chi phí, ngăn chặn lạm dụng, và bảo mật các endpoint (`GET /students`, `POST /students`, `POST /backup`) khi được gọi từ giao diện web (chạy trên CloudFront).

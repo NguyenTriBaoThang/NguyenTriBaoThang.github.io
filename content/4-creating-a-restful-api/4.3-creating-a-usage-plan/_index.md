@@ -3,7 +3,7 @@ title: "Set Up Usage Plan"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>4.3 </b>"
+pre: "<b>4.3. </b>"
 ---
 
 > **Objective**: Create a Usage Plan named `StudentUsagePlan` in AWS API Gateway to control and limit access to the `student` API (created in section 4.1) via the `StudentApiKey` (created in section 4.2). The Usage Plan will apply rate limits (**Rate**: 5 requests/second, **Burst**: 10 requests) and a quota (1000 requests/day), ensuring cost control, preventing abuse, and securing the endpoints (`GET /students`, `POST /students`, `POST /backup`) when accessed from the web interface (running on CloudFront).

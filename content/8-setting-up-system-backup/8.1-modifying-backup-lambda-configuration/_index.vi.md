@@ -3,7 +3,7 @@ title: "Chỉnh Sửa Cấu Hình trong Lambda Backup"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>8.1 </b>"
+pre: "<b>8.1. </b>"
 ---
 
 > **Mục tiêu**: Cập nhật cấu hình cho Lambda function `BackupDynamoDBAndSendEmail` (tạo ở mục 3.3, tích hợp với endpoint **POST /backup**, mục 4.6) để đảm bảo hoạt động hiệu quả khi backup dữ liệu từ bảng DynamoDB `studentData` vào S3 Bucket `student-backup-20250706` (mục 6.5) và gửi email thông báo qua Amazon SES. Cấu hình bao gồm Memory, Ephemeral Storage, Execution Role, và Environment Variables để tối ưu hiệu suất và tích hợp với hệ thống serverless.

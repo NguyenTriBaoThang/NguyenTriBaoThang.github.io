@@ -3,7 +3,7 @@ title: "Link API Key to Usage Plan & Associate with REST API and Stage"
 date: 2023-10-25
 weight: 9
 chapter: false
-pre: "<b>4.9 </b>"
+pre: "<b>4.9. </b>"
 ---
 
 > **Objective**: Link the `StudentApiKey` (created in section 4.2) to the `StudentUsagePlan` (created in section 4.3) and associate it with the `student` API (created in section 4.1) on the `prod` stage (created in section 4.8). This ensures that requests to the endpoints (**GET /students**, **POST /students**, **POST /backup**) must include the `StudentApiKey` in the `x-api-key` header and adhere to the limits of the `StudentUsagePlan` (Rate: 5 requests/second, Burst: 10 requests, Quota: 1000 requests/day). This configuration allows the web interface (running on CloudFront, using Tailwind CSS) to access the API securely and with control.

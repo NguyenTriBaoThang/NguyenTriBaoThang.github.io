@@ -3,7 +3,7 @@ title: "Enable CORS to Support Frontend Access"
 date: 2023-10-25
 weight: 7
 chapter: false
-pre: "<b>4.7 </b>"
+pre: "<b>4.7. </b>"
 ---
 
 > **Objective**: Enable CORS (Cross-Origin Resource Sharing) on the `student` API (created in section 4.1) to allow the web interface (running on CloudFront, using Tailwind CSS) to send requests to the **GET /students**, **POST /students**, and **POST /backup** endpoints. CORS will be configured on the `/students` and `/backup` resources by adding the **OPTIONS** method and setting the necessary headers (`Access-Control-Allow-Methods`, `Access-Control-Allow-Headers`, `Access-Control-Allow-Origin`), ensuring smooth and secure integration with the frontend.

@@ -3,7 +3,7 @@ title: "Triển Khai CloudFront để Tăng Tốc Website"
 date: 2023-10-25
 weight: 7
 chapter: false
-pre: "<b>7 </b>"
+pre: "<b>7. </b>"
 ---
 
 > **Mục tiêu**: Triển khai Amazon CloudFront, một dịch vụ CDN (Content Delivery Network), để tăng tốc độ tải và bảo mật giao diện web tĩnh lưu trữ trên S3 Bucket `student-management-website-2025` (mục 6). CloudFront sẽ:  

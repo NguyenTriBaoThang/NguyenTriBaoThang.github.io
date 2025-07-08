@@ -3,7 +3,7 @@ title: "Tạo IAM Role cho Lambda Post"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>2.2 </b>"
+pre: "<b>2.2. </b>"
 ---
 
 

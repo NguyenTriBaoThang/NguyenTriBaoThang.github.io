@@ -3,7 +3,7 @@ title: "Configure Lambda Function BackupDynamoDBAndSendEmail"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>3.3 </b>"
+pre: "<b>3.3. </b>"
 ---
 
 > **Objective**: Create and configure the `BackupDynamoDBAndSendEmail` Lambda function to back up all data from the DynamoDB `studentData` table into an S3 bucket as a JSON file, create a pre-signed URL, and send a notification email containing the download link via SES. The function uses **Python 3.13**, architecture `x86_64`, and is assigned the IAM role `DynamoDBBackupRole` (created in step 2.3). The function will return a JSON response to integrate with other systems (if needed) and log to CloudWatch for monitoring.

@@ -3,7 +3,7 @@ title: "Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>6.2 </b>"
+pre: "<b>6.2. </b>"
 ---
 
 > **Mục tiêu**: Tải các tệp giao diện web tĩnh (`index.html`, `styles.css`, `scripts.js` từ mục 5) lên S3 Bucket `student-management-website-2025` (tạo ở mục 6.1) để chuẩn bị cho việc bật **Static Website Hosting** (mục 6.3) và phục vụ qua CloudFront (mục 7). Các tệp này tạo nên giao diện của ứng dụng Quản Lý Dữ Liệu Sinh Viên, cho phép người dùng nhập, xem, và sao lưu dữ liệu sinh viên thông qua các endpoint API **GET /students**, **POST /students**, và **POST /backup** (mục 4.8) với bảo mật API Key (`StudentApiKey`, mục 4.2) và CORS (mục 4.7).

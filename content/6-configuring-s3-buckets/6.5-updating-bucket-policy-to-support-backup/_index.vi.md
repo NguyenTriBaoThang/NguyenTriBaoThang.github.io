@@ -3,7 +3,7 @@ title: "Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup
 date: 2023-10-25
 weight: 5
 chapter: false
-pre: "<b>6.5 </b>"
+pre: "<b>6.5. </b>"
 ---
 
 > **Mục tiêu**: Tạo S3 Bucket `student-backup-20250706` (nếu chưa được tạo ở mục 2.4) và cấu hình **Bucket Policy** để cho phép hàm Lambda `BackupDynamoDBAndSendEmail` (với vai trò `DynamoDBBackupRole`, mục 3.3) ghi tệp backup (JSON/CSV) vào bucket thông qua endpoint **POST /backup** (mục 4.6). Bucket này lưu trữ dữ liệu sao lưu từ bảng DynamoDB `studentData` và tích hợp với SES để gửi email thông báo. Bucket không cần truy cập công khai, chỉ cần quyền `s3:PutObject` cho vai trò `DynamoDBBackupRole`, đảm bảo bảo mật và tích hợp mượt mà với hệ thống serverless.

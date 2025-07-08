@@ -3,7 +3,7 @@ title: "Tạo phương thức POST để lưu dữ liệu"
 date: 2023-10-25
 weight: 5
 chapter: false
-pre: "<b>4.5 </b>"
+pre: "<b>4.5. </b>"
 ---
 
 > **Mục tiêu**: Tạo phương thức **POST** trên resource `/students` trong API `student` (tạo ở mục 4.1) để tích hợp với hàm Lambda `insertStudentData` (tạo ở mục 3.2), cho phép lưu thông tin sinh viên vào bảng DynamoDB `studentData` và gửi email xác nhận qua SES. Phương thức sẽ yêu cầu API Key (`StudentApiKey`, tạo ở mục 4.2) trong header `x-api-key` để bảo mật, và chuẩn bị cho việc kích hoạt CORS (mục 4.7) để giao diện web (chạy trên CloudFront) có thể gửi yêu cầu.

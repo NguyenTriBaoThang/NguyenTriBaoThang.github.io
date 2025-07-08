@@ -3,7 +3,7 @@ title: "Cấu hình Amazon SES"
 date: 2023-10-25
 weight: 5
 chapter: false
-pre: "<b>2.5 </b>"
+pre: "<b>2.5. </b>"
 ---
 
 > **Mục tiêu**: Cấu hình Amazon SES để gửi email xác nhận cho hàm Lambda `insertStudentData` (xác nhận khi lưu dữ liệu sinh viên) và `BackupDynamoDBAndSendEmail` (thông báo link tải tệp backup). Xác minh địa chỉ email (ví dụ: `nguyentribaothang@gmail.com`) và thoát chế độ sandbox để gửi email đến các địa chỉ chưa xác minh.

@@ -3,7 +3,7 @@ title: "Create IAM Role for Lambda Post"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>2.2 </b>"
+pre: "<b>2.2. </b>"
 ---
 
 > **Objective**: Create the IAM role **LambdaInsertStudentRole** for the Lambda function `insertStudentData`, granting permissions to **write data** to the DynamoDB table `studentData`, **send emails** via AWS SES, **log data** to CloudWatch, and support potential interactions with S3 and CloudFront.

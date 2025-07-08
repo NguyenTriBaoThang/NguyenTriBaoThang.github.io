@@ -3,7 +3,7 @@ title: "Tạo phương thức GET để truy xuất dữ liệu"
 date: 2023-10-25
 weight: 4
 chapter: false
-pre: "<b>4.4 </b>"
+pre: "<b>4.4. </b>"
 ---
 
 > **Mục tiêu**: Tạo phương thức **GET** trên resource `/students` trong API `student` (tạo ở mục 4.1) để tích hợp với hàm Lambda `getStudentData` (tạo ở mục 3.1), cho phép truy xuất danh sách sinh viên từ bảng DynamoDB `studentData`. Phương thức sẽ yêu cầu API Key (`StudentApiKey`, tạo ở mục 4.2) trong header `x-api-key` để bảo mật, và chuẩn bị cho việc kích hoạt CORS (mục 4.7) để giao diện web (chạy trên CloudFront) có thể gửi yêu cầu.

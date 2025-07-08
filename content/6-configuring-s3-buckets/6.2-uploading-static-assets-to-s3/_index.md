@@ -3,7 +3,7 @@ title: "Upload the Web Interface Resources to S3 (HTML/CSS/JS)"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>6.2 </b>"
+pre: "<b>6.2. </b>"
 ---
 
 > **Objective**: Upload the static web interface files (`index.html`, `styles.css`, `scripts.js` from section 5) to the S3 Bucket `student-management-website-2025` (created in section 6.1) in preparation for enabling **Static Website Hosting** (section 6.3) and serving the content via CloudFront (section 7). These files form the interface of the Student Data Management application, allowing users to input, view, and back up student data via the **GET /students**, **POST /students**, and **POST /backup** API endpoints (section 4.8) with API Key security (`StudentApiKey`, section 4.2) and CORS (section 4.7).

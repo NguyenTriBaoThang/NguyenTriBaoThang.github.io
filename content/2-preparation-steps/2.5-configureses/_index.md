@@ -3,7 +3,7 @@ title: "Configure Amazon SES"
 date: 2023-10-25
 weight: 5
 chapter: false
-pre: "<b>2.5 </b>"
+pre: "<b>2.5. </b>"
 ---
 
 > **Objective**: Configure Amazon SES to send confirmation emails for the Lambda function `insertStudentData` (confirmation when saving student data) and `BackupDynamoDBAndSendEmail` (notification with a backup file download link). Verify the email address (e.g., `nguyentribaothang@gmail.com`) and exit sandbox mode to send emails to unverified addresses.

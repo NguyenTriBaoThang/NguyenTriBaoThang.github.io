@@ -3,7 +3,7 @@ title: "Tạo bảng trong DynamoDB"
 date: 2023-10-25
 weight: 4
 chapter: false
-pre: "<b>2.4 </b>"
+pre: "<b>2.4. </b>"
 ---
 
 > **Mục tiêu**: Thiết lập bảng **studentData** trong DynamoDB để lưu trữ thông tin sinh viên, bao gồm **Mã sinh viên (studentid)**, **Họ tên**, **Lớp**, **Ngày sinh**, và **Email**, sử dụng **studentid** (kiểu String) làm khóa chính để đảm bảo truy vấn nhanh và hiệu quả trong kiến trúc serverless.

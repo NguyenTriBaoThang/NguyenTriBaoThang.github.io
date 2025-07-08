@@ -3,7 +3,7 @@ title: "Configure Lambda Function getStudentData"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>3.1 </b>"
+pre: "<b>3.1. </b>"
 ---
 
 > **Objective**: Create and configure the Lambda function `getStudentData` to retrieve all student data from the DynamoDB `studentData` table, including fields Student ID (`studentid`), Full Name (`name`), Class (`class`), Date of Birth (`birthdate`), and Email (`email`). This function uses the Scan operation to fetch the data and returns the results in JSON format, supporting integration with the web interface via API Gateway.

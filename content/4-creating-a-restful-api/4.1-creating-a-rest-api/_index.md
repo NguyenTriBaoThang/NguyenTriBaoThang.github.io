@@ -3,7 +3,7 @@ title: "Create a New REST API on API Gateway"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>4.1 </b>"
+pre: "<b>4.1. </b>"
 ---
 
 > **Objective**: Create a new REST API in AWS API Gateway with the name `student` and the **Edge-optimized** endpoint type, to integrate with Lambda functions (`getStudentData`, `insertStudentData`, `BackupDynamoDBAndSendEmail`) and the web interface (running on CloudFront). This API will provide endpoints to access, store, and back up student data, while being secured with an API Key and supporting CORS.

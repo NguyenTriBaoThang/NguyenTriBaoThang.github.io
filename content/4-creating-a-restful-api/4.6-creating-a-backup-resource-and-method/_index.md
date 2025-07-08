@@ -3,7 +3,7 @@ title: "Create Resource and Method for Data Backup"
 date: 2023-10-25
 weight: 6
 chapter: false
-pre: "<b>4.6 </b>"
+pre: "<b>4.6. </b>"
 ---
 
 > **Objective**: Create the resource `/backup` and the **POST** method in the `student` API (created in section 4.1) to integrate with the Lambda function `BackupDynamoDBAndSendEmail` (created in section 3.3). This will allow backing up all data from the DynamoDB `studentData` table to the S3 bucket `student-backup-20250706` and sending an email notification via SES. The method will require an API Key (`StudentApiKey`, created in section 4.2) in the `x-api-key` header for security, and prepare for enabling CORS (section 4.7) so that the web interface (running on CloudFront) can send requests.

@@ -3,7 +3,7 @@ title: "Tạo IAM Role cho Lambda Get"
 date: 2023-10-25
 weight: 2
 chapter: false
-pre: "<b>2.1 </b>"
+pre: "<b>2.1. </b>"
 ---
 
 

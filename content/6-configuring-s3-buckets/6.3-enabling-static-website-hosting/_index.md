@@ -3,7 +3,7 @@ title: "Enable Static Website Hosting"
 date: 2023-10-25
 weight: 3
 chapter: false
-pre: "<b>6.3 </b>"
+pre: "<b>6.3. </b>"
 ---
 
 > **Objective**: Enable **Static Website Hosting** on the S3 Bucket `student-management-website-2025` to serve the static files (`index.html`, `styles.css`, `scripts.js` from section 6.2) as a static website. This provides an HTTP endpoint (e.g., http://student-management-website-2025.s3-website-us-east-1.amazonaws.com) to access the interface, preparing it for distribution via CloudFront (section 7) with HTTPS and high performance. The interface calls the **GET /students**, **POST /students**, and **POST /backup** API endpoints (section 4.8) using the **Invoke URL** (e.g., https://abc123.execute-api.us-east-1.amazonaws.com/prod) and `StudentApiKey` (section 4.2) with CORS (section 4.7).

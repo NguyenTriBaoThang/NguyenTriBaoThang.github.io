@@ -1,8 +1,9 @@
 ---
-title : "Session Management"
+title : "Website Serverless"
 date : 2023-10-25
 weight : 5
 chapter : false
+pre: "<b>6.5. </b>"
 ---
 # Work with Amazon System Manager - Session Manager
 

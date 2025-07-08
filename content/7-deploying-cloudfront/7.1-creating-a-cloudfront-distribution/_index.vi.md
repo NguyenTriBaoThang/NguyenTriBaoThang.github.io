@@ -3,7 +3,7 @@ title: "Tạo CloudFront Distribution"
 date: 2023-10-25
 weight: 1
 chapter: false
-pre: "<b>7.1 </b>"
+pre: "<b>7.1. </b>"
 ---
 
 > **Mục tiêu**: Tạo một CloudFront Distribution để phân phối nội dung tĩnh từ S3 Bucket `student-management-website-2025` (mục 6.1–6.4), sử dụng **Origin Access Identity (OAI)** để giới hạn truy cập bucket chỉ từ CloudFront, bật **Web Application Firewall (WAF)** để tăng bảo mật, và cung cấp HTTPS cho giao diện web (`index.html`, `styles.css`, `scripts.js`). Distribution sẽ tích hợp với API `student` (stage `prod`, mục 4.8) để hỗ trợ các endpoint **GET /students**, **POST /students**, và **POST /backup**, sử dụng `StudentApiKey` (mục 4.2) với CORS (mục 4.7).
