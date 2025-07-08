@@ -1,7 +1,7 @@
 ---
 title: "Tạo CloudFront Distribution"
 date: 2023-10-25
-weight: 7.1
+weight: 1
 chapter: false
 pre: "<b>7.1 </b>"
 ---
