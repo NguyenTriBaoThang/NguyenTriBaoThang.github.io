@@ -1,0 +1,2045 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS) :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1751949628" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751949628" rel="stylesheet">
+    <link href="/css/hybrid.css?1751949628" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751949628" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751949628" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751949628" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751949628" rel="stylesheet">
+    <link href="/css/theme.css?1751949628" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751949628" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1751949628" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1751949628"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+  
+  
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+    <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/%20js/lunr.min.js?1751949628"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751949628"></script>
+<script type="text/javascript">
+    { { if hugo.IsMultilingual } }
+    var baseurl = "\/\/localhost:1313\/\/vi";
+    { { else } }
+    var baseurl = "\/\/localhost:1313\/";
+    { { end } }
+</script>
+<script type="text/javascript" src="/%20js/search.js?1751949628"></script>
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+
+      
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/1-introduction/" title="Giới Thiệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/1-introduction/">
+    <b>1. </b>Giới Thiệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/" title="Các Bước Chuẩn Bị" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/">
+    <b>2. </b>Các Bước Chuẩn Bị
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Tạo IAM Role cho Lambda Get" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
+    <b>2.1 </b>Tạo IAM Role cho Lambda Get
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Tạo IAM Role cho Lambda Post" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
+    <b>2.2 </b>Tạo IAM Role cho Lambda Post
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Tạo IAM Role cho DynamoDB Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
+    <b>2.3 </b>Tạo IAM Role cho DynamoDB Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Tạo bảng trong DynamoDB" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.4-createtable-in-dynamodb/">
+    <b>2.4 </b>Tạo bảng trong DynamoDB
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.5-configureses/" title="Cấu hình Amazon SES" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.5-configureses/">
+    <b>2.5 </b>Cấu hình Amazon SES
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/" title="Tạo Lambda Functions" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/">
+    <b> 3. </b>Tạo Lambda Functions
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Cấu hình Lambda Function getStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
+    <b>3.1 </b>Cấu hình Lambda Function getStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Cấu hình Lambda Function insertStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Cấu hình Lambda Function insertStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Cấu hình Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Cấu hình Lambda Function BackupDynamoDBAndSendEmail
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/" title="Cấu hình RESTful API Bảo Mật bằng API Key" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/">
+    <b>4. </b>Cấu hình RESTful API Bảo Mật bằng API Key
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Tạo REST API mới trên API Gateway" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/">
+    <b>4.1 </b>Tạo REST API mới trên API Gateway
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Tạo API Key để bảo vệ truy cập" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.2-creating-an-api-key/">
+    <b>4.2 </b>Tạo API Key để bảo vệ truy cập
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Thiết lập Usage Plan (Kế hoạch sử dụng)" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
+    <b>4.3 </b>Thiết lập Usage Plan (Kế hoạch sử dụng)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Tạo phương thức GET để truy xuất dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.4-creating-a-get-method/">
+    <b>4.4 </b>Tạo phương thức GET để truy xuất dữ liệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Tạo phương thức POST để lưu dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.5-creating-a-post-method/">
+    <b>4.5 </b>Tạo phương thức POST để lưu dữ liệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Tạo Resource và Method cho Backup dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
+    <b>4.6 </b>Tạo Resource và Method cho Backup dữ liệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.7-enabling-cors/" title="Kích hoạt CORS để hỗ trợ frontend truy cập" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.7-enabling-cors/">
+    <b>4.7 </b>Kích hoạt CORS để hỗ trợ frontend truy cập
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.8-deploying-the-api/" title="Triển khai API lên một Stage cụ thể" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.8-deploying-the-api/">
+    <b>4.8 </b>Triển khai API lên một Stage cụ thể
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Gắn API Key vào Usage Plan &amp; Liên kết với REST API và Stage" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
+    <b>4.9 </b>Gắn API Key vào Usage Plan &amp; Liên kết với REST API và Stage
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/5-designing-the-website-interface/" title="Viết giao diện cho Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/5-designing-the-website-interface/">
+    <b>5. </b>Viết giao diện cho Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/" title="Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website" class="dd-item 
+        parent
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/">
+    <b>6. </b>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Khởi Tạo S3 Bucket Mới" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
+    <b>6.1 </b>Khởi Tạo S3 Bucket Mới
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    <b>6.2 </b>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Bật Tính Năng Static Website Hosting" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    <b>6.3 </b>Bật Tính Năng Static Website Hosting
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    <b>6.4 </b>Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
+    <b>6.5 </b>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/" title="Triển Khai CloudFront để Tăng Tốc Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/">
+    <b>7 </b>Triển Khai CloudFront để Tăng Tốc Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/">
+    <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
+    <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Tạo CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
+    <b>7.1 </b>Tạo CloudFront Distribution
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+    </ul>
+
+    
+    
+    <section id="shortcuts">
+      <h3>More</h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+            <div class="select-style">
+              <select id="select-language" onchange="location = this.value;">
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="en" value="//localhost:1313/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">English
+                </option>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="vi" value="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" selected>Tiếng Việt</option>
+                
+                
+                
+                
+              </select>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="255px" height="255px"
+                viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+                <g>
+                  <g id="arrow-drop-down">
+                    <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+        
+
+        
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>Website Serverless</a> > <a href='/vi/6-configuring-s3-buckets/'>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website</a> > Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tổng-quan-về-tài-nguyên-giao-diện">Tổng Quan về Tài Nguyên Giao Diện</a></li>
+    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
+    <li><a href="#hành-động-chi-tiết">Hành Động Chi Tiết</a></li>
+    <li><a href="#lưu-ý-quan-trọng">Lưu Ý Quan Trọng</a></li>
+    <li><a href="#kết-luận">Kết Luận</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
+            </h1>
+          
+
+        
+
+
+
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Tải các tệp giao diện web tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 5) lên S3 Bucket <code>student-management-website-2025</code> (tạo ở mục 6.1) để chuẩn bị cho việc bật <strong>Static Website Hosting</strong> (mục 6.3) và phục vụ qua CloudFront (mục 7). Các tệp này tạo nên giao diện của ứng dụng Quản Lý Dữ Liệu Sinh Viên, cho phép người dùng nhập, xem, và sao lưu dữ liệu sinh viên thông qua các endpoint API <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong> (mục 4.8) với bảo mật API Key (<code>StudentApiKey</code>, mục 4.2) và CORS (mục 4.7).</p></blockquote>
+<hr>
+<h2 id="tổng-quan-về-tài-nguyên-giao-diện">Tổng Quan về Tài Nguyên Giao Diện</h2>
+<ul>
+<li><strong>Các tệp cần tải lên</strong>:
+<ul>
+<li><code>index.html</code>: Cấu trúc giao diện với biểu mẫu nhập liệu, bảng hiển thị sinh viên, và các nút chức năng (Lưu, Xem, Backup).</li>
+<li><code>styles.css</code>: Tùy chỉnh giao diện với Tailwind CSS, font Poppins, gradient màu sắc, và hiệu ứng động.</li>
+<li><code>scripts.js</code>: Logic gọi API sử dụng jQuery, xử lý yêu cầu tới <strong>Invoke URL</strong> (VD: <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>) với header <code>x-api-key: &lt;StudentApiKey&gt;</code>.</li>
+</ul>
+</li>
+<li><strong>Vai trò của bucket <code>student-management-website-2025</code></strong>:
+<ul>
+<li>Lưu trữ các tệp tĩnh để phục vụ giao diện web qua <strong>Static Website Hosting</strong>.</li>
+<li>Được cấu hình quyền công khai (<code>s3:GetObject</code>) trong <strong>Bucket Policy</strong> (mục 6.4) để CloudFront truy xuất nội dung.</li>
+<li>Tích hợp với CloudFront để cung cấp HTTPS, tăng tốc độ tải, và bảo mật tốt hơn.</li>
+</ul>
+</li>
+<li><strong>Tích hợp với hệ thống</strong>:
+<ul>
+<li>Giao diện web gọi API <code>student</code> (stage <code>prod</code>, mục 4.8) để thực hiện các chức năng:
+<ul>
+<li><strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email xác nhận qua SES.</li>
+<li><strong>GET /students</strong>: Hiển thị dữ liệu trong bảng.</li>
+<li><strong>POST /backup</strong>: Tạo tệp backup trong S3 Bucket <code>student-backup-20250706</code> (mục 2.4, 6.5) và gửi email thông báo qua SES.</li>
+</ul>
+</li>
+<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <code>https://d12345678.cloudfront.net</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+
+<div class="notices info" ><p>Bạn cần hoàn thành mục 6.1 (tạo bucket <code>student-management-website-2025</code>), mục 5 (xây dựng giao diện web với <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code> và liên kết với API <code>student</code> stage <code>prod</code>), mục 3 (tạo các hàm Lambda <code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>, bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, SES email xác minh). Đảm bảo tài khoản AWS có quyền truy cập S3 (<code>s3:PutObject</code>) và vùng AWS là <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="hành-động-chi-tiết">Hành Động Chi Tiết</h2>
+<ol>
+<li>
+<p><strong>Truy Cập AWS Management Console</strong></p>
+<ul>
+<li>Mở trình duyệt và đăng nhập vào <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> bằng tài khoản AWS của bạn.</li>
+<li>Trong thanh tìm kiếm ở đầu trang, nhập <strong>S3</strong> và chọn dịch vụ <strong>Amazon S3</strong> để vào giao diện quản lý bucket.</li>
+<li>Kiểm tra vùng AWS: Đảm bảo bạn đang làm việc trong vùng <strong>us-east-1</strong> (US East (N. Virginia)) để đồng bộ với bucket <code>student-management-website-2025</code>, API <code>student</code>, các hàm Lambda (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, và SES. Vùng được hiển thị ở góc trên bên phải AWS Console.<br>
+<img src="/images/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/uploading-static-assets-to-s3-01.png" alt="Giao diện AWS Console với thanh tìm kiếm S3.">
+<em>Hình 1: Giao diện AWS Console với thanh tìm kiếm S3.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Chọn Bucket <code>student-management-website-2025</code></strong></p>
+<ul>
+<li>Trong giao diện chính của <strong>Amazon S3 &gt; Buckets</strong>, tìm và chọn bucket <code>student-management-website-2025</code> (tạo ở mục 6.1).</li>
+<li>Nếu không thấy bucket:
+<ul>
+<li>Kiểm tra vùng AWS (<code>us-east-1</code>) và làm mới trang.</li>
+<li>Xác minh bucket đã được tạo thành công với tên chính xác (tên bucket là duy nhất toàn cầu, có thể bạn đã dùng tên khác như <code>student-management-website-20250706-abc123</code>).</li>
+</ul>
+</li>
+<li>Nhấn vào tên bucket để vào giao diện quản lý <strong>Objects</strong> của <code>student-management-website-2025</code>.<br>
+<img src="/images/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/uploading-static-assets-to-s3-02.png" alt="Chọn bucket student-management-website-2025.">
+<em>Hình 2: Chọn bucket <code>student-management-website-2025</code>.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Mở Giao Diện Upload</strong></p>
+<ul>
+<li>Trong giao diện <strong>Objects</strong> của bucket <code>student-management-website-2025</code>, nhấn nút <strong>Upload</strong> (thường nằm ở góc trên bên phải).</li>
+<li>Giao diện <strong>Upload</strong> sẽ mở ra, cho phép bạn chọn hoặc kéo thả các tệp để tải lên.<br>
+<img src="/images/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/uploading-static-assets-to-s3-03.png" alt="Nút Upload trong giao diện bucket.">
+<em>Hình 3: Nút Upload trong giao diện bucket.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Chuẩn Bị và Kéo Thả Tệp để Tải Lên</strong></p>
+<ul>
+<li><strong>Chuẩn bị tệp</strong>:
+<ul>
+<li>Đảm bảo bạn có các tệp từ mục 5:
+<ul>
+<li><code>index.html</code>: Giao diện với biểu mẫu, bảng, và nút chức năng, sử dụng Tailwind CSS và jQuery.</li>
+<li><code>styles.css</code>: Style tùy chỉnh với font Poppins, gradient, và hiệu ứng responsive.</li>
+<li><code>scripts.js</code>: Logic gọi API với <strong>Invoke URL</strong> (VD: <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>) và <code>StudentApiKey</code> (VD: <code>xxxxxxxxxxxxxxxxxxxx</code>).</li>
+</ul>
+</li>
+<li>Lưu các tệp trong một thư mục cục bộ (VD: <code>student-web-files/</code>) để dễ quản lý.</li>
+<li>Kiểm tra nội dung:
+<ul>
+<li>Mở <code>scripts.js</code>, xác minh <code>API_ENDPOINT</code> và <code>API_KEY</code> đã được thay bằng <strong>Invoke URL</strong> (mục 4.8) và <code>StudentApiKey</code> (mục 4.2).</li>
+<li>Nếu chưa thay, cập nhật:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_ENDPOINT</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;https://abc123.execute-api.us-east-1.amazonaws.com/prod&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">API_KEY</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;xxxxxxxxxxxxxxxxxxxx&#39;</span>;
+</span></span></code></pre></div></li>
+<li><strong>Lưu ý bảo mật</strong>: Không nhúng <code>API_KEY</code> trực tiếp; xem đề xuất trong <strong>Lưu ý</strong> để sử dụng AWS Secrets Manager hoặc CloudFront Functions.</li>
+</ul>
+</li>
+<li>Mở <code>index.html</code> cục bộ trong trình duyệt để đảm bảo giao diện hiển thị đúng trước khi tải lên.</li>
+</ul>
+</li>
+<li><strong>Kéo thả tệp</strong>:
+<ul>
+<li>Trong giao diện <strong>Upload</strong>, kéo thả các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ thư mục cục bộ vào khu vực tải lên.</li>
+<li>Hoặc nhấn <strong>Add files</strong> và chọn từng tệp từ máy tính.</li>
+<li><strong>Cấu trúc tệp</strong>:
+<ul>
+<li>Tải các tệp trực tiếp vào <strong>thư mục gốc</strong> của bucket (không tạo thư mục con như <code>css/</code>, <code>js/</code>) để đảm bảo đường dẫn đơn giản (VD: <code>https://student-management-website-2025.s3-website-us-east-1.amazonaws.com/index.html</code>).</li>
+<li>Nếu cần thư mục con, tạo trước trong bucket (VD: <strong>Create folder</strong> &gt; <code>css</code>, <code>js</code>) và tải tệp tương ứng, nhưng phải cập nhật đường dẫn trong <code>index.html</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/css/styles.css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/js/scripts.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Tải Tệp Lên Bucket</strong></p>
+<ul>
+<li>Sau khi chọn các tệp, kiểm tra danh sách trong giao diện <strong>Upload</strong> hiển thị <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>.<br>
+<img src="/images/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/uploading-static-assets-to-s3-04.png" alt="Danh sách tệp trong giao diện Upload.">
+<em>Hình 4: Danh sách tệp trong giao diện Upload.</em></li>
+<li>Trong mục <strong>Permissions</strong> (trong giao diện Upload):
+<ul>
+<li><strong>Predefined ACLs</strong>: Chọn <strong>Grant public-read access</strong> để đảm bảo CloudFront có thể truy xuất tệp.</li>
+<li><strong>Lưu ý</strong>: Quyền này sẽ được thay thế bằng <strong>Bucket Policy</strong> (mục 6.4) để quản lý tập trung, nhưng chọn ở đây để đơn giản hóa kiểm tra ban đầu.</li>
+</ul>
+</li>
+<li>Trong mục <strong>Properties</strong> (tùy chọn):
+<ul>
+<li><strong>Storage class</strong>: Chọn <strong>Standard</strong> (mặc định) để đảm bảo hiệu suất tốt cho giao diện web.</li>
+<li><strong>Server-side encryption</strong>: Đảm bảo <strong>Enable</strong> với <strong>SSE-S3</strong> (đã cấu hình ở mục 6.1).</li>
+</ul>
+</li>
+<li>Nhấn <strong>Upload</strong> để bắt đầu tải tệp.<br>
+<img src="/images/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/uploading-static-assets-to-s3-05.png" alt="Nhấn Upload để tải tệp.">
+<em>Hình 5: Nhấn Upload để tải tệp.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Kiểm Tra Trạng Thái Tải Lên</strong></p>
+<ul>
+<li>Sau khi nhấn <strong>Upload</strong>, AWS S3 sẽ xử lý và hiển thị thông báo: <em>&ldquo;Upload succeeded&rdquo;</em> khi tất cả tệp được tải lên thành công.<br>
+<img src="/images/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/uploading-static-assets-to-s3-06.png" alt="Thông báo Upload succeeded.">
+<em>Hình 6: Thông báo Upload succeeded.</em></li>
+<li>Để xác minh:
+<ul>
+<li>Trong <strong>S3 &gt; Buckets &gt; student-management-website-2025 &gt; Objects</strong>, kiểm tra danh sách hiển thị <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>.</li>
+<li>Nhấn vào từng tệp để xem chi tiết (VD: URL, kích thước, ngày tải lên).</li>
+</ul>
+</li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li>Nếu gặp lỗi <em>&ldquo;AccessDenied&rdquo;</em>:
+<ul>
+<li>Đảm bảo <strong>Block all public access</strong> đã bỏ chọn trong mục 6.1.</li>
+<li>Kiểm tra vai trò IAM của tài khoản AWS có quyền <code>s3:PutObject</code>.</li>
+</ul>
+</li>
+<li>Nếu tệp không hiển thị:
+<ul>
+<li>Làm mới trang hoặc kiểm tra vùng AWS (<code>us-east-1</code>).</li>
+<li>Xác minh bạn đã chọn đúng bucket <code>student-management-website-2025</code>.</li>
+</ul>
+</li>
+<li>Nếu thông báo <em>&ldquo;Upload failed&rdquo;</em>:
+<ul>
+<li>Kiểm tra kết nối mạng hoặc kích thước tệp (S3 hỗ trợ tối đa 5TB/tệp).</li>
+<li>Thử tải lại từng tệp riêng lẻ để xác định tệp có vấn đề.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="lưu-ý-quan-trọng">Lưu Ý Quan Trọng</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Yếu Tố</strong></th>
+          <th><strong>Chi Tiết</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Cấu trúc tệp</strong></td>
+          <td>- Tải các tệp vào <strong>thư mục gốc</strong> để giữ đường dẫn đơn giản (VD: <code>/index.html</code>, <code>/styles.css</code>, <code>/scripts.js</code>). <!-- raw HTML omitted --> - Nếu dùng thư mục con (<code>css/</code>, <code>js/</code>), cập nhật đường dẫn trong <code>index.html</code> và kiểm tra khi bật <strong>Static Website Hosting</strong> (mục 6.3).</td>
+      </tr>
+      <tr>
+          <td><strong>Bảo mật</strong></td>
+          <td>- Tránh nhúng <code>StudentApiKey</code> trực tiếp trong <code>scripts.js</code>. Sử dụng AWS Secrets Manager hoặc CloudFront Functions để thêm header <code>x-api-key</code>: <!-- raw HTML omitted --> ```javascript <!-- raw HTML omitted --> // Ví dụ với CloudFront Functions <!-- raw HTML omitted --> function handler(event) { <!-- raw HTML omitted -->   var request = event.request; <!-- raw HTML omitted -->   request.headers[&lsquo;x-api-key&rsquo;] = { value: &lsquo;xxxxxxxxxxxxxxxxxxxx&rsquo; }; <!-- raw HTML omitted -->   return request; <!-- raw HTML omitted --> } <!-- raw HTML omitted --> - Sau khi tải lên, cấu hình <strong>Bucket Policy</strong> (mục 6.4) để quản lý quyền <code>s3:GetObject</code> thay vì dựa vào ACL <code>public-read</code>. <!-- raw HTML omitted --> - Sử dụng CloudFront <strong>Origin Access Identity (OAI)</strong> (mục 7) để tăng bảo mật, hạn chế truy cập trực tiếp vào S3.</td>
+      </tr>
+      <tr>
+          <td><strong>Tối ưu hóa</strong></td>
+          <td>- <strong>Nén tệp</strong>: Nén <code>styles.css</code> và <code>scripts.js</code> (sử dụng UglifyJS hoặc CSSNano) để giảm thời gian tải. <!-- raw HTML omitted --> - <strong>Kiểm tra nội dung</strong>: Mở <code>index.html</code> cục bộ trong trình duyệt để đảm bảo giao diện hiển thị đúng trước khi tải lên. <!-- raw HTML omitted --> - <strong>Sử dụng AWS CLI</strong>: Tải tệp nhanh hơn với lệnh: <!-- raw HTML omitted --> <code>bash &lt;br&gt; aws s3 cp student-web-files/ s3://student-management-website-2025/ --recursive &lt;br&gt; </code> <!-- raw HTML omitted --> - <strong>S3 Versioning</strong>: Đã bật ở mục 6.1, đảm bảo khôi phục được nếu tải nhầm tệp.</td>
+      </tr>
+      <tr>
+          <td><strong>Tích hợp với hệ thống</strong></td>
+          <td>- Sau khi tải tệp, bật <strong>Static Website Hosting</strong> (mục 6.3) để lấy endpoint (VD: <code>http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</code>). <!-- raw HTML omitted --> - Cấu hình <strong>Bucket Policy</strong> (mục 6.4) để cho phép CloudFront truy xuất. <!-- raw HTML omitted --> - Tích hợp với CloudFront (mục 7) để phục vụ giao diện qua HTTPS và tăng tốc độ tải. <!-- raw HTML omitted --> - Đảm bảo CORS trong API Gateway (mục 4.7) hỗ trợ yêu cầu từ CloudFront domain (VD: <code>https://d12345678.cloudfront.net</code>).</td>
+      </tr>
+      <tr>
+          <td><strong>Kiểm tra tích hợp</strong></td>
+          <td>- Kiểm tra các tệp trong <strong>S3 &gt; Buckets &gt; student-management-website-2025 &gt; Objects</strong>. <!-- raw HTML omitted --> - Sau khi bật <strong>Static Website Hosting</strong> (mục 6.3), truy cập endpoint S3 (VD: <code>http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</code>) để kiểm tra giao diện. <!-- raw HTML omitted --> - <strong>Kết quả mong đợi</strong>: Giao diện hiển thị với biểu mẫu, bảng, và nút chức năng. <!-- raw HTML omitted --> - <strong>Lưu ý</strong>: Các yêu cầu API có thể gặp lỗi CORS nếu chưa cấu hình CloudFront; sẽ khắc phục trong mục 7. <!-- raw HTML omitted --> - Sau khi tích hợp CloudFront, kiểm tra chức năng: <!-- raw HTML omitted --> - <strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email qua SES. <!-- raw HTML omitted --> - <strong>GET /students</strong>: Hiển thị dữ liệu trong bảng. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Tạo tệp trong <code>student-backup-20250706</code> và gửi email thông báo.</td>
+      </tr>
+      <tr>
+          <td><strong>Xử lý lỗi</strong></td>
+          <td>- <strong>403 Forbidden</strong>: Kiểm tra quyền <code>s3:PutObject</code> và <strong>Bucket Policy</strong> (mục 6.4). <!-- raw HTML omitted --> - <strong>Tệp không hiển thị</strong>: Xác minh tệp được tải vào đúng bucket và thư mục gốc. <!-- raw HTML omitted --> - <strong>Giao diện lỗi</strong>: Kiểm tra đường dẫn trong <code>index.html</code> (VD: <code>&lt;link href=&quot;styles.css&quot;&gt;</code>, <code>&lt;script src=&quot;scripts.js&quot;&gt;</code>) và log trình duyệt (<strong>Developer Tools &gt; Console</strong>).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Mẹo thực tiễn</strong>: Trước khi tải lên, kiểm tra giao diện cục bộ bằng <code>npx serve</code> hoặc server tĩnh để đảm bảo các tệp hoạt động đúng. Sử dụng AWS CLI để tải nhanh hơn nếu có nhiều tệp. Sau khi tải, kiểm tra danh sách tệp trong bucket và chuẩn bị cho mục 6.3 (bật <strong>Static Website Hosting</strong>).</p></blockquote>
+<hr>
+<h2 id="kết-luận">Kết Luận</h2>
+<p>Các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> đã được tải lên bucket <code>student-management-website-2025</code>, sẵn sàng để bật <strong>Static Website Hosting</strong> (mục 6.3) và tích hợp với CloudFront (mục 7) để phục vụ giao diện web.</p>
+<blockquote>
+<p><strong>Bước tiếp theo</strong>: Chuyển đến <a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">Bật tính năng Static Website Hosting</a> để tiếp tục cấu hình!</p></blockquote>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Khởi Tạo S3 Bucket Mới"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Bật Tính Năng Static Website Hosting" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1751949628"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751949628"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751949628"></script>
+    <script src="/js/jquery.sticky.js?1751949628"></script>
+    <script src="/js/featherlight.min.js?1751949628"></script>
+    <script src="/js/highlight.pack.js?1751949628"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751949628"></script>
+    <script src="/js/learn.js?1751949628"></script>
+    <script src="/js/hugo-learn.js?1751949628"></script>
+
+    <link href="/mermaid/mermaid.css?1751949628" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751949628"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

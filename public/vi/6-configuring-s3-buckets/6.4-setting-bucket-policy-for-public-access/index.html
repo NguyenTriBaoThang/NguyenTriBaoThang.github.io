@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="vi" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1751949628" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751949628" rel="stylesheet">
+    <link href="/css/hybrid.css?1751949628" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751949628" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751949628" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751949628" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751949628" rel="stylesheet">
+    <link href="/css/theme.css?1751949628" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751949628" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1751949628" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1751949628"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+  
+  
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+    <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/%20js/lunr.min.js?1751949628"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751949628"></script>
+<script type="text/javascript">
+    { { if hugo.IsMultilingual } }
+    var baseurl = "\/\/localhost:1313\/\/vi";
+    { { else } }
+    var baseurl = "\/\/localhost:1313\/";
+    { { end } }
+</script>
+<script type="text/javascript" src="/%20js/search.js?1751949628"></script>
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+
+      
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/1-introduction/" title="Giới Thiệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/1-introduction/">
+    <b>1. </b>Giới Thiệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/" title="Các Bước Chuẩn Bị" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/">
+    <b>2. </b>Các Bước Chuẩn Bị
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Tạo IAM Role cho Lambda Get" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
+    <b>2.1 </b>Tạo IAM Role cho Lambda Get
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Tạo IAM Role cho Lambda Post" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
+    <b>2.2 </b>Tạo IAM Role cho Lambda Post
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Tạo IAM Role cho DynamoDB Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
+    <b>2.3 </b>Tạo IAM Role cho DynamoDB Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Tạo bảng trong DynamoDB" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.4-createtable-in-dynamodb/">
+    <b>2.4 </b>Tạo bảng trong DynamoDB
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/2-preparation-steps/2.5-configureses/" title="Cấu hình Amazon SES" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/2-preparation-steps/2.5-configureses/">
+    <b>2.5 </b>Cấu hình Amazon SES
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/" title="Tạo Lambda Functions" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/">
+    <b> 3. </b>Tạo Lambda Functions
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Cấu hình Lambda Function getStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
+    <b>3.1 </b>Cấu hình Lambda Function getStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Cấu hình Lambda Function insertStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Cấu hình Lambda Function insertStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Cấu hình Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Cấu hình Lambda Function BackupDynamoDBAndSendEmail
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/" title="Cấu hình RESTful API Bảo Mật bằng API Key" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/">
+    <b>4. </b>Cấu hình RESTful API Bảo Mật bằng API Key
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Tạo REST API mới trên API Gateway" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.1-creating-a-rest-api/">
+    <b>4.1 </b>Tạo REST API mới trên API Gateway
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Tạo API Key để bảo vệ truy cập" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.2-creating-an-api-key/">
+    <b>4.2 </b>Tạo API Key để bảo vệ truy cập
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Thiết lập Usage Plan (Kế hoạch sử dụng)" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
+    <b>4.3 </b>Thiết lập Usage Plan (Kế hoạch sử dụng)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Tạo phương thức GET để truy xuất dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.4-creating-a-get-method/">
+    <b>4.4 </b>Tạo phương thức GET để truy xuất dữ liệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Tạo phương thức POST để lưu dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.5-creating-a-post-method/">
+    <b>4.5 </b>Tạo phương thức POST để lưu dữ liệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Tạo Resource và Method cho Backup dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
+    <b>4.6 </b>Tạo Resource và Method cho Backup dữ liệu
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.7-enabling-cors/" title="Kích hoạt CORS để hỗ trợ frontend truy cập" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.7-enabling-cors/">
+    <b>4.7 </b>Kích hoạt CORS để hỗ trợ frontend truy cập
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.8-deploying-the-api/" title="Triển khai API lên một Stage cụ thể" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.8-deploying-the-api/">
+    <b>4.8 </b>Triển khai API lên một Stage cụ thể
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Gắn API Key vào Usage Plan &amp; Liên kết với REST API và Stage" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
+    <b>4.9 </b>Gắn API Key vào Usage Plan &amp; Liên kết với REST API và Stage
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/5-designing-the-website-interface/" title="Viết giao diện cho Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/5-designing-the-website-interface/">
+    <b>5. </b>Viết giao diện cho Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/" title="Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website" class="dd-item 
+        parent
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/">
+    <b>6. </b>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Khởi Tạo S3 Bucket Mới" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
+    <b>6.1 </b>Khởi Tạo S3 Bucket Mới
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    <b>6.2 </b>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Bật Tính Năng Static Website Hosting" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    <b>6.3 </b>Bật Tính Năng Static Website Hosting
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    <b>6.4 </b>Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
+    <b>6.5 </b>Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/" title="Triển Khai CloudFront để Tăng Tốc Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/">
+    <b>7 </b>Triển Khai CloudFront để Tăng Tốc Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.2-configuring-default-root-object/">
+    <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
+    <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Tạo CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/vi/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
+    <b>7.1 </b>Tạo CloudFront Distribution
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+    </ul>
+
+    
+    
+    <section id="shortcuts">
+      <h3>More</h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+            <div class="select-style">
+              <select id="select-language" onchange="location = this.value;">
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="en" value="//localhost:1313/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">English
+                </option>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="vi" value="//localhost:1313/vi/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" selected>Tiếng Việt</option>
+                
+                
+                
+                
+              </select>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="255px" height="255px"
+                viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+                <g>
+                  <g id="arrow-drop-down">
+                    <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+        
+
+        
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/vi/'>Website Serverless</a> > <a href='/vi/6-configuring-s3-buckets/'>Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website</a> > Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#tổng-quan-về-bucket-policy">Tổng Quan về Bucket Policy</a></li>
+    <li><a href="#yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</a></li>
+    <li><a href="#hành-động-chi-tiết">Hành Động Chi Tiết</a></li>
+    <li><a href="#lưu-ý-quan-trọng">Lưu Ý Quan Trọng</a></li>
+    <li><a href="#kết-luận">Kết Luận</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Cấu Hình Bucket Policy để Cho Phép Truy Cập Công Khai
+            </h1>
+          
+
+        
+
+
+
+	<blockquote>
+<p><strong>Mục tiêu</strong>: Cấu hình <strong>Bucket Policy</strong> cho S3 Bucket <code>student-management-website-2025</code> để cho phép truy cập công khai (<code>s3:GetObject</code>) tới các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> từ mục 6.2). Điều này đảm bảo giao diện web tĩnh (được bật <strong>Static Website Hosting</strong> ở mục 6.3) có thể được truy cập qua endpoint S3 hoặc CloudFront (mục 7). <strong>Bucket Policy</strong> cho phép mọi người (<code>Principal: *</code>) đọc các tệp, hỗ trợ tích hợp với API <code>student</code> (stage <code>prod</code>, mục 4.8) để gọi các endpoint <strong>GET /students</strong>, <strong>POST /students</strong>, và <strong>POST /backup</strong> với bảo mật API Key (<code>StudentApiKey</code>, mục 4.2) và CORS (mục 4.7).</p></blockquote>
+<hr>
+<h2 id="tổng-quan-về-bucket-policy">Tổng Quan về Bucket Policy</h2>
+<ul>
+<li><strong>Vai trò của Bucket Policy</strong>:
+<ul>
+<li>Cấp quyền truy cập công khai (<code>s3:GetObject</code>) để trình duyệt hoặc CloudFront đọc các tệp tĩnh (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</li>
+<li>Đảm bảo endpoint <strong>Static Website Hosting</strong> (VD: <a href="http://student-management-website-2025.s3-website-us-east-1.amazonaws.com">http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</a>) phục vụ giao diện web đúng cách.</li>
+<li>Chuẩn bị cho tích hợp với CloudFront, cung cấp HTTPS và hiệu suất cao.</li>
+</ul>
+</li>
+<li><strong>Tích hợp với hệ thống</strong>:
+<ul>
+<li>Giao diện web gọi API <code>student</code> (mục 4.8) sử dụng <strong>Invoke URL</strong> (VD: <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod">https://abc123.execute-api.us-east-1.amazonaws.com/prod</a>) và <code>StudentApiKey</code> trong header <code>x-api-key</code>.</li>
+<li>Các chức năng bao gồm:
+<ul>
+<li><strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code> và gửi email xác nhận qua SES.</li>
+<li><strong>GET /students</strong>: Hiển thị dữ liệu trong bảng.</li>
+<li><strong>POST /backup</strong>: Tạo tệp backup trong S3 Bucket <code>student-backup-20250706</code> (mục 2.4, 6.5) và gửi email thông báo qua SES.</li>
+</ul>
+</li>
+<li>CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+<li><strong>Lý do cấp quyền công khai</strong>:
+<ul>
+<li><strong>Static Website Hosting</strong> yêu cầu các tệp trong bucket có thể truy cập công khai để trình duyệt hoặc CloudFront tải nội dung.</li>
+<li>Quyền <code>s3:GetObject</code> được cấp cho <code>Principal: *</code> (mọi người) để đơn giản hóa, nhưng có thể giới hạn với CloudFront <strong>OAI</strong> (xem <strong>Lưu ý</strong>) để tăng bảo mật.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="yêu-cầu-ban-đầu">Yêu Cầu Ban Đầu</h2>
+
+<div class="notices info" ><p>Bạn cần hoàn thành mục 6.1 (tạo bucket <code>student-management-website-2025</code>), mục 6.2 (tải lên <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>), mục 6.3 (bật <strong>Static Website Hosting</strong>), mục 5 (xây dựng giao diện web), mục 4.1 (tạo API <code>student</code>), mục 4.2 (tạo API Key <code>StudentApiKey</code>), mục 4.3 (tạo Usage Plan <code>StudentUsagePlan</code>), mục 4.4 (tạo phương thức <strong>GET /students</strong>), mục 4.5 (tạo phương thức <strong>POST /students</strong>), mục 4.6 (tạo resource <code>/backup</code> và phương thức <strong>POST /backup</strong>), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage <code>prod</code>), mục 4.9 (gắn <code>StudentApiKey</code> vào <code>StudentUsagePlan</code>), mục 3 (tạo các hàm Lambda <code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>, bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, SES email xác minh). Đảm bảo tài khoản AWS có quyền <code>s3:PutBucketPolicy</code> và vùng AWS là <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="hành-động-chi-tiết">Hành Động Chi Tiết</h2>
+<ol>
+<li>
+<p><strong>Truy Cập AWS Management Console</strong></p>
+<ul>
+<li>Mở trình duyệt và đăng nhập vào <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> bằng tài khoản AWS của bạn.</li>
+<li>Trong thanh tìm kiếm ở đầu trang, nhập <strong>S3</strong> và chọn dịch vụ <strong>Amazon S3</strong> để vào giao diện quản lý bucket.</li>
+<li>Kiểm tra vùng AWS: Đảm bảo bạn đang làm việc trong vùng <strong>us-east-1</strong> (US East (N. Virginia)) để đồng bộ với bucket <code>student-management-website-2025</code>, API <code>student</code>, các hàm Lambda (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), bảng DynamoDB <code>studentData</code>, bucket <code>student-backup-20250706</code>, và SES. Vùng được hiển thị ở góc trên bên phải AWS Console.<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-01.png" alt="Giao diện AWS Console với thanh tìm kiếm S3.">
+<em>Hình 1: Giao diện AWS Console với thanh tìm kiếm S3.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Chọn Bucket <code>student-management-website-2025</code></strong></p>
+<ul>
+<li>Trong giao diện chính của <strong>Amazon S3 &gt; Buckets</strong>, tìm và chọn bucket <code>student-management-website-2025</code> (tạo ở mục 6.1).</li>
+<li>Nếu không thấy bucket:
+<ul>
+<li>Kiểm tra vùng AWS (<code>us-east-1</code>) và làm mới trang.</li>
+<li>Xác minh bucket đã được tạo với tên chính xác (tên bucket là duy nhất toàn cầu, có thể bạn đã dùng tên khác như <code>student-management-website-20250706-abc123</code>).</li>
+</ul>
+</li>
+<li>Nhấn vào tên bucket để vào giao diện quản lý bucket.<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-02.png" alt="Chọn bucket student-management-website-2025.">
+<em>Hình 2: Chọn bucket student-management-website-2025.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Truy Cập Tab Permissions</strong></p>
+<ul>
+<li>Trong giao diện của bucket <code>student-management-website-2025</code>, chọn tab <strong>Permissions</strong> (thường nằm ở đầu trang, bên cạnh Objects, Properties, v.v.).</li>
+<li>Cuộn xuống phần <strong>Bucket policy</strong> để xem trạng thái hiện tại (mặc định là trống nếu chưa cấu hình).<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-03.png" alt="Tab Permissions và phần Bucket policy.">
+<em>Hình 3: Tab Permissions và phần Bucket policy.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Chỉnh Sửa Bucket Policy</strong></p>
+<ul>
+<li>Trong phần <strong>Bucket policy</strong>, nhấn nút <strong>Edit</strong> để mở giao diện chỉnh sửa.</li>
+<li>Kiểm tra trước khi chỉnh sửa:
+<ul>
+<li>Đảm bảo <strong>Block all public access</strong> đã bỏ chọn (mục 6.1) để cho phép cấu hình quyền công khai.</li>
+<li>Xác minh các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> đã được tải lên (mục 6.2) và <strong>Static Website Hosting</strong> đã bật với <code>index.html</code> làm <strong>Index document</strong> (mục 6.3).<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-04.png" alt="Nhấn Edit trong Bucket policy.">
+<em>Hình 4: Nhấn Edit trong Bucket policy.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Chỉnh Sửa Mã Bucket Policy</strong></p>
+<ul>
+<li>Trong giao diện <strong>Edit bucket policy</strong>, xóa nội dung hiện có (nếu có) và dán mã JSON sau:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;PublicReadGetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Principal&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:GetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-management-website-2025/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><strong>Giải thích mã JSON</strong>:
+<ul>
+<li><strong>Version</strong>: &ldquo;2012-10-17&rdquo; là phiên bản định dạng chính sách IAM mới nhất.</li>
+<li><strong>Statement</strong>: Danh sách các chính sách quyền.</li>
+<li><strong>Sid</strong>: &ldquo;PublicReadGetObject&rdquo; là tên tùy chọn để nhận diện chính sách.</li>
+<li><strong>Effect</strong>: &ldquo;Allow&rdquo; cho phép hành động được chỉ định.</li>
+<li><strong>Principal</strong>: &ldquo;*&rdquo; cho phép mọi người (bao gồm trình duyệt và CloudFront) truy cập.</li>
+<li><strong>Action</strong>: &ldquo;s3:GetObject&rdquo; cho phép đọc các tệp trong bucket.</li>
+<li><strong>Resource</strong>: &ldquo;arn:aws:s3:::student-management-website-2025/*&rdquo; chỉ định tất cả các tệp trong bucket <code>student-management-website-2025</code>.</li>
+</ul>
+</li>
+<li>Kiểm tra mã: Đảm bảo tên bucket trong <strong>Resource</strong> khớp với <code>student-management-website-2025</code>.<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-05.png" alt="Cấu hình Bucket Policy.">
+<em>Hình 5: Cấu hình Bucket Policy.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Lưu Thay Đổi</strong></p>
+<ul>
+<li>Nhấn <strong>Save changes</strong> để áp dụng <strong>Bucket Policy</strong>.</li>
+<li>Kết quả mong đợi: AWS S3 hiển thị thông báo <em>&ldquo;Successfully edited bucket policy&rdquo;</em>.<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-06.png" alt="Nhấn Save changes.">
+<em>Hình 6: Nhấn Save changes.</em></li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li><strong>&ldquo;Policy has invalid resource&rdquo;</strong>: Kiểm tra ARN trong <strong>Resource</strong> đúng cú pháp (<code>arn:aws:s3:::student-management-website-2025/*</code>).</li>
+<li><strong>&ldquo;AccessDenied&rdquo;</strong>:
+<ul>
+<li>Kiểm tra vai trò IAM của tài khoản có quyền <code>s3:PutBucketPolicy</code>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:PutBucketPolicy&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-management-website-2025&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Đảm bảo <strong>Block all public access</strong> đã bỏ chọn (mục 6.1).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Kiểm Tra Truy Cập Website</strong></p>
+<ul>
+<li>Trở lại tab <strong>Properties &gt; Static website hosting</strong> trong bucket <code>student-management-website-2025</code>.</li>
+<li>Sao chép <strong>Bucket website endpoint</strong> (VD: <a href="http://student-management-website-2025.s3-website-us-east-1.amazonaws.com">http://student-management-website-2025.s3-website-us-east-1.amazonaws.com</a>).<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-07.png" alt="Bucket website endpoint.">
+<em>Hình 7: Bucket website endpoint.</em></li>
+<li>Mở trình duyệt và truy cập endpoint này.</li>
+<li>Kết quả mong đợi:
+<ul>
+<li>Giao diện web hiển thị với biểu mẫu nhập liệu, bảng sinh viên, và các nút chức năng (Lưu, Xem, Backup) sử dụng Tailwind CSS và font Poppins.</li>
+<li>Các tệp <code>styles.css</code> và <code>scripts.js</code> được tải đúng, giao diện hiển thị chính xác.<br>
+<img src="/images/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/setting-bucket-policy-for-public-access-08.png" alt="Giao diện web hiển thị qua endpoint S3.">
+<em>Hình 8: Giao diện web hiển thị qua endpoint S3.</em></li>
+</ul>
+</li>
+<li><strong>Lưu ý</strong>:
+<ul>
+<li>Các yêu cầu API (<strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>) có thể gặp lỗi CORS vì endpoint S3 sử dụng HTTP và chưa tích hợp với CloudFront. Điều này sẽ được khắc phục khi cấu hình CloudFront (mục 7) và CORS trong API Gateway (mục 4.7).</li>
+<li>Endpoint S3 chỉ hỗ trợ HTTP. CloudFront sẽ cung cấp HTTPS và tăng tốc độ tải.</li>
+</ul>
+</li>
+<li><strong>Xử lý lỗi</strong>:
+<ul>
+<li><strong>Lỗi 403 Forbidden</strong>:
+<ul>
+<li>Kiểm tra <strong>Bucket Policy</strong> đúng ARN (<code>arn:aws:s3:::student-management-website-2025/*</code>).</li>
+<li>Xác minh <strong>Block all public access</strong> đã bỏ chọn (mục 6.1).</li>
+<li>Đảm bảo các tệp <code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code> được tải lên với quyền <code>public-read</code> (mục 6.2) hoặc được bao phủ bởi <strong>Bucket Policy</strong>.</li>
+</ul>
+</li>
+<li><strong>Lỗi 404 Not Found</strong>:
+<ul>
+<li>Xác minh <code>index.html</code> đã được tải lên thư mục gốc (mục 6.2).</li>
+<li>Kiểm tra <strong>Static Website Hosting</strong> đã bật với <code>index.html</code> là <strong>Index document</strong> (mục 6.3).</li>
+</ul>
+</li>
+<li><strong>Giao diện hiển thị sai</strong>:
+<ul>
+<li>Mở <strong>Developer Tools &gt; Console</strong> trong trình duyệt để kiểm tra lỗi (VD: tệp CSS/JS không tải).</li>
+<li>Xác minh đường dẫn trong <code>index.html</code> (VD: <!-- raw HTML omitted -->, <!-- raw HTML omitted -->).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="lưu-ý-quan-trọng">Lưu Ý Quan Trọng</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Yếu Tố</th>
+          <th>Chi Tiết</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Bảo mật</td>
+          <td>Quyền công khai (<code>Principal: &quot;*&quot;</code>) phù hợp cho kiểm tra ban đầu, nhưng không an toàn cho môi trường sản xuất. Sử dụng CloudFront <strong>Origin Access Identity (OAI)</strong>: <!-- raw HTML omitted --> - Tạo OAI trong CloudFront &gt; Origin access identities, gắn vào phân phối CloudFront (mục 7). <!-- raw HTML omitted --> - Bật lại <strong>Block public access</strong> (trừ <strong>Block public access for bucket policies</strong>) sau khi cấu hình OAI. <!-- raw HTML omitted --> - Tránh nhúng <code>StudentApiKey</code> trong <code>scripts.js</code>. Sử dụng AWS Secrets Manager hoặc CloudFront Functions: <!-- raw HTML omitted --> function handler(event) { var request = event.request; request.headers[&lsquo;x-api-key&rsquo;] = { value: &lsquo;xxxxxxxxxxxxxxxxxxxx&rsquo; }; return request; }</td>
+      </tr>
+      <tr>
+          <td>Tối ưu hóa</td>
+          <td>Bật <strong>S3 Access Logs</strong>: Trong S3 &gt; student-management-website-2025 &gt; Properties &gt; Server access logging, chọn <strong>Enable</strong>, chỉ định bucket log (VD: student-web-logs-20250706). Sử dụng AWS CLI: <!-- raw HTML omitted --> aws s3api put-bucket-policy &ndash;bucket student-management-website-2025 &ndash;policy file://policy.json</td>
+      </tr>
+      <tr>
+          <td>Tích hợp với hệ thống</td>
+          <td>Tích hợp với CloudFront (mục 7): <!-- raw HTML omitted --> - Sử dụng <strong>Bucket website endpoint</strong> làm Origin. <!-- raw HTML omitted --> - Đặt <strong>Default root object</strong>: <code>index.html</code>. <!-- raw HTML omitted --> - Cấu hình <strong>Viewer protocol policy</strong>: Redirect HTTP to HTTPS. <!-- raw HTML omitted --> Cập nhật CORS trong API Gateway (mục 4.7) với <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>.</td>
+      </tr>
+      <tr>
+          <td>Kiểm tra tích hợp</td>
+          <td>Truy cập <strong>Bucket website endpoint</strong> để kiểm tra giao diện. Sau khi cấu hình CloudFront, truy cập CloudFront URL (<a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>) và kiểm tra: <!-- raw HTML omitted --> - <strong>POST /students</strong>: Lưu bản ghi vào DynamoDB <code>studentData</code>, gửi email SES. <!-- raw HTML omitted --> - <strong>GET /students</strong>: Hiển thị bảng. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Tạo tệp trong <code>student-backup-20250706</code>, gửi email. <!-- raw HTML omitted --> Sử dụng <strong>Developer Tools &gt; Network</strong> để kiểm tra yêu cầu API.</td>
+      </tr>
+      <tr>
+          <td>Xử lý lỗi</td>
+          <td><strong>403 Forbidden</strong>: Kiểm tra <strong>Bucket Policy</strong> ARN, <strong>Block all public access</strong> (mục 6.1), quyền <code>public-read</code> của tệp (mục 6.2). <strong>404 Not Found</strong>: Xác minh <code>index.html</code> ở thư mục gốc, <strong>Static Website Hosting</strong> bật đúng (mục 6.3). <strong>Giao diện sai</strong>: Kiểm tra <strong>Developer Tools &gt; Console</strong>, đường dẫn trong <code>index.html</code>. <strong>CORS</strong>: Kiểm tra header <code>Access-Control-Allow-Origin</code> trong Lambda (mục 3.1, 3.2, 3.3) và API Gateway (mục 4.7). <strong>429</strong>: Kiểm tra giới hạn Rate/Burst/Quota trong <code>StudentUsagePlan</code> (mục 4.3).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Mẹo thực tiễn</strong>: Kiểm tra <strong>Bucket website endpoint</strong> ngay sau khi lưu <strong>Bucket Policy</strong>. Sử dụng AWS CLI để tự động hóa nếu cần áp dụng chính sách cho nhiều bucket. Chuẩn bị cho mục 7 (cấu hình CloudFront) để tăng bảo mật và hỗ trợ HTTPS.</p></blockquote>
+<hr>
+<h2 id="kết-luận">Kết Luận</h2>
+<p><strong>Bucket Policy</strong> đã được cấu hình trên bucket <code>student-management-website-2025</code>, cho phép truy cập công khai (<code>s3:GetObject</code>) để phục vụ giao diện web. Bucket sẵn sàng tích hợp với CloudFront (mục 7) để hỗ trợ HTTPS và hiệu suất cao.</p>
+<blockquote>
+<p><strong>Bước tiếp theo</strong>: Chuyển đến <a href="/7-configuring-cloudfront/">Cấu hình CloudFront để phân phối nội dung</a> để tiếp tục cấu hình!</p></blockquote>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Bật Tính Năng Static Website Hosting"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/vi/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Cập Nhật Bucket Policy để Hỗ Trợ Sao Lưu Dữ Liệu (Backup)" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1751949628"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751949628"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751949628"></script>
+    <script src="/js/jquery.sticky.js?1751949628"></script>
+    <script src="/js/featherlight.min.js?1751949628"></script>
+    <script src="/js/highlight.pack.js?1751949628"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751949628"></script>
+    <script src="/js/learn.js?1751949628"></script>
+    <script src="/js/hugo-learn.js?1751949628"></script>
+
+    <link href="/mermaid/mermaid.css?1751949628" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751949628"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>

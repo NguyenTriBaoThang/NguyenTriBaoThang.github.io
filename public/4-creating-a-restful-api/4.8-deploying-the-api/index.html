@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Deploy the API to a Specific Stage :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1751949625" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1751949625" rel="stylesheet">
+    <link href="/css/hybrid.css?1751949625" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1751949625" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1751949625" rel="stylesheet">
+    <link href="/css/auto-complete.css?1751949625" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1751949625" rel="stylesheet">
+    <link href="/css/theme.css?1751949625" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1751949625" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1751949625" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1751949625"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/4-creating-a-restful-api/4.8-deploying-the-api/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+  
+  
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+    <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/%20js/lunr.min.js?1751949625"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1751949625"></script>
+<script type="text/javascript">
+    { { if hugo.IsMultilingual } }
+    var baseurl = "\/\/localhost:1313\/";
+    { { else } }
+    var baseurl = "\/\/localhost:1313\/";
+    { { end } }
+</script>
+<script type="text/javascript" src="/%20js/search.js?1751949625"></script>
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+
+      
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/1-introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/1-introduction/">
+    <b>1. </b>Introduction
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/" title="Preparation Steps" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/">
+    <b>2. </b>Preparation Steps
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
+    <b>2.1 </b>Create IAM Role for Lambda Get
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
+    <b>2.2 </b>Create IAM Role for Lambda Post
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
+    <b>2.3 </b>Create IAM Role for DynamoDB Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.4-createtable-in-dynamodb/">
+    <b>2.4 </b>Create Table in DynamoDB
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Configure Amazon SES" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.5-configureses/">
+    <b>2.5 </b>Configure Amazon SES
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/" title="Creating Lambda Functions" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/">
+    <b> 3. </b>Creating Lambda Functions
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Configure Lambda Function getStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
+    <b>3.1 </b>Configure Lambda Function getStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2 </b>Configure Lambda Function insertStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3 </b>Configure Lambda Function BackupDynamoDBAndSendEmail
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" class="dd-item 
+        parent
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/">
+    <b>4. </b>Configuring RESTful API with API Key Security
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">
+    <b>4.1 </b>Create a New REST API on API Gateway
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Create an API Key to Secure Access" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">
+    <b>4.2 </b>Create an API Key to Secure Access
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Set Up Usage Plan" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
+    <b>4.3 </b>Set Up Usage Plan
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Create GET Method to Retrieve Data" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">
+    <b>4.4 </b>Create GET Method to Retrieve Data
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Create POST Method to Store Data" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">
+    <b>4.5 </b>Create POST Method to Store Data
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Create Resource and Method for Data Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
+    <b>4.6 </b>Create Resource and Method for Data Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.7-enabling-cors/">
+    <b>4.7 </b>Enable CORS to Support Frontend Access
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Deploy the API to a Specific Stage" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.8-deploying-the-api/">
+    <b>4.8 </b>Deploy the API to a Specific Stage
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
+    <b>4.9 </b>Link API Key to Usage Plan &amp; Associate with REST API and Stage
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/5-designing-the-website-interface/" title="Write the Website Interface" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/5-designing-the-website-interface/">
+    <b>5. </b>Write the Website Interface
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/" title="Configuring S3 Bucket for Storing and Serving the Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/">
+    <b>6. </b>Configuring S3 Bucket for Storing and Serving the Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Session Management" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
+    Session Management
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/">
+    <b>7. </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
+    <b>7.1 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/7.2-configuring-default-root-object/">
+    <b>7.2 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
+    <b>7.3 </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+    </ul>
+
+    
+    
+    <section id="shortcuts">
+      <h3>More</h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+            <div class="select-style">
+              <select id="select-language" onchange="location = this.value;">
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="en" value="//localhost:1313/4-creating-a-restful-api/4.8-deploying-the-api/" selected>English</option>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="vi" value="//localhost:1313/vi/4-creating-a-restful-api/4.8-deploying-the-api/">Tiếng Việt
+                </option>
+                
+                
+                
+                
+              </select>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="255px" height="255px"
+                viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+                <g>
+                  <g id="arrow-drop-down">
+                    <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+        
+
+        
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/sutrinh/"  style="color:orange">Sử Trịnh  </a> <br>
+                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+                <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Website Serverless</a> > <a href='/4-creating-a-restful-api/'>Configuring RESTful API with API Key Security</a> > Deploy the API to a Specific Stage
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview-of-api-deployment-in-api-gateway">Overview of API Deployment in API Gateway</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#detailed-actions">Detailed Actions</a></li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Deploy the API to a Specific Stage
+            </h1>
+          
+
+        
+
+
+
+	<blockquote>
+<p><strong>Objective</strong>: Deploy the <code>student</code> API (created in section 4.1) to the <code>prod</code> stage in AWS API Gateway to activate the <strong>GET /students</strong> (section 4.4), <strong>POST /students</strong> (section 4.5), and <strong>POST /backup</strong> (section 4.6) methods, along with CORS configuration (section 4.7). After deployment, copy the <strong>Invoke URL</strong> (e.g., <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>) to be used in the web interface (running on CloudFront, using Tailwind CSS) to call the endpoints with the API Key <code>StudentApiKey</code> (section 4.2).</p></blockquote>
+<hr>
+<h2 id="overview-of-api-deployment-in-api-gateway">Overview of API Deployment in API Gateway</h2>
+<ul>
+<li>A stage is a deployment environment (e.g., <code>prod</code>, <code>dev</code>, <code>test</code>) in API Gateway, representing an active version of the API at a given time.</li>
+<li>Deploying the API to the <code>prod</code> stage will:
+<ul>
+<li>Activate the <strong>GET /students</strong>, <strong>POST /students</strong>, and <strong>POST /backup</strong> methods, integrated with Lambda functions (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>).</li>
+<li>Apply the CORS configuration (section 4.7) so the web interface can send cross-origin requests.</li>
+<li>Require the API Key <code>StudentApiKey</code> in the <code>x-api-key</code> header for the methods (due to <strong>API Key Required</strong> being enabled in sections 4.4, 4.5, and 4.6).</li>
+</ul>
+</li>
+<li>The <strong>Invoke URL</strong> is the root URL of the stage (e.g., <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>), combined with the resource paths (<code>/students</code>, <code>/backup</code>) to create the full endpoints:
+<ul>
+<li><strong>GET</strong> <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod/students</code></li>
+<li><strong>POST</strong> <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod/students</code></li>
+<li><strong>POST</strong> <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup</code></li>
+</ul>
+</li>
+<li>After deployment, the <strong>Invoke URL</strong> will be used in the web interface to call the API with the API Key.</li>
+</ul>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<div class="notices info" ><p>You need to complete section 4.1 (create <code>student</code> API), section 4.2 (create <code>StudentApiKey</code>), section 4.3 (create <code>StudentUsagePlan</code>), section 4.4 (create <strong>GET /students</strong> method), section 4.5 (create <strong>POST /students</strong> method), section 4.6 (create <code>/backup</code> resource and <strong>POST /backup</strong> method), section 4.7 (enable CORS), and section 3 (create Lambda functions <code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>, DynamoDB <code>studentData</code> table, S3 bucket <code>student-backup-20250706</code>, SES email verification). Ensure your AWS account is ready and the AWS region is <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="detailed-actions">Detailed Actions</h2>
+<ol>
+<li>
+<p><strong>Access AWS Management Console</strong></p>
+<ul>
+<li>
+<p>Open your browser and log into the <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> with your AWS account.</p>
+</li>
+<li>
+<p>In the search bar at the top, type <strong>API Gateway</strong> and select the <strong>Amazon API Gateway</strong> service to access the management interface.</p>
+</li>
+<li>
+<p>Check the AWS region: Ensure you are working in the primary AWS region (assumed <code>us-east-1</code> to synchronize with previous sections), check the region in the top-right corner of the AWS Console. This region must match the <code>student</code> API, the Lambda functions (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), <code>studentData</code> DynamoDB table, <code>student-backup-20250706</code> S3 bucket, and SES.</p>
+<p><img src="/images/5-creating-a-restful-api/4.8-deploying-the-api/deploying-the-api-01.png" alt="AWS Console Interface with the API Gateway search bar."><br>
+<em>Figure 1: AWS Console interface with the API Gateway search bar.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Navigate to APIs</strong></p>
+<ul>
+<li>
+<p>In the main interface of Amazon API Gateway, look at the left navigation menu.</p>
+</li>
+<li>
+<p>Select <strong>APIs</strong> to view the list of existing APIs.</p>
+</li>
+<li>
+<p>The list should display the <code>student</code> API (created in section 4.1). If not, check the AWS region again or refresh the page.</p>
+<p><img src="/images/5-creating-a-restful-api/4.8-deploying-the-api/deploying-the-api-02.png" alt="Navigation menu with the APIs option."><br>
+<em>Figure 2: Navigation menu with the APIs option.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Select the student API</strong></p>
+<ul>
+<li>
+<p>In the <strong>APIs</strong> list, find and select the <code>student</code> API.</p>
+</li>
+<li>
+<p>You will be redirected to the API management page for <code>student</code>, showing options like <strong>Resources</strong>, <strong>Stages</strong>, <strong>API Keys</strong>, etc.</p>
+<p><img src="/images/5-creating-a-restful-api/4.8-deploying-the-api/deploying-the-api-03.png" alt="Student API management page."><br>
+<em>Figure 3: Student API management page.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Deploy the API</strong></p>
+<ul>
+<li>In the API management page for <code>student</code>, select <strong>Resources</strong> from the left menu.</li>
+<li>Click <strong>Actions</strong> &gt; <strong>Deploy API</strong> to open the deployment interface.</li>
+</ul>
+<p><img src="/images/5-creating-a-restful-api/4.8-deploying-the-api/deploying-the-api-04.png" alt="Click the Deploy API button."><br>
+<em>Figure 4: Click the Deploy API button.</em></p>
+<ul>
+<li>
+<p>In the <strong>Deploy API</strong> interface:</p>
+<ul>
+<li><strong>Deployment stage</strong>: Select <strong>New Stage</strong>.</li>
+<li><strong>Stage name</strong>: Enter <code>prod</code> (in lowercase, no special characters).</li>
+<li><strong>Stage description</strong>: (Optional) Enter <code>Production stage for StudentManagementAPI</code> for a clear description.</li>
+<li><strong>Deployment description</strong>: (Optional) Enter <code>Initial deployment for prod stage</code> to note the deployment version.</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Deploy</strong> to deploy the API to the <code>prod</code> stage.</p>
+</li>
+<li>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>If the <code>prod</code> stage already exists (from a previous deployment), select <code>prod</code> in the <strong>Deployment stage</strong> dropdown instead of creating a new one, then click <strong>Deploy</strong> to update it.</li>
+<li>Every time you change the API configuration (method, CORS, etc.), you need to redeploy to apply the changes.</li>
+</ul>
+<p><img src="/images/5-creating-a-restful-api/4.8-deploying-the-api/deploying-the-api-05.png" alt="Deploy API to the prod stage interface."><br>
+<em>Figure 5: Deploy API to the prod stage interface.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check the Deployment Status</strong></p>
+<ul>
+<li>
+<p>After clicking <strong>Deploy</strong>, you will see the message: <em>&ldquo;Successfully created deployment for student. This deployment is active for prod.&rdquo;</em></p>
+</li>
+<li>
+<p>In the left menu, select <strong>Stages</strong> to view the list of stages.</p>
+</li>
+<li>
+<p>Select the <code>prod</code> stage to check the details:</p>
+<ul>
+<li>Verify that the <strong>Invoke URL</strong> appears at the top of the page (e.g., <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>).</li>
+<li>Check the resources (<code>/students</code>, <code>/backup</code>) and methods (<strong>GET</strong>, <strong>POST</strong>, <strong>OPTIONS</strong>) that have been deployed.</li>
+</ul>
+</li>
+<li>
+<p>If you do not see the message or encounter an error:</p>
+<ul>
+<li><em>&ldquo;AccessDenied&rdquo;</em>: Check that the AWS account&rsquo;s IAM role has the <code>apigateway:POST</code> permission to deploy the API.</li>
+<li><em>&ldquo;Stage already exists&rdquo;</em>: If the <code>prod</code> stage already exists, select the existing stage and redeploy.</li>
+<li><em>&ldquo;No methods deployed&rdquo;</em>: Ensure that the <strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>, and <strong>OPTIONS</strong> methods have been created (sections 4.4, 4.5, 4.6, 4.7).</li>
+</ul>
+<p><img src="/images/5-creating-a-restful-api/4.8-deploying-the-api/deploying-the-api-06.png" alt="Deployment status message and prod stage details."><br>
+<em>Figure 6: Deployment status message and prod stage details.</em></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Copy the Invoke URL</strong></p>
+<ul>
+<li>In <strong>Stages</strong> &gt; <code>prod</code>, copy the <strong>Invoke URL</strong> (e.g., <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>).</li>
+<li>Store the <strong>Invoke URL</strong> in a safe place (e.g., configuration file, environment variable, or <strong>AWS Secrets Manager</strong>) to use in the web interface.</li>
+<li>Use the <strong>Invoke URL</strong>:
+<ul>
+<li>Combine the <strong>Invoke URL</strong> with the resource path to create the full endpoint:
+<ul>
+<li><strong>GET</strong> <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod/students</code></li>
+<li><strong>POST</strong> <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod/students</code></li>
+<li><strong>POST</strong> <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup</code></li>
+</ul>
+</li>
+<li>These endpoints will be called from the web interface with the header <code>x-api-key: &lt;StudentApiKey&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="important-notes">Important Notes</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Factor</strong></th>
+          <th><strong>Details</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>API Key Security</strong></td>
+          <td>Each request to the endpoints must include the <code>x-api-key</code> header with the value <code>StudentApiKey</code> (created in section 4.2). <!-- raw HTML omitted --> Store the API Key in <strong>AWS Secrets Manager</strong> for enhanced security, avoiding direct embedding in JavaScript code.</td>
+      </tr>
+      <tr>
+          <td><strong>CORS</strong></td>
+          <td>Ensure CORS has been properly enabled (section 4.7) with the <strong>OPTIONS</strong> method and the <code>Access-Control-Allow-Origin: '*'</code> header (or specific CloudFront domain). <!-- raw HTML omitted --> The Lambda functions (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>) must return the <code>Access-Control-Allow-Origin: '*'</code> header in the response (configured in sections 3.1, 3.2, 3.3).</td>
+      </tr>
+      <tr>
+          <td><strong>AWS Region</strong></td>
+          <td>Ensure the <code>us-east-1</code> region matches the <code>student</code> API, Lambda functions, <code>studentData</code> DynamoDB table, <code>student-backup-20250706</code> S3 bucket, and SES.</td>
+      </tr>
+      <tr>
+          <td><strong>Error Handling</strong></td>
+          <td>- If you encounter a <code>403 &quot;Forbidden&quot;</code> error when calling the endpoint: <!-- raw HTML omitted --> - Check that the <code>StudentApiKey</code> is valid and linked to the Usage Plan (sections 4.3, 4.9). <!-- raw HTML omitted --> - Ensure <strong>API Key Required: true</strong> is set in <strong>Method Request</strong> (sections 4.4, 4.5, 4.6). <!-- raw HTML omitted --> - If you encounter a <code>404 &quot;Not Found&quot;</code> error: <!-- raw HTML omitted --> - Check that the <strong>Invoke URL</strong> is correct and the resource paths (<code>/students</code>, <code>/backup</code>) are configured. <!-- raw HTML omitted --> - Ensure the API has been deployed to the <code>prod</code> stage. <!-- raw HTML omitted --> - If you encounter a CORS error: <!-- raw HTML omitted --> - Check the CORS configuration (section 4.7) and the <code>Access-Control-Allow-Origin</code> header in <strong>Method Response</strong> and Lambda. <!-- raw HTML omitted --> - If you encounter a <code>500</code> error from Lambda, check the logs in <strong>CloudWatch</strong> (log groups <code>/aws/lambda/getStudentData</code>, <code>/aws/lambda/insertStudentData</code>, <code>/aws/lambda/BackupDynamoDBAndSendEmail</code>).</td>
+      </tr>
+      <tr>
+          <td><strong>Optimization</strong></td>
+          <td>- Enable <strong>CloudWatch Logs</strong> for the <code>prod</code> stage to monitor API requests: <!-- raw HTML omitted --> - In <strong>Stages</strong> &gt; <code>prod</code> &gt; <strong>Logs/Tracing</strong>, select <strong>Enable CloudWatch Logs</strong> and set the log level (e.g., <code>INFO</code>). <!-- raw HTML omitted --> - Check the logs in <strong>CloudWatch</strong> &gt; <strong>Log groups</strong> &gt; <code>/aws/apigateway/student-prod</code>. <!-- raw HTML omitted --> - Consider using <strong>AWS WAF</strong> with API Gateway to protect against DDoS attacks or API Key abuse. <!-- raw HTML omitted --> - If additional stages are needed (e.g., <code>dev</code>, <code>test</code>), create more stages in <strong>Stages</strong> and deploy separately for testing.</td>
+      </tr>
+      <tr>
+          <td><strong>Early Testing</strong></td>
+          <td>- After deployment, verify the <code>prod</code> stage appears in <strong>Stages</strong> with the correct <strong>Invoke URL</strong>. <!-- raw HTML omitted --> - Test the endpoints using Postman or curl. <!-- raw HTML omitted --> - Expected results: <!-- raw HTML omitted --> - <strong>GET /students</strong>: Returns the student list from the DynamoDB <code>studentData</code> table. <!-- raw HTML omitted --> - <strong>POST /students</strong>: Saves a new record to DynamoDB and sends a confirmation email via SES. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Creates a backup file in S3 <code>student-backup-20250706</code> and sends a notification email. <!-- raw HTML omitted --> - Check from the web interface (open <strong>Developer Tools</strong> &gt; <strong>Network</strong> in the browser) to verify that there are no CORS or 403 errors. <!-- raw HTML omitted --> - If you encounter errors, check the API Key, CORS configuration, or <strong>CloudWatch</strong> logs.</td>
+      </tr>
+      <tr>
+          <td><strong>Web Interface Integration Testing</strong></td>
+          <td>Use the <strong>Invoke URL</strong> in the web interface to call the endpoints, ensuring the <code>x-api-key</code> header is sent correctly (using Tailwind CSS, running on CloudFront).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Practical Tip</strong>: After deployment, check the <strong>Invoke URL</strong> using Postman before integrating with the web interface. Verify the data in DynamoDB <code>studentData</code>, S3 bucket <code>student-backup-20250706</code>, and SES email to ensure the endpoints are working correctly.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <code>student</code> API has been successfully deployed to the <code>prod</code> stage with the <strong>Invoke URL</strong> ready for use in the web interface, supporting the <strong>GET /students</strong>, <strong>POST /students</strong>, and <strong>POST /backup</strong> methods.</p>
+<blockquote>
+<p><strong>Next step</strong>: Move to <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan/">Linking API Key to Usage Plan</a> to continue!</p></blockquote>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1751949626"></script>
+    <script src="/js/perfect-scrollbar.min.js?1751949626"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1751949626"></script>
+    <script src="/js/jquery.sticky.js?1751949626"></script>
+    <script src="/js/featherlight.min.js?1751949626"></script>
+    <script src="/js/highlight.pack.js?1751949626"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1751949626"></script>
+    <script src="/js/learn.js?1751949626"></script>
+    <script src="/js/hugo-learn.js?1751949626"></script>
+
+    <link href="/mermaid/mermaid.css?1751949626" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1751949626"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
