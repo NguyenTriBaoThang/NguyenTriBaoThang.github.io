@@ -76,11 +76,24 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### 🔽1. Clone Mã Nguồn từ GitHub
-Mở terminal và chạy lệnh sau để sao chép mã nguồn về máy:
+- Mở terminal và chạy lệnh sau để sao chép mã nguồn về máy:
 
 ```bash
 git clone https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io.git
 cd NguyenTriBaoThang.github.io
+```
+
+- Nếu bạn chưa cài đặt Hugo: [Bạn có thể vào trang Website này đề tải.](https://gohugo.io/getting-started/installing/).
+- Chạy lệnh sau để build trang web:
+
+```bash
+hugo
+```
+
+- Chạy lệnh sau để khởi động server Hugo:
+
+```bash
+hugo server
 ```
 
 ### 🧰2. Cài Đặt Công Cụ
