@@ -9,10 +9,19 @@
 Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS**! Đây là một chương trình đào tạo thực hành kéo dài **8 giờ**, giúp bạn xây dựng một **ứng dụng web serverless** quản lý thông tin sinh viên trên nền tảng **Amazon Web Services (AWS)**. Sử dụng các dịch vụ như **S3**, **CloudFront**, **API Gateway**, **Lambda**, **DynamoDB**, **SES**, và **EventBridge**, bạn sẽ học cách triển khai một hệ thống hoàn chỉnh từ giao diện tĩnh đến backend, tích hợp sao lưu tự động và giám sát hiệu suất.
 
 <p align="center">
-  <a href="https://nguyentribaothang.github.io/" rel="dofollow" target="blank"><strong>Explore the docs »</strong></a>
-<p>
+  <a href="https://nguyentribaothang.github.io/" rel="dofollow" target="blank"><strong>Explore the hugo »</strong></a>
+	<br/>
+	<br/>
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+">🐛 Report Bug</a>
+	|
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=%F0%9F%9A%80+Feature%3A+">✈️ Request Feature</a>
+	|
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/wiki">📚 Read Wiki</a>
+	|
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/projects?query=is%3Aopen">📋 Roadmap</a>
+</p>
 	
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 🔰Giới Thiệu
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -24,7 +33,7 @@ Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Qu�
 
 Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, và doanh nghiệp muốn nâng cao năng lực công nghệ đám mây. Sau khi hoàn thành, bạn sẽ có một **dự án thực tế** để bổ sung vào portfolio và kỹ năng triển khai ứng dụng serverless chuyên nghiệp.
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### Thông Tin Sinh Viên Thực Tập 👨‍🎓
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -42,7 +51,7 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 - **📧Gmail**: [vothanhtrung9379@gmail.com](mailto:vothanhtrung9379@gmail.com)  
 - **💻GitHub**: [ttrung03](https://github.com/ttrung03)  
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 🧩Nội Dung Chính
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -71,7 +80,7 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 - **⚙️Node.js**: Quản lý thư viện JavaScript.
 - **🔎CloudWatch Logs Insights**: Phân tích log.
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 🚀Hướng Dẫn Cài Đặt và Chạy Dự Án
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -124,7 +133,7 @@ hugo server
 - Kiểm tra endpoint API với Postman (GET/POST `/students`, POST `/backup`).
 - Xem video demo (Phần 11) để hiểu quy trình triển khai.
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 🧱Yêu Cầu Hệ Thống
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -136,7 +145,7 @@ hugo server
 | **🌐Trình Duyệt** | Chrome, Firefox, hoặc Edge (hỗ trợ JavaScript) |
 | **📶Kết Nối** | Internet ổn định để truy cập AWS và GitHub |
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 📚Tài Liệu Tham Khảo 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
@@ -147,8 +156,9 @@ hugo server
 - [🎨Tailwind CSS](https://tailwindcss.com/)
 - [☁️VTI Cloud](https://vticloud.io/)
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 📬Liên Hệ
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 - **📧Nguyễn Tri Bão Thắng**: [nguyentribaothang@gmail.com](mailto:nguyentribaothang@gmail.com)
@@ -156,6 +166,7 @@ Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 
 🌟 **Cảm ơn bạn đã quan tâm đến workshop của chúng tôi!** Tham gia để làm chủ công nghệ serverless và xây dựng ứng dụng hiện đại với AWS! 🚀
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 💖Contributor
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <p align="justify">
@@ -187,7 +198,7 @@ Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 	</table>
 </div>
 
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 ### 📄License
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
