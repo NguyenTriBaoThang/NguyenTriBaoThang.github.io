@@ -1,5 +1,5 @@
 <p align="center">
-	<img loading="lazy" src="./images/system-architecture-overview.jpg" alt="Project" height="150">
+	<img loading="lazy" src="./images/system-architecture-overview.svg" alt="Project" height="150">
 </p>
 
 # 🏁Workshop: Triển Khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS 🚀
