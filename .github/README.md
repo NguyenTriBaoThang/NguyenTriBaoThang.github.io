@@ -1,7 +1,3 @@
-<p align="center">
-	<img loading="lazy" src="./images/system-architecture-overview.svg" alt="Project" height="150">
-</p>
-
 # 🏁Workshop: Triển Khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS 🚀
 
 ![AWS Serverless](https://img.shields.io/badge/AWS-Serverless-orange?logo=amazonaws) ![Duration](https://img.shields.io/badge/Duration-8%20Hours-blue) ![Level](https://img.shields.io/badge/Level-Intermediate-green)
@@ -20,7 +16,12 @@ Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Qu�
 	|
 	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/projects?query=is%3Aopen">📋 Roadmap</a>
 </p>
-	
+
+<p>Sơ đồ kiến trúc tổng hợp: </p> 
+<p align="center">
+	<img loading="lazy" src="./images/system-architecture-overview.svg" alt="Project">
+</p>
+ 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### 🔰Giới Thiệu
@@ -169,7 +170,9 @@ hugo server
 - [☁️VTI Cloud](https://vticloud.io/)
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 📬Liên Hệ
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
