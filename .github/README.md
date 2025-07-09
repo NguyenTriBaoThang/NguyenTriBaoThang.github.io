@@ -159,7 +159,7 @@ Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 			        <br>
 			        <a href="https://github.com/NguyenTriBaoThang">Bao Thang</a>
 			        <p>
-			          <a href="https://github.com/NguyenTriBaoThang/bmttnc-hutech-2180601452/commits?author=NguyenTriBaoThang" title="Developer">💻</a>
+			          <a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/commits?author=NguyenTriBaoThang" title="Developer">💻</a>
 			        </p>
 			</td>
 			<td align="center" valign="top">
@@ -167,7 +167,7 @@ Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 			        <br>
 			        <a href="https://github.com/ttrung03">Thanh Trung</a>
 			        <p>
-			          <a href="https://github.com/ttrung03/bmttnc-hutech-2180601452/commits?author=ttrung03" title="Developer">💻</a>
+			          <a href="https://github.com/ttrung03/NguyenTriBaoThang.github.io/commits?author=ttrung03" title="Developer">💻</a>
 			        </p>
 			</td>
 		</tr>
