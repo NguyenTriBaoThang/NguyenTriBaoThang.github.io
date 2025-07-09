@@ -40,7 +40,7 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 - **Trường**: Đại Học Công nghệ TP.HCM (HUTECH)  
 - **MSSV**: 2180603167  
 - **Gmail**: [vothanhtrung9379@gmail.com](mailto:vothanhtrung9379@gmail.com)  
-- **GitHub**: [NguyenTriBaoThang](https://github.com/NguyenTriBaoThang)  
+- **GitHub**: [NguyenTriBaoThang](https://github.com/ttrung03)  
 
 ---
 
