@@ -4,9 +4,7 @@
 
 # Workshop: Triển Khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS 🚀
 
-<p align="center">
 ![AWS Serverless](https://img.shields.io/badge/AWS-Serverless-orange?logo=amazonaws) ![Duration](https://img.shields.io/badge/Duration-8%20Hours-blue) ![Level](https://img.shields.io/badge/Level-Intermediate-green)
-<p>
 
 Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS**! Đây là một chương trình đào tạo thực hành kéo dài **8 giờ**, giúp bạn xây dựng một **ứng dụng web serverless** quản lý thông tin sinh viên trên nền tảng **Amazon Web Services (AWS)**. Sử dụng các dịch vụ như **S3**, **CloudFront**, **API Gateway**, **Lambda**, **DynamoDB**, **SES**, và **EventBridge**, bạn sẽ học cách triển khai một hệ thống hoàn chỉnh từ giao diện tĩnh đến backend, tích hợp sao lưu tự động và giám sát hiệu suất.
 
