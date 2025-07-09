@@ -128,11 +128,12 @@ cd NguyenTriBaoThang.github.io
 
 ## Tài Liệu Tham Khảo 📚
 
+- [The First Cloud Journey](https://cloudjourney.awsstudygroup.com/)
+- [AWS Special Force Portal](https://specialforce.awsstudygroup.com/)
 - [AWS Serverless Workshops](https://aws.amazon.com/serverless/)
 - [AWS Documentation](https://docs.aws.amazon.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [VTI Cloud](https://vticloud.io/)
-- [Techmaster Vietnam](https://techmaster.vn/)
 
 ---
 
