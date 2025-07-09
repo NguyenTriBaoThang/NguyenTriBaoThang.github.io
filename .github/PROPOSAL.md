@@ -26,7 +26,7 @@ Chào mừng bạn đến với workshop thực hành **Triển Khai Website Ser
 
 ---
 
-## Executive Summary
+## 1. 📄Executive Summary
 
 Workshop kéo dài **8 giờ**, hướng dẫn xây dựng ứng dụng web serverless quản lý thông tin sinh viên trên AWS, sử dụng **S3**, **CloudFront**, **API Gateway**, **Lambda**, **DynamoDB**, **SES**, và **EventBridge**. Với **12 phần chính**, từ giới thiệu serverless đến dọn dẹp tài nguyên, chương trình đảm bảo trải nghiệm học tập thực tiễn.
 
@@ -36,7 +36,7 @@ Workshop kéo dài **8 giờ**, hướng dẫn xây dựng ứng dụng web serv
 
 ---
 
-## Problem Statement
+## 2. 🎯Problem Statement
 
 Nhu cầu kỹ năng phát triển ứng dụng serverless tăng mạnh, đặc biệt trong giáo dục và quản lý dữ liệu. Tuy nhiên, lập trình viên và sinh viên tại Việt Nam gặp thách thức:
 - Thiếu kinh nghiệm áp dụng **kiến trúc serverless** để xây dựng ứng dụng tiết kiệm chi phí.
@@ -48,7 +48,7 @@ Workshop cung cấp chương trình thực hành, hướng dẫn xây dựng ứ
 
 ---
 
-## Solution Architecture
+## 3. 🏗️Solution Architecture
 
 Hệ thống sử dụng **kiến trúc serverless** trên AWS:
 - **Frontend**: Giao diện tĩnh (`index.html`, `styles.css` với Tailwind CSS, `scripts.js`) lưu trữ trong S3 bucket `student-management-website-2025`, phân phối qua CloudFront `StudentWebsiteDistribution`.
@@ -60,7 +60,7 @@ Hệ thống sử dụng **kiến trúc serverless** trên AWS:
 
 ---
 
-## Technical Implementation
+## 4. 🔧Technical Implementation
 
 Workshop gồm **12 phần**, sử dụng công cụ:
 - **AWS Management Console**
@@ -145,7 +145,7 @@ Workshop gồm **12 phần**, sử dụng công cụ:
 
 ---
 
-## Timeline & Milestones
+## 5. 📅Timeline & Milestones
 
 Workshop kéo dài **8 giờ**, chia thành 2 buổi:
 
@@ -169,7 +169,7 @@ Workshop kéo dài **8 giờ**, chia thành 2 buổi:
 
 ---
 
-## Budget Estimation
+## 6. 💰Budget Estimation
 
 Ước tính chi phí **các dịch vụ AWS** cho 20–30 người, sử dụng **AWS Free Tier** và dọn dẹp tài nguyên (Phần 12). Giá dựa trên vùng `us-east-1` (09/07/2025, [AWS Pricing](https://aws.amazon.com/pricing/)).
 
@@ -191,7 +191,7 @@ Workshop kéo dài **8 giờ**, chia thành 2 buổi:
 
 ---
 
-## Risk Assessment
+## 7. ⚠️Risk Assessment
 
 ### Rủi Ro Kỹ Thuật
 - **Lỗi Cấu Hình**: CORS, OAI, API key gây lỗi 403/404.
@@ -222,7 +222,7 @@ Workshop kéo dài **8 giờ**, chia thành 2 buổi:
 
 ---
 
-## Expected Outcomes
+## 8. 🎯Expected Outcomes
 
 - **Kỹ Năng**: Thành thạo S3, CloudFront, API Gateway, Lambda, DynamoDB, SES, EventBridge.
 - **Dự Án**: Hệ thống quản lý sinh viên serverless, tùy chỉnh được.
