@@ -41,15 +41,15 @@ Workshop bao gồm các bước chi tiết để xây dựng ứng dụng server
 | 1 | [Giới thiệu](1-introduction/) | Tổng quan về workshop, lợi ích của kiến trúc serverless, và mục tiêu học tập. |
 | 2 | [Các bước chuẩn bị](2-preparation-steps/)  | Hướng dẫn thiết lập tài khoản AWS, cài đặt công cụ cần thiết, và chuẩn bị môi trường. |
 | 3 | [Cấu hình Lambda Functions](3-creating-lambda-functions/) | Tạo các hàm Lambda để xử lý logic, như truy xuất và lưu trữ dữ liệu sinh viên. |
-| 4 | [Tạo RESTful API](1-Introduction/) | Cấu hình API Gateway để tạo API an toàn, tích hợp với Lambda. |
-| 5 | [Viết giao diện cho Website](1-Introduction/) | Thiết kế giao diện web với Tailwind CSS để nhập/xuất dữ liệu sinh viên. |
-| 6 | [Cấu hình S3 Bucket](1-Introduction/)| Tạo và cấu hình bucket S3 để lưu trữ nội dung tĩnh và dữ liệu sao lưu. |
-| 7 | [Triển khai CloudFront](1-Introduction/) | Sử dụng CloudFront để phân phối nội dung toàn cầu với độ trễ thấp. |
-| 8 | [Thiết lập Backup hệ thống](1-Introduction/) | Tự động hóa sao lưu dữ liệu từ DynamoDB vào S3 với EventBridge. |
-| 9 | [Kiểm tra kết quả](1-Introduction/) | Xác minh hoạt động của ứng dụng qua các kịch bản kiểm thử. |
-| 10 | [Xem Logs hoạt động bằng CloudWatch](1-Introduction/) | Theo dõi và phân tích log hệ thống để tối ưu hiệu suất. |
-| 11 | [Video Demo tham khảo](1-Introduction/)| Xem video hướng dẫn minh họa cách ứng dụng hoạt động. |
-| 12 | [Dọn dẹp tài nguyên](1-Introduction/) | Hướng dẫn xóa các tài nguyên AWS để tránh chi phí không cần thiết. |
+| 4 | [Tạo RESTful API](4-creating-a-restful-api/) | Cấu hình API Gateway để tạo API an toàn, tích hợp với Lambda. |
+| 5 | [Viết giao diện cho Website](5-designing-the-website-interface/) | Thiết kế giao diện web với Tailwind CSS để nhập/xuất dữ liệu sinh viên. |
+| 6 | [Cấu hình S3 Bucket](6-configuring-s3-buckets/)| Tạo và cấu hình bucket S3 để lưu trữ nội dung tĩnh và dữ liệu sao lưu. |
+| 7 | [Triển khai CloudFront](7-deploying-cloudfront/) | Sử dụng CloudFront để phân phối nội dung toàn cầu với độ trễ thấp. |
+| 8 | [Thiết lập Backup hệ thống](8-setting-up-system-backup/) | Tự động hóa sao lưu dữ liệu từ DynamoDB vào S3 với EventBridge. |
+| 9 | [Kiểm tra kết quả](9-testing-results/) | Xác minh hoạt động của ứng dụng qua các kịch bản kiểm thử. |
+| 10 | [Xem Logs hoạt động bằng CloudWatch](10-monitoring-logs-with-cloudwatch/) | Theo dõi và phân tích log hệ thống để tối ưu hiệu suất. |
+| 11 | [Video Demo tham khảo](11-reference-video-demo/)| Xem video hướng dẫn minh họa cách ứng dụng hoạt động. |
+| 12 | [Dọn dẹp tài nguyên](12-cleaning-up-resources/) | Hướng dẫn xóa các tài nguyên AWS để tránh chi phí không cần thiết. |
 
 > **Lưu ý**: Mỗi bước được thiết kế để bạn thực hành từng phần của ứng dụng, từ cấu hình cơ sở dữ liệu đến triển khai giao diện và giám sát hệ thống. Hãy làm theo thứ tự để đạt kết quả tốt nhất.
 

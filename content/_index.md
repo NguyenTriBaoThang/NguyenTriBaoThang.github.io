@@ -41,15 +41,15 @@ The workshop includes detailed steps to build a complete serverless application.
 | 1 | [Introduction](1-introduction/) | Overview of the workshop, benefits of serverless architecture, and learning objectives. |
 | 2 | [Preparation Steps](2-preparation-steps/)  | Guide to set up your AWS account, install required tools, and prepare the environment. |
 | 3 | [Configuring Lambda Functions](3-creating-lambda-functions/) | Create Lambda functions to handle logic, such as retrieving and storing student data. |
-| 4 | [Create a RESTful API](1-Introduction/) | Configure API Gateway to create a secure API, integrate with Lambda. |
-| 5 | [Build the Website Interface](1-Introduction/) | Design the web interface with Tailwind CSS to input/output student data. |
-| 6 | [Configure the S3 Bucket](1-Introduction/)| Create and configure an S3 bucket to store static content and backup data. |
-| 7 | [Deploy CloudFront](1-Introduction/) | Use CloudFront to distribute content globally with low latency. |
-| 8 | [Set up System Backup](1-Introduction/) | Automate the backup of data from DynamoDB to S3 using EventBridge. |
-| 9 | [Verify the Results](1-Introduction/) | Verify the application’s functionality through test scenarios. |
-| 10 | [View Logs with CloudWatch](1-Introduction/) | Monitor and analyze system logs to optimize performance. |
-| 11 | [Demo Video](1-Introduction/)| Watch a demo video illustrating how the application works. |
-| 12 | [Cleanup Resources](1-Introduction/) | Guide on how to delete AWS resources to avoid unnecessary costs. |
+| 4 | [Create a RESTful API](4-creating-a-restful-api/) | Configure API Gateway to create a secure API, integrate with Lambda. |
+| 5 | [Build the Website Interface](5-designing-the-website-interface/) | Design the web interface with Tailwind CSS to input/output student data. |
+| 6 | [Configure the S3 Bucket](6-configuring-s3-buckets/)| Create and configure an S3 bucket to store static content and backup data. |
+| 7 | [Deploy CloudFront](7-deploying-cloudfront/) | Use CloudFront to distribute content globally with low latency. |
+| 8 | [Set up System Backup](8-setting-up-system-backup/) | Automate the backup of data from DynamoDB to S3 using EventBridge. |
+| 9 | [Verify the Results](9-testing-results/) | Verify the application’s functionality through test scenarios. |
+| 10 | [View Logs with CloudWatch](10-monitoring-logs-with-cloudwatch/) | Monitor and analyze system logs to optimize performance. |
+| 11 | [Demo Video](11-reference-video-demo/)| Watch a demo video illustrating how the application works. |
+| 12 | [Cleanup Resources](12-cleaning-up-resources/) | Guide on how to delete AWS resources to avoid unnecessary costs. |
 
 > **Note**: Each step is designed to let you practice each part of the application, from configuring the database to deploying the interface and monitoring the system. Follow the steps in order for the best results.
 
