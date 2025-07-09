@@ -22,7 +22,9 @@ Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Qu�
 </p>
 	
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 🔰Giới Thiệu
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 🧠Workshop này được thiết kế để trang bị kỹ năng thực tiễn về **kiến trúc serverless** và **điện toán đám mây** cho lập trình viên, sinh viên CNTT, và chuyên gia IT. Qua **12 phần thực hành**, bạn sẽ:
@@ -34,7 +36,9 @@ Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Qu�
 Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, và doanh nghiệp muốn nâng cao năng lực công nghệ đám mây. Sau khi hoàn thành, bạn sẽ có một **dự án thực tế** để bổ sung vào portfolio và kỹ năng triển khai ứng dụng serverless chuyên nghiệp.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### Thông Tin Sinh Viên Thực Tập 👨‍🎓
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### 🧑‍🎓Thành Viên 1
@@ -52,7 +56,9 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 - **💻GitHub**: [ttrung03](https://github.com/ttrung03)  
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 🧩Nội Dung Chính
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 📦Workshop bao gồm **12 phần thực hành**, từ giới thiệu serverless đến triển khai và dọn dẹp tài nguyên:
@@ -81,7 +87,9 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 - **🔎CloudWatch Logs Insights**: Phân tích log.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 🚀Hướng Dẫn Cài Đặt và Chạy Dự Án
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 ### 🔽1. Clone Mã Nguồn từ GitHub
@@ -134,7 +142,9 @@ hugo server
 - Xem video demo (Phần 11) để hiểu quy trình triển khai.
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 🧱Yêu Cầu Hệ Thống
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 | ⚙️Yêu Cầu | 💡Mô Tả |
@@ -146,7 +156,9 @@ hugo server
 | **📶Kết Nối** | Internet ổn định để truy cập AWS và GitHub |
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 📚Tài Liệu Tham Khảo 
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 - [🔗The First Cloud Journey](https://cloudjourney.awsstudygroup.com/)
@@ -167,7 +179,9 @@ Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 🌟 **Cảm ơn bạn đã quan tâm đến workshop của chúng tôi!** Tham gia để làm chủ công nghệ serverless và xây dựng ứng dụng hiện đại với AWS! 🚀
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 💖Contributor
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <p align="justify">
 
@@ -199,7 +213,9 @@ Có thắc mắc hoặc cần hỗ trợ? Liên hệ với chúng tôi:
 </div>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+
 ### 📄License
+
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 <p align="justify">
