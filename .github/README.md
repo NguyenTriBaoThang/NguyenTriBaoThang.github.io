@@ -123,7 +123,6 @@ cd NguyenTriBaoThang.github.io
 | **🌐Trình Duyệt** | Chrome, Firefox, hoặc Edge (hỗ trợ JavaScript) |
 | **📶Kết Nối** | Internet ổn định để truy cập AWS và GitHub |
 
----
 
 ### 📚Tài Liệu Tham Khảo 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
