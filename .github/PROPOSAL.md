@@ -10,7 +10,7 @@ Chào mừng bạn đến với workshop thực hành **Triển Khai Website Ser
 
 ### Thành Viên 1
 - **Họ và Tên**: Nguyễn Tri Bão Thắng  
-- **Trường**: Đại Học Công nghệ TP.HCM (HUTECH)  
+- **Trường**: Trường Đại Học Công nghệ Thành phố Hồ Chí Minh (HUTECH)  
 - **MSSV**: 2180601452  
 - **Gmail**: [nguyentribaothang@gmail.com](mailto:nguyentribaothang@gmail.com)  
 - **GitHub**: [NguyenTriBaoThang](https://github.com/NguyenTriBaoThang)  
@@ -18,7 +18,7 @@ Chào mừng bạn đến với workshop thực hành **Triển Khai Website Ser
 
 ### Thành Viên 2
 - **Họ và Tên**: Võ Thành Trung  
-- **Trường**: Đại Học Công nghệ TP.HCM (HUTECH)  
+- **Trường**: Trường Đại Học Công nghệ Thành phố Hồ Chí Minh (HUTECH)
 - **MSSV**: 2180603167  
 - **Gmail**: [vothanhtrung9379@gmail.com](mailto:vothanhtrung9379@gmail.com)  
 - **GitHub**: [NguyenTriBaoThang](https://github.com/NguyenTriBaoThang)  
@@ -249,8 +249,11 @@ Workshop cung cấp trải nghiệm thực tiễn qua **12 phần**, giúp làm 
 ---
 
 📚 **Tài Liệu Tham Khảo**:
+- [The First Cloud Journey](https://cloudjourney.awsstudygroup.com/)
+- [AWS Special Force Portal](https://specialforce.awsstudygroup.com/)
 - [AWS Serverless Workshops](https://aws.amazon.com/serverless/)
+- [AWS Documentation](https://docs.aws.amazon.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 - [VTI Cloud](https://vticloud.io/)
-- [Techmaster Vietnam](https://techmaster.vn/)
 
 🌟 **Cảm ơn bạn đã quan tâm đến workshop của chúng tôi!**
