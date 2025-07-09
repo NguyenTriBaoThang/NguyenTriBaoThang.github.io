@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bật Tính Năng Static Website Hosting on AWS System Manager</title>
+    <link>/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</link>
+    <description>Recent content in Bật Tính Năng Static Website Hosting on AWS System Manager</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="/vi/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

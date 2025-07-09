@@ -1,0 +1,2380 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.147.9">
+    <meta name="description" content="">
+<meta name="author" content="journeyoftheaverageguy@gmail.com">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>System Testing Results :: AWS System Manager</title>
+
+    
+    <link href="/css/nucleus.css?1752040583" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752040583" rel="stylesheet">
+    <link href="/css/hybrid.css?1752040583" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752040583" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752040583" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752040583" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752040583" rel="stylesheet">
+    <link href="/css/theme.css?1752040583" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752040583" rel="stylesheet">
+    
+    <link href="/css/theme-workshop.css?1752040583" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1752040583"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/9-testing-results/">
+    <nav id="sidebar" class="showVisitedLinks">
+
+  
+  
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="/">
+
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
+
+</a>
+
+    </div>
+    
+    <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/%20js/lunr.min.js?1752040583"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1752040583"></script>
+<script type="text/javascript">
+    { { if hugo.IsMultilingual } }
+    var baseurl = "\/";
+    { { else } }
+    var baseurl = "\/";
+    { { end } }
+</script>
+<script type="text/javascript" src="/%20js/search.js?1752040583"></script>
+    
+  </div>
+
+  <div class="highlightable">
+    <ul class="topics">
+
+      
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/1-introduction/" title="Introduction" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/1-introduction/">
+    <b>1. </b>Introduction
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/" title="Preparation Steps" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/">
+    <b>2. </b>Preparation Steps
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/" title="Create IAM Role for Lambda Get" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/">
+    <b>2.1. </b>Create IAM Role for Lambda Get
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/" title="Create IAM Role for Lambda Post" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.2-create-iam-role-for-lambda-post/">
+    <b>2.2. </b>Create IAM Role for Lambda Post
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/" title="Create IAM Role for DynamoDB Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/">
+    <b>2.3. </b>Create IAM Role for DynamoDB Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.4-createtable-in-dynamodb/" title="Create Table in DynamoDB" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.4-createtable-in-dynamodb/">
+    <b>2.4. </b>Create Table in DynamoDB
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/2-preparation-steps/2.5-configureses/" title="Configure Amazon SES" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/2-preparation-steps/2.5-configureses/">
+    <b>2.5. </b>Configure Amazon SES
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/" title="Creating Lambda Functions" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/">
+    <b> 3. </b>Creating Lambda Functions
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/" title="Configure Lambda Function getStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/">
+    <b>3.1. </b>Configure Lambda Function getStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/" title="Configure Lambda Function insertStudentData" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/">
+    <b>3.2. </b>Configure Lambda Function insertStudentData
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/" title="Configure Lambda Function BackupDynamoDBAndSendEmail" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/">
+    <b>3.3. </b>Configure Lambda Function BackupDynamoDBAndSendEmail
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/" title="Configuring RESTful API with API Key Security" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/">
+    <b>4. </b>Configuring RESTful API with API Key Security
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.1-creating-a-rest-api/" title="Create a New REST API on API Gateway" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.1-creating-a-rest-api/">
+    <b>4.1. </b>Create a New REST API on API Gateway
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.2-creating-an-api-key/" title="Create an API Key to Secure Access" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.2-creating-an-api-key/">
+    <b>4.2. </b>Create an API Key to Secure Access
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.3-creating-a-usage-plan/" title="Set Up Usage Plan" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.3-creating-a-usage-plan/">
+    <b>4.3. </b>Set Up Usage Plan
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.4-creating-a-get-method/" title="Create GET Method to Retrieve Data" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.4-creating-a-get-method/">
+    <b>4.4. </b>Create GET Method to Retrieve Data
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.5-creating-a-post-method/" title="Create POST Method to Store Data" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.5-creating-a-post-method/">
+    <b>4.5. </b>Create POST Method to Store Data
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/" title="Create Resource and Method for Data Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/">
+    <b>4.6. </b>Create Resource and Method for Data Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.7-enabling-cors/" title="Enable CORS to Support Frontend Access" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.7-enabling-cors/">
+    <b>4.7. </b>Enable CORS to Support Frontend Access
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.8-deploying-the-api/" title="Deploy the API to a Specific Stage" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.8-deploying-the-api/">
+    <b>4.8. </b>Deploy the API to a Specific Stage
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/" title="Link API Key to Usage Plan &amp; Associate with REST API and Stage" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/">
+    <b>4.9. </b>Link API Key to Usage Plan &amp; Associate with REST API and Stage
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/5-designing-the-website-interface/" title="Write the Website Interface" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/5-designing-the-website-interface/">
+    <b>5. </b>Write the Website Interface
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/" title="Configuring S3 Bucket for Storing and Serving the Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/">
+    <b>6. </b>Configuring S3 Bucket for Storing and Serving the Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/" title="Create a New S3 Bucket" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/">
+    <b>6.1. </b>Create a New S3 Bucket
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/" title="Upload the Web Interface Resources to S3 (HTML/CSS/JS)" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/">
+    <b>6.2. </b>Upload the Web Interface Resources to S3 (HTML/CSS/JS)
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/" title="Enable Static Website Hosting" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/">
+    <b>6.3. </b>Enable Static Website Hosting
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/" title="Configure Bucket Policy for Public Access" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/">
+    <b>6.4. </b>Configure Bucket Policy for Public Access
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Website Serverless" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
+    <b>6.5. </b>Website Serverless
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/" title="Deploying CloudFront to Accelerate the Website" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/">
+    <b>7. </b>Deploying CloudFront to Accelerate the Website
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/" title="Create CloudFront Distribution" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/">
+    <b>7.1. </b>Create CloudFront Distribution
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/7.2-configuring-default-root-object/" title="Configure Default Root Object" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/7.2-configuring-default-root-object/">
+    <b>7.2. </b>Configure Default Root Object
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/" title="Create Invalidation to Refresh Cache Content" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/">
+    <b>7.3. </b>Create Invalidation to Refresh Cache Content
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/8-setting-up-system-backup/" title="Setting Up Automated System Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/8-setting-up-system-backup/">
+    <b>8. </b>Setting Up Automated System Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+  <ul>
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/" title="Modify Lambda Backup Configuration" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/">
+    <b>8.1. </b>Modify Lambda Backup Configuration
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+<li data-nav-id="/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/" title="Create EventBridge Rule for Automated Backup" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/">
+    <b>8.2. </b>Create EventBridge Rule for Automated Backup
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+    
+    
+    
+  </ul>
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/9-testing-results/" title="System Testing Results" class="dd-item 
+        
+        active
+        
+        ">
+  <a href="/9-testing-results/">
+    <b>9. </b>System Testing Results
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/10-monitoring-logs-with-cloudwatch/" title="Monitoring Activity Logs with CloudWatch" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/10-monitoring-logs-with-cloudwatch/">
+    <b>10. </b>Monitoring Activity Logs with CloudWatch
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/11-reference-video-demo/" title="Reference Video Demo" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/11-reference-video-demo/">
+    <b>11. </b>Reference Video Demo
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+
+
+
+
+
+
+
+<li data-nav-id="/12-cleaning-up-resources/" title="Cleaning Up Resources" class="dd-item 
+        
+        
+        
+        ">
+  <a href="/12-cleaning-up-resources/">
+    <b>12. </b>Cleaning Up Resources
+    
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+  
+  
+</li>
+
+
+
+      
+      
+    </ul>
+
+    
+    
+    <section id="shortcuts">
+      <h3>More</h3>
+      <ul>
+        
+        <li>
+          <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+        </li>
+        
+      </ul>
+    </section>
+    
+
+    
+    <section id="prefooter">
+      <hr />
+      <ul>
+        
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+            <div class="select-style">
+              <select id="select-language" onchange="location = this.value;">
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="en" value="/9-testing-results/" selected>English</option>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <option id="vi" value="/vi/9-testing-results/">Tiếng Việt
+                </option>
+                
+                
+                
+                
+              </select>
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="255px" height="255px"
+                viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+                <g>
+                  <g id="arrow-drop-down">
+                    <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+        </li>
+        
+
+        
+        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
+        
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <left>
+    
+     <b> Workshop</b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+     <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
+     
+</left>
+<left>
+    <br>
+    <br>
+        <b> Last Updated </b> <br>
+        <i><font color=orange>30-01-2022</font></i>
+    </left>
+    <left>
+        <br>
+        <br>
+            <b> Team </b> <br>
+           
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng  </a> <br>
+                <a href="https://www.linkedin.com/in/vanhoangkha"  style="color:orange">Kha Văn </a> <br>
+                <a href="https://www.linkedin.com/in/thangntb"  style="color:orange">Bão Thắng </a> <br>
+                <a href="https://www.linkedin.com/in/vthanhtrung"  style="color:orange">Thành Trung </a>
+               
+        </i>
+        </left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            <a href='/'>Serverless Website</a> > System Testing Results
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview-of-testing-results">Overview of Testing Results</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#detailed-actions">Detailed Actions</a></li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              System Testing Results
+            </h1>
+          
+
+        
+
+
+
+	<blockquote>
+<p><strong>Objective</strong>: Test the entire serverless system, including the web interface (served via CloudFront <code>StudentWebsiteDistribution</code>), student data saving functionality (<strong>POST /students</strong>), viewing the student list (<strong>GET /students</strong>), sending notification emails via Amazon SES, and automatic backup from DynamoDB <code>studentData</code> to the S3 Bucket <code>student-backup-20250706</code>. Ensure the system works correctly from frontend to backend, notification emails, and automated backup.</p></blockquote>
+<hr>
+<h2 id="overview-of-testing-results">Overview of Testing Results</h2>
+<ul>
+<li><strong>Web Interface</strong>:
+<ul>
+<li>Distributed via CloudFront <code>StudentWebsiteDistribution</code> (sections 7.1–7.3) from S3 Bucket <code>student-management-website-2025</code> (sections 6.1–6.4).</li>
+<li>Uses Tailwind CSS (section 5) to display the student information form (<code>studentid</code>, <code>name</code>, <code>class</code>, <code>birthdate</code>, <code>email</code>) and the data table.</li>
+<li>Calls the <code>student</code> API (stage <code>prod</code>, section 4.8) with <strong>Invoke URL</strong> (e.g., <code>https://abc123.execute-api.us-east-1.amazonaws.com/prod</code>) and <code>StudentApiKey</code> (section 4.2).</li>
+</ul>
+</li>
+<li><strong>Backend Functions</strong>:
+<ul>
+<li><strong>POST /students</strong>: Lambda function <code>insertStudentData</code> (section 3.2) saves records to DynamoDB <code>studentData</code> and sends emails via SES.</li>
+<li><strong>GET /students</strong>: Lambda function <code>getStudentData</code> (section 3.1) retrieves data from DynamoDB.</li>
+<li><strong>POST /backup</strong>: Lambda function <code>DynamoDBBackup</code> (section 8.1) saves a JSON file to S3 <code>student-backup-20250706</code> and sends notification emails.</li>
+<li><strong>Automated backup</strong>: EventBridge Rule <code>DailyDynamoDBBackup</code> (section 8.2) triggers <code>DynamoDBBackup</code> daily at 07:00 AM +07.</li>
+</ul>
+</li>
+<li><strong>System Integration</strong>:
+<ul>
+<li>CORS configured (section 4.7) to support requests from CloudFront (e.g., <code>https://d12345678.cloudfront.net</code>).</li>
+<li>IAM role <code>DynamoDBBackupRoleStudent</code> (section 6.5) grants permissions for DynamoDB, S3, SES.</li>
+<li>Notification emails sent via SES to students and admin (<code>no-reply@studentapp.com</code>, <code>admin@studentapp.com</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<div class="notices info" ><p>You need to complete:</p>
+<ul>
+<li>Section 2.4: Create S3 Bucket <code>student-backup-20250706</code>.</li>
+<li>Sections 3.1–3.3: Create Lambda functions <code>getStudentData</code>, <code>insertStudentData</code>, <code>DynamoDBBackup</code> with role <code>DynamoDBBackupRoleStudent</code>.</li>
+<li>Sections 4.1–4.9: Create the <code>student</code> API, <code>StudentApiKey</code>, <code>StudentUsagePlan</code>, methods <strong>GET /students</strong>, <strong>POST /students</strong>, <strong>POST /backup</strong>, enable CORS, deploy the <code>prod</code> stage.</li>
+<li>Section 5: Build the web interface (<code>index.html</code>, <code>styles.css</code>, <code>scripts.js</code>).</li>
+<li>Sections 6.1–6.5: Create S3 Buckets <code>student-management-website-2025</code>, <code>student-backup-20250706</code>.</li>
+<li>Sections 7.1–7.3: Create CloudFront <code>StudentWebsiteDistribution</code>.</li>
+<li>Sections 8.1–8.2: Configure Lambda <code>DynamoDBBackup</code>, EventBridge Rule <code>DailyDynamoDBBackup</code>.<br>
+Ensure your AWS account has permissions for <code>dynamodb:Scan</code>, <code>dynamodb:PutItem</code>, <code>s3:GetObject</code>, <code>s3:PutObject</code>, <code>ses:SendEmail</code>, and the AWS region is <code>us-east-1</code>.</li>
+</ul>
+</div>
+
+<hr>
+<h2 id="detailed-actions">Detailed Actions</h2>
+<ol>
+<li>
+<p><strong>Access the Website via CloudFront Domain Name</strong></p>
+<ul>
+<li>Open a browser (Chrome, Firefox) and enter the CloudFront URL (e.g., <code>https://d12345678.cloudfront.net</code>) from <strong>CloudFront &gt; Distributions &gt; StudentWebsiteDistribution</strong> (section 7.3).</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>The web interface loads successfully, displaying the student information form (<code>studentid</code>, <code>name</code>, <code>class</code>, <code>birthdate</code>, <code>email</code>) and the <strong>Save</strong>, <strong>View All Students</strong> buttons, styled with Tailwind CSS (section 5).</li>
+<li>No JavaScript errors in <strong>Developer Tools &gt; Console</strong>.<br>
+<img src="/images/9-testing-results/testing-results-01.png" alt="Access CloudFront URL."><br>
+<em>Figure 1: Access CloudFront URL.</em><br>
+<img src="/images/9-testing-results/testing-results-02.png" alt="Website interface."><br>
+<em>Figure 2: Website interface.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Enter and Save Student Information</strong></p>
+<ul>
+<li>In the web form, enter:
+<ul>
+<li><strong>Student ID (studentid)</strong>: <code>SV006</code></li>
+<li><strong>Name</strong>: <code>Nguyen Van F</code></li>
+<li><strong>Class</strong>: <code>CNTT06</code></li>
+<li><strong>Birthdate</strong>: <code>2001-06-06</code></li>
+<li><strong>Email</strong>: <code>student6@example.com</code></li>
+</ul>
+</li>
+<li>Click <strong>Save</strong> to send <strong>POST /students</strong> via API Gateway.<br>
+<img src="/images/9-testing-results/testing-results-03.png" alt="Student information form."><br>
+<em>Figure 3: Student information form.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Confirm Successful Save Notification</strong></p>
+<ul>
+<li>After clicking <strong>Save</strong>, the interface displays a <em>&ldquo;Save successful&rdquo;</em> notification (handled by <code>scripts.js</code>).</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>Notification is displayed (e.g., via <code>alert()</code> or a Tailwind CSS-styled div).</li>
+<li>The <code>insertStudentData</code> function returns:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{ <span style="color:#f92672">&#34;statusCode&#34;</span>: <span style="color:#ae81ff">200</span>, <span style="color:#f92672">&#34;body&#34;</span>: <span style="color:#e6db74">&#34;{\&#34;message\&#34;: \&#34;Lưu thành công\&#34;}&#34;</span> }
+</span></span></code></pre></div></li>
+</ul>
+<img src="/images/9-testing-results/testing-results-04.png" alt="Save successful notification."><br>
+<em>Figure 4: Save successful notification.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>View Student List</strong></p>
+<ul>
+<li>Click <strong>View All Students</strong> to send <strong>GET /students</strong>.</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>The <code>getStudentData</code> function (section 3.1) retrieves data from <code>studentData</code>.</li>
+<li>The interface displays a table containing the newly entered record (<code>SV006</code>) and other records, with fields: <code>studentid</code>, <code>name</code>, <code>class</code>, <code>birthdate</code>, <code>email</code>.<br>
+<img src="/images/9-testing-results/testing-results-05.png" alt="Student list table."><br>
+<em>Figure 5: Student list table.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Student Notification Email</strong></p>
+<ul>
+<li>Open the inbox of <code>student6@example.com</code> to check the email from SES.</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>Email from <code>no-reply@studentapp.com</code> with:
+<ul>
+<li><strong>Subject</strong>: <em>Student information has been saved</em></li>
+<li><strong>Body</strong>:
+<pre tabindex="0"><code>Hello Nguyen Van F,
+Your information has been successfully saved:
+- Student ID: SV006
+- Class: CNTT06
+- Birthdate: 2001-06-06
+- Email: student6@example.com
+</code></pre></li>
+</ul>
+</li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li>Email not sent: Verify <code>no-reply@studentapp.com</code>, <code>student6@example.com</code> in SES (section 3).</li>
+<li>Check <code>ses:SendEmail</code> permission in <code>DynamoDBBackupRoleStudent</code>.<br>
+<img src="/images/9-testing-results/testing-results-06.png" alt="Student notification email."><br>
+<em>Figure 6: Student notification email.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Data in DynamoDB</strong></p>
+<ul>
+<li>In <strong>AWS Management Console</strong>, go to <strong>DynamoDB &gt; Tables &gt; studentData</strong>.</li>
+<li>Select <strong>Explore items</strong> to view the data.</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>New record:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;studentid&#34;</span>: <span style="color:#e6db74">&#34;SV006&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Nguyen Van F&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;class&#34;</span>: <span style="color:#e6db74">&#34;CNTT06&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;birthdate&#34;</span>: <span style="color:#e6db74">&#34;2001-06-06&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;email&#34;</span>: <span style="color:#e6db74">&#34;student6@example.com&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>Other records are displayed correctly.</li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li>Record not found: Check <code>/aws/lambda/insertStudentData</code> logs (section 10) or <code>dynamodb:PutItem</code> permission.<br>
+<img src="/images/9-testing-results/testing-results-07.png" alt="Data in DynamoDB."><br>
+<em>Figure 7: Data in DynamoDB.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Admin Backup Notification Email</strong></p>
+<ul>
+<li>Open the inbox of <code>admin@studentapp.com</code> to check the backup email from SES (sent by <code>DynamoDBBackup</code>, section 8.1).</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>Email from <code>no-reply@studentapp.com</code> with:
+<ul>
+<li><strong>Subject</strong>: <em>Student Data Backup Completed</em></li>
+<li><strong>Body</strong>: <em>Backup created at backup/students-backup-20250709T0700.json in S3 bucket student-backup-20250706</em></li>
+</ul>
+</li>
+<li>Email sent after <code>DynamoDBBackup</code> runs (manually via <strong>POST /backup</strong> or automatically via <code>DailyDynamoDBBackup</code> at 07:00 AM +07, section 8.2).</li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li>Email not sent: Verify SES email and <code>ses:SendEmail</code> permission.</li>
+<li>Check <code>/aws/lambda/DynamoDBBackup</code> logs (section 10).<br>
+<img src="/images/9-testing-results/testing-results-08.png" alt="Backup notification email."><br>
+<em>Figure 8: Backup notification email.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Backup File in S3</strong></p>
+<ul>
+<li>In <strong>AWS Management Console</strong>, go to <strong>S3 &gt; Buckets &gt; student-backup-20250706</strong>.</li>
+<li>Open the <code>backup/</code> folder and check the JSON file (e.g., <code>students-backup-20250709T0700.json</code>).</li>
+<li><strong>Expected results</strong>:
+<ul>
+<li>The JSON file contains data from <code>studentData</code>, including the <code>SV006</code> record.</li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li>File not found: Check <code>/aws/lambda/DynamoDBBackup</code> logs or <code>s3:PutObject</code> permission in <code>DynamoDBBackupRoleStudent</code>.</li>
+<li>Verify <code>DailyDynamoDBBackup</code> (section 8.2) runs on schedule.<br>
+<img src="/images/9-testing-results/testing-results-09.png" alt="Backup file in S3."><br>
+<em>Figure 9: Backup file in S3.</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="important-notes">Important Notes</h2>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Factor</strong></th>
+          <th><strong>Details</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Security</strong></td>
+          <td>- Do not embed <code>StudentApiKey</code> in <code>scripts.js</code>. Use CloudFront Functions: <!-- raw HTML omitted --> <code>javascript &lt;br&gt; function handler(event) { &lt;br&gt; var request = event.request; &lt;br&gt; request.headers['x-api-key'] = { value: 'xxxxxxxxxxxxxxxxxxxx' }; &lt;br&gt; return request; &lt;br&gt; } &lt;br&gt; </code> <!-- raw HTML omitted --> - Verify SES emails (<code>no-reply@studentapp.com</code>, <code>admin@studentapp.com</code>, <code>student6@example.com</code>).</td>
+      </tr>
+      <tr>
+          <td><strong>Optimization</strong></td>
+          <td>- Check CloudWatch Logs (section 10) for performance analysis. <!-- raw HTML omitted --> - Use AWS CLI to test API: <!-- raw HTML omitted --> <code>bash &lt;br&gt; aws apigateway test-invoke-method --rest-api-id abc123 --resource-id xxxxx --http-method POST --path-with-query-string /students --body '{&quot;studentid&quot;:&quot;SV006&quot;,&quot;name&quot;:&quot;Nguyen Van F&quot;,&quot;class&quot;:&quot;CNTT06&quot;,&quot;birthdate&quot;:&quot;2001-06-06&quot;,&quot;email&quot;:&quot;student6@example.com&quot;}' &lt;br&gt; </code></td>
+      </tr>
+      <tr>
+          <td><strong>Integration</strong></td>
+          <td>- Ensure CORS in API Gateway (section 4.7): <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>. <!-- raw HTML omitted --> - Test all endpoints (<strong>POST /students</strong>, <strong>GET /students</strong>, <strong>POST /backup</strong>) via CloudFront URL.</td>
+      </tr>
+      <tr>
+          <td><strong>Integration Testing</strong></td>
+          <td>- Access <code>https://d12345678.cloudfront.net</code>: <!-- raw HTML omitted --> - <strong>POST /students</strong>: Save record, send SES email. <!-- raw HTML omitted --> - <strong>GET /students</strong>: Display table. <!-- raw HTML omitted --> - <strong>POST /backup</strong>: Create JSON file, send email. <!-- raw HTML omitted --> - Use <strong>Developer Tools &gt; Network</strong> to inspect API requests.</td>
+      </tr>
+      <tr>
+          <td><strong>Error Handling</strong></td>
+          <td>- <strong>Interface error</strong>: Check <code>index.html</code>, <code>scripts.js</code> in S3 <code>student-management-website-2025</code>. <!-- raw HTML omitted --> - <strong>API error</strong>: Check <code>/aws/lambda/insertStudentData</code>, <code>/aws/lambda/getStudentData</code> logs. <!-- raw HTML omitted --> - <strong>Backup error</strong>: Verify <code>DailyDynamoDBBackup</code> and <code>/aws/lambda/DynamoDBBackup</code> logs. <!-- raw HTML omitted --> - <strong>Email error</strong>: Check SES email and <code>ses:SendEmail</code> permission.</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Best practice tip</strong>: Test each function via the web interface. Check CloudWatch Logs (section 10) for debugging. Set S3 Lifecycle Rule for <code>student-backup-20250706</code> to manage old files.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The serverless system works correctly: the web interface loads via CloudFront, <strong>POST /students</strong> saves data and sends emails, <strong>GET /students</strong> displays the list, <strong>POST /backup</strong> and <code>DailyDynamoDBBackup</code> create JSON files in S3, and notification emails are sent successfully. Everything is smoothly integrated with the <code>student</code> API and SES.</p>
+<blockquote>
+<p><strong>Next step</strong>: Go to <a href="/10-monitoring-logs-with-cloudwatch/">View Activity Logs with CloudWatch</a> for detailed analysis</p></blockquote>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/" title="Create EventBridge Rule for Automated Backup"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/10-monitoring-logs-with-cloudwatch/" title="Monitoring Activity Logs with CloudWatch" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1752040583"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752040583"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752040583"></script>
+    <script src="/js/jquery.sticky.js?1752040583"></script>
+    <script src="/js/featherlight.min.js?1752040583"></script>
+    <script src="/js/highlight.pack.js?1752040583"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752040583"></script>
+    <script src="/js/learn.js?1752040583"></script>
+    <script src="/js/hugo-learn.js?1752040583"></script>
+
+    <link href="/mermaid/mermaid.css?1752040583" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1752040583"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-158079754-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
