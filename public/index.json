@@ -273,6 +273,13 @@
 	"content": "Work with Amazon System Manager - Session Manager Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Amazon System Manager - Session Manager . Perform creating public and private instance connections.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
 },
 {
+	"uri": "//localhost:1313/12-cleaning-up-resources/",
+	"title": "Website Serverless",
+	"tags": [],
+	"description": "",
+	"content": "Work with Amazon System Manager - Session Manager Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Amazon System Manager - Session Manager . Perform creating public and private instance connections.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
+},
+{
 	"uri": "//localhost:1313/categories/",
 	"title": "Categories",
 	"tags": [],

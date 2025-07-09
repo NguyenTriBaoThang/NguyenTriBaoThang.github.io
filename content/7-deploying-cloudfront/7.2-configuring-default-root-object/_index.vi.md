@@ -1,68 +1,68 @@
 ---
-title: "Configure Default Root Object"
+title: "Cấu Hình Default Root Object"
 date: 2023-10-25
 weight: 2
 chapter: false
 pre: "<b>7.2. </b>"
 ---
 
-> **Objective**: Configure `index.html` as the **Default Root Object** for the CloudFront Distribution `StudentWebsiteDistribution` (section 7.1) so that CloudFront automatically serves the `index.html` file from the S3 Bucket `student-management-website-2025` when users access the CloudFront domain (e.g., https://d12345678.cloudfront.net). This ensures the static web interface (form, student table, functional buttons) displays correctly and integrates with the `student` API (stage `prod`, section 4.8) to perform functions like saving, viewing, and backing up data.
+> **Mục tiêu**: Cấu hình `index.html` làm **Default Root Object** cho CloudFront Distribution `StudentWebsiteDistribution` (mục 7.1) để CloudFront tự động phục vụ tệp `index.html` từ S3 Bucket `student-management-website-2025` khi người dùng truy cập domain CloudFront (VD: https://d12345678.cloudfront.net). Điều này đảm bảo giao diện web tĩnh (biểu mẫu, bảng sinh viên, nút chức năng) hiển thị đúng và tích hợp với API `student` (stage `prod`, mục 4.8) để thực hiện các chức năng như lưu, xem, và sao lưu dữ liệu.
 
 ---
 
-## Overview of Default Root Object
+## Tổng Quan về Default Root Object
 
-- **Role of Default Root Object**:  
-  - Specifies the default file (`index.html`) that CloudFront returns when users access the root URL of the distribution (e.g., https://d12345678.cloudfront.net).  
-  - Similar to the **Index document** in S3 **Static Website Hosting** (section 6.3), but applied at the CloudFront layer.  
-  - Ensures the main interface displays without the need for a specific path (e.g., /index.html).  
-- **Integration with the system**:  
-  - CloudFront distributes static files (`index.html`, `styles.css`, `scripts.js`, section 6.2) from the S3 Bucket `student-management-website-2025` (sections 6.1–6.4) via **Origin Access Identity (OAI)** (section 7.1) to restrict access.  
-  - The web interface calls the `student` API (section 4.8) with the **Invoke URL** (e.g., https://abc123.execute-api.us-east-1.amazonaws.com/prod) and `StudentApiKey` (section 4.2).  
-  - The functions include:  
-    - **POST /students**: Save records to DynamoDB `studentData` and send a confirmation email via SES.  
-    - **GET /students**: Display data in the table.  
-    - **POST /backup**: Create a file in the S3 Bucket `student-backup-20250706` (section 6.5) and send notification emails via SES.  
-  - CORS is configured (section 4.7) to support requests from the CloudFront domain (e.g., https://d12345678.cloudfront.net).
+- **Vai trò của Default Root Object**:  
+  - Chỉ định tệp mặc định (`index.html`) mà CloudFront trả về khi người dùng truy cập URL gốc của distribution (VD: https://d12345678.cloudfront.net).  
+  - Tương tự **Index document** trong S3 **Static Website Hosting** (mục 6.3), nhưng áp dụng ở tầng CloudFront.  
+  - Đảm bảo giao diện chính hiển thị mà không cần nhập đường dẫn cụ thể (VD: /index.html).  
+- **Tích hợp với hệ thống**:  
+  - CloudFront phân phối các tệp tĩnh (`index.html`, `styles.css`, `scripts.js`, mục 6.2) từ S3 Bucket `student-management-website-2025` (mục 6.1–6.4) thông qua **Origin Access Identity (OAI)** (mục 7.1) để giới hạn truy cập.  
+  - Giao diện web gọi API `student` (mục 4.8) với **Invoke URL** (VD: https://abc123.execute-api.us-east-1.amazonaws.com/prod) và `StudentApiKey` (mục 4.2).  
+  - Các chức năng:  
+    - **POST /students**: Lưu bản ghi vào DynamoDB `studentData` và gửi email qua SES.  
+    - **GET /students**: Hiển thị dữ liệu trong bảng.  
+    - **POST /backup**: Tạo tệp trong S3 Bucket `student-backup-20250706` (mục 6.5) và gửi email thông báo.  
+  - CORS được cấu hình (mục 4.7) để hỗ trợ yêu cầu từ domain CloudFront (VD: https://d12345678.cloudfront.net).
 
 ---
 
-## Initial Requirements
+## Yêu Cầu Ban Đầu
 
 {{% notice info %}}
-You need to complete section 7.1 (create the CloudFront Distribution `StudentWebsiteDistribution`), section 6.1 (create the `student-management-website-2025` bucket), section 6.2 (upload `index.html`, `styles.css`, `scripts.js`), section 6.3 (enable **Static Website Hosting**), section 6.4 (configure **Bucket Policy**), section 6.5 (configure the `student-backup-20250706` bucket), section 5 (build the web interface), section 4.1 (create the `student` API), section 4.2 (create the `StudentApiKey`), section 4.3 (create the `StudentUsagePlan`), section 4.4 (create the **GET /students** method), section 4.5 (create the **POST /students** method), section 4.6 (create the `/backup` resource and **POST /backup** method), section 4.7 (enable CORS), section 4.8 (deploy the API to the `prod` stage), section 4.9 (link the `StudentApiKey` to `StudentUsagePlan`). Ensure your AWS account has `cloudfront:UpdateDistribution`, `s3:GetObject`, and the AWS region is `us-east-1` for related services.
+Bạn cần hoàn thành mục 7.1 (tạo CloudFront Distribution `StudentWebsiteDistribution`), mục 6.1 (tạo bucket `student-management-website-2025`), mục 6.2 (tải lên `index.html`, `styles.css`, `scripts.js`), mục 6.3 (bật **Static Website Hosting**), mục 6.4 (cấu hình **Bucket Policy**), mục 6.5 (cấu hình bucket `student-backup-20250706`), mục 5 (xây dựng giao diện web), mục 4.1 (tạo API `student`), mục 4.2 (tạo API Key `StudentApiKey`), mục 4.3 (tạo Usage Plan `StudentUsagePlan`), mục 4.4 (tạo phương thức **GET /students**), mục 4.5 (tạo phương thức **POST /students**), mục 4.6 (tạo resource `/backup` và phương thức **POST /backup**), mục 4.7 (kích hoạt CORS), mục 4.8 (triển khai API lên stage `prod`), mục 4.9 (gắn `StudentApiKey` vào `StudentUsagePlan`). Đảm bảo tài khoản AWS có quyền `cloudfront:UpdateDistribution`, `s3:GetObject`, và vùng AWS là `us-east-1` cho các dịch vụ liên quan.
 {{% /notice %}}
 
 ---
 
-## Detailed Actions
+## Hành Động Chi Tiết
 
-1. **Access the AWS Management Console**  
-   - Log in to the **[AWS Management Console](https://console.aws.amazon.com)** with your AWS account.  
-   - In the search bar, type **CloudFront** and select the **Amazon CloudFront** service.  
-   - Check the AWS region: CloudFront is a global service, but ensure the S3 Bucket `student-management-website-2025`, `student` API, Lambda, DynamoDB, and SES are in `us-east-1`.  
-     ![AWS Console Interface with CloudFront Search Bar](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-01.png)  
-     *Figure 1: AWS Console Interface with the CloudFront search bar.*
+1. **Truy Cập AWS Management Console**  
+   - Đăng nhập vào **[AWS Management Console](https://console.aws.amazon.com)** bằng tài khoản AWS.  
+   - Trong thanh tìm kiếm, nhập **CloudFront** và chọn dịch vụ **Amazon CloudFront**.  
+   - Kiểm tra vùng AWS: CloudFront là dịch vụ toàn cầu, nhưng đảm bảo S3 Bucket `student-management-website-2025`, API `student`, Lambda, DynamoDB, và SES ở `us-east-1`.  
+     ![Giao diện AWS Console với thanh tìm kiếm CloudFront.](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-01.png)
+     *Hình 1: Giao diện AWS Console với thanh tìm kiếm CloudFront.*
 
-2. **Select the CloudFront Distribution**  
-   - In **CloudFront > Distributions**, find and select the distribution named `StudentWebsiteDistribution` (created in section 7.1).  
-     - **Identification**: The distribution ID starts with `E...` and the Domain name is of the format `d12345678.cloudfront.net`.  
-   - Click the ID or distribution name to enter the distribution details interface.  
-   - Check the status: Ensure the distribution is in the **Enabled** state. If it is still **In Progress**, wait 5–15 minutes for the deployment to complete.  
-     ![Select CloudFront Distribution](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-02.png)  
-     *Figure 2: Select CloudFront Distribution.*
+2. **Chọn CloudFront Distribution**  
+   - Trong **CloudFront > Distributions**, tìm và chọn distribution có tên `StudentWebsiteDistribution` (tạo ở mục 7.1).  
+     - **Nhận diện**: Distribution có ID bắt đầu bằng `E...` và Domain name dạng `d12345678.cloudfront.net`.  
+   - Nhấn vào ID hoặc tên distribution để vào giao diện chi tiết.  
+   - Kiểm tra trạng thái: Đảm bảo distribution ở trạng thái **Enabled**. Nếu vẫn là **In Progress**, chờ 5–15 phút để triển khai hoàn tất.  
+     ![Chọn CloudFront Distribution.](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-02.png)
+     *Hình 2: Chọn CloudFront Distribution.*
 
-3. **Edit Default Root Object**  
-   - In the details interface of `StudentWebsiteDistribution`, select the **General** tab.  
-   - Find the **Settings** section and click the **Edit** button next to **Default root object** (usually shows the current value if set).  
-     ![Find and Click Edit in the Settings Section](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-03.png)  
-     *Figure 3: Find and Click Edit in the Settings Section.*  
-   - In the **Default root object** field, enter `index.html`.  
-     - **Reason**: `index.html` is the main file containing the web interface (input form, student table, save/view/backup functional buttons) uploaded to the S3 Bucket `student-management-website-2025` (section 6.2). When users access the CloudFront domain, CloudFront will request `index.html` from S3 through OAI (section 7.1).  
-   - Review before saving:  
-     - Ensure `index.html` has been uploaded to the root directory of the S3 Bucket `student-management-website-2025` (section 6.2).  
-     - Verify **Static Website Hosting** is enabled with `index.html` as the **Index document** (section 6.3).  
-     - Check the **Bucket Policy** (section 7.1) allows OAI access:  
+3. **Chỉnh Sửa Default Root Object**  
+   - Trong giao diện chi tiết của `StudentWebsiteDistribution`, chọn tab **General**.  
+   - Tìm phần **Settings** và nhấn nút **Edit** bên cạnh **Default root object** (thường hiển thị giá trị hiện tại, nếu có).  
+     ![Tìm và nhấn Edit trong phần Settings.](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-03.png)
+     *Hình 3: Tìm và nhấn Edit trong phần Settings.*  
+   - Trong trường **Default root object**, nhập `index.html`.  
+     - **Lý do**: `index.html` là tệp chính chứa giao diện web (biểu mẫu nhập liệu, bảng sinh viên, nút chức năng Lưu/Xem/Backup) được tải lên S3 Bucket `student-management-website-2025` (mục 6.2). Khi người dùng truy cập domain CloudFront, CloudFront sẽ yêu cầu `index.html` từ S3 qua OAI (mục 7.1).  
+   - Kiểm tra trước khi lưu:  
+     - Đảm bảo `index.html` đã được tải lên thư mục gốc của S3 Bucket `student-management-website-2025` (mục 6.2).  
+     - Xác minh **Static Website Hosting** đã bật với `index.html` làm **Index document** (mục 6.3).  
+     - Kiểm tra **Bucket Policy** (mục 7.1) cho phép OAI truy cập:  
        ```json
        {
            "Version": "2012-10-17",
@@ -80,15 +80,15 @@ You need to complete section 7.1 (create the CloudFront Distribution `StudentWeb
        }
        ```
 
-4. **Save Changes**  
-   - Click **Save changes** to apply the configuration.  
-     ![Click Save Changes to Save Configuration](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-04.png)  
-     *Figure 4: Click Save Changes to Save Configuration.*  
-   - Expected result: CloudFront will start updating the configuration (takes 5–10 minutes). Once completed, the distribution status will return to **Enabled**, and AWS will display the message _"Successfully updated distribution settings"_.  
-     ![Update Success Message](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-05.png)  
-     *Figure 5: Update Success Message.*  
-   - **Error Handling**:  
-     - **"AccessDenied"**: Check if the IAM role has `cloudfront:UpdateDistribution` permissions:  
+4. **Lưu Thay Đổi**  
+   - Nhấn **Save changes** để áp dụng cấu hình.  
+     ![Nhấn Save changes để lưu cấu hình.](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-04.png)
+     *Hình 4: Nhấn Save changes để lưu cấu hình.*  
+   - Kết quả mong đợi: CloudFront bắt đầu cập nhật cấu hình (mất 5–10 phút). Sau khi hoàn tất, trạng thái distribution trở lại **Enabled**, và AWS hiển thị thông báo _"Successfully updated distribution settings"_.  
+     ![Thông báo cập nhật thành công.](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-05.png)
+     *Hình 5: Thông báo cập nhật thành công.*  
+   - **Xử lý lỗi**:  
+     - **"AccessDenied"**: Kiểm tra vai trò IAM có quyền `cloudfront:UpdateDistribution`:  
        ```json
        {
            "Version": "2012-10-17",
@@ -101,52 +101,53 @@ You need to complete section 7.1 (create the CloudFront Distribution `StudentWeb
            ]
        }
        ```  
-       - Replace `<AWS_ACCOUNT_ID>` and `<DISTRIBUTION_ID>` with actual values (found in CloudFront > Distributions).  
-     - **Update not applied**:  
-       - Check the distribution status and wait for it to return to **Enabled**.  
-       - Verify that the **Default root object** field shows `index.html` in the **General** tab.
+       - Thay `<AWS_ACCOUNT_ID>` và `<DISTRIBUTION_ID>` bằng giá trị thực (tìm trong CloudFront > Distributions).  
+     - **Cập nhật không áp dụng**:  
+       - Kiểm tra trạng thái distribution, chờ cho đến khi trở lại **Enabled**.  
+       - Xác minh trường **Default root object** hiển thị `index.html` trong tab **General**.
 
-5. **Test Default Root Object**  
-   - In **CloudFront > Distributions**, copy the **Distribution domain name** (e.g., `https://d12345678.cloudfront.net`).  
-   - Open your browser and access this URL.  
-   - Expected result:  
-     - The web interface should display with the input form, student table, and functional buttons (Save, View, Backup) using Tailwind CSS and Poppins font.  
-     - The `styles.css` and `scripts.js` files should load correctly over HTTPS, and the interface should display as expected.  
-     - API requests (**GET /students**, **POST /students**, **POST /backup**) should work if CORS is correctly configured (section 4.7).  
-     ![Web Interface via CloudFront](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-06.png)  
-     *Figure 6: Web Interface via CloudFront.*  
-   - **Error Handling**:  
-     - **403 Forbidden**:  
-       - Check the **Bucket Policy** for the correct OAI ARN (`arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity EXXXXXX`).  
-       - Verify `index.html`, `styles.css`, `scripts.js` are uploaded to S3 (section 6.2).  
-       - Ensure the old public policy (`Principal: "*"`) has been removed (section 6.4).  
-     - **404 Not Found**:  
-       - Check that **Default root object** is set to `index.html` in CloudFront > Distributions > General.  
-       - Verify that **Static Website Hosting** is enabled with `index.html` as the **Index document** (section 6.3).  
-     - **Incorrect Interface**:  
-       - Open **Developer Tools > Console** to check for errors loading `styles.css` or `scripts.js`.  
-       - Check the paths in `index.html` (e.g., `<link href="styles.css">`, `<script src="scripts.js">`).  
-     - **CORS**: Check the CORS configuration in API Gateway (section 4.7) with `Access-Control-Allow-Origin: https://d12345678.cloudfront.net`.  
-     - **API Errors**: Check `StudentApiKey`, `StudentUsagePlan` (section 4.9), and CloudWatch logs for Lambda.
-
----
-
-## Important Notes
-
-| Factor | Details |
-|--------|---------|
-| **Security** | Ensure the **Bucket Policy** allows only OAI access to S3 (section 7.1). Avoid embedding `StudentApiKey` in `scripts.js`. Use CloudFront Functions to add the `x-api-key` header: <br> ```javascript <br> function handler(event) { <br>     var request = event.request; <br>     request.headers['x-api-key'] = { value: 'xxxxxxxxxxxxxxxxxxxx' }; <br>     return request; <br> } <br> ``` |
-| **Optimization** | Enable **CloudFront Standard Logs** to track access: In **CloudFront > Distribution > General > Logging**, select **On**, and specify a log bucket (e.g., `student-web-logs-20250706`). Use AWS CLI to check the configuration: <br> ```bash <br> aws cloudfront get-distribution --id <DISTRIBUTION_ID> <br> ``` |
-| **System Integration** | Update CORS in API Gateway (section 4.7) with `Access-Control-Allow-Origin: https://d12345678.cloudfront.net`. Ensure **POST /students**, **GET /students**, **POST /backup** work with **Invoke URL** and `StudentApiKey`. |
-| **Integration Testing** | Access the CloudFront URL (https://d12345678.cloudfront.net) and check: <br> - **POST /students**: Save records, send SES email. <br> - **GET /students**: Display table. <br> - **POST /backup**: Create file in `student-backup-20250706`, send email. <br> Use **Developer Tools > Network** to check API requests. |
-| **Error Handling** | **403 Forbidden**: Check OAI ARN, **Bucket Policy**, `s3:GetObject` permission. **404 Not Found**: Verify `index.html` is the **Default root object**, file exists in S3. **Incorrect Interface**: Check **Developer Tools > Console**, paths in `index.html`. **CORS**: Check `Access-Control-Allow-Origin` header in Lambda (section 3) and API Gateway (section 4.7). **429**: Check rate/burst/quota limits in `StudentUsagePlan` (section 4.3). |
-
-> **Best Practice Tip**: Test the CloudFront URL immediately after setting the **Default root object**. Create invalidation (section 7.3) if updating files in S3. Use AWS CLI to check the configuration: `aws cloudfront get-distribution --id <DISTRIBUTION_ID>`.
+5. **Kiểm Tra Default Root Object**  
+   - Trong **CloudFront > Distributions**, sao chép **Distribution domain name** (VD: `https://d12345678.cloudfront.net`).  
+   - Mở trình duyệt và truy cập URL này.  
+   - Kết quả mong đợi:  
+     - Giao diện web hiển thị với biểu mẫu nhập liệu, bảng sinh viên, và các nút chức năng (Lưu, Xem, Backup) sử dụng Tailwind CSS và font Poppins.  
+     - Các tệp `styles.css` và `scripts.js` được tải đúng qua HTTPS, giao diện hiển thị chính xác.  
+     - Yêu cầu API (**GET /students**, **POST /students**, **POST /backup**) hoạt động nếu CORS được cấu hình đúng (mục 4.7).  
+     ![Giao diện web qua CloudFront.](/images/7-deploying-cloudfront/7.2-configuring-default-root-object/configuring-default-root-object-06.png)
+     *Hình 6: Giao diện web qua CloudFront.*  
+   - **Xử lý lỗi**:  
+     - **Lỗi 403 Forbidden**:  
+       - Kiểm tra **Bucket Policy** của `student-management-website-2025` (mục 7.1) cho phép OAI truy cập với đúng `<OAI_ID>`.  
+       - Xác minh `index.html` được tải lên thư mục gốc của S3 (mục 6.2).  
+       - Đảm bảo **Block public access** được bật (trừ **Block public access for bucket policies**) trong S3 (mục 7.1).  
+     - **Lỗi 404 Not Found**:  
+       - Kiểm tra **Default root object** được đặt là `index.html` trong CloudFront > Distributions > General.  
+       - Xác minh **Static Website Hosting** bật với `index.html` làm **Index document** (mục 6.3).  
+     - **Giao diện hiển thị sai**:  
+       - Mở **Developer Tools > Console** trong trình duyệt để kiểm tra lỗi tải `styles.css` hoặc `scripts.js`.  
+       - Kiểm tra đường dẫn trong `index.html` (VD: `<link href="styles.css">`, `<script src="scripts.js">`) khớp với cấu trúc thư mục trong S3.  
+     - **Lỗi CORS khi gọi API**:  
+       - Kiểm tra cấu hình CORS trong API Gateway (mục 4.7) có `Access-Control-Allow-Origin: https://d12345678.cloudfront.net`.  
+       - Đảm bảo `scripts.js` gửi yêu cầu API với đúng **Invoke URL** (VD: https://abc123.execute-api.us-east-1.amazonaws.com/prod) và header `x-api-key: <StudentApiKey>`.
 
 ---
 
-## Conclusion
+## Lưu Ý Quan Trọng
 
-The **Default Root Object** has been configured as `index.html` for the CloudFront Distribution `StudentWebsiteDistribution`, ensuring the web interface displays correctly when accessing the CloudFront domain. The system is now ready to integrate with the `student` API.
+| Yếu Tố | Chi Tiết |
+|--------|----------|
+| Bảo mật | Đảm bảo **Bucket Policy** chỉ cho phép OAI truy cập S3 (mục 7.1). Tránh nhúng `StudentApiKey` trong `scripts.js`. Sử dụng CloudFront Functions để thêm header `x-api-key`: <br> ```javascript <br> function handler(event) { <br>     var request = event.request; <br>     request.headers['x-api-key'] = { value: 'xxxxxxxxxxxxxxxxxxxx' }; <br>     return request; <br> } <br> ``` |
+| Tối ưu hóa | Bật **CloudFront Standard Logs** để theo dõi truy cập: Trong **CloudFront > Distribution > General > Logging**, chọn **On**, chỉ định bucket log (VD: `student-web-logs-20250706`). Sử dụng AWS CLI để kiểm tra cấu hình: <br> ```bash <br> aws cloudfront get-distribution --id <DISTRIBUTION_ID> <br> ``` |
+| Tích hợp với hệ thống | Cập nhật CORS trong API Gateway (mục 4.7) với `Access-Control-Allow-Origin: https://d12345678.cloudfront.net`. Đảm bảo endpoint **POST /students**, **GET /students**, **POST /backup** hoạt động với **Invoke URL** và `StudentApiKey`. |
+| Kiểm tra tích hợp | Truy cập CloudFront URL (https://d12345678.cloudfront.net) và kiểm tra: <br> - **POST /students**: Lưu bản ghi, gửi email SES. <br> - **GET /students**: Hiển thị bảng. <br> - **POST /backup**: Tạo tệp trong `student-backup-20250706`, gửi email. <br> Sử dụng **Developer Tools > Network** để kiểm tra yêu cầu API. |
+| Xử lý lỗi | **403 Forbidden**: Kiểm tra OAI ARN, **Bucket Policy**, quyền `s3:GetObject`. **404 Not Found**: Xác minh `index.html` là **Default root object**, tệp tồn tại trong S3. **CORS**: Kiểm tra header `Access-Control-Allow-Origin` trong Lambda (mục 3) và API Gateway (mục 4.7). **429**: Kiểm tra giới hạn Rate/Burst/Quota trong `StudentUsagePlan` (mục 4.3). |
 
-> **Next step**: Proceed to [Create Invalidation to Refresh Cache](/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/) to continue!
+> **Mẹo thực tiễn**: Kiểm tra CloudFront URL ngay sau khi cập nhật **Default root object**. Nếu giao diện chưa hiển thị đúng, tạo invalidation (mục 7.3) để làm mới cache. Sử dụng AWS CLI để kiểm tra cấu hình: `aws cloudfront get-distribution --id <DISTRIBUTION_ID>`.
+
+---
+
+## Kết Luận
+
+**Default Root Object** đã được cấu hình là `index.html` cho CloudFront Distribution `StudentWebsiteDistribution`, đảm bảo giao diện web hiển thị đúng khi truy cập domain CloudFront. Hệ thống sẵn sàng tích hợp với API `student`.
+
+> **Bước tiếp theo**: Chuyển đến [Tạo Invalidation để làm mới nội dung cache](/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/) để tiếp tục!
