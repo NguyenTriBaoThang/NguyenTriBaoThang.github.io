@@ -27,7 +27,7 @@ Bằng cách sử dụng các dịch vụ serverless như **S3**, **DynamoDB**, 
 
 **Kiến trúc hệ thống tổng quan**:
 
-![Kiến trúc hệ thống serverless](/images/system-architecture-overview.jpg)
+![Kiến trúc hệ thống serverless](/images/system-architecture-overview.svg)
 *Hình 1: Sơ đồ tổng quan kiến trúc ứng dụng serverless với các dịch vụ AWS.*
 
 ---

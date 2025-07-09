@@ -27,7 +27,7 @@ By using serverless services like **S3**, **DynamoDB**, **Lambda**, **API Gatewa
 
 **System Architecture Overview**:
 
-![System Architecture Overview](images/system-architecture-overview.jpg)  
+![System Architecture Overview](images/system-architecture-overview.svg)  
 *Figure 1: Overview diagram of the serverless application architecture with AWS services.*
 
 ---
