@@ -8,8 +8,10 @@
 
 Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Quản Lý Thông Tin Sinh Viên với AWS**! Đây là một chương trình đào tạo thực hành kéo dài **8 giờ**, giúp bạn xây dựng một **ứng dụng web serverless** quản lý thông tin sinh viên trên nền tảng **Amazon Web Services (AWS)**. Sử dụng các dịch vụ như **S3**, **CloudFront**, **API Gateway**, **Lambda**, **DynamoDB**, **SES**, và **EventBridge**, bạn sẽ học cách triển khai một hệ thống hoàn chỉnh từ giao diện tĩnh đến backend, tích hợp sao lưu tự động và giám sát hiệu suất.
 
-🔗 **Link Workshop**: [Explore the hugo »](https://nguyentribaothang.github.io/)
-
+<p align="center">
+[🔗Explore the hugo »](https://nguyentribaothang.github.io/)
+<p>
+	
 ---
 
 ## Giới Thiệu
@@ -46,6 +48,7 @@ Workshop phù hợp cho các tổ chức giáo dục, trung tâm đào tạo, v�
 
 Workshop bao gồm **12 phần thực hành**, từ giới thiệu serverless đến triển khai và dọn dẹp tài nguyên:
 
+<p align="center">
 | Phần | Nội Dung | Mô Tả |
 |------|----------|-------|
 | 1 | **Giới Thiệu** | Tổng quan serverless, lợi ích, và kiến trúc hệ thống. |
@@ -60,6 +63,7 @@ Workshop bao gồm **12 phần thực hành**, từ giới thiệu serverless đ
 | 10 | **Giám Sát CloudWatch** | Phân tích log hệ thống với CloudWatch Logs Insights. |
 | 11 | **Video Demo** | Xem video minh họa quy trình triển khai (35 phút). |
 | 12 | **Dọn Dẹp Tài Nguyên** | Xóa tài nguyên để tránh chi phí dư thừa. |
+</p>
 
 **Công Cụ Sử Dụng**:
 - **AWS Management Console**, **AWS CLI**: Cấu hình dịch vụ AWS.
@@ -111,8 +115,10 @@ cd NguyenTriBaoThang.github.io
 
 ---
 
+
 ## Yêu Cầu Hệ Thống
 
+<p align="center">
 | Yêu Cầu | Mô Tả |
 |---------|-------|
 | **Hệ Điều Hành** | Windows, macOS, hoặc Linux |
@@ -120,6 +126,7 @@ cd NguyenTriBaoThang.github.io
 | **Công Cụ** | AWS CLI, Node.js (v16+), Visual Studio Code, Postman |
 | **Trình Duyệt** | Chrome, Firefox, hoặc Edge (hỗ trợ JavaScript) |
 | **Kết Nối** | Internet ổn định để truy cập AWS và GitHub |
+</p>
 
 ---
 
