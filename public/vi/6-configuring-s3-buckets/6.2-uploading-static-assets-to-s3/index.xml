@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS) on AWS System Manager</title>
+    <link>//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</link>
+    <description>Recent content in Tải Tài Nguyên Giao Diện Lên S3 (HTML/CSS/JS) on AWS System Manager</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="//localhost:1313/vi/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
