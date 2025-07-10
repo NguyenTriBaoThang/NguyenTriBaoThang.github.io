@@ -1,6 +1,6 @@
 ---
 title: "Thiết Lập Backup Hệ Thống Tự Động"
-date: 2023-10-25
+date: 2025-07-09
 weight: 8
 chapter: false
 pre: "<b>8. </b>"

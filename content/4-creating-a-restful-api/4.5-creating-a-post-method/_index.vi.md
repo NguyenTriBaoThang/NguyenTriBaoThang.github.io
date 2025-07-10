@@ -1,6 +1,6 @@
 ---
 title: "Tạo phương thức POST để lưu dữ liệu"
-date: 2023-10-25
+date: 2025-07-09
 weight: 5
 chapter: false
 pre: "<b>4.5. </b>"

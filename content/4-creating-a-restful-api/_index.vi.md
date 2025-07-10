@@ -1,6 +1,6 @@
 ---
 title: "Cấu hình RESTful API Bảo Mật bằng API Key"
-date: 2023-10-25
+date: 2025-07-09
 weight: 4
 chapter: false
 pre: "<b>4. </b>"

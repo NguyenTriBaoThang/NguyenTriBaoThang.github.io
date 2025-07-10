@@ -1,6 +1,6 @@
 ---
 title: "Cấu hình Lambda Function insertStudentData"
-date: 2023-10-25
+date: 2025-07-09
 weight: 2
 chapter: false
 pre: "<b>3.2. </b>"

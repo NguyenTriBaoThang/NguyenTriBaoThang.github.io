@@ -1,6 +1,6 @@
 ---
 title: "Configuring S3 Bucket for Storing and Serving the Website"
-date: 2023-10-25
+date: 2025-07-09
 weight: 6
 chapter: false
 pre: "<b>6. </b>"

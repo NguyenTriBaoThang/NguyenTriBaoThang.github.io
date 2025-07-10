@@ -1,6 +1,6 @@
 ---
 title: "Cấu hình Amazon SES"
-date: 2023-10-25
+date: 2025-07-09
 weight: 5
 chapter: false
 pre: "<b>2.5. </b>"

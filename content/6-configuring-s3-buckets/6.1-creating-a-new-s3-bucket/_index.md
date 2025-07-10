@@ -1,6 +1,6 @@
 ---
 title: "Create a New S3 Bucket"
-date: 2023-10-25
+date: 2025-07-09
 weight: 1
 chapter: false
 pre: "<b>6.1. </b>"

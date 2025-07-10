@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>/3-creating-lambda-functions/3.1-create-the-getstudentdata-function/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.1-creating-a-rest-api/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>/6-configuring-s3-buckets/6.1-creating-a-new-s3-bucket/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -54,8 +54,21 @@
                 href="/7-deploying-cloudfront/7.1-creating-a-cloudfront-distribution/"
                 />
   </url><url>
+    <loc>/2-preparation-steps/2.1-create-iam-role-for-lambda-get/</loc>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
+                />
+  </url><url>
     <loc>/1-introduction/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -68,7 +81,7 @@
                 />
   </url><url>
     <loc>/8-setting-up-system-backup/8.1-modifying-backup-lambda-configuration/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -81,7 +94,7 @@
                 />
   </url><url>
     <loc>/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -94,7 +107,7 @@
                 />
   </url><url>
     <loc>/7-deploying-cloudfront/7.2-configuring-default-root-object/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -107,7 +120,7 @@
                 />
   </url><url>
     <loc>/3-creating-lambda-functions/3.2-create-the-insertstudentdata-function/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -120,7 +133,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.2-creating-an-api-key/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -133,7 +146,7 @@
                 />
   </url><url>
     <loc>/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -145,21 +158,8 @@
                 href="/8-setting-up-system-backup/8.2-creating-eventbridge-rule-for-backup/"
                 />
   </url><url>
-    <loc>/2-preparation-steps/2.1-create-iam-role-for-lambda-get/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="/vi/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/2-preparation-steps/2.1-create-iam-role-for-lambda-get/"
-                />
-  </url><url>
     <loc>/2-preparation-steps/2.2-create-iam-role-for-lambda-post/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -172,7 +172,7 @@
                 />
   </url><url>
     <loc>/2-preparation-steps/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -185,7 +185,7 @@
                 />
   </url><url>
     <loc>/6-configuring-s3-buckets/6.2-uploading-static-assets-to-s3/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -198,7 +198,7 @@
                 />
   </url><url>
     <loc>/3-creating-lambda-functions/3.3-create-the-backupdynamodbandsendemail-function/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -211,7 +211,7 @@
                 />
   </url><url>
     <loc>/2-preparation-steps/2.3-create-iam-role-for-dynamodb-backup/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -224,7 +224,7 @@
                 />
   </url><url>
     <loc>/7-deploying-cloudfront/7.3-creating-cloudfront-invalidation/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -237,7 +237,7 @@
                 />
   </url><url>
     <loc>/3-creating-lambda-functions/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -250,7 +250,7 @@
                 />
   </url><url>
     <loc>/6-configuring-s3-buckets/6.3-enabling-static-website-hosting/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -263,7 +263,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.3-creating-a-usage-plan/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -276,7 +276,7 @@
                 />
   </url><url>
     <loc>/6-configuring-s3-buckets/6.4-setting-bucket-policy-for-public-access/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -289,7 +289,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -302,7 +302,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.4-creating-a-get-method/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -315,7 +315,7 @@
                 />
   </url><url>
     <loc>/2-preparation-steps/2.4-createtable-in-dynamodb/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -328,7 +328,7 @@
                 />
   </url><url>
     <loc>/2-preparation-steps/2.5-configureses/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -341,7 +341,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.5-creating-a-post-method/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -354,7 +354,7 @@
                 />
   </url><url>
     <loc>/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -367,7 +367,7 @@
                 />
   </url><url>
     <loc>/5-designing-the-website-interface/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -380,7 +380,7 @@
                 />
   </url><url>
     <loc>/6-configuring-s3-buckets/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -393,7 +393,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.6-creating-a-backup-resource-and-method/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -406,7 +406,7 @@
                 />
   </url><url>
     <loc>/7-deploying-cloudfront/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -419,7 +419,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.7-enabling-cors/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -432,7 +432,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.8-deploying-the-api/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -445,7 +445,7 @@
                 />
   </url><url>
     <loc>/8-setting-up-system-backup/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -458,7 +458,7 @@
                 />
   </url><url>
     <loc>/4-creating-a-restful-api/4.9-linking-api-key-to-usage-plan-and-stage/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -471,7 +471,7 @@
                 />
   </url><url>
     <loc>/9-testing-results/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -484,7 +484,7 @@
                 />
   </url><url>
     <loc>/10-monitoring-logs-with-cloudwatch/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -497,7 +497,7 @@
                 />
   </url><url>
     <loc>/11-reference-video-demo/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
@@ -510,7 +510,7 @@
                 />
   </url><url>
     <loc>/12-cleaning-up-resources/</loc>
-    <lastmod>2023-10-25T00:00:00+00:00</lastmod>
+    <lastmod>2025-07-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"

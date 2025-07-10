@@ -1,6 +1,6 @@
 ---
 title: "Enable Static Website Hosting"
-date: 2023-10-25
+date: 2025-07-09
 weight: 3
 chapter: false
 pre: "<b>6.3. </b>"

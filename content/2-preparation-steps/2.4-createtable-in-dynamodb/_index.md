@@ -1,6 +1,6 @@
 ---
 title: "Create Table in DynamoDB"
-date: 2023-10-25
+date: 2025-07-09
 weight: 4
 chapter: false
 pre: "<b>2.4. </b>"

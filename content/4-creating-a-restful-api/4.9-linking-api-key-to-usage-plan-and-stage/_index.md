@@ -1,6 +1,6 @@
 ---
 title: "Link API Key to Usage Plan & Associate with REST API and Stage"
-date: 2023-10-25
+date: 2025-07-09
 weight: 9
 chapter: false
 pre: "<b>4.9. </b>"

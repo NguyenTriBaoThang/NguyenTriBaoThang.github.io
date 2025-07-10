@@ -1,6 +1,6 @@
 ---
 title: "Tạo Resource và Method cho Backup dữ liệu"
-date: 2023-10-25
+date: 2025-07-09
 weight: 6
 chapter: false
 pre: "<b>4.6. </b>"

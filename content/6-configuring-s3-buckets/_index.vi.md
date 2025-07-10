@@ -1,6 +1,6 @@
 ---
 title: "Cấu Hình S3 Bucket để Lưu Trữ và Phục Vụ Website"
-date: 2023-10-25
+date: 2025-07-09
 weight: 6
 chapter: false
 pre: "<b>6. </b>"

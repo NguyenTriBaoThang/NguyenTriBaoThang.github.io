@@ -1,6 +1,6 @@
 ---
 title: "Create EventBridge Rule for Automated Backup"
-date: 2023-10-25
+date: 2025-07-09
 weight: 2
 chapter: false
 pre: "<b>8.2. </b>"

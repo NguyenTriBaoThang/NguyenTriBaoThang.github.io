@@ -1,6 +1,6 @@
 ---
 title: "Tạo Invalidation để Làm Mới Nội Dung Cache"
-date: 2023-10-25
+date: 2025-07-09
 weight: 3
 chapter: false
 pre: "<b>7.3. </b>"
