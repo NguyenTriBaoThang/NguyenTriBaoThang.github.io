@@ -10,7 +10,7 @@ Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Qu�
 	<br/>
 	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/blob/main/.github/PROPOSAL.md">💡Workshop Proposal</a>
 	|
-	<a href="[https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+](https://github.com/NguyenTriBaoThang/Student-Management-Web-2025)">📂Source code</a>
+	<a href="https://github.com/NguyenTriBaoThang/Student-Management-Web-2025.git">📂Source code</a>
 	|
 	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+">🐛Report Bug</a>
 	|
