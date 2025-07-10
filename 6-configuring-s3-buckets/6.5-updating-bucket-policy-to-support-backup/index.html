@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Website Serverless :: AWS System Manager</title>
+    <title>Update Bucket Policy to Support Data Backup :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1752049338" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1752049338" rel="stylesheet">
-    <link href="/css/hybrid.css?1752049338" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1752049338" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1752049338" rel="stylesheet">
-    <link href="/css/auto-complete.css?1752049338" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1752049338" rel="stylesheet">
-    <link href="/css/theme.css?1752049338" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1752049338" rel="stylesheet">
+    <link href="/css/nucleus.css?1752122442" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752122442" rel="stylesheet">
+    <link href="/css/hybrid.css?1752122442" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752122442" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752122442" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752122442" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752122442" rel="stylesheet">
+    <link href="/css/theme.css?1752122442" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752122442" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1752049338" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1752122442" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1752049338"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752122442"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,8 +57,8 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/%20js/lunr.min.js?1752049338"></script>
-<script type="text/javascript" src="/%20js/auto-complete.js?1752049338"></script>
+<script type="text/javascript" src="/%20js/lunr.min.js?1752122442"></script>
+<script type="text/javascript" src="/%20js/auto-complete.js?1752122442"></script>
 <script type="text/javascript">
     { { if hugo.IsMultilingual } }
     var baseurl = "\/";
@@ -66,7 +66,7 @@
     var baseurl = "\/";
     { { end } }
 </script>
-<script type="text/javascript" src="/%20js/search.js?1752049338"></script>
+<script type="text/javascript" src="/%20js/search.js?1752122442"></script>
     
   </div>
 
@@ -868,13 +868,13 @@
 
 
 
-<li data-nav-id="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Website Serverless" class="dd-item 
+<li data-nav-id="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/" title="Update Bucket Policy to Support Data Backup" class="dd-item 
         
         active
         
         ">
   <a href="/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/">
-    <b>6.5. </b>Website Serverless
+    <b>6.5. </b>Update Bucket Policy to Support Data Backup
     
     <i class="fas fa-check read-icon"></i>
     
@@ -1304,7 +1304,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>30-01-2022</font></i>
+        <i><font color=orange>09-07-2025</font></i>
     </left>
     <left>
         <br>
@@ -1358,7 +1358,7 @@
             
           
           
-            <a href='/'>Serverless Website</a> > <a href='/6-configuring-s3-buckets/'>Configuring S3 Bucket for Storing and Serving the Website</a> > Website Serverless
+            <a href='/'>Serverless Website</a> > <a href='/6-configuring-s3-buckets/'>Configuring S3 Bucket for Storing and Serving the Website</a> > Update Bucket Policy to Support Data Backup
           
         
           
@@ -1373,12 +1373,11 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li><a href="#overall">Overall</a></li>
-        <li><a href="#content">Content</a></li>
-      </ul>
-    </li>
+    <li><a href="#overview-of-the-backup-bucket">Overview of the Backup Bucket</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#detailed-steps">Detailed Steps</a></li>
+    <li><a href="#important-notes">Important Notes</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -1396,7 +1395,7 @@
           
             <h1>
               
-              Website Serverless
+              Update Bucket Policy to Support Data Backup
             </h1>
           
 
@@ -1404,20 +1403,309 @@
 
 
 
-	<h1 id="work-with-amazon-system-manager---session-manager">Work with Amazon System Manager - Session Manager</h1>
-<h3 id="overall">Overall</h3>
-<p>In this lab, you&rsquo;ll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections.</p>
-<p><img src="/images/arc-log.png" alt="ConnectPrivate"></p>
-<h3 id="content">Content</h3>
+	<blockquote>
+<p><strong>Objective</strong>: Create the S3 Bucket <code>student-backup-20250706</code> (if not already created in section 2.4) and configure the <strong>Bucket Policy</strong> to allow the Lambda function <code>BackupDynamoDBAndSendEmail</code> (with the <code>DynamoDBBackupRole</code> role, section 3.3) to write backup files (JSON/CSV) to the bucket via the <strong>POST /backup</strong> endpoint (section 4.6). This bucket stores backup data from the DynamoDB table <code>studentData</code> and integrates with SES to send notification emails. The bucket does not require public access, only <code>s3:PutObject</code> permission for the <code>DynamoDBBackupRole</code> role, ensuring security and seamless integration with the serverless system.</p></blockquote>
+<hr>
+<h2 id="overview-of-the-backup-bucket">Overview of the Backup Bucket</h2>
+<ul>
+<li><strong>Role of the <code>student-backup-20250706</code> bucket</strong>:
+<ul>
+<li>Stores backup files (JSON/CSV) created by the Lambda function <code>BackupDynamoDBAndSendEmail</code> when calling the <strong>POST /backup</strong> endpoint.</li>
+<li>Configured to only allow the <code>DynamoDBBackupRole</code> role to write files (<code>s3:PutObject</code>, <code>s3:PutObjectAcl</code>), with no public access.</li>
+<li>Integrated with the <code>student</code> API (stage <code>prod</code>, section 4.8) and SES to send notification emails after backup.</li>
+</ul>
+</li>
+<li><strong>System integration</strong>:
+<ul>
+<li>Lambda function <code>BackupDynamoDBAndSendEmail</code> (section 3.3):
+<ul>
+<li>Reads data from DynamoDB <code>studentData</code> (<code>dynamodb:Scan</code>, <code>dynamodb:Query</code>).</li>
+<li>Writes backup files to <code>student-backup-20250706</code> (<code>s3:PutObject</code>).</li>
+<li>Sends notification emails via SES (<code>ses:SendEmail</code>, <code>ses:SendRawEmail</code>).</li>
+</ul>
+</li>
+<li><strong>POST /backup</strong> endpoint (section 4.6) is called from the web interface (<code>scripts.js</code>, section 6.2) via the <strong>Invoke URL</strong> (e.g., <a href="https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup">https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup</a>) with header <code>x-api-key: &lt;StudentApiKey&gt;</code> (section 4.2).</li>
+<li>CORS is configured (section 4.7) to support requests from the CloudFront domain (e.g., <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+<li><strong>Why public access is not allowed</strong>:
+<ul>
+<li>The <code>student-backup-20250706</code> bucket only needs write access from Lambda, not public access like the <code>student-management-website-2025</code> bucket (section 6.4).</li>
+<li><strong>Block all public access</strong> is enabled for security, only allowing the <code>DynamoDBBackupRole</code> role to access.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+
+<div class="notices info" ><p>You need to complete section 2.4 (create the <code>student-backup-20250706</code> bucket), section 3.3 (create the Lambda function <code>BackupDynamoDBAndSendEmail</code> with the <code>DynamoDBBackupRole</code> role), section 4.1 (create the <code>student</code> API), section 4.2 (create the <code>StudentApiKey</code>), section 4.3 (create the <code>StudentUsagePlan</code>), section 4.6 (create the <code>/backup</code> resource and <strong>POST /backup</strong> method), section 4.7 (enable CORS), section 4.8 (deploy the API to the <code>prod</code> stage), section 4.9 (attach <code>StudentApiKey</code> to <code>StudentUsagePlan</code>), section 5 (build the web interface with <code>scripts.js</code>), section 6.1 (create the <code>student-management-website-2025</code> bucket). Ensure your AWS account has <code>s3:CreateBucket</code>, <code>s3:PutBucketPolicy</code> permissions and the AWS region is <code>us-east-1</code>.</p>
+</div>
+
+<hr>
+<h2 id="detailed-steps">Detailed Steps</h2>
 <ol>
-<li><a href="1-introduce/">Introduction </a></li>
-<li><a href="2-prerequiste/">Preparation</a></li>
-<li><a href="3-accessibilitytoinstances/">Connect to EC2 instance</a></li>
-<li><a href="4-s3log/">Manage session logs</a></li>
-<li><a href="5-Portfwd/">Port Forwarding</a></li>
-<li><a href="6-cleanup/">Clean up resources</a></li>
+<li>
+<p><strong>Access AWS Management Console</strong></p>
+<ul>
+<li>Open your browser and log in to the <strong><a href="https://console.aws.amazon.com">AWS Management Console</a></strong> with your AWS account.</li>
+<li>In the search bar at the top, type <strong>S3</strong> and select the <strong>Amazon S3</strong> service to access the bucket management interface.</li>
+<li>Check AWS region: Make sure you are working in <strong>us-east-1</strong> (US East (N. Virginia)) to synchronize with the <code>student-backup-20250706</code> bucket, <code>student</code> API, Lambda functions (<code>getStudentData</code>, <code>insertStudentData</code>, <code>BackupDynamoDBAndSendEmail</code>), DynamoDB table <code>studentData</code>, and SES. The region is shown in the top right corner of the AWS Console.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-01.png" alt="AWS Console interface with S3 search bar."><br>
+<em>Figure 1: AWS Console interface with S3 search bar.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Create the <code>student-backup-20250706</code> Bucket</strong></p>
+<ul>
+<li>Check existing buckets: In <strong>S3 &gt; Buckets</strong>, look for the <code>student-backup-20250706</code> bucket (assumed created in section 2.4). If it exists, skip creation and move to Step 3.</li>
+<li>In the main <strong>Amazon S3</strong> interface, click <strong>Create bucket</strong> (usually in the top right corner).<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-02.png" alt="Create bucket button in S3 interface."><br>
+<em>Figure 2: Create bucket button in S3 interface.</em></li>
+<li>In the <strong>Create bucket</strong> interface, enter the following:
+<ul>
+<li><strong>Bucket name</strong>: Enter <code>student-backup-20250706</code>.
+<ul>
+<li>The bucket name must be globally unique. If taken, try adding a random suffix (e.g., <code>student-backup-20250706-abc123</code>).</li>
+<li>Name must contain only lowercase letters, numbers, hyphens (-), no spaces or special characters.</li>
+</ul>
+</li>
+<li><strong>AWS Region</strong>: Select <strong>US East (N. Virginia) us-east-1</strong> to match other services.</li>
+<li><strong>Bucket type</strong>: Select <strong>General purpose</strong> (suitable for backup file storage).</li>
+<li><strong>Object Ownership</strong>: Select <strong>ACLs disabled</strong> (recommended for non-public buckets) to manage permissions via <strong>Bucket Policy</strong> and IAM.</li>
+<li><strong>Block Public Access settings for this bucket</strong>: Keep <strong>Block all public access</strong> selected (default) to ensure the bucket is not publicly accessible.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-04.png" alt="Block Public Access selected."><br>
+<em>Figure 3: Block Public Access selected.</em></li>
+<li><strong>Bucket Versioning</strong>: Select <strong>Disable</strong> (as required).
+<ul>
+<li><strong>Note</strong>: It is recommended to <strong>Enable</strong> to store versions of backup files, supporting recovery if write errors occur. If enabled, use AWS CLI:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>aws s3api put-bucket-versioning --bucket student-backup-20250706 --versioning-configuration Status<span style="color:#f92672">=</span>Enabled
+</span></span></code></pre></div></li>
+</ul>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-05.png" alt="Enable Bucket Versioning."><br>
+<em>Figure 4: Enable Bucket Versioning.</em></li>
+<li><strong>Default encryption</strong>: Select <strong>Enable</strong> &gt; <strong>Server-side encryption with Amazon S3-managed keys (SSE-S3)</strong> to encrypt data at rest for better security.</li>
+<li><strong>Tags</strong> (Optional): Add tags for cost management, e.g., <code>Project=StudentManagement</code>, <code>Environment=Production</code>.</li>
+</ul>
+</li>
+<li>Click <strong>Create bucket</strong>.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-06.png" alt="Review and click Create bucket."><br>
+<em>Figure 5: Review and click Create bucket.</em></li>
+<li>Expected result: AWS S3 shows the message <em>&ldquo;Successfully created bucket &lsquo;student-backup-20250706&rsquo;&rdquo;</em>.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-07.png" alt="Bucket creation status message."><br>
+<em>Figure 6: Bucket creation status message.</em></li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li><strong>&ldquo;Bucket name already exists&rdquo;</strong>: Change the bucket name (e.g., <code>student-backup-20250706-&lt;random-string&gt;</code>). Check <code>s3:CreateBucket</code> permission in your IAM role.</li>
+<li><strong>&ldquo;AccessDenied&rdquo;</strong>: Check your IAM role has <code>s3:CreateBucket</code> permission:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:CreateBucket&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Access the Bucket&rsquo;s Permissions Tab</strong></p>
+<ul>
+<li>In <strong>S3 &gt; Buckets</strong>, select the <code>student-backup-20250706</code> bucket.</li>
+<li>Click the <strong>Permissions</strong> tab (usually at the top, next to Objects, Properties, etc.).</li>
+<li>Scroll down to the <strong>Bucket policy</strong> section to view the current status (default is empty if not configured).<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-03.png" alt="Permissions tab and Bucket policy section."><br>
+<em>Figure 7: Permissions tab and Bucket policy section.</em></li>
+</ul>
+</li>
+<li>
+<p><strong>Edit the Bucket Policy</strong></p>
+</li>
 </ol>
+<ul>
+<li>In the <strong>Bucket policy</strong> section, click <strong>Edit</strong> to open the editor.
+<ul>
+<li>Paste the following JSON to allow the <code>DynamoDBBackupRole</code> role to write files (<code>s3:PutObject</code>, <code>s3:PutObjectAcl</code>):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;AllowLambdaPutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Principal&#34;</span>: {
+</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;AWS&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::&lt;AWS_ACCOUNT_ID&gt;:role/DynamoDBBackupRole&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObjectAcl&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-backup-20250706/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><strong>Explanation of the JSON</strong>:
+<ul>
+<li><strong>Version</strong>: &ldquo;2012-10-17&rdquo; is the latest IAM policy format version.</li>
+<li><strong>Statement</strong>: List of permission statements.</li>
+<li><strong>Sid</strong>: &ldquo;AllowLambdaPutObject&rdquo; is an optional identifier for the policy.</li>
+<li><strong>Effect</strong>: &ldquo;Allow&rdquo; permits the specified actions.</li>
+<li><strong>Principal</strong>: &ldquo;arn:aws:iam::&lt;AWS_ACCOUNT_ID&gt;:role/DynamoDBBackupRole&rdquo; specifies the IAM role of the Lambda <code>BackupDynamoDBAndSendEmail</code>.</li>
+<li><strong>Action</strong>:
+<ul>
+<li><code>s3:PutObject</code>: Allows writing backup files to the bucket.</li>
+<li><code>s3:PutObjectAcl</code>: Allows setting ACL on files (if needed).</li>
+</ul>
+</li>
+<li><strong>Resource</strong>: &ldquo;arn:aws:s3:::student-backup-20250706/*&rdquo; specifies all files in the <code>student-backup-20250706</code> bucket.</li>
+</ul>
+</li>
+<li><strong>Replace <code>&lt;AWS_ACCOUNT_ID&gt;</code></strong>:
+<ul>
+<li>Find your AWS account ID in <strong>IAM &gt; Users</strong> or <strong>Account</strong> (e.g., 123456789012).</li>
+<li>Replace in the ARN: <code>arn:aws:iam::123456789012:role/DynamoDBBackupRole</code>.</li>
+</ul>
+</li>
+<li>Check the code: Ensure the ARN in <strong>Resource</strong> and <strong>Principal</strong> is correct and matches your actual bucket/role.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-04.png" alt="Configure Bucket Policy."><br>
+<em>Figure 8: Configure Bucket Policy.</em></li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>
+<p><strong>Save Changes</strong></p>
+<ul>
+<li>Click <strong>Save changes</strong> to apply the <strong>Bucket Policy</strong>.</li>
+<li>Expected result: AWS S3 shows the message <em>&ldquo;Successfully edited bucket policy&rdquo;</em>.<br>
+<img src="/images/6-configuring-s3-buckets/6.5-updating-bucket-policy-to-support-backup/updating-bucket-policy-to-support-backup-05.png" alt="Click Save changes."><br>
+<em>Figure 9: Click Save changes.</em></li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li><strong>&ldquo;Policy has invalid resource&rdquo;</strong>: Check the ARN in <strong>Resource</strong> is correct (<code>arn:aws:s3:::student-backup-20250706/*</code>).</li>
+<li><strong>&ldquo;Invalid principal in policy&rdquo;</strong>: Verify the ARN of <code>DynamoDBBackupRole</code> is correct and the role exists in IAM.</li>
+<li><strong>&ldquo;AccessDenied&rdquo;</strong>: Check your IAM role has <code>s3:PutBucketPolicy</code> permission:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: <span style="color:#e6db74">&#34;s3:PutBucketPolicy&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-backup-20250706&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Check Lambda Permissions</strong></p>
+<ul>
+<li>Verify the <code>DynamoDBBackupRole</code> role:
+<ul>
+<li>In <strong>IAM &gt; Roles</strong>, find <code>DynamoDBBackupRole</code> (created in section 3.3).</li>
+<li>Ensure the role has <code>s3:PutObject</code> and <code>s3:PutObjectAcl</code> permissions for the <code>student-backup-20250706</code> bucket:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObject&#34;</span>,
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#34;s3:PutObjectAcl&#34;</span>
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&#34;Resource&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:s3:::student-backup-20250706/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>Check the <strong>POST /backup</strong> endpoint:
+<ul>
+<li>Call the endpoint using curl to verify the Lambda can write backup files:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST https://abc123.execute-api.us-east-1.amazonaws.com/prod/backup <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;x-api-key: xxxxxxxxxxxxxxxxxxxx&#34;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -H <span style="color:#e6db74">&#34;Content-Type: application/json&#34;</span>
+</span></span></code></pre></div></li>
+<li>Expected result:
+<ul>
+<li>Backup file (JSON/CSV) is created in <strong>S3 &gt; student-backup-20250706 &gt; Objects</strong> (e.g., <code>backup-20250706.json</code>).</li>
+<li>Notification email is sent via SES (check your inbox, including Spam/Junk).</li>
+</ul>
+</li>
+<li><strong>Troubleshooting</strong>:
+<ul>
+<li><strong>403 Forbidden error</strong>:
+<ul>
+<li>Check the ARN in the <strong>Bucket Policy</strong> (<strong>Resource</strong> and <strong>Principal</strong>) matches the bucket and role.</li>
+<li>Verify <code>DynamoDBBackupRole</code> has <code>s3:PutObject</code> permission and is attached to the <code>BackupDynamoDBAndSendEmail</code> Lambda.</li>
+</ul>
+</li>
+<li><strong>Backup file not appearing</strong>:
+<ul>
+<li>Check the Lambda CloudWatch log (<code>/aws/lambda/BackupDynamoDBAndSendEmail</code>) for errors.</li>
+<li>Ensure the <strong>POST /backup</strong> endpoint returns status 200 and no CORS errors.</li>
+</ul>
+</li>
+<li><strong>CORS error</strong>:
+<ul>
+<li>Check the <code>Access-Control-Allow-Origin</code> header in Lambda (section 3.3) and API Gateway (section 4.7).</li>
+<li>Ensure CORS supports the CloudFront domain (e.g., <a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="important-notes">Important Notes</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Factor</th>
+          <th>Details</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Security</td>
+          <td>Keep <strong>Block all public access</strong> enabled to ensure the <code>student-backup-20250706</code> bucket is not publicly accessible. Only the <code>DynamoDBBackupRole</code> role is allowed to write files. Avoid embedding <code>StudentApiKey</code> in <code>scripts.js</code>; use AWS Secrets Manager or CloudFront Functions: <!-- raw HTML omitted --> function handler(event) { var request = event.request; request.headers[&lsquo;x-api-key&rsquo;] = { value: &lsquo;xxxxxxxxxxxxxxxxxxxx&rsquo; }; return request; }</td>
+      </tr>
+      <tr>
+          <td>Optimization</td>
+          <td>Enable <strong>S3 Access Logs</strong>: In S3 &gt; student-backup-20250706 &gt; Properties &gt; Server access logging, select <strong>Enable</strong>, specify a log bucket (e.g., student-backup-logs-20250706). Use AWS CLI to automate: <!-- raw HTML omitted --> aws s3api put-bucket-policy &ndash;bucket student-backup-20250706 &ndash;policy file://policy.json</td>
+      </tr>
+      <tr>
+          <td>System integration</td>
+          <td>Ensure the <strong>POST /backup</strong> endpoint works with the <strong>Invoke URL</strong> and <code>StudentApiKey</code>. Update CORS in API Gateway (section 4.7) with <code>Access-Control-Allow-Origin: https://d12345678.cloudfront.net</code>. Integrate with CloudFront (section 7) to call the API from the web interface.</td>
+      </tr>
+      <tr>
+          <td>Integration testing</td>
+          <td>Call <strong>POST /backup</strong> from the web interface (<a href="https://d12345678.cloudfront.net">https://d12345678.cloudfront.net</a>) or curl. Check: <!-- raw HTML omitted --> - Backup file appears in <code>student-backup-20250706</code>. <!-- raw HTML omitted --> - SES email is sent. <!-- raw HTML omitted --> Use <strong>Developer Tools &gt; Network</strong> to inspect API requests.</td>
+      </tr>
+      <tr>
+          <td>Troubleshooting</td>
+          <td><strong>403 Forbidden</strong>: Check ARN in <strong>Bucket Policy</strong>, <code>s3:PutObject</code> permission for <code>DynamoDBBackupRole</code>. <strong>File not appearing</strong>: Check CloudWatch logs, Lambda code. <strong>CORS</strong>: Check <code>Access-Control-Allow-Origin</code> header in Lambda (section 3.3) and API Gateway (section 4.7). <strong>429</strong>: Check Rate/Burst/Quota limits in <code>StudentUsagePlan</code> (section 4.3).</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Practical tip</strong>: Check the <strong>Bucket Policy</strong> and IAM permissions of <code>DynamoDBBackupRole</code> before calling <strong>POST /backup</strong>. Use AWS CLI to automate if you need to apply the policy to multiple buckets. Prepare for section 7 (CloudFront configuration) to complete the integration.</p></blockquote>
+<hr>
+<h2 id="conclusion">Conclusion</h2>
+<p>The <code>student-backup-20250706</code> bucket has been created and the <strong>Bucket Policy</strong> configured to allow the <code>BackupDynamoDBAndSendEmail</code> Lambda function to write backup files. The bucket is ready to integrate with the <strong>POST /backup</strong> endpoint and CloudFront (section 7).</p>
+<blockquote>
+<p><strong>Next step</strong>: Go to <a href="/7-configuring-cloudfront/">Configure CloudFront for content distribution</a> to continue setup!</p></blockquote>
 
 
 
@@ -2122,19 +2410,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1752049338"></script>
-    <script src="/js/perfect-scrollbar.min.js?1752049338"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1752049338"></script>
-    <script src="/js/jquery.sticky.js?1752049338"></script>
-    <script src="/js/featherlight.min.js?1752049338"></script>
-    <script src="/js/highlight.pack.js?1752049338"></script>
+    <script src="/js/clipboard.min.js?1752122442"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752122442"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752122442"></script>
+    <script src="/js/jquery.sticky.js?1752122442"></script>
+    <script src="/js/featherlight.min.js?1752122442"></script>
+    <script src="/js/highlight.pack.js?1752122442"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1752049338"></script>
-    <script src="/js/learn.js?1752049338"></script>
-    <script src="/js/hugo-learn.js?1752049338"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752122442"></script>
+    <script src="/js/learn.js?1752122442"></script>
+    <script src="/js/hugo-learn.js?1752122442"></script>
 
-    <link href="/mermaid/mermaid.css?1752049338" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1752049338"></script>
+    <link href="/mermaid/mermaid.css?1752122442" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1752122442"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
