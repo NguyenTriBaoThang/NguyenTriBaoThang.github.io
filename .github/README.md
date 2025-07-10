@@ -8,13 +8,15 @@ Chào mừng bạn đến với **Workshop: Triển Khai Website Serverless Qu�
   <a href="https://nguyentribaothang.github.io/" rel="dofollow" target="blank"><strong>Explore the hugo »</strong></a>
 	<br/>
 	<br/>
-	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+">🐛 Report Bug</a>
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/blob/main/.github/PROPOSAL.md">💡Workshop Proposal</a>
+	|
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%F0%9F%90%9B+Bug+Report%3A+">🐛Report Bug</a>
 	|
 	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=%F0%9F%9A%80+Feature%3A+">✈️ Request Feature</a>
 	|
-	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/wiki">📚 Read Wiki</a>
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/wiki">📚Read Wiki</a>
 	|
-	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/projects?query=is%3Aopen">📋 Roadmap</a>
+	<a href="https://github.com/NguyenTriBaoThang/NguyenTriBaoThang.github.io/projects?query=is%3Aopen">📋Roadmap</a>
 </p>
 
 <p>Sơ đồ kiến trúc tổng hợp: </p> 
